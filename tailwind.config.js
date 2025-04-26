@@ -55,8 +55,8 @@ const customize = {
 	},
 	fontFamily: {
 		superhighlight: ['Homemade Apple'],
-		h1: ['Besley', 'serif'],
-		h2: ['Besley', 'serif'],
+		h1: ['Besley'],
+		h2: ['Besley'],
 		h2sans: ['Jost', 'sans-serif'],
 		h3: ['Besley', 'serif'],
 		h3sans: ['Jost', 'sans-serif'],
@@ -170,43 +170,43 @@ export default {
 						success: customize.colors.ui.successGreen,
 						error: customize.colors.ui.errorRedLight,
 					},
-					text: {
-						primary: customize.colors.brand.primary.orange100,
-						def: customize.colors.neutral.dark.dark100,
-						alternate: customize.colors.neutral.beige.light,
-						secondary: customize.colors.neutral.warm.warm,
-						tertiary: customize.colors.neutral.warm.shade,
-						archive: {
-							supportive1: customize.colors.supportive.blue.blue100,
-							supportive2: customize.colors.supportive.green.green100
+				},
+				text: {
+					primary: customize.colors.brand.primary.orange100,
+					def: customize.colors.neutral.dark.dark100,
+					alternate: customize.colors.neutral.beige.light,
+					secondary: customize.colors.neutral.warm.warm,
+					tertiary: customize.colors.neutral.warm.shade,
+					archive: {
+						supportive1: customize.colors.supportive.blue.blue100,
+						supportive2: customize.colors.supportive.green.green100
+					},
+					supportive: {
+						blue: {
+							light: customize.colors.supportive.blue.blue10,
+							mid: customize.colors.supportive.blue.blue50,
+							dark: customize.colors.supportive.blue.blue100
 						},
-						supportive: {
-							blue: {
-								light: customize.colors.supportive.blue.blue10,
-								mid: customize.colors.supportive.blue.blue50,
-								dark: customize.colors.supportive.blue.blue100
-							},
-							green: {
-								dark: customize.colors.supportive.green.green100,
-								mid: customize.colors.supportive.green.green50,
-								light: customize.colors.supportive.green.green10
-							},
-							violet: {
-								dark: customize.colors.supportive.violet.violet100,
-								mid: customize.colors.supportive.violet.violet50,
-								light: customize.colors.supportive.violet.violet10
-							},
-							yellow: {
-								dark: customize.colors.supportive.yellow.yellow100,
-								mid: customize.colors.supportive.yellow.yellow50,
-								light: customize.colors.supportive.yellow.yellow10,
-							}
+						green: {
+							dark: customize.colors.supportive.green.green100,
+							mid: customize.colors.supportive.green.green50,
+							light: customize.colors.supportive.green.green10
 						},
-						ui: {
-							success: customize.colors.ui.successGreen,
-							error: customize.colors.ui.errorRed,
+						violet: {
+							dark: customize.colors.supportive.violet.violet100,
+							mid: customize.colors.supportive.violet.violet50,
+							light: customize.colors.supportive.violet.violet10
 						},
-					}
+						yellow: {
+							dark: customize.colors.supportive.yellow.yellow100,
+							mid: customize.colors.supportive.yellow.yellow50,
+							light: customize.colors.supportive.yellow.yellow10,
+						}
+					},
+					ui: {
+						success: customize.colors.ui.successGreen,
+						error: customize.colors.ui.errorRed,
+					},
 				}
 			},
 		},
