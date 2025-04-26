@@ -5,16 +5,16 @@ const routes: Array<RouteRecordRaw> = [
 		path: '/',
 		name: 'HomePage',
 		meta: {
-			title: 'LIANG LIN  ∣ 00',
+			title: 'Cicadas',
 		},
-		component: () => import('@/views/HomePage.vue'),
+		component: () => import('@/views/home/HomePage.vue'),
 		children: [
 			{
 				path: '/:pathMatch(.*)*',
 				name: 'Error404Page',
 				component: () => import('@/views/error/Error404Page.vue'),
 				meta: {
-					title: ' 404 頁面 - LIANG LIN  ∣ 00',
+					title: ' 404 頁面 - Cicadas',
 				},
 			},
 		],
