@@ -30,14 +30,14 @@ export default defineConfig({
 				assetFileNames: (assetInfo) => {
 					if (assetInfo.name && assetInfo.name.endsWith('.css')) {
 						//  CSS 文件放入 'css' 文件夾
-						return 'static/css/00.[name].[hash][extname]';
+						return 'static/css/cicadas.[name].[hash][extname]';
 					}
 
 					//其他資源文件（如 JS）放入 'assets' 文件夾
-					return 'assets/00.[name].[hash][extname]';
+					return 'assets/cicadas.[name].[hash][extname]';
 				},
-				entryFileNames: 'static/js/00.[name].[hash].js',
-				chunkFileNames: 'static/js/00.[name].[hash].js',
+				entryFileNames: 'static/js/cicadas.[name].[hash].js',
+				chunkFileNames: 'static/js/cicadas.[name].[hash].js',
 			},
 		},
 	},
