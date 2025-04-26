@@ -1,28 +1,26 @@
-import {createRouter, createWebHashHistory, RouteRecordRaw} from 'vue-router';
+import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
 	{
 		path: '/',
 		name: 'HomePage',
+		component: () => import('@/views/home/HomePage.vue'),
 		meta: {
 			title: 'Cicadas',
 		},
-		component: () => import('@/views/home/HomePage.vue'),
-		children: [
-			{
-				path: '/:pathMatch(.*)*',
-				name: 'Error404Page',
-				component: () => import('@/views/error/Error404Page.vue'),
-				meta: {
-					title: ' 404 頁面 - Cicadas',
-				},
-			},
-		],
+	},
+	{
+		path: '/:pathMatch(.*)*',
+		name: 'Error404Page',
+		component: () => import('@/views/error/Error404Page.vue'),
+		meta: {
+			title: ' 404 頁面 - Cicadas',
+		},
 	},
 ];
 
 const router = createRouter({
-	history: createWebHashHistory(),
+	history: createWebHistory(),
 	routes: routes,
 	scrollBehavior() {
 		return {top: 0};

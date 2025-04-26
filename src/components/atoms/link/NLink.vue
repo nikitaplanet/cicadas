@@ -1,5 +1,11 @@
 <template>
-	<component v-bind="linkProps" @click="handleClick" :href="isAnchorLink ? href : null" :is="tag" :to="isRouterLink ? to : null">
+	<component
+		v-bind="linkProps"
+		@click="handleClick"
+		:href="isAnchorLink ? href : null"
+		:is="tag"
+		:to="isRouterLink ? to : null"
+		class="cursor-pointer">
 		<slot />
 	</component>
 </template>
