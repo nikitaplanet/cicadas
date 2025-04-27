@@ -1,6 +1,6 @@
 <template>
 	<div class="landing-bg w-full">
-		<SectionContainer>
+		<div class="w-11/12 m-auto">
 			<div class="w-full h-screen relative">
 				<div class="w-full h-full absolute left-0 top-0 flex align-center justify-center">
 					<img class="block w-9/12 max-w-[450px]" alt="LogoIcon" src="~@/assets/img/home/brand/LogoIcon.svg" />
@@ -8,29 +8,26 @@
 				<div class="w-full h-full grid grid-cols-12 pt-12 absolute">
 					<div class="col-span-8">
 						<HeaderText :mode="TextMode.light">
-							We are a<br />
-							social impact <br />agency
+							<span v-html="contentText.landing.headerTitle"></span>
 						</HeaderText>
 					</div>
 
 					<div class="col-span-4">
 						<HeaderDescription :mode="TextMode.light">
-							Through data-driven insights and compelling<br />
-							storytelling, we create powerful campaigns to<br />
-							amplify the work of change makers across Asia
+							<span v-html="contentText.landing.headerDescription"></span>
 						</HeaderDescription>
 					</div>
 				</div>
 			</div>
-		</SectionContainer>
+		</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
-import SectionContainer from '@/components/layout/SectionContainer.vue';
 import HeaderText from '@/components/atoms/text/HeaderText.vue';
 import HeaderDescription from '@/components/atoms/text/HeaderDescription.vue';
 import {TextMode} from '@/components/atoms/text';
+import {contentText} from '@assets/wording/home/text.ts';
 </script>
 
 <style lang="scss" scoped>

@@ -4,15 +4,25 @@
 		<!-- NavBar：根據滾動切換位置 -->
 		<div
 			id="homeNav"
-			class="py-6"
+			class="py-5"
 			:class="[
 				'transition-all duration-300',
-				isScrolledPastLanding ? 'fixed top-0 left-0 w-full z-20' : 'absolute bottom-0 left-0 w-full z-20',
+				isScrolledPastLanding ? 'fixed top-0 left-0 w-full z-20 bg-surface-def' : 'absolute bottom-0 left-0 w-full z-20',
 			]">
 			<NavBar />
 		</div>
+
+		<!--Intro-->
 		<Section1 />
+
+		<!--Wording-->
 		<Section2 />
+
+		<!--BG 過場-->
+		<div class="section3-gradient"></div>
+
+		<!--Our Works-->
+		<Section3 />
 	</div>
 </template>
 
@@ -22,6 +32,7 @@ import NavBar from '@components/organisms/navbar/NavBar.vue';
 import LandingSection from '@/views/home/components/LandingSection.vue';
 import Section1 from '@/views/home/components/Section1.vue';
 import Section2 from '@/views/home/components/Section2.vue';
+import Section3 from '@/views/home/components/Section3.vue';
 
 // 是否已經滑超過 LandingSection
 const isScrolledPastLanding = ref(false);
@@ -29,7 +40,7 @@ const isScrolledPastLanding = ref(false);
 // 監聽 scroll
 const handleScroll = () => {
 	// 判斷是否超過 100vh
-	isScrolledPastLanding.value = window.scrollY > window.innerHeight;
+	isScrolledPastLanding.value = window.scrollY > window.innerHeight - 100;
 };
 
 onMounted(() => {
@@ -41,4 +52,10 @@ onUnmounted(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.section3-gradient {
+	width: 100%;
+	height: 120px;
+	background: linear-gradient(180deg, var(--Surface-def, #fceee9) 0%, var(--Surface-supportive-green-light, #ddf0db) 100%);
+}
+</style>
