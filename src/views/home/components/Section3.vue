@@ -16,17 +16,18 @@
 
 						<div :class="{'inline-block opacity-100': hoverImage === 1, 'hidden opacity-0': hoverImage !== 1}">
 							<img alt="2" src="@/assets/img/home/section3/2.png" />
-							<img class="absolute top-6 left-4" alt="2 decor" src="@/assets/img/home/section3/2_decor.svg" />
+							<img class="absolute top-14 left-4" alt="2 decor" src="@/assets/img/home/section3/2_decor.svg" />
 						</div>
 
 						<div :class="{'inline-block opacity-100': hoverImage === 2, 'hidden opacity-0': hoverImage !== 2}">
 							<img alt="3" src="@/assets/img/home/section3/3.png" />
-							<img class="absolute top-6 left-4" alt="3 decor" src="@/assets/img/home/section3/3_decor.svg" />
+							<img class="absolute top-2 left-5" alt="3 decor" src="@/assets/img/home/section3/3_decor.svg" />
 						</div>
 
 						<div :class="{'inline-block opacity-100': hoverImage === 3, 'hidden opacity-0': hoverImage !== 3}">
 							<img alt="4" src="@/assets/img/home/section3/4.png" />
-							<img class="absolute top-6 left-4" alt="4 decor" src="@/assets/img/home/section3/4_decor.svg" />
+							<img class="absolute top-6 right-8" alt="4 decor" src="@/assets/img/home/section3/4_decor.svg" />
+							<img class="absolute top-6 right-16" alt="4 decor" src="@/assets/img/home/section3/4_decor.svg" />
 						</div>
 					</div>
 				</div>

@@ -23,6 +23,9 @@
 
 		<!--Our Works-->
 		<Section3 />
+
+		<!--BG 過場-->
+		<div class="section4-gradient"></div>
 	</div>
 </template>
 
@@ -57,5 +60,11 @@ onUnmounted(() => {
 	width: 100%;
 	height: 120px;
 	background: linear-gradient(180deg, var(--Surface-def, #fceee9) 0%, var(--Surface-supportive-green-light, #ddf0db) 100%);
+}
+
+.section4-gradient {
+	width: 100%;
+	height: 120px;
+	background: linear-gradient(180deg, var(--Surface-supportive-green-light, #ddf0db) 0%, var(--Surface-supportive-violet-light, #f3e6f7) 100%);
 }
 </style>
