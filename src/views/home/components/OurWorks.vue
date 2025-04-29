@@ -36,30 +36,30 @@
 						@click="handleClick(0)"
 						@mouseleave="hoverImage = showImage"
 						@mouseover="hoverImage = 0"
-						:description="contentText.section3.campaignsDescription"
+						:description="contentText.ourWorks.campaignsDescription"
 						:isActive="selectedContent === 0"
-						:title="contentText.section3.campaignsTitle" />
+						:title="contentText.ourWorks.campaignsTitle" />
 					<HoverTextBox
 						@click="handleClick(1)"
 						@mouseleave="hoverImage = showImage"
 						@mouseover="hoverImage = 1"
-						:description="contentText.section3.studioDescription"
+						:description="contentText.ourWorks.studioDescription"
 						:isActive="selectedContent === 1"
-						:title="contentText.section3.studioTitle" />
+						:title="contentText.ourWorks.studioTitle" />
 					<HoverTextBox
 						@click="handleClick(2)"
 						@mouseleave="hoverImage = showImage"
 						@mouseover="hoverImage = 2"
-						:description="contentText.section3.workshopsDescription"
+						:description="contentText.ourWorks.workshopsDescription"
 						:isActive="selectedContent === 2"
-						:title="contentText.section3.workshopsTitle" />
+						:title="contentText.ourWorks.workshopsTitle" />
 					<HoverTextBox
 						@click="handleClick(3)"
 						@mouseleave="hoverImage = showImage"
 						@mouseover="hoverImage = 3"
-						:description="contentText.section3.commonsDescription"
+						:description="contentText.ourWorks.commonsDescription"
 						:isActive="selectedContent === 3"
-						:title="contentText.section3.commonsTitle" />
+						:title="contentText.ourWorks.commonsTitle" />
 				</div>
 			</div>
 		</SectionContainer>

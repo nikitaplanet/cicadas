@@ -21,7 +21,7 @@ export const contentText = {
 		title1: 'Cicadas may be small, but they rarely go <br />unnoticed. The space within them<br />' + 'amplifies their',
 		title2: 'sound and collectively<br />they make a spectacular noise that must<br />' + 'be reckoned with.',
 	},
-	section3: {
+	ourWorks: {
 		campaignsTitle: 'Campaigns',
 		campaignsDescription:
 			'Our campaigns are designed through a process of audience research, narrative strategy, creative production and purposeful distribution.',
@@ -32,5 +32,8 @@ export const contentText = {
 		workshopsDescription: 'Our workshops build capacity for our partners on audience design, narrative change, storytelling, and messaging.',
 		commonsTitle: 'Commons',
 		commonsDescription: 'Our commons match under-resourced NGOs and organizers to our network of resources for immediate practical relief.',
+	},
+	aboutUs: {
+		content1: 'We are<br /> storytellers & non<br /> profit founders<br /> ourselves',
 	},
 };

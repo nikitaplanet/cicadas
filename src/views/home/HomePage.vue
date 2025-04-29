@@ -22,10 +22,16 @@
 		<div class="section3-gradient"></div>
 
 		<!--Our Works-->
-		<Section3 />
+		<OurWorks />
 
 		<!--BG 過場-->
 		<div class="section4-gradient"></div>
+
+		<!--About Us-->
+		<AboutUs />
+
+		<!--BG 過場-->
+		<div class="section5-gradient"></div>
 	</div>
 </template>
 
@@ -35,7 +41,8 @@ import NavBar from '@components/organisms/navbar/NavBar.vue';
 import LandingSection from '@/views/home/components/LandingSection.vue';
 import Section1 from '@/views/home/components/Section1.vue';
 import Section2 from '@/views/home/components/Section2.vue';
-import Section3 from '@/views/home/components/Section3.vue';
+import OurWorks from '@/views/home/components/OurWorks.vue';
+import AboutUs from '@/views/home/components/AboutUs.vue';
 
 // 是否已經滑超過 LandingSection
 const isScrolledPastLanding = ref(false);
@@ -66,5 +73,11 @@ onUnmounted(() => {
 	width: 100%;
 	height: 120px;
 	background: linear-gradient(180deg, var(--Surface-supportive-green-light, #ddf0db) 0%, var(--Surface-supportive-violet-light, #f3e6f7) 100%);
+}
+
+.section5-gradient {
+	width: 100%;
+	height: 120px;
+	background: linear-gradient(180deg, var(--Surface-supportive-violet-light, #f3e6f7) 0%, var(--Surface-def, #fceee9) 100%);
 }
 </style>
