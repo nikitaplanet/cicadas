@@ -16,6 +16,7 @@
         "@popperjs/core": "^2.11.8",
         "@types/lodash": "^4.17.14",
         "axios": "^1.7.9",
+        "gsap": "^3.12.7",
         "pinia": "^3.0.1",
         "prettier": "^3.4.2",
         "swiper": "^11.2.1",

@@ -1,8 +1,8 @@
 <template>
-	<div class="w-full min-h-screen bg-surface-def">
-		<LandingSection />
+	<div ref="main" class="w-full min-h-screen bg-surface-def">
 		<!-- NavBar：根據滾動切換位置 -->
 		<div
+			ref="nav"
 			id="homeNav"
 			class="py-5"
 			:class="[
@@ -11,6 +11,8 @@
 			]">
 			<NavBar />
 		</div>
+
+		<LandingSection ref="landing" />
 
 		<!--Intro-->
 		<Section1 />
@@ -37,6 +39,7 @@
 
 <script lang="ts" setup>
 import {ref, onMounted, onUnmounted} from 'vue';
+
 import NavBar from '@components/organisms/navbar/NavBar.vue';
 import LandingSection from '@/views/home/components/LandingSection.vue';
 import Section1 from '@/views/home/components/Section1.vue';
@@ -59,6 +62,7 @@ onMounted(() => {
 
 onUnmounted(() => {
 	window.removeEventListener('scroll', handleScroll);
+	ctx.revert();
 });
 </script>
 
