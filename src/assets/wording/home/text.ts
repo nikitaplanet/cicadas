@@ -19,7 +19,7 @@ export const contentText = {
 	},
 	section2: {
 		title1: 'Cicadas may be small, but they rarely go <br />unnoticed. The space within them<br />' + 'amplifies their',
-		title2: 'sound and collectively<br />they make a spectacular noise that must<br />' + 'be reckoned with.',
+		title2: ' sound and collectively<br />they make a spectacular noise that must<br />' + 'be reckoned with.',
 	},
 	ourWorks: {
 		campaignsTitle: 'Campaigns',
