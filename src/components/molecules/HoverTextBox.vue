@@ -18,7 +18,7 @@
 			class="group-hover:opacity-100"
 			:class="{'opacity-100': isActive, 'opacity-0': !isActive}"
 			alt="arrow"
-			src="@/assets/img/home/section3/arrow.svg" />
+			src="../../assets/img/home/arrow.svg" />
 	</div>
 </template>
 

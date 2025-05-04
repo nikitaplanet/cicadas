@@ -35,8 +35,11 @@
 		<!--BG 過場-->
 		<div class="section5-gradient"></div>
 
-        <!--Hear from our partners-->
-        <SliderSection></SliderSection>
+		<!--Hear from our partners-->
+		<SliderSection />
+
+		<!--BG 過場-->
+		<div class="section6-gradient"></div>
 	</div>
 </template>
 
@@ -87,5 +90,11 @@ onUnmounted(() => {
 	width: 100%;
 	height: 120px;
 	background: linear-gradient(180deg, var(--Surface-supportive-violet-light, #f3e6f7) 0%, var(--Surface-def, #fceee9) 100%);
+}
+
+.section6-gradient {
+	width: 100%;
+	height: 120px;
+	background: linear-gradient(180deg, var(--Surface-def, #fceee9) 0%, var(--Surface-supportive-blue-light, #cce2f7) 100%);
 }
 </style>

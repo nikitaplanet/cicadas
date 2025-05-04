@@ -37,6 +37,11 @@ export const contentText = {
 		content1: 'We are<br /> storytellers & non<br /> profit founders<br /> ourselves',
 	},
 	sliderSection: {
-		header: ''
-	}
+		header: 'Hear from our partners',
+		content1: {
+			title: 'HERFUND',
+			content:
+				'HER Fund has collaborated with Singing Cicadas on numerous projects over the past few years, including audience research, narrative building workshops, creating videos for HER Hub, and a strategic document designed for corporate engagement. Our experience working with them has been exceptional. They prioritize a participatory approach, provide honest feedback from an objective perspective, and share our values. We highly recommend collaborating with Singing Cicadas.',
+		},
+	},
 };

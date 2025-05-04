@@ -17,4 +17,17 @@ const navMenu = [
 	},
 ];
 
-export {navMenu};
+const globalWording = {
+	meta: {
+		title: {
+			main: 'Cicadas',
+			about: 'About',
+			campaigns: 'Campaigns',
+			studio: 'Studio',
+			workshops: 'Workshops',
+			error: 'Error 404',
+		},
+	},
+};
+
+export {navMenu, globalWording};

@@ -10,7 +10,7 @@ const isShowLoading = ref(true);
 
 setTimeout(() => {
 	isShowLoading.value = false;
-}, 5000);
+}, 200);
 </script>
 
 <style scoped></style>
