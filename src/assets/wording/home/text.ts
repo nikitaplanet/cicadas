@@ -36,4 +36,7 @@ export const contentText = {
 	aboutUs: {
 		content1: 'We are<br /> storytellers & non<br /> profit founders<br /> ourselves',
 	},
+	sliderSection: {
+		header: ''
+	}
 };
