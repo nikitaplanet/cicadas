@@ -49,6 +49,9 @@
 
 		<!--QA-->
 		<Questions />
+
+		<!--Footer-->
+		<NFooter />
 	</div>
 </template>
 
@@ -64,6 +67,7 @@ import AboutUs from '@/views/home/components/AboutUs.vue';
 import SliderSection from '@/views/home/components/SliderSection.vue';
 import IssuesWeTackle from '@/views/home/components/IssuesWeTackle.vue';
 import Questions from '@/views/home/components/Questions.vue';
+import NFooter from '@/components/organisms/footer/NFooter.vue';
 
 // 是否已經滑超過 LandingSection
 const isScrolledPastLanding = ref(false);

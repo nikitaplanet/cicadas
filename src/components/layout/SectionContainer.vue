@@ -14,7 +14,7 @@ withDefaults(defineProps<Props>(), {
 });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .section-container {
 	min-height: calc(100vh - 100px);
 }
