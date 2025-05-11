@@ -2,7 +2,7 @@
 	<div class="sliderSection">
 		<SectionContainer class="pt-16 pb-20">
 			<div class="w-full">
-				<h2 class="font-superhighlight text-superhighlight text-text-primary">{{ contentText.sliderSection.header }}</h2>
+				<HeadingHomeMade>{{ contentText.sliderSection.header }}</HeadingHomeMade>
 			</div>
 
 			<div class="w-full h-[500px] flex items-center justify-center mt-12">
@@ -39,6 +39,7 @@
 import SectionContainer from '@/components/layout/SectionContainer.vue';
 import {ref} from 'vue';
 import {contentText} from '@/assets/wording/home/text.ts';
+import HeadingHomeMade from '@components/atoms/text/HeadingHomeMade.vue';
 
 const contents = ref([]);
 const sliderDots = ref([
