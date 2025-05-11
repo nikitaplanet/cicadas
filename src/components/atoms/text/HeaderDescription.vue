@@ -1,7 +1,8 @@
 <template>
 	<p
-		class="font-body text-body italic"
+		class="font-body text-body"
 		:class="{
+			italic: isItalic,
 			'text-text-alternate': mode === TextMode.light,
 			'text-text-def': mode === TextMode.dark,
 		}">
@@ -14,10 +15,12 @@ import {TextMode} from './index';
 
 interface Props {
 	mode?: TextMode;
+	isItalic?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
 	mode: TextMode.dark,
+	isItalic: true,
 });
 </script>
 

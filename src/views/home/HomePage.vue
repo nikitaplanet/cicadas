@@ -1,5 +1,5 @@
 <template>
-	<div ref="main" class="w-full min-h-screen bg-surface-def">
+	<div class="w-full min-h-screen bg-surface-def">
 		<!-- NavBar：根據滾動切換位置 -->
 		<div
 			ref="nav"
@@ -84,7 +84,6 @@ onMounted(() => {
 
 onUnmounted(() => {
 	window.removeEventListener('scroll', handleScroll);
-	// ctx.revert();
 });
 </script>
 
