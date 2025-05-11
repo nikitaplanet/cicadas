@@ -3,7 +3,7 @@
 		<SectionContainer :hasMinHeight="false">
 			<div class="w-full flex flex-col justify-center items-center">
 				<div class="w-full">
-					<SectionNameTag>About Us</SectionNameTag>
+					<SectionNameTag>{{ contentText.aboutUs.title }}</SectionNameTag>
 				</div>
 				<div class="w-full flex flex-row justify-center items-center gap-10 mt-28">
 					<img alt="flower" src="@/assets/img/home/aboutUs/1.svg" />

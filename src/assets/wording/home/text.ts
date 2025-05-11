@@ -34,6 +34,7 @@ export const contentText = {
 		commonsDescription: 'Our commons match under-resourced NGOs and organizers to our network of resources for immediate practical relief.',
 	},
 	aboutUs: {
+		title: 'About Us',
 		content1: 'We are<br /> storytellers & non<br /> profit founders<br /> ourselves',
 	},
 	sliderSection: {
@@ -43,5 +44,52 @@ export const contentText = {
 			content:
 				'HER Fund has collaborated with Singing Cicadas on numerous projects over the past few years, including audience research, narrative building workshops, creating videos for HER Hub, and a strategic document designed for corporate engagement. Our experience working with them has been exceptional. They prioritize a participatory approach, provide honest feedback from an objective perspective, and share our values. We highly recommend collaborating with Singing Cicadas.',
 		},
+	},
+	issuesWeTackle: {
+		title: 'Issues we tackle',
+		contentTextList: [
+			{
+				title: 'Research, Analytics and Insights',
+				content: 'We conduct comprehensive research and data analysis to provide you with actionable insights to inform your decisions.',
+			},
+			{
+				title: 'Strategy Development',
+				content:
+					'We deliver a tailored creative strategy that aligns your objectives, highlights new narratives, address key challenges and captures the opportunities in sight.',
+			},
+			{
+				title: 'Digital Strategy and Marketing',
+				content: 'We design and implement effective digital marketing to engage target audiences, and drive conversions.',
+			},
+			{
+				title: 'Visual Branding',
+				content: 'We create memorable visual identities that reflect your values and resonate with your audience across various platforms.',
+			},
+			{
+				title: 'Content Creation',
+				content: 'We develop high-quality, engaging content with our network of creatives.',
+			},
+			{
+				title: 'Partner & Influencer Engagement',
+				content: 'We identify and cultivate relationships with strategic partners and influencers to amplify outreach.',
+			},
+			{
+				title: 'Education Guides and Impact Kits',
+				content: 'We produce informative guides and impact kits that educate stakeholders on the campaign issue.',
+			},
+			{
+				title: 'Training, Workshops and Capacity Building',
+				content: 'We facilitate training sessions to enhance the skills and capabilities of your teams and other stakeholders.',
+			},
+			{
+				title: 'Media Relations',
+				content: 'We manage communications with media outlets to secure coverage and effectively convey key messages.',
+			},
+			{
+				title: 'Community and Stakeholder Engagement',
+				content:
+					'We foster relationships with community stakeholders to build trust, gather feedback, and ensure alignment with campaign objective.',
+			},
+		],
 	},
 };

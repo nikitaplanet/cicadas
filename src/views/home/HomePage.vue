@@ -40,6 +40,9 @@
 
 		<!--BG 過場-->
 		<div class="section6-gradient"></div>
+
+		<!--Issue we tackle-->
+		<IssuesWeTackle />
 	</div>
 </template>
 
@@ -53,6 +56,7 @@ import Section2 from '@/views/home/components/Section2.vue';
 import OurWorks from '@/views/home/components/OurWorks.vue';
 import AboutUs from '@/views/home/components/AboutUs.vue';
 import SliderSection from '@/views/home/components/SliderSection.vue';
+import IssuesWeTackle from '@/views/home/components/IssuesWeTackle.vue';
 
 // 是否已經滑超過 LandingSection
 const isScrolledPastLanding = ref(false);
