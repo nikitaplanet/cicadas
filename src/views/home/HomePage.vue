@@ -21,28 +21,34 @@
 		<Section2 />
 
 		<!--BG 過場-->
-		<div class="section3-gradient"></div>
+		<div class="section-gradient3"></div>
 
 		<!--Our Works-->
 		<OurWorks />
 
 		<!--BG 過場-->
-		<div class="section4-gradient"></div>
+		<div class="section-gradient4"></div>
 
 		<!--About Us-->
 		<AboutUs />
 
 		<!--BG 過場-->
-		<div class="section5-gradient"></div>
+		<div class="section-gradient5"></div>
 
 		<!--Hear from our partners-->
 		<SliderSection />
 
 		<!--BG 過場-->
-		<div class="section6-gradient"></div>
+		<div class="section-gradient6"></div>
 
 		<!--Issue we tackle-->
 		<IssuesWeTackle />
+
+		<!--BG 過場-->
+		<div class="section-gradient7"></div>
+
+		<!--QA-->
+		<Questions />
 	</div>
 </template>
 
@@ -57,6 +63,7 @@ import OurWorks from '@/views/home/components/OurWorks.vue';
 import AboutUs from '@/views/home/components/AboutUs.vue';
 import SliderSection from '@/views/home/components/SliderSection.vue';
 import IssuesWeTackle from '@/views/home/components/IssuesWeTackle.vue';
+import Questions from '@/views/home/components/Questions.vue';
 
 // 是否已經滑超過 LandingSection
 const isScrolledPastLanding = ref(false);
@@ -78,27 +85,34 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
-.section3-gradient {
-	width: 100%;
-	height: 120px;
-	background: linear-gradient(180deg, var(--Surface-def, #fceee9) 0%, var(--Surface-supportive-green-light, #ddf0db) 100%);
-}
+.section {
+	&-gradient3,
+	&-gradient4,
+	&-gradient5,
+	&-gradient6,
+	&-gradient7 {
+		width: 100%;
+		height: 120px;
+	}
 
-.section4-gradient {
-	width: 100%;
-	height: 120px;
-	background: linear-gradient(180deg, var(--Surface-supportive-green-light, #ddf0db) 0%, var(--Surface-supportive-violet-light, #f3e6f7) 100%);
-}
+	&-gradient3 {
+		background: linear-gradient(180deg, var(--Surface-def, #fceee9) 0%, var(--Surface-supportive-green-light, #ddf0db) 100%);
+	}
 
-.section5-gradient {
-	width: 100%;
-	height: 120px;
-	background: linear-gradient(180deg, var(--Surface-supportive-violet-light, #f3e6f7) 0%, var(--Surface-def, #fceee9) 100%);
-}
+	&-gradient4 {
+		background: linear-gradient(180deg, var(--Surface-supportive-green-light, #ddf0db) 0%, var(--Surface-supportive-violet-light, #f3e6f7) 100%);
+	}
 
-.section6-gradient {
-	width: 100%;
-	height: 120px;
-	background: linear-gradient(180deg, var(--Surface-def, #fceee9) 0%, var(--Surface-supportive-blue-light, #cce2f7) 100%);
+	&-gradient5 {
+		background: linear-gradient(180deg, var(--Surface-supportive-violet-light, #f3e6f7) 0%, var(--Surface-def, #fceee9) 100%);
+	}
+
+	&-gradient6 {
+		background: linear-gradient(180deg, var(--Surface-def, #fceee9) 0%, var(--Surface-supportive-blue-light, #cce2f7) 100%);
+	}
+
+	&-gradient7 {
+		background: linear-gradient(180deg, var(--Surface-supportive-blue-light, #cce2f7) 0%, var(--Surface-def, #fceee9) 100%);
+	}
 }
 </style>

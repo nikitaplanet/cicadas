@@ -92,4 +92,33 @@ export const contentText = {
 			},
 		],
 	},
+	qa: {
+		title: 'Frequently Asked Questions',
+		qaList: [
+			{
+				title: 'Would this be very expensive?',
+				content:
+					'It depends on the scale of your campaign. We know a thing or two about how to be creatively economical so we can customize our services to fit your needs and resources. Plus, through our Commons program, we offer limited pro bono support for under-resourced NGOs.',
+			},
+			{
+				title: 'What if we are not sure we need a campaign?',
+				content:
+					'No worries! Just reach out to us, and we can chat about your work to help determine what you might need. We’re here to explore the possibilities with you.',
+			},
+			{
+				title: 'Do you work with corporates?',
+				content:
+					'Absolutely! We collaborate with corporates on their community-focused initiatives as part of their Environmental, Social, and Governance (ESG) efforts.',
+			},
+			{
+				title: 'When is the best time to engage your company?',
+				content:
+					'The earlier, the better! Getting started with us as soon as possible allows for thorough preparation and insights, ensuring you make the most of your resources.',
+			},
+			{
+				title: 'Do you work with organizations not based in Asia?',
+				content: 'Yes, we do, we work with organizations who work on Asia even if they are not based in Asia.',
+			},
+		],
+	},
 };
