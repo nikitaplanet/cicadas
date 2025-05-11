@@ -84,7 +84,7 @@ onMounted(() => {
 
 onUnmounted(() => {
 	window.removeEventListener('scroll', handleScroll);
-	ctx.revert();
+	// ctx.revert();
 });
 </script>
 

@@ -36,9 +36,9 @@ onMounted(async () => {
 	// 使用 timeline 讓每行動畫根據滾動進度驅動
 	const tl = gsap.timeline({
 		scrollTrigger: {
-			trigger: sectionRef.value.$el,
+			trigger: sectionRef.value?.$el,
 			start: 'top top',
-			end: () => `+=${sectionRef.value.$el?.offsetHeight || 0}`,
+			end: () => `+=${sectionRef.value?.$el?.offsetHeight || 0}`,
 			scrub: true,
 			pin: true,
 			anticipatePin: 1,
