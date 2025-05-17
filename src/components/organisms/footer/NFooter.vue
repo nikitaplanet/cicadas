@@ -25,7 +25,7 @@
 
 			<!--social info-->
 			<div class="w-screen absolute bottom-0 left-0">
-				<div class="w-11/12 m-auto flex justify-between font-label text-labelMd font-semibold text-text-alternate italic p-5">
+				<div class="w-full px-8 m-auto flex justify-between font-label text-labelMd font-semibold text-text-alternate italic p-5">
 					<div>{{ globalWording.footer.domain }}</div>
 					<div>© 2025 {{ globalWording.footer.copyright }}</div>
 					<div class="flex flex-row gap-6">
