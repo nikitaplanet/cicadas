@@ -3,18 +3,18 @@
 		<div class="w-full px-8 h-screen m-auto grid grid-cols-12 pt-40 relative">
 			<div class="col-span-6">
 				<HeaderText ref="headerText" :mode="TextMode.dark" class="relative">
-					<span v-html="campaignsWording.landing.headerTitle"></span>
-					<img class="absolute bottom-[-203px] right-[-26px]" alt="underline" src="@/assets/img/campaigns/headingIcon.svg" />
+					<span v-html="studioWording.landing.headerTitle"></span>
+					<img class="absolute bottom-[-130px] left-[235px]" alt="underline" src="@/assets/img/studio/headingIcon.svg" />
 				</HeaderText>
 			</div>
 			<div class="col-span-6">
 				<HeaderDescription ref="headerDesc" :isItalic="false" :mode="TextMode.dark">
-					<span v-html="campaignsWording.landing.description"></span>
+					<span v-html="studioWording.landing.description"></span>
 				</HeaderDescription>
 			</div>
 
 			<button @click="handleScrollDown" class="absolute right-0 bottom-32" type="button">
-				<img alt="ScrollDown" src="@/assets/img/campaigns/scrollDown.svg" />
+				<img alt="ScrollDown" src="@/assets/img/studio/scrollDown.svg" />
 			</button>
 		</div>
 	</div>
@@ -24,7 +24,7 @@
 import {TextMode} from '@components/atoms/text';
 import HeaderText from '@components/atoms/text/HeaderText.vue';
 import HeaderDescription from '@components/atoms/text/HeaderDescription.vue';
-import {campaignsWording} from '@assets/wording/campaigns/text.ts';
+import {studioWording} from '@assets/wording/studio/text.ts';
 
 const handleScrollDown = () => {};
 </script>
@@ -33,8 +33,8 @@ const handleScrollDown = () => {};
 .landing-bg {
 	background: linear-gradient(
 		180deg,
-		var(--sc-color-surface-supportive-green-dark, #add4aa) 0%,
-		var(--sc-color-surface-supportive-green-mid, #bbe5b8) 50.33%,
+		var(--sc-color-surface-supportive-blue-dark, #a3c4e3) 0%,
+		var(--sc-color-surface-supportive-blue-mid, #a7cbed) 50.33%,
 		var(--sc-color-surface-def, #fceee9) 100%
 	);
 }

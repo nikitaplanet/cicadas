@@ -1,6 +1,6 @@
 <template>
 	<div class="w-full h-screen landing-bg">
-		<div class="w-11/12 h-screen m-auto grid grid-cols-12 pt-40 relative">
+		<div class="w-full px-8 h-screen m-auto grid grid-cols-12 pt-40 relative">
 			<div class="col-span-6">
 				<HeaderText ref="headerText" :mode="TextMode.dark" class="relative">
 					<span v-html="aboutWording.landing.headerTitle"></span>

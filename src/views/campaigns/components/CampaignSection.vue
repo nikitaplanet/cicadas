@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts" setup>
-import {reactive, computed} from 'vue';
+import {reactive} from 'vue';
 import SectionContainer from '@components/layout/SectionContainer.vue';
 
 interface Props {
