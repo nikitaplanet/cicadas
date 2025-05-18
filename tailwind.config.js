@@ -90,6 +90,11 @@ export default {
 	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
 	theme: {
 		extend: {
+			aspectRatio: {
+				'4/3': '4 / 3',
+				'1/1.3': '1 / 1.3',
+				'1/1': '1 / 1',
+			},
 			fontFamily: customize.fontFamily,
 			fontSize: customize.fontSize,
 			colors: {

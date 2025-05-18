@@ -15,7 +15,13 @@
 		<LandingSection />
 
 		<template v-for="item in studioInfo" :key="item.title">
-			<StudioSection :align="item.align" :description="item.description" :id="item.id" :img="[]" :title="item.title" />
+			<StudioSection
+				:align="item.align"
+				:description="item.description"
+				:id="item.id"
+				:img="item.img"
+				:swiperClass="item.swiperClass"
+				:title="item.title" />
 		</template>
 
 		<!--Footer-->
