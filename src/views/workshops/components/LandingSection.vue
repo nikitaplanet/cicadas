@@ -4,7 +4,7 @@
 			<div class="col-span-6">
 				<HeaderText ref="headerText" :mode="TextMode.dark" class="relative">
 					<span v-html="workshopsWording.landing.headerTitle"></span>
-					<img class="absolute bottom-[-130px] left-[235px]" alt="underline" src="@/assets/img/workshops/headingIcon.svg" />
+					<img class="absolute bottom-[-162px] right-0" alt="underline" src="@/assets/img/workshops/headingIcon.svg" />
 				</HeaderText>
 			</div>
 			<div class="col-span-6">
