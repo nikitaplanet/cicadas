@@ -14,6 +14,8 @@
 
 		<LandingSection />
 
+		<LogoSection />
+
 		<!--Footer-->
 		<NFooter />
 	</div>
@@ -24,6 +26,7 @@ import {ref, onMounted, onUnmounted} from 'vue';
 import NavBar from '@components/organisms/navbar/NavBar.vue';
 import NFooter from '@components/organisms/footer/NFooter.vue';
 import LandingSection from '@/views/workshops/components/LandingSection.vue';
+import LogoSection from '@/views/workshops/components/LogoSection.vue';
 
 // 是否已經滑超過 LandingSection
 const isScrolledPastLanding = ref(false);
