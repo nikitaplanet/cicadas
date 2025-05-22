@@ -2,11 +2,12 @@
 	<swiper
 		:autoplay="{
 			delay: 500,
-			disableOnInteraction: false,
 		}"
+		:grabCursor="true"
 		:modules="modules"
 		:navigation="false"
 		:pagination="pagination"
+		:slidesPerView="3"
 		:spaceBetween="30"
 		effect="fade"
 		lazy
