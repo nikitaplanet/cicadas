@@ -28,6 +28,14 @@ const routes: Array<RouteRecordRaw> = [
 		},
 	},
 	{
+		path: '/campaign/:id',
+		name: ROUTER_NAME.CAMPAIGN_DETAIL,
+		component: () => import('@/views/campaigns/CampaignDetail.vue'),
+		meta: {
+			title: `${globalWording.meta.title.campaigns} | ${globalWording.meta.title.main}`,
+		},
+	},
+	{
 		path: '/studio',
 		name: ROUTER_NAME.STUDIO_PAGE,
 		component: () => import('@/views/studio/StudioPage.vue'),
