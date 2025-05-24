@@ -54,6 +54,9 @@ const breakPoints = reactive({
 		slidesPerView: 3.5,
 	},
 	1280: {
+		slidesPerView: 3.5,
+	},
+	1920: {
 		slidesPerView: 4.5,
 	},
 });
@@ -67,6 +70,7 @@ const breakPoints = reactive({
 .swiper {
 	width: 100%;
 	height: 100%;
+	padding-bottom: 10px;
 }
 
 .swiper-slide {

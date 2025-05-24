@@ -64,5 +64,32 @@ export const aboutWording = {
 	},
 	issuesWeTackle: {
 		title: 'Issues we tackle',
+		issueList: [
+			{
+				id: 0,
+				title: 'Climate Change',
+				description: '',
+			},
+			{
+				id: 1,
+				title: 'Youth',
+				description: '',
+			},
+			{
+				id: 2,
+				title: 'Heritage Preservation',
+				description: '',
+			},
+			{
+				id: 3,
+				title: 'Migration & Refugees',
+				description: '',
+			},
+			{
+				id: 4,
+				title: 'Gender based violence',
+				description: '',
+			},
+		],
 	},
 };

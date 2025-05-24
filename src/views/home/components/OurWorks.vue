@@ -33,33 +33,14 @@
 				</div>
 				<div class="col-span-7 flex flex-col p-10 gap-10 mt-7">
 					<HoverTextBox
-						@click="handleClick(0)"
+						v-for="item in list"
+						@click="handleClick(item.id)"
 						@mouseleave="hoverImage = showImage"
-						@mouseover="hoverImage = 0"
-						:description="contentText.ourWorks.campaignsDescription"
-						:isActive="selectedContent === 0"
-						:title="contentText.ourWorks.campaignsTitle" />
-					<HoverTextBox
-						@click="handleClick(1)"
-						@mouseleave="hoverImage = showImage"
-						@mouseover="hoverImage = 1"
-						:description="contentText.ourWorks.studioDescription"
-						:isActive="selectedContent === 1"
-						:title="contentText.ourWorks.studioTitle" />
-					<HoverTextBox
-						@click="handleClick(2)"
-						@mouseleave="hoverImage = showImage"
-						@mouseover="hoverImage = 2"
-						:description="contentText.ourWorks.workshopsDescription"
-						:isActive="selectedContent === 2"
-						:title="contentText.ourWorks.workshopsTitle" />
-					<HoverTextBox
-						@click="handleClick(3)"
-						@mouseleave="hoverImage = showImage"
-						@mouseover="hoverImage = 3"
-						:description="contentText.ourWorks.commonsDescription"
-						:isActive="selectedContent === 3"
-						:title="contentText.ourWorks.commonsTitle" />
+						@mouseover="hoverImage = item.id"
+						:description="item.description"
+						:isActive="selectedContent === item.id"
+						:key="item.title"
+						:title="item.title" />
 				</div>
 			</div>
 		</SectionContainer>
@@ -67,7 +48,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref} from 'vue';
+import {reactive, ref} from 'vue';
 import SectionContainer from '@/components/layout/SectionContainer.vue';
 import SectionNameTag from '@components/atoms/text/SectionNameTag.vue';
 import HoverTextBox from '@components/molecules/HoverTextBox.vue';
@@ -82,6 +63,8 @@ const handleClick = (val: number) => {
 	showImage.value = val;
 	hoverImage.value = val;
 };
+
+const list = reactive([...contentText.ourWorks.list]);
 </script>
 
 <style lang="scss" scoped>

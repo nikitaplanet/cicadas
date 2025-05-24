@@ -22,6 +22,30 @@ export const contentText = {
 		title2: ' sound and collectively<br />they make a spectacular noise that must<br />' + 'be reckoned with.',
 	},
 	ourWorks: {
+		list: [
+			{
+				id: 0,
+				title: 'Campaigns',
+				description:
+					'Our campaigns are designed through a process of audience research, narrative strategy, creative production and purposeful distribution.',
+			},
+			{
+				id: 1,
+				title: 'Studio',
+				description:
+					'Our studio makes emotionally powerful, multi-format productions including films, publications, websites, VR experience and events.',
+			},
+			{
+				id: 2,
+				title: 'Workshops',
+				description: 'Our workshops build capacity for our partners on audience design, narrative change, storytelling, and messaging.',
+			},
+			{
+				id: 3,
+				title: 'Commons',
+				description: 'Our commons match under-resourced NGOs and organizers to our network of resources for immediate practical relief.',
+			},
+		],
 		campaignsTitle: 'Campaigns',
 		campaignsDescription:
 			'Our campaigns are designed through a process of audience research, narrative strategy, creative production and purposeful distribution.',
