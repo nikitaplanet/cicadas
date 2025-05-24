@@ -24,7 +24,6 @@ import {ref, onMounted, onUnmounted} from 'vue';
 import NavBar from '@components/organisms/navbar/NavBar.vue';
 import NFooter from '@components/organisms/footer/NFooter.vue';
 import LandingSection from '@/views/campaigns/components/detail/LandingSection.vue';
-import {campaignsWording} from '@assets/wording/campaigns/text.ts';
 
 // 是否已經滑超過 LandingSection
 const isScrolledPastLanding = ref(false);
@@ -42,9 +41,6 @@ onMounted(() => {
 onUnmounted(() => {
 	window.removeEventListener('scroll', handleScroll);
 });
-
-// Content
-const campaigns = ref(campaignsWording.campaigns);
 </script>
 
 <style lang="scss" scoped></style>
