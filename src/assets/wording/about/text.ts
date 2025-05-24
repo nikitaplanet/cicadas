@@ -1,3 +1,9 @@
+import Chloe from '@/assets/img/about/workWith/Chloe.svg';
+import Hanna from '@/assets/img/about/workWith/Hanna.svg';
+import Json from '@/assets/img/about/workWith/Json.svg';
+import Marias from '@/assets/img/about/workWith/Marias.svg';
+import Tylor from '@/assets/img/about/workWith/Tylor.svg';
+
 export const aboutWording = {
 	landing: {
 		headerTitle: 'About Us',
@@ -28,26 +34,31 @@ export const aboutWording = {
 				id: 1,
 				name: 'Chloe Shih',
 				city: 'Taipei',
+				img: Chloe,
 			},
 			{
 				id: 2,
 				name: 'Hanna Shin',
 				city: 'Seoul',
+				img: Hanna,
 			},
 			{
 				id: 3,
 				name: 'Json Liu',
 				city: 'Seoul',
+				img: Json,
 			},
 			{
 				id: 4,
 				name: 'Marias Fang',
 				city: 'Tokyo',
+				img: Marias,
 			},
 			{
 				id: 5,
 				name: 'Tylor Meng',
 				city: 'New York',
+				img: Tylor,
 			},
 		],
 	},
