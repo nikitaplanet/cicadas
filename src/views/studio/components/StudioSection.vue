@@ -20,7 +20,7 @@
 							:class="{'text-left': align === 'left', 'text-right': align === 'right'}"></p>
 
 						<div class="w-full mt-12 flex items-center" :class="{'justify-start': align === 'left', 'justify-end': align === 'right'}">
-							<SwiperImages :img="img" :key="title" class="w-[650px]" :class="swiperClass" />
+							<StudioSwiperImages :img="img" :key="title" class="w-[650px]" :class="swiperClass" />
 						</div>
 					</div>
 				</div>
@@ -31,7 +31,7 @@
 
 <script lang="ts" setup>
 import SectionContainer from '@components/layout/SectionContainer.vue';
-import SwiperImages from '@components/atoms/swiper/SwiperImages.vue';
+import StudioSwiperImages from '@/views/studio/components/StudioSwiperImages.vue';
 import {SwiperImage} from '@components/atoms/swiper';
 
 interface Props {

@@ -1,5 +1,5 @@
 <template>
-	<div class="fixed top-0 left-0 z-50 w-screen h-screen bg-surface-primary flex justify-center items-center">
+	<div class="fixed top-0 left-0 z-50 w-full h-screen bg-surface-primary flex justify-center items-center">
 		<svg class="draw-path" fill="none" height="137" viewBox="0 0 385 137" width="385" xmlns="http://www.w3.org/2000/svg">
 			<path
 				clip-rule="evenodd"

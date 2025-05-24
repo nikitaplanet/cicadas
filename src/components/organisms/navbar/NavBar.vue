@@ -1,5 +1,5 @@
 <template>
-	<nav class="w-screen flex justify-between items-center px-8">
+	<nav class="w-full flex justify-between items-center px-8">
 		<div class="flex gap-10">
 			<NLink to="/">
 				<img alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />

@@ -1,0 +1,16 @@
+/* 預設點點 */
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: transparent !important;
+  background-image: url("@/assets/img/components/swiper/dot_default.svg") !important;
+  opacity: 1;
+}
+
+/* 被選中的點點 */
+.swiper-pagination-bullet-active {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: transparent !important;
+  background-image: url("@/assets/img/components/swiper/dot_active.svg") !important;
+}

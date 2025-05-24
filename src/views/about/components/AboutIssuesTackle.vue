@@ -3,7 +3,12 @@
 		<SectionContainer :hasMinHeight="false">
 			<div class="w-full flex flex-col justify-center items-center">
 				<div class="w-full">
-					<SectionNameTag>{{ aboutWording.issuesWeTackle.title }}</SectionNameTag>
+					<SectionNameTag>
+						<span class="relative">
+							{{ aboutWording.issuesWeTackle.title }}
+							<img class="w-20 absolute right-[-100px] bottom-[-150px]" alt="star" src="@/assets/img/about/isuueIcon.svg" />
+						</span>
+					</SectionNameTag>
 				</div>
 				<div class="w-full flex flex-col justify-center items-end gap-10 mt-28">
 					<HoverTextBox

@@ -37,10 +37,10 @@ import {aboutWording} from '@assets/wording/about/text.ts';
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import {Autoplay} from 'swiper/modules';
+import {Autoplay, Pagination} from 'swiper/modules';
 import {reactive} from 'vue';
 
-const modules = [Autoplay];
+const modules = [Autoplay, Pagination];
 
 const staffs = reactive(aboutWording.workWith.nameList);
 const breakPoints = reactive({
