@@ -1,10 +1,11 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
 import {globalWording} from '@assets/wording/global/menu.ts';
+import {ROUTER_NAME} from '@assets/js/enum/routerEnum.ts';
 
 const routes: Array<RouteRecordRaw> = [
 	{
 		path: '/',
-		name: 'HomePage',
+		name: ROUTER_NAME.HOME_PAGE,
 		component: () => import('@/views/home/HomePage.vue'),
 		meta: {
 			title: `${globalWording.meta.title.main}`,
@@ -12,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
 	},
 	{
 		path: '/about',
-		name: 'AboutPage',
+		name: ROUTER_NAME.ABOUT_PAGE,
 		component: () => import('@/views/about/AboutPage.vue'),
 		meta: {
 			title: `${globalWording.meta.title.about} | ${globalWording.meta.title.main}`,
@@ -20,7 +21,7 @@ const routes: Array<RouteRecordRaw> = [
 	},
 	{
 		path: '/campaigns',
-		name: 'CampaignsPage',
+		name: ROUTER_NAME.CAMPAIGNS_PAGE,
 		component: () => import('@/views/campaigns/CampaignsPage.vue'),
 		meta: {
 			title: `${globalWording.meta.title.campaigns} | ${globalWording.meta.title.main}`,
@@ -28,7 +29,7 @@ const routes: Array<RouteRecordRaw> = [
 	},
 	{
 		path: '/studio',
-		name: 'StudioPage',
+		name: ROUTER_NAME.STUDIO_PAGE,
 		component: () => import('@/views/studio/StudioPage.vue'),
 		meta: {
 			title: `${globalWording.meta.title.studio} | ${globalWording.meta.title.main}`,
@@ -36,7 +37,7 @@ const routes: Array<RouteRecordRaw> = [
 	},
 	{
 		path: '/workshops',
-		name: 'WorkshopsPage',
+		name: ROUTER_NAME.WORKSHOPS_PAGE,
 		component: () => import('@/views/workshops/WorkshopsPage.vue'),
 		meta: {
 			title: `${globalWording.meta.title.workshops} | ${globalWording.meta.title.main}`,
@@ -44,7 +45,7 @@ const routes: Array<RouteRecordRaw> = [
 	},
 	{
 		path: '/:pathMatch(.*)*',
-		name: 'Error404Page',
+		name: ROUTER_NAME.ERROR_404_PAGE,
 		component: () => import('@/views/error/Error404Page.vue'),
 		meta: {
 			title: `${globalWording.meta.title.error} | ${globalWording.meta.title.main}`,

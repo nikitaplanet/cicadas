@@ -16,6 +16,7 @@
 					<img
 						:src="navImages[index]"
 						class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+						:class="{'opacity-100': checkLinkActive(item)}"
 						alt="bg" />
 					<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ item.label }}</span>
 				</NLink>
@@ -38,11 +39,14 @@
 
 <script lang="ts" setup>
 import {ref} from 'vue';
+import router from '@/router';
+
 import {navMenu} from '@assets/wording/global/menu.ts';
 import NLink from '@components/atoms/link/NLink.vue';
+import {NavMenuItem} from '@components/organisms/navbar/index.ts';
 
 const navImages = navMenu.map((_, index) => new URL(`../../../assets/img/components/nav/menu${index}.svg`, import.meta.url).href);
-const menu = ref(
+const menu = ref<NavMenuItem[]>(
 	navMenu.map((item) => {
 		return {
 			...item,
@@ -50,6 +54,10 @@ const menu = ref(
 		};
 	}),
 );
+
+const checkLinkActive = (item: NavMenuItem) => {
+	return router.currentRoute.value.name === item.name;
+};
 </script>
 
 <style lang="scss" scoped></style>
