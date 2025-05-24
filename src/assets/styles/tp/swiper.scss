@@ -4,7 +4,7 @@
   height: 10px !important;
   background-color: transparent !important;
   background-image: url("@/assets/img/components/swiper/dot_default.svg") !important;
-  opacity: 1;
+  opacity: 1!important;
 }
 
 /* 被選中的點點 */
@@ -13,4 +13,33 @@
   height: 10px !important;
   background-color: transparent !important;
   background-image: url("@/assets/img/components/swiper/dot_active.svg") !important;
+  opacity: 1!important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+
+  &:after {
+    display: none; /* 不顯示預設箭頭 */
+  }
+}
+
+.swiper-button-next {
+  background-image: url('@/assets/img/home/arrow.svg');
+  right: 10px;
+}
+
+.swiper-button-prev {
+  background-image: url('@/assets/img/home/arrow.svg');
+  transform: rotate(180deg);
+  left: 10px;
+}
+
+.swiper-button-disabled {
+  display: none !important;
 }

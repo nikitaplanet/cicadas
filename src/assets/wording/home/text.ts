@@ -1,4 +1,5 @@
 /* 換行請使用 <br/> */
+import HerFundLogo from '@/assets/img/home/sliderSection/content1_logo.svg';
 
 export const contentText = {
 	landing: {
@@ -63,6 +64,20 @@ export const contentText = {
 	},
 	sliderSection: {
 		header: 'Hear from our partners',
+		contentList: [
+			{
+				id: 1,
+				title: 'HERFUND',
+				logoSrc: HerFundLogo,
+				content: `HER Fund has collaborated with Singing Cicadas on numerous projects over the past few years, including audience research, narrative building workshops, creating videos for HER Hub, and a strategic document designed for corporate engagement. Our experience working with them has been exceptional. They prioritize a participatory approach, provide honest feedback from an objective perspective, and share our values. We highly recommend collaborating with Singing Cicadas.<br><br>- Judy Kan, HER Fund`,
+			},
+			{
+				id: 2,
+				title: 'Spark Foundation',
+				logoSrc: HerFundLogo,
+				content: `We enjoyed working with Singing Cicadas on a successful campaign with award-winning productions for young people. Their team guided us through research and execution, and we’re excited to collaborate again on a new project. What stands out is their thorough research and effective social listening tools which helped us better understand our audience. Han Yan and Sharon consistently deliver on their commitments, making them a reliable partner.<br><br>- Ron Tan, Spark Foundation`,
+			},
+		],
 		content1: {
 			title: 'HERFUND',
 			content:

@@ -18,7 +18,7 @@
         "@primeuix/themes": "^1.1.1",
         "@types/lodash": "^4.17.14",
         "axios": "1.8.2",
-        "gsap": "^3.12.7",
+        "gsap": "^3.13.0",
         "pinia": "^3.0.1",
         "prettier": "^3.4.2",
         "primeicons": "^7.0.0",

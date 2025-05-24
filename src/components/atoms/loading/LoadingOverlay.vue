@@ -48,6 +48,8 @@
 <script lang="ts" setup>
 import gsap from 'gsap';
 import {onMounted} from 'vue';
+import {DrawSVGPlugin} from 'gsap/DrawSVGPlugin';
+gsap.registerPlugin(DrawSVGPlugin);
 
 onMounted(() => {
 	const paths = document.querySelectorAll('.draw-path path');
@@ -76,7 +78,7 @@ onMounted(() => {
 			strokeDashoffset: 0,
 			strokeOpacity: 1,
 			fillOpacity: 1, // ✅ stroke 畫出同時填色淡入
-			duration: 0.4,
+			duration: 0.05,
 			ease: 'power2.out',
 		});
 
