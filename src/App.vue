@@ -3,9 +3,10 @@
 		class="transition duration-300 ease-in-out"
 		:class="{block: !isHideLoading, hidden: isHideLoading, 'opacity-0': !isShowLoading, 'opacity-100': isShowLoading}" />
 	<div ref="nav" id="homeNav" class="py-5 transition-all duration-300" :class="navStyle">
-		<NavBar />
+		<NavBar @showCommon="handleShowCommon" />
 	</div>
-	<!--	<CommonOverlay />-->
+
+	<CommonOverlay v-if="isShowCommon" @closeCommon="handleCloseCommon" />
 
 	<router-view v-slot="{Component}">
 		<transition mode="out-in" name="fade">
@@ -15,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, watch, computed} from 'vue';
+import {ref, watch, computed, onMounted} from 'vue';
 import LoadingOverlay from '@components/atoms/loading/LoadingOverlay.vue';
 import {useRoute} from 'vue-router';
 import CommonOverlay from '@components/layout/CommonOverlay.vue';
@@ -31,6 +32,8 @@ const isShowLoading = ref(true);
 const isHideLoading = ref(false);
 const isHomePage = ref(route.name === ROUTER_NAME.HOME_PAGE);
 
+const isShowCommon = ref(false);
+
 setTimeout(() => {
 	isShowLoading.value = false;
 }, 2200);
@@ -38,6 +41,15 @@ setTimeout(() => {
 setTimeout(() => {
 	isHideLoading.value = true;
 }, 2500);
+
+watch(
+	() => isShowLoading.value,
+	(newValue) => {
+		if (!newValue) {
+			isHomePage.value = route.name === ROUTER_NAME.HOME_PAGE;
+		}
+	},
+);
 
 watch(
 	() => route.fullPath,
@@ -74,6 +86,14 @@ const navStyle = computed(() => {
 		];
 	}
 });
+
+const handleShowCommon = () => {
+	isShowCommon.value = true;
+};
+
+const handleCloseCommon = () => {
+	isShowCommon.value = false;
+};
 </script>
 
 <style scoped></style>

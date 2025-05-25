@@ -18,7 +18,7 @@
 				<img class="w-full" alt="ContentBack" src="@/assets/img/home/sliderSection/content_background.svg" />
 				<div class="w-full absolute top-[90px] left-0 p-12 flex justify-between items-center gap-5">
 					<div class="flex flex-col gap-2 justify-center items-center pr-14">
-						<div class="text-h5 font-h5 font-semibold italic">{{ item.title }}</div>
+						<div class="text-h5 font-h5 font-semibold italic text-center">{{ item.title }}</div>
 						<img :alt="item.title" :src="item.logoSrc" class="w-12" />
 					</div>
 					<p v-html="item.content" class="text-body18 italic font-body font-semibold"></p>

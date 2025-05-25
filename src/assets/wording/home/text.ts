@@ -4,19 +4,11 @@ import HerFundLogo from '@/assets/img/home/sliderSection/content1_logo.svg';
 export const contentText = {
 	landing: {
 		headerTitle: 'We are a<br />social impact <br />agency',
-		headerDescription:
-			'Through data-driven insights and compelling<br />' +
-			'storytelling, we create powerful campaigns to<br />' +
-			'amplify the work of change makers across Asia',
+		headerDescription: `Through data-driven insights and compelling storytelling,<br>we craft powerful campaigns that amplify the voices of<br>changemakers across Asia. Together, we’ll transform your message into a movement that changes perspectives and catalyses action.`,
 	},
 	section1: {
-		title: 'We are a one stop<br />' + 'partner for non-profits<br />' + 'and purpose-driven<br />businesses.',
-		description:
-			"We're here - whether you need to activate <br />" +
-			'funders, mobilize the public or build internal<br />' +
-			'capacity. We help you connect meaningfully<br />' +
-			'with your audience—bringing them one step<br />' +
-			'closer to action.',
+		title: `More Than an Agency, <br>A Partner in<br> Transformation`,
+		description: `We're here - whether you need to activate<br> funders, mobilize the public or build internal<br> capacity. We help you connect meaningfully<br> with your audience—bringing them one step<br> closer to action.`,
 	},
 	section2: {
 		title1: 'Cicadas may be small, but they rarely go <br />unnoticed. The space within them<br />' + 'amplifies their',
@@ -69,20 +61,15 @@ export const contentText = {
 				id: 1,
 				title: 'HERFUND',
 				logoSrc: HerFundLogo,
-				content: `HER Fund has collaborated with Singing Cicadas on numerous projects over the past few years, including audience research, narrative building workshops, creating videos for HER Hub, and a strategic document designed for corporate engagement. Our experience working with them has been exceptional. They prioritize a participatory approach, provide honest feedback from an objective perspective, and share our values. We highly recommend collaborating with Singing Cicadas.<br><br>- Judy Kan, HER Fund`,
+				content: `HER Fund has collaborated with Singing Cicadas on numerous projects over the past few years, including audience research, narrative building workshops, creating videos for HER Hub, and a strategic document designed for corporate engagement. Our experience working with them has been exceptional. They prioritize a participatory approach, provide honest feedback from an objective perspective, and share our values. We highly recommend collaborating with Singing Cicadas.<br><br>-Judy Kan`,
 			},
 			{
 				id: 2,
 				title: 'Spark Foundation',
 				logoSrc: HerFundLogo,
-				content: `We enjoyed working with Singing Cicadas on a successful campaign with award-winning productions for young people. Their team guided us through research and execution, and we’re excited to collaborate again on a new project. What stands out is their thorough research and effective social listening tools which helped us better understand our audience. Han Yan and Sharon consistently deliver on their commitments, making them a reliable partner.<br><br>- Ron Tan, Spark Foundation`,
+				content: `We enjoyed working with Singing Cicadas on a successful campaign with award-winning productions for young people. Their team guided us through research and execution, and we’re excited to collaborate again on a new project. What stands out is their thorough research and effective social listening tools which helped us better understand our audience. Han Yan and Sharon consistently deliver on their commitments, making them a reliable partner.<br><br>-Ron Tan`,
 			},
 		],
-		content1: {
-			title: 'HERFUND',
-			content:
-				'HER Fund has collaborated with Singing Cicadas on numerous projects over the past few years, including audience research, narrative building workshops, creating videos for HER Hub, and a strategic document designed for corporate engagement. Our experience working with them has been exceptional. They prioritize a participatory approach, provide honest feedback from an objective perspective, and share our values. We highly recommend collaborating with Singing Cicadas.',
-		},
 	},
 	issuesWeTackle: {
 		title: 'Issues we tackle',

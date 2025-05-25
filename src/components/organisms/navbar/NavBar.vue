@@ -20,8 +20,11 @@
 						alt="bg" />
 					<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ item.label }}</span>
 				</NLink>
-				<NLink class="group font-label text-def text-labelMd italic relative font-semibold">
-					<!--					<img :src="" class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300" alt="bg" />-->
+				<NLink @click="handleShowCommon" class="group font-label text-def text-labelMd italic relative font-semibold">
+					<img
+						class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+						alt="bg"
+						src="@/assets/img/components/nav/menu4.svg" />
 					<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ globalWording.nav.button.common }}</span>
 				</NLink>
 			</div>
@@ -48,6 +51,7 @@ import router from '@/router';
 import {globalWording, navMenu} from '@assets/wording/global/menu.ts';
 import NLink from '@components/atoms/link/NLink.vue';
 import {NavMenuItem} from '@components/organisms/navbar/index.ts';
+const emit = defineEmits(['showCommon']);
 
 const navImages = navMenu.map((_, index) => new URL(`../../../assets/img/components/nav/menu${index}.svg`, import.meta.url).href);
 const menu = ref<NavMenuItem[]>(
@@ -61,6 +65,10 @@ const menu = ref<NavMenuItem[]>(
 
 const checkLinkActive = (item: NavMenuItem) => {
 	return router.currentRoute.value.name === item.name;
+};
+
+const handleShowCommon = () => {
+	emit('showCommon');
 };
 </script>
 

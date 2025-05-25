@@ -1,12 +1,12 @@
 <template>
-	<div class="w-full h-screen common-bg fixed top-0 left-0 z-30 grid grid-cols-1 py-14 px-10">
+	<div class="w-full h-screen common-bg fixed top-0 left-0 z-30 grid grid-cols-1 pt-14 pb-24 px-10">
 		<div class="flex justify-between items-start">
 			<HeaderText ref="headerText" :mode="TextMode.light" class="relative">
 				<span v-html="commonWording.headerTitle"></span>
 				<img class="absolute bottom-[-57px] left-0" alt="underline" src="@/assets/img/common/headingUnderline.svg" />
 			</HeaderText>
 
-			<button class="w-11 h-11 flex justify-end items-start" type="button">
+			<button @click="handleCloseCommon" class="w-11 h-11 flex justify-end items-start" type="button">
 				<img class="w-6 h-6" alt="Close" src="@/assets/img/components/overlay/close.svg" />
 			</button>
 		</div>
@@ -14,12 +14,27 @@
 		<div class="w-full flex flex-row justify-end items-start">
 			<div class="max-w-screen-sm">
 				<div v-html="commonWording.details.title" class="text-h5 font-h5 font-semibold"></div>
-				<div v-for="item in commonWording.details.contents">
-					<template v-if="item.type === TEXT_TYPE.TEXT">
-						<div v-for="text in item.content" v-html="text"></div>
+				<div class="mt-5 font-body text-body font-medium">
+					<template v-for="item in commonWording.details.contents">
+						<template v-if="item.type === TEXT_TYPE.TEXT">
+							<div v-for="text in item.content" v-html="text"></div>
+						</template>
+
+						<template v-if="item.type === TEXT_TYPE.SPACE">
+							<div class="mt-5"></div>
+						</template>
+
+						<template v-if="item.type === TEXT_TYPE.TEXT_LIST">
+							<ul class="flex flex-col list-[square] list-inside pl-3">
+								<li v-for="text in item.content" v-html="text"></li>
+							</ul>
+						</template>
 					</template>
 				</div>
 			</div>
+		</div>
+		<div class="w-full flex flex-row justify-end items-end">
+			<a href="https://cryptpad.fr/form/#/2/form/view/vDSfK5jM2RgWSrtLZlCO6-XqmJbux9fOm1sr5xgRS0s/" target="_blank"> Tell us about yourself </a>
 		</div>
 	</div>
 </template>
@@ -31,6 +46,8 @@ import HeaderText from '@components/atoms/text/HeaderText.vue';
 import {commonWording} from '@assets/wording/common/text.ts';
 import {TEXT_TYPE} from '@assets/js/enum/textType.ts';
 
+const emit = defineEmits(['closeCommon']);
+
 onMounted(() => {
 	document.body.style.overflow = 'hidden';
 });
@@ -38,6 +55,10 @@ onMounted(() => {
 onUnmounted(() => {
 	document.body.style.overflow = '';
 });
+
+const handleCloseCommon = () => {
+	emit('closeCommon');
+};
 </script>
 
 <style lang="scss" scoped>
