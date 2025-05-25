@@ -11,7 +11,13 @@
 				</h2>
 				<p v-html="globalWording.footer.description" class="text-center block font-h2sans text-body18 italic font-medium mt-5"></p>
 
-				<NLink @mouseleave="handleHoverLeveButton" @mouseover="handleHoverButton" class="group relative w-[215px] h-[51px] mt-10" to="/help">
+				<NLink
+					@mouseleave="handleHoverLeveButton"
+					@mouseover="handleHoverButton"
+					class="group relative w-[215px] h-[51px] mt-10"
+					data-tally-emoji-animation="wave"
+					data-tally-emoji-text="👋"
+					data-tally-open="mZ1K9z">
 					<img
 						class="object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-200"
 						alt="bg"
@@ -39,6 +45,9 @@
 					</div>
 				</div>
 			</div>
+
+			// Data attributes data-tally-open="mZ1K9z" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" // Example
+			<button data-tally-emoji-animation="wave" data-tally-emoji-text="👋" data-tally-open="mZ1K9z">Click me</button>
 		</SectionContainer>
 	</footer>
 </template>

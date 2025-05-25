@@ -24,7 +24,7 @@
 		</div>
 
 		<!--Let's talk-->
-		<NLink class="group relative" to="/form">
+		<NLink class="group relative" data-tally-emoji-animation="wave" data-tally-emoji-text="👋" data-tally-open="mZ1K9z">
 			<img
 				class="object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-200"
 				alt="bg"
