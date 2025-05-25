@@ -4,10 +4,13 @@
 		<div
 			ref="nav"
 			id="homeNav"
-			class="py-5"
+			class="py-5 transition-all duration-300"
 			:class="[
-				'transition-all duration-300',
 				isScrolledPastLanding ? 'fixed top-0 left-0 w-full z-20 bg-surface-def' : 'absolute bottom-0 left-0 w-full z-20',
+				{
+					'-translate-y-full': !showNavBar,
+					'translate-y-0': showNavBar,
+				},
 			]">
 			<NavBar />
 		</div>
@@ -56,8 +59,6 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, onMounted, onUnmounted} from 'vue';
-
 import NavBar from '@components/organisms/navbar/NavBar.vue';
 import LandingSection from '@/views/home/components/LandingSection.vue';
 import Section1 from '@/views/home/components/Section1.vue';
@@ -68,23 +69,9 @@ import SliderSection from '@/views/home/components/SliderSection.vue';
 import IssuesWeTackle from '@/views/home/components/IssuesWeTackle.vue';
 import Questions from '@/views/home/components/Questions.vue';
 import NFooter from '@/components/organisms/footer/NFooter.vue';
+import {useScrollDirectionNav} from '@/hooks/useNavBar.ts';
 
-// 是否已經滑超過 LandingSection
-const isScrolledPastLanding = ref(false);
-
-// 監聽 scroll
-const handleScroll = () => {
-	// 判斷是否超過 100vh
-	isScrolledPastLanding.value = window.scrollY > window.innerHeight - 100;
-};
-
-onMounted(() => {
-	window.addEventListener('scroll', handleScroll);
-});
-
-onUnmounted(() => {
-	window.removeEventListener('scroll', handleScroll);
-});
+const {isScrolledPastLanding, showNavBar} = useScrollDirectionNav();
 </script>
 
 <style lang="scss" scoped>
