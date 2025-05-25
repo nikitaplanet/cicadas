@@ -28,11 +28,6 @@
 			<img v-if="index !== campaigns.length - 1" class="w-full px-8" alt="line" src="@/assets/img/campaigns/listLine.svg" />
 		</template>
 
-		<!--LoadMore-->
-		<div class="w-full flex justify-center items-center">
-			<img alt="LoadMore" src="@/assets/img/campaigns/loadMore.svg" />
-		</div>
-
 		<!--Footer-->
 		<NFooter />
 	</div>
