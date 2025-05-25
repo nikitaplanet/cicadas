@@ -4,6 +4,7 @@
 			delay: 10000,
 			disableOnInteraction: false,
 		}"
+		:effect="'fade'"
 		:modules="modules"
 		:pagination="{
 			clickable: true,
@@ -30,13 +31,14 @@
 <script lang="ts" setup>
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import 'swiper/css';
+import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import {Autoplay, Pagination, Navigation} from 'swiper/modules';
+import {Autoplay, Pagination, Navigation, EffectFade} from 'swiper/modules';
 import {reactive} from 'vue';
 import {contentText} from '@assets/wording/home/text.ts';
-const modules = [Autoplay, Pagination, Navigation];
+const modules = [Autoplay, Pagination, Navigation, EffectFade];
 
 const contentList = reactive([...contentText.sliderSection.contentList]);
 </script>

@@ -7,6 +7,7 @@
 					<img class="absolute bottom-[-130px] left-[235px]" alt="underline" src="@/assets/img/studio/headingIcon.svg" />
 				</HeaderText>
 			</div>
+
 			<div class="col-span-6">
 				<HeaderDescription ref="headerDesc" :isItalic="false" :mode="TextMode.dark">
 					<span v-html="studioWording.landing.description"></span>
