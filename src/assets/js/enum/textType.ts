@@ -1,0 +1,8 @@
+export enum TEXT_TYPE {
+	TEXT = 1,
+	SINGLE_IMAGE = 2,
+	TWO_IMAGES = 3,
+	SWIPER_IMAGE = 4,
+	TEXT_LIST = 5,
+	SPACE = 6,
+}

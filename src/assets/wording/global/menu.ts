@@ -37,7 +37,8 @@ const globalWording = {
 	},
 	footer: {
 		heading: 'Curious?',
-		description: "We'd love to chat about any potential project or collaboration, or<br/> even just a friendly hello",
+		description:
+			'We’d love to talk about your vision, explore potential collaboration, or<br> even just hear a friendly hello. Reach out—we’re excited to connect.',
 		button: 'How Can We Help?',
 		copyright: 'Singing Cicadas. All rights reserved.',
 		domain: 'hello@singingcicadas.com',

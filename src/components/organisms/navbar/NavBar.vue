@@ -35,6 +35,8 @@
 				src="@/assets/img/components/nav/talk__default.svg" />
 		</NLink>
 	</nav>
+
+	<!--	<CommonOverlay />-->
 </template>
 
 <script lang="ts" setup>
@@ -44,6 +46,7 @@ import router from '@/router';
 import {navMenu} from '@assets/wording/global/menu.ts';
 import NLink from '@components/atoms/link/NLink.vue';
 import {NavMenuItem} from '@components/organisms/navbar/index.ts';
+import CommonOverlay from '@components/layout/CommonOverlay.vue';
 
 const navImages = navMenu.map((_, index) => new URL(`../../../assets/img/components/nav/menu${index}.svg`, import.meta.url).href);
 const menu = ref<NavMenuItem[]>(
