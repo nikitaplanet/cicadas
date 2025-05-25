@@ -1,20 +1,5 @@
 <template>
 	<div class="w-full min-h-screen bg-surface-def">
-		<!-- NavBar：根據滾動切換位置 -->
-		<div
-			ref="nav"
-			id="homeNav"
-			class="py-5 transition-all duration-300"
-			:class="[
-				isScrolledPastLanding ? 'fixed top-0 left-0 w-full z-20 bg-surface-def' : 'absolute bottom-0 left-0 w-full z-20',
-				{
-					'-translate-y-full': !showNavBar,
-					'translate-y-0': showNavBar,
-				},
-			]">
-			<NavBar />
-		</div>
-
 		<LandingSection ref="landing" />
 
 		<!--Intro-->
@@ -59,7 +44,6 @@
 </template>
 
 <script lang="ts" setup>
-import NavBar from '@components/organisms/navbar/NavBar.vue';
 import LandingSection from '@/views/home/components/LandingSection.vue';
 import Section1 from '@/views/home/components/Section1.vue';
 import Section2 from '@/views/home/components/Section2.vue';
@@ -69,9 +53,6 @@ import SliderSection from '@/views/home/components/SliderSection.vue';
 import IssuesWeTackle from '@/views/home/components/IssuesWeTackle.vue';
 import Questions from '@/views/home/components/Questions.vue';
 import NFooter from '@/components/organisms/footer/NFooter.vue';
-import {useScrollDirectionNav} from '@/hooks/useNavBar.ts';
-
-const {isScrolledPastLanding, showNavBar} = useScrollDirectionNav();
 </script>
 
 <style lang="scss" scoped>

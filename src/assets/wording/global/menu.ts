@@ -35,6 +35,11 @@ const globalWording = {
 			error: 'Error 404',
 		},
 	},
+	nav: {
+		button: {
+			common: 'Common',
+		},
+	},
 	footer: {
 		heading: 'Curious?',
 		description:

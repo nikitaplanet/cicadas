@@ -20,6 +20,10 @@
 						alt="bg" />
 					<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ item.label }}</span>
 				</NLink>
+				<NLink class="group font-label text-def text-labelMd italic relative font-semibold">
+					<!--					<img :src="" class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300" alt="bg" />-->
+					<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ globalWording.nav.button.common }}</span>
+				</NLink>
 			</div>
 		</div>
 
@@ -35,18 +39,15 @@
 				src="@/assets/img/components/nav/talk__default.svg" />
 		</NLink>
 	</nav>
-
-	<!--	<CommonOverlay />-->
 </template>
 
 <script lang="ts" setup>
 import {ref} from 'vue';
 import router from '@/router';
 
-import {navMenu} from '@assets/wording/global/menu.ts';
+import {globalWording, navMenu} from '@assets/wording/global/menu.ts';
 import NLink from '@components/atoms/link/NLink.vue';
 import {NavMenuItem} from '@components/organisms/navbar/index.ts';
-import CommonOverlay from '@components/layout/CommonOverlay.vue';
 
 const navImages = navMenu.map((_, index) => new URL(`../../../assets/img/components/nav/menu${index}.svg`, import.meta.url).href);
 const menu = ref<NavMenuItem[]>(
