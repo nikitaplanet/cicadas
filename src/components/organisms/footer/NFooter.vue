@@ -45,8 +45,6 @@
 					</div>
 				</div>
 			</div>
-
-			<button data-tally-emoji-animation="wave" data-tally-emoji-text="👋" data-tally-open="mZ1K9z">Click me</button>
 		</SectionContainer>
 	</footer>
 </template>
