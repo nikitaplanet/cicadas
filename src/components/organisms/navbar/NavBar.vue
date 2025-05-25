@@ -58,8 +58,6 @@ const menu = ref<NavMenuItem[]>(
 const checkLinkActive = (item: NavMenuItem) => {
 	return router.currentRoute.value.name === item.name;
 };
-
-import {useRoute} from 'vue-router';
 </script>
 
 <style lang="scss" scoped></style>

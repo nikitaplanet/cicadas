@@ -46,7 +46,6 @@
 				</div>
 			</div>
 
-			// Data attributes data-tally-open="mZ1K9z" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" // Example
 			<button data-tally-emoji-animation="wave" data-tally-emoji-text="👋" data-tally-open="mZ1K9z">Click me</button>
 		</SectionContainer>
 	</footer>
