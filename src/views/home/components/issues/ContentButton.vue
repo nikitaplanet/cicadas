@@ -5,7 +5,9 @@
 		@mouseover="handleHover"
 		class="flex flex-col justify-start items-start"
 		type="button">
-		<span class="font-h1 text-h3 italic font-semibold transition ease-in-out" :class="[isActiveStyle ? 'text-text-def' : defaultColorClass]">
+		<span
+			class="font-h1 text-h3 italic font-semibold transition ease-in-out text-left"
+			:class="[isActiveStyle ? 'text-text-def' : defaultColorClass]">
 			{{ title }}
 		</span>
 		<span v-show="isActiveStyle" class="w-full flex flex-col justify-start items-start transition ease-in-out">

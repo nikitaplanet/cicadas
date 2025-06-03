@@ -5,7 +5,7 @@
 				<div class="w-full">
 					<SectionNameTag>{{ contentText.aboutUs.title }}</SectionNameTag>
 				</div>
-				<div class="w-full flex flex-row justify-center items-center gap-10 mt-28">
+				<div class="w-full flex flex-col lg:flex-row justify-center items-center gap-10 mt-28">
 					<img alt="flower" src="@/assets/img/home/aboutUs/1.svg" />
 					<div class="flex flex-col relative">
 						<img class="absolute top-[-135px] right-[-80px] w-32" alt="feather" src="@/assets/img/home/aboutUs/1_feather.svg" />

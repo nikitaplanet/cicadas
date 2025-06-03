@@ -1,11 +1,11 @@
 <template>
 	<div class="pt-32 pb-36">
 		<SectionContainer :hasMinHeight="false">
-			<div class="w-full grid grid-cols-12">
-				<div class="w-full col-span-4">
+			<div class="w-full grid grid-cols-1 lg:grid-cols-12">
+				<div class="w-full col-span-1 lg:col-span-4">
 					<SectionNameTag>{{ contentText.qa.title }}</SectionNameTag>
 				</div>
-				<div class="col-span-8 w-full flex flex-col justify-center items-start gap-5">
+				<div class="col-span-1 mt-8 lg:mt-0 lg:col-span-8 w-full flex flex-col justify-center items-start gap-5">
 					<QAccordion>
 						<QAccordionItem v-for="item in qaList" :content="item.content" :id="item.id" :title="item.title"></QAccordionItem>
 					</QAccordion>

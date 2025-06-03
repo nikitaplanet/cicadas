@@ -83,6 +83,9 @@ const customize = {
 		labelLg: ['18px', {lineHeight: '1', letterSpacing: '0'}],
 		labelMd: ['14px', {lineHeight: '1', letterSpacing: '0'}],
 		labelSm: ['12px', {lineHeight: '1', letterSpacing: '0'}],
+		scale3XL: ['80px', {lineHeight: '1.25', letterSpacing: '-1.6'}],
+		scale2XL: ['48px', {lineHeight: '1.2'}],
+		scaleXL: ['32px', {lineHeight: '1.2'}],
 	},
 };
 

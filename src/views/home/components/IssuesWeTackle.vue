@@ -5,7 +5,7 @@
 				<div class="w-full">
 					<SectionNameTag>{{ contentText.issuesWeTackle.title }}</SectionNameTag>
 				</div>
-				<div class="w-full flex flex-col gap-5 justify-center items-start mt-14 pl-[15%]">
+				<div class="w-full flex flex-col gap-5 items-start mt-14 lg:pl-[15%] lg:justify-center">
 					<ContentButton
 						v-for="item in textAry"
 						@click="handleClickItem(item)"

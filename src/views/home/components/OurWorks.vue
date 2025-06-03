@@ -1,8 +1,8 @@
 <template>
 	<div class="section3-bg py-28">
 		<SectionContainer :hasMinHeight="false">
-			<div class="w-full grid grid-cols-12">
-				<div class="col-span-5 flex flex-col">
+			<div class="w-full grid grid-cols-1 lg:grid-cols-12">
+				<div class="col-span-1 lg:col-span-5 flex flex-col">
 					<SectionNameTag>Our Works</SectionNameTag>
 					<div class="relative p-16 mt-3">
 						<div
@@ -31,7 +31,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-span-7 flex flex-col p-10 gap-10 mt-7">
+				<div class="col-span-1 lg:col-span-7 flex flex-col p-10 gap-10 mt-7">
 					<HoverTextBox
 						v-for="item in list"
 						@click="handleClick(item.id)"

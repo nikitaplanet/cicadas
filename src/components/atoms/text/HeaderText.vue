@@ -1,25 +1,26 @@
 <template>
-    <h1 class="font-h1 text-h1 text-[80px] italic font-semibold" :class="{
-        'text-text-alternate': mode === TextMode.light,
-        'text-text-def': mode === TextMode.dark
-    }">
-        <slot/>
-    </h1>
+	<h1
+		class="font-h1 text-scale2XL md:text-h1 italic font-semibold"
+		:class="{
+			'text-text-alternate': mode === TextMode.light,
+			'text-text-def': mode === TextMode.dark,
+		}">
+		<slot />
+	</h1>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import {TextMode} from './index';
 
 interface Props {
-    mode?: TextMode
+	mode?: TextMode;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-    mode: TextMode.dark
+	mode: TextMode.dark,
 });
 
 const mode = props.mode;
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
