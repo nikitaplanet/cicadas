@@ -18,7 +18,6 @@
 						@mouseover="hoverImage = item.id"
 						:description="item.description"
 						:isActive="selectedContent === item.id"
-						:isShowArrowButton="false"
 						:key="item.title"
 						:title="item.title"
 						align="right"

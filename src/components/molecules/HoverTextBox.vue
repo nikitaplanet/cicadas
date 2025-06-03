@@ -24,12 +24,20 @@
 				{{ description }}
 			</div>
 		</div>
-		<img
-			v-if="isShowArrowButton"
-			class="group-hover:opacity-100"
-			:class="{'opacity-100': isActive, 'opacity-0': !isActive}"
-			alt="arrow"
-			src="../../assets/img/home/arrow.svg" />
+		<router-link v-if="link" :to="link">
+			<img
+				class="group-hover:opacity-100"
+				:class="{'opacity-100': isActive, 'opacity-0': !isActive}"
+				alt="arrow"
+				src="../../assets/img/home/arrow.svg" />
+		</router-link>
+		<button v-if="isButton" @click="handleClickArrow" type="button">
+			<img
+				class="group-hover:opacity-100"
+				:class="{'opacity-100': isActive, 'opacity-0': !isActive}"
+				alt="arrow"
+				src="../../assets/img/home/arrow.svg" />
+		</button>
 	</div>
 </template>
 
@@ -38,22 +46,24 @@ import {computed} from 'vue';
 interface Props {
 	title: string;
 	description: string;
+	link?: string;
 	isActive: boolean;
+	isButton?: boolean;
 	align?: 'left' | 'right';
-	isShowArrowButton?: boolean;
 	defaultColor?: 'text-text-archive-supportive2' | 'text-text-supportive-violet-dark';
 }
 
 const props = withDefaults(defineProps<Props>(), {
 	title: '',
 	description: '',
+	link: '',
 	isActive: false,
 	align: 'left',
-	isShowArrowButton: true,
+	isButton: false,
 	defaultColor: 'text-text-archive-supportive2',
 });
 
-const emit = defineEmits(['click']);
+const emit = defineEmits(['click', 'clickArrow']);
 const handelClick = () => {
 	emit('click');
 };
@@ -61,6 +71,10 @@ const handelClick = () => {
 const isActiveBox = computed(() => {
 	return props.isActive;
 });
+
+const handleClickArrow = () => {
+	emit('clickArrow');
+};
 </script>
 
 <style scoped></style>

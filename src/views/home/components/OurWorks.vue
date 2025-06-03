@@ -35,16 +35,21 @@
 					<HoverTextBox
 						v-for="item in list"
 						@click="handleClick(item.id)"
+						@clickArrow="handleClickArrow(item.id)"
 						@mouseleave="hoverImage = showImage"
 						@mouseover="hoverImage = item.id"
 						:description="item.description"
 						:isActive="selectedContent === item.id"
+						:isButton="item.id === 3"
 						:key="item.title"
+						:link="item.link"
 						:title="item.title" />
 				</div>
 			</div>
 		</SectionContainer>
 	</div>
+
+	<CommonOverlay v-if="isShowCommon" @closeCommon="handleCloseCommon" />
 </template>
 
 <script lang="ts" setup>
@@ -53,15 +58,29 @@ import SectionContainer from '@/components/layout/SectionContainer.vue';
 import SectionNameTag from '@components/atoms/text/SectionNameTag.vue';
 import HoverTextBox from '@components/molecules/HoverTextBox.vue';
 import {contentText} from '@assets/wording/home/text.ts';
+import CommonOverlay from '@components/layout/CommonOverlay.vue';
 
 const selectedContent = ref(0);
 const showImage = ref(0);
 const hoverImage = ref(0);
 
+const isShowCommon = ref(false);
+
 const handleClick = (val: number) => {
 	selectedContent.value = val;
 	showImage.value = val;
 	hoverImage.value = val;
+};
+
+const handleClickArrow = (id: number) => {
+	if (id === 3) {
+		// Commons
+		isShowCommon.value = true;
+	}
+};
+
+const handleCloseCommon = () => {
+	isShowCommon.value = false;
 };
 
 const list = reactive([...contentText.ourWorks.list]);

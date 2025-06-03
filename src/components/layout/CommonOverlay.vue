@@ -1,5 +1,7 @@
 <template>
-	<div class="w-full h-screen common-bg fixed top-0 left-0 z-30 grid grid-cols-1 pt-14 pb-24 px-10">
+	<div
+		class="w-full h-screen common-bg fixed top-0 left-0 z-30 grid grid-cols-1 pt-14 pb-24 px-10 transition-opacity duration-500"
+		:class="{'opacity-100': isVisible, 'opacity-0': !isVisible}">
 		<div class="flex justify-between items-start">
 			<HeaderText ref="headerText" :mode="TextMode.light" class="relative">
 				<span v-html="commonWording.headerTitle"></span>
@@ -40,20 +42,28 @@
 </template>
 
 <script lang="ts" setup>
-import {onMounted, onUnmounted} from 'vue';
+import {ref, onMounted, onUnmounted} from 'vue';
 import {TextMode} from '@components/atoms/text';
 import HeaderText from '@components/atoms/text/HeaderText.vue';
 import {commonWording} from '@assets/wording/common/text.ts';
 import {TEXT_TYPE} from '@assets/js/enum/textType.ts';
 
 const emit = defineEmits(['closeCommon']);
+const isVisible = ref(false);
 
 onMounted(() => {
-	document.body.style.overflow = 'hidden';
+	setTimeout(() => {
+		document.body.style.overflow = 'hidden';
+		isVisible.value = true;
+	}, 200);
 });
 
 onUnmounted(() => {
 	document.body.style.overflow = '';
+
+	setTimeout(() => {
+		isVisible.value = false;
+	}, 200);
 });
 
 const handleCloseCommon = () => {

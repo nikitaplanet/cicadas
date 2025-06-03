@@ -21,22 +21,26 @@ export const contentText = {
 				title: 'Campaigns',
 				description:
 					'Our campaigns are designed through a process of audience research, narrative strategy, creative production and purposeful distribution.',
+				link: '/campaigns',
 			},
 			{
 				id: 1,
 				title: 'Studio',
 				description:
 					'Our studio makes emotionally powerful, multi-format productions including films, publications, websites, VR experience and events.',
+				link: '/studio',
 			},
 			{
 				id: 2,
 				title: 'Workshops',
 				description: 'Our workshops build capacity for our partners on audience design, narrative change, storytelling, and messaging.',
+				link: '/workshops',
 			},
 			{
 				id: 3,
 				title: 'Commons',
 				description: 'Our commons match under-resourced NGOs and organizers to our network of resources for immediate practical relief.',
+				link: '',
 			},
 		],
 		campaignsTitle: 'Campaigns',
