@@ -73,6 +73,12 @@ export const contentText = {
 				logoSrc: HerFundLogo,
 				content: `We enjoyed working with Singing Cicadas on a successful campaign with award-winning productions for young people. Their team guided us through research and execution, and we’re excited to collaborate again on a new project. What stands out is their thorough research and effective social listening tools which helped us better understand our audience. Han Yan and Sharon consistently deliver on their commitments, making them a reliable partner.<br><br>-Ron Tan`,
 			},
+			{
+				id: 3,
+				title: 'Spark Foundation',
+				logoSrc: HerFundLogo,
+				content: `"The workshops delivered by Han Yan and Sharon equipped our team with immediately applicable strategies in effective narrative building, donor persona development, story frameworks, and campaign design. We gained a deeper and more nuanced understanding of key concepts crucial for women's funds, including resource mobilization, strategic processes, and narrative construction. What impressed us most was their patience and dedication in finding solutions despite various challenges we faced, while making complex professional concepts accessible and relevant to our organization's specific context. Their thoughtful and professional approach truly inspired us and reminded me why this work matters"<br><br>Keunyoung Jang, Korea Foundation for Women`,
+			},
 		],
 	},
 	issuesWeTackle: {

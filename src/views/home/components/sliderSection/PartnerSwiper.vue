@@ -15,7 +15,7 @@
 		navigation>
 		<swiper-slide v-for="item in contentList" class="cursor-grab">
 			<div class="relative">
-				<img class="w-full" alt="ContentBack" src="@/assets/img/home/sliderSection/content_background.svg" />
+				<img class="w-full h-[480px] object-cover" alt="ContentBack" src="@/assets/img/home/sliderSection/content_background.svg" />
 				<div class="w-full absolute top-[90px] left-0 p-12 flex justify-between items-center gap-5">
 					<div class="flex flex-col gap-2 justify-center items-center pr-14">
 						<div class="text-h5 font-h5 font-semibold italic text-center">{{ item.title }}</div>
