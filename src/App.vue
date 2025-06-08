@@ -6,7 +6,9 @@
 		<NavBar @showCommon="handleShowCommon" />
 	</div>
 
-	<CommonOverlay v-if="isShowCommon" @closeCommon="handleCloseCommon" />
+	<Transition mode="out-in" name="fade">
+		<CommonOverlay v-if="isShowCommon" @closeCommon="handleCloseCommon" />
+	</Transition>
 
 	<router-view v-slot="{Component}">
 		<transition mode="out-in" name="fade">
