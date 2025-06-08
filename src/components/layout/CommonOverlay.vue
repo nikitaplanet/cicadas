@@ -36,7 +36,16 @@
 			</div>
 		</div>
 		<div class="w-full flex flex-row justify-end items-end">
-			<a href="https://cryptpad.fr/form/#/2/form/view/vDSfK5jM2RgWSrtLZlCO6-XqmJbux9fOm1sr5xgRS0s/" target="_blank"> Tell us about yourself </a>
+			<a class="group relative" href="https://cryptpad.fr/form/#/2/form/view/vDSfK5jM2RgWSrtLZlCO6-XqmJbux9fOm1sr5xgRS0s/" target="_blank">
+				<img
+					class="absolute left-0 bottom-[3px] group-hover:opacity-0 transition-opacity duration-200"
+					alt="Tell us about yourself"
+					src="@/assets/img/common/tellUs_btn.svg" />
+				<img
+					class="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+					alt="Tell us about yourself"
+					src="@/assets/img/common/tellUs_btn-hover.svg" />
+			</a>
 		</div>
 	</div>
 </template>
