@@ -39,11 +39,12 @@ onBeforeUnmount(() => {
 	position: fixed;
 	width: 24px;
 	height: 24px;
-	background: url('@/assets/img/icons/cursor/default.svg') no-repeat center center;
+	background: url('@/assets/img/icons/cursor/default_b.svg') no-repeat center center;
 	background-size: contain;
 	pointer-events: none;
 	transform: translate(-50%, -50%);
 	z-index: 9999;
+	mix-blend-mode: difference;
 }
 
 .custom-cursor.is-clickable {
