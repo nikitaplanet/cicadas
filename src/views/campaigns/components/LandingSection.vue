@@ -4,7 +4,6 @@
 			<div class="col-span-6">
 				<HeaderText ref="headerText" :mode="TextMode.dark" class="relative">
 					<span v-html="campaignsWording.landing.headerTitle"></span>
-					<img class="absolute bottom-[-203px] right-[-26px]" alt="underline" src="@/assets/img/campaigns/headingIcon.svg" />
 				</HeaderText>
 			</div>
 			<div class="col-span-6">

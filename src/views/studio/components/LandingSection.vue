@@ -4,7 +4,6 @@
 			<div class="col-span-6">
 				<HeaderText ref="headerText" :mode="TextMode.dark" class="relative">
 					<span v-html="studioWording.landing.headerTitle"></span>
-					<img class="absolute bottom-[-130px] left-[235px]" alt="underline" src="@/assets/img/studio/headingIcon.svg" />
 				</HeaderText>
 			</div>
 
