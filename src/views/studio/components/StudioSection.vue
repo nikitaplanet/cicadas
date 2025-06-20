@@ -1,5 +1,5 @@
 <template>
-	<div class="pt-32 pb-36">
+	<div class="pt-0 pb-10">
 		<SectionContainer :hasMinHeight="false">
 			<div class="flex flex-col">
 				<!---col-->
@@ -14,13 +14,9 @@
 							v-html="title"
 							class="italic font-semibold text-h2 font-h2"
 							:class="{'text-left': align === 'left', 'text-right': align === 'right'}"></h2>
-						<p
-							v-html="description"
-							class="mt-5 font-body text-body font-medium"
-							:class="{'text-left': align === 'left', 'text-right': align === 'right'}"></p>
 
 						<div class="w-full mt-12 flex items-center" :class="{'justify-start': align === 'left', 'justify-end': align === 'right'}">
-							<StudioSwiperImages :img="img" :key="title" class="w-[650px]" :class="swiperClass" />
+							<img :alt="title" :src="img" class="w-[650px]" />
 						</div>
 					</div>
 				</div>
@@ -31,14 +27,11 @@
 
 <script lang="ts" setup>
 import SectionContainer from '@components/layout/SectionContainer.vue';
-import StudioSwiperImages from '@/views/studio/components/StudioSwiperImages.vue';
-import {SwiperImage} from '@components/atoms/swiper';
 
 interface Props {
 	id: number;
 	title: string;
-	description: string;
-	img: SwiperImage[];
+	img: string;
 	align: string;
 	swiperClass: string;
 }
@@ -46,8 +39,7 @@ interface Props {
 withDefaults(defineProps<Props>(), {
 	id: 1,
 	title: '',
-	description: '',
-	img: () => [],
+	img: '',
 	align: 'left',
 	swiperClass: 'aspect-[banner]',
 });
