@@ -15,15 +15,11 @@
 				class="cursor-pointer" />
 			<img v-if="index !== campaigns.length - 1" class="w-full px-8" alt="line" src="@/assets/img/campaigns/listLine.svg" />
 		</template>
-
-		<!--Footer-->
-		<NFooter />
 	</div>
 </template>
 
 <script lang="ts" setup>
 import {ref} from 'vue';
-import NFooter from '@components/organisms/footer/NFooter.vue';
 import LandingSection from '@/views/campaigns/components/LandingSection.vue';
 import CampaignSection from '@/views/campaigns/components/CampaignSection.vue';
 import {campaignsWording} from '@assets/wording/campaigns/text.ts';

@@ -5,20 +5,23 @@
 				<!---col-->
 				<div class="w-full grid grid-cols-1">
 					<!---row-->
-					<div
-						class="flex flex-col"
+					<router-link
+						:to="`/studio/${id}`"
+						class="flex flex-col cursor-pointer transition ease-in-out hover:opacity-90"
 						:class="{
 							'items-end justify-start': align === 'right',
 						}">
 						<h2
 							v-html="title"
-							class="italic font-semibold text-h2 font-h2"
+							class="italic font-semibold text-h2 font-h2 cursor-pointer"
 							:class="{'text-left': align === 'left', 'text-right': align === 'right'}"></h2>
 
-						<div class="w-full mt-12 flex items-center" :class="{'justify-start': align === 'left', 'justify-end': align === 'right'}">
+						<div
+							class="w-full mt-12 flex items-center cursor-pointer"
+							:class="{'justify-start': align === 'left', 'justify-end': align === 'right'}">
 							<img :alt="title" :src="img" class="w-[650px]" />
 						</div>
-					</div>
+					</router-link>
 				</div>
 			</div>
 		</SectionContainer>
@@ -29,7 +32,7 @@
 import SectionContainer from '@components/layout/SectionContainer.vue';
 
 interface Props {
-	id: number;
+	id: string;
 	title: string;
 	img: string;
 	align: string;
@@ -37,7 +40,7 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-	id: 1,
+	id: '1',
 	title: '',
 	img: '',
 	align: 'left',

@@ -15,7 +15,8 @@
 			<component v-if="!isShowLoading" :is="Component" />
 		</transition>
 	</router-view>
-
+	<!--Footer-->
+	<NFooter />
 	<NCursor />
 </template>
 
@@ -29,6 +30,7 @@ import NavBar from '@components/organisms/navbar/NavBar.vue';
 import {useScrollDirectionNav} from '@/hooks/useNavBar.ts';
 import {ROUTER_NAME} from '@assets/js/enum/routerEnum.ts';
 import NCursor from '@components/atoms/cursor/NCursor.vue';
+import NFooter from '@components/organisms/footer/NFooter.vue';
 
 const {isScrolledPastLanding, showNavBar} = useScrollDirectionNav();
 const route = useRoute();

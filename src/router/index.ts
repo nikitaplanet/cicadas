@@ -44,6 +44,14 @@ const routes: Array<RouteRecordRaw> = [
 		},
 	},
 	{
+		path: '/studio/:id',
+		name: ROUTER_NAME.STUDIO_DETAIL_PAGE,
+		component: () => import('@/views/studio/StudioDetailPage.vue'),
+		meta: {
+			title: `${globalWording.meta.title.studio} | ${globalWording.meta.title.main}`,
+		},
+	},
+	{
 		path: '/workshops',
 		name: ROUTER_NAME.WORKSHOPS_PAGE,
 		component: () => import('@/views/workshops/WorkshopsPage.vue'),

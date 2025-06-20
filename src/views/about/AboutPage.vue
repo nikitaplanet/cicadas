@@ -28,19 +28,15 @@
 		<AboutIssuesTackle />
 
 		<div class="section-gradient4"></div>
-		<!--Footer-->
-		<NFooter />
 	</div>
 </template>
 
 <script lang="ts" setup>
-import NavBar from '@components/organisms/navbar/NavBar.vue';
 import LandingSection from '@/views/about/components/LandingSection.vue';
 import WordFadeInSection from '@/views/about/components/WordFadeInSection.vue';
 import OurTeam from '@/views/about/components/OurTeam.vue';
 import WorkWithSwiperSection from '@/views/about/components/WorkWithSwiperSection.vue';
 import ServiceWeOfferSection from '@/views/about/components/ServiceWeOfferSection.vue';
-import NFooter from '@components/organisms/footer/NFooter.vue';
 import AboutIssuesTackle from '@/views/about/components/AboutIssuesTackle.vue';
 
 import {useScrollDirectionNav} from '@/hooks/useNavBar.ts';

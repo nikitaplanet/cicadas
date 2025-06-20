@@ -37,9 +37,6 @@
 
 		<!--QA-->
 		<Questions />
-
-		<!--Footer-->
-		<NFooter />
 	</div>
 </template>
 

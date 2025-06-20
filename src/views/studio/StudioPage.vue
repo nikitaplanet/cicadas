@@ -5,15 +5,11 @@
 		<template v-for="item in studioInfo" :key="item.title">
 			<StudioSection :align="item.align" :id="item.id" :img="item.img" :swiperClass="item.swiperClass" :title="item.title" />
 		</template>
-
-		<!--Footer-->
-		<NFooter />
 	</div>
 </template>
 
 <script lang="ts" setup>
 import {ref} from 'vue';
-import NFooter from '@components/organisms/footer/NFooter.vue';
 import LandingSection from '@/views/studio/components/LandingSection.vue';
 import {studioWording} from '@assets/wording/studio/text.ts';
 import StudioSection from '@/views/studio/components/StudioSection.vue';
