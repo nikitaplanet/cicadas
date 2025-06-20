@@ -88,6 +88,6 @@ const socialInfoAry = reactive([
 }
 
 .nFooter-bg {
-	background: var(--SC-Gradient-orange-footer, linear-gradient(180deg, rgba(249, 223, 213, 0) 24.93%, #dd5621 92.44%));
+	background: linear-gradient(180deg, rgba(249, 223, 213, 0) 24.93%, #dd5621 92.44%);
 }
 </style>

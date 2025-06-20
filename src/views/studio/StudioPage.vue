@@ -1,6 +1,6 @@
 <template>
 	<div class="w-full min-h-screen bg-surface-def">
-		<LandingSection />
+		<LandingSection :description="studioWording.landing.description" :title="studioWording.landing.headerTitle" />
 
 		<template v-for="item in studioInfo" :key="item.title">
 			<StudioSection :align="item.align" :id="item.id" :img="item.img" :swiperClass="item.swiperClass" :title="item.title" />

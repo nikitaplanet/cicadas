@@ -10,13 +10,15 @@
 		<CommonOverlay v-if="isShowCommon" @closeCommon="handleCloseCommon" />
 	</Transition>
 
-	<router-view v-slot="{Component}">
-		<transition mode="out-in" name="fade">
-			<component v-if="!isShowLoading" :is="Component" />
-		</transition>
-	</router-view>
-	<!--Footer-->
-	<NFooter />
+	<div class="bg-surface-def">
+		<router-view v-slot="{Component}">
+			<transition mode="out-in" name="fade">
+				<component v-if="!isShowLoading" :is="Component" />
+			</transition>
+		</router-view>
+		<!--Footer-->
+		<NFooter />
+	</div>
 	<NCursor />
 </template>
 

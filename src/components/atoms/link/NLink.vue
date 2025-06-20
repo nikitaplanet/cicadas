@@ -5,7 +5,8 @@
 		:href="isAnchorLink ? href : null"
 		:is="tag"
 		:to="isRouterLink ? to : null"
-		class="cursor-pointer">
+		class="cursor-pointer"
+		:class="{'underline underline-offset-4 font-bold text-sm': hasUnderline}">
 		<slot />
 	</component>
 </template>

@@ -4,7 +4,8 @@ import swiper3_1 from '@/assets/img/studio/swiper3/1.jpg';
 import swiper4_1 from '@/assets/img/studio/swiper4/1.jpg';
 import {MEDIA_TYPE} from '@assets/js/enum/media.ts';
 
-import detail3_4_image from '@/assets/img/studio/detail/id3/image_3_4.png';
+import detail3_1_image from '@/assets/img/studio/detail/id3/image_3_1.jpg';
+import detail3_2_image from '@/assets/img/studio/detail/id3/image_3_2.jpg';
 
 export const studioWording = {
 	landing: {
@@ -84,12 +85,7 @@ export const studioWording = {
 						id: '2-1',
 						title: 'When a Poet Goes to War',
 						content:
-							'"When peaceful protests fail to sway the country’s dictator, a Burmese poet and his fellow artists pick up arms to fight the well-resourced military junta. Deep in the jungles they are gaining ground, but the former pacifists struggle with the mental and physical realities of a brutal war."\n' +
-							'\n' +
-							'This feature-length documentary follows the journey of Saungkha, a renowned poet-turned-opposition army general as Myanmar descends into a brutal civil war. The project has received support from IDFA Bertha Fund, Purin Foundation and has received the Docs by the Sea Award at TCCF (Taiwan).\n' +
-							'\n' +
-							'Director: Aung Naing Soe\n' +
-							'Producer: Han Yan Yuen',
+							'"When peaceful protests fail to sway the country’s dictator, a Burmese poet and his fellow artists pick up arms to fight the well-resourced military junta. Deep in the jungles they are gaining ground, but the former pacifists struggle with the mental and physical realities of a brutal war."<br/><br/>This feature-length documentary follows the journey of Saungkha, a renowned poet-turned-opposition army general as Myanmar descends into a brutal civil war. The project has received support from IDFA Bertha Fund, Purin Foundation and has received the Docs by the Sea Award at TCCF (Taiwan).<br/><br/>Director: Aung Naing Soe<br/>Producer: Han Yan Yuen',
 						media: {
 							type: MEDIA_TYPE.VIMEO,
 							src: 'https://vimeo.com/1090011632',
@@ -127,7 +123,7 @@ export const studioWording = {
 							'The journey of “creating-your-own-documentary” delves into the essence of creativity, exploring what defines it, why we might feel constrained, and how we can reignite that spark within ourselves. Users craft a unique planet based on their choices and the final version is sent to their email as a powerful reminder that they are shaped by their decisions. Together, with others on this shared path, it’s both possible and extraordinary to make bolder, more inspired choices in shaping their identities.',
 						media: {
 							type: MEDIA_TYPE.IMAGE,
-							src: '',
+							src: detail3_1_image,
 						},
 						isOnGoing: true,
 					},
@@ -135,12 +131,10 @@ export const studioWording = {
 						id: '3-2',
 						title: 'MADE VR',
 						content:
-							'MADE: meet me at the end of the assembly line is a choose-your-own-adventure experience, viewers form a personal connection with an Apple factory worker, Xiaowu,  gaining insight into her daily life, family, and inner thoughts.\n' +
-							'\n' +
-							'At the end of the journey, viewers are invited to take action by sending a letter to tech companies with factories in China, advocating for a living wage for workers.',
+							'MADE: meet me at the end of the assembly line is a choose-your-own-adventure experience, viewers form a personal connection with an Apple factory worker, Xiaowu,  gaining insight into her daily life, family, and inner thoughts.<br/><br/>At the end of the journey, viewers are invited to take action by sending a letter to tech companies with factories in China, advocating for a living wage for workers.',
 						media: {
-							type: MEDIA_TYPE.VIMEO,
-							src: 'https://vimeo.com/1089964419',
+							type: MEDIA_TYPE.IMAGE,
+							src: detail3_2_image,
 						},
 						isOnGoing: false,
 					},
@@ -161,8 +155,8 @@ export const studioWording = {
 						content:
 							'In response to the profound impact of COVID-19 on students, parents, and teachers, Ednovators engaged us to develop a mental wellness toolkit for their Better Me Better We platform. We distributed 500 curated boxes filled with a comprehensive guide, 30 daily exercises, and soothing audio meditations, providing hope, resilience, and tools to thrive amid adversity. ',
 						media: {
-							type: MEDIA_TYPE.IMAGE,
-							src: detail3_4_image,
+							type: MEDIA_TYPE.VIMEO,
+							src: '',
 						},
 						isOnGoing: false,
 					},
@@ -183,11 +177,7 @@ export const studioWording = {
 						id: '4-1',
 						title: 'Gaming for Change',
 						content:
-							'In collaboration with Press Start Academy and Eaton Hotel, we hosted Hong Kong’s first-ever event exploring gaming as an innovative medium for advocacy-driven storytelling —creating new opportunities to integrate games into social impact initiatives.\n' +
-							'\n' +
-							'The landmark event combines panel discussions, hands-on workshops, and a game exhibition, to showcase the potential of gaming in advocacy.\n' +
-							'\n' +
-							'Around 70 industry professionals and change-makers attended the event, sparking conversations to incorporate games into social impact initiatives.',
+							'In collaboration with Press Start Academy and Eaton Hotel, we hosted Hong Kong’s first-ever event exploring gaming as an innovative medium for advocacy-driven storytelling —creating new opportunities to integrate games into social impact initiatives.<br/><br/>The landmark event combines panel discussions, hands-on workshops, and a game exhibition, to showcase the potential of gaming in advocacy.<br/><br/>Around 70 industry professionals and change-makers attended the event, sparking conversations to incorporate games into social impact initiatives.',
 						media: {
 							type: MEDIA_TYPE.IMAGE,
 							src: '',

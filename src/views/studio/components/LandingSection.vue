@@ -3,18 +3,18 @@
 		<div class="w-full px-8 h-screen m-auto grid grid-cols-12 pt-40 relative">
 			<div class="col-span-6">
 				<HeaderText ref="headerText" :mode="TextMode.dark" class="relative">
-					<span v-html="studioWording.landing.headerTitle"></span>
+					<span v-html="title"></span>
 				</HeaderText>
 			</div>
 
 			<div class="col-span-6">
 				<HeaderDescription ref="headerDesc" :isItalic="false" :mode="TextMode.dark">
-					<span v-html="studioWording.landing.description"></span>
+					<span v-html="description"></span>
 				</HeaderDescription>
 			</div>
 
 			<button @click="handleScrollDown" class="absolute right-0 bottom-32" type="button">
-				<img alt="ScrollDown" src="@/assets/img/studio/scrollDown.svg" />
+				<img alt="ScrollDown" src="../../../assets/img/studio/scrollDown.svg" />
 			</button>
 		</div>
 	</div>
@@ -24,9 +24,18 @@
 import {TextMode} from '@components/atoms/text';
 import HeaderText from '@components/atoms/text/HeaderText.vue';
 import HeaderDescription from '@components/atoms/text/HeaderDescription.vue';
-import {studioWording} from '@assets/wording/studio/text.ts';
 
 const handleScrollDown = () => {};
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+withDefaults(defineProps<Props>(), {
+	title: '',
+	description: '',
+});
 </script>
 
 <style lang="scss" scoped>
