@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full flex flex-col items-center justify-start gap-5">
+	<div class="w-full flex flex-col items-center justify-start gap-5" :class="{'hidden md:block md:opacity-0': isHide}">
 		<img :alt="logoAlt" :src="logoSrc" />
 		<p v-html="description" class="text-center italic font-label text-labelLg font-semibold"></p>
 	</div>
@@ -10,12 +10,14 @@ interface Props {
 	logoSrc: string;
 	logoAlt: string;
 	description: string;
+	isHide: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
 	logoSrc: '',
 	logoAlt: '',
 	description: '',
+	isHide: false,
 });
 </script>
 

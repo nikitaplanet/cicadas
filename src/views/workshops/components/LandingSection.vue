@@ -1,12 +1,12 @@
 <template>
 	<div class="w-full h-screen landing-bg">
-		<div class="w-full px-8 h-screen m-auto grid grid-cols-12 pt-40 relative">
-			<div class="col-span-6">
-				<HeaderText ref="headerText" :mode="TextMode.dark" class="relative">
+		<div class="w-full px-8 h-screen m-auto flex flex-col justify-start md:justify-between md:flex-row gap-10 pt-40 relative">
+			<div class="w-1/2">
+				<HeaderText ref="headerText" :mode="TextMode.dark">
 					<span v-html="workshopsWording.landing.headerTitle"></span>
 				</HeaderText>
 			</div>
-			<div class="col-span-6">
+			<div class="w-1/2">
 				<HeaderDescription ref="headerDesc" :isItalic="false" :mode="TextMode.dark">
 					<span v-html="workshopsWording.landing.description"></span>
 				</HeaderDescription>

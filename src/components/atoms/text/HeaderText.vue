@@ -1,6 +1,6 @@
 <template>
 	<h1
-		class="font-h1 text-scale2XL md:text-h1 italic font-semibold"
+		class="font-h1 text-scale2XL lg:text-h1 italic font-semibold"
 		:class="{
 			'text-text-alternate': mode === TextMode.light,
 			'text-text-def': mode === TextMode.dark,

@@ -2,10 +2,12 @@ export const workshopsWording = {
 	landing: {
 		headerTitle: 'Workshops',
 		description:
-			'We offer group workshops on the basics of narrative change and campaign design. These are ideal for those who work directly with advocacy or campaigns but also to strengthen the foundations of small teams. Here are some topics we cover. You can contact us if you wish for a sample workshop rundown. Our pricing is on a sliding scale based on organization budget.',
+			'We offer hands-on workshops on Narrative Change and Campaign Design to strengthen your team’s ability to effectively drive change. We can also devise custom sessions based on your needs.',
 	},
 	logoSection: {
-		title: 'Workshop<br>flow<br>intro',
+		title: 'Workshops<br/>incorporate',
+		description:
+			'From a half-day fundamentals session to an intensive 3-day process, each workshop is customized to reflect your team’s goals, values, and strategic context. Our longer engagements incorporate full organizational or campaign planning processes to ensure learning translates into action. We’re happy to provide a sample workshop rundown upon request.',
 		logoList: {
 			1: 'Defining Problems and Setting<br>Objectives',
 			2: 'Identifying Target Audience and their<br>Needs',
