@@ -1,22 +1,24 @@
 <template>
-	<swiper
-		:autoplay="{
-			delay: 3000,
-			disableOnInteraction: false,
-		}"
-		:breakpoints="breakPoints"
-		:centeredSlides="true"
-		:loop="true"
-		:modules="modules"
-		:pagination="{
-			clickable: true,
-		}"
-		:spaceBetween="20"
-		class="mySwiper">
-		<swiper-slide v-for="item in imgs" class="swiper-slide-custom">
-			<img :alt="item.key" :src="item.src" class="aspect-[16/11]" />
-		</swiper-slide>
-	</swiper>
+	<div class="w-96 m-auto md:w-full">
+		<swiper
+			:autoplay="{
+				delay: 5000,
+				disableOnInteraction: true,
+			}"
+			:breakpoints="breakPoints"
+			:centeredSlides="true"
+			:loop="true"
+			:modules="modules"
+			:pagination="{
+				clickable: true,
+			}"
+			:spaceBetween="20"
+			class="mySwiper">
+			<swiper-slide v-for="item in imgs" class="swiper-slide-custom">
+				<img :alt="item.key" :src="item.src" class="aspect-[16/11]" />
+			</swiper-slide>
+		</swiper>
+	</div>
 </template>
 
 <script lang="ts" setup>
@@ -31,12 +33,11 @@ import {SwiperImage} from '@components/atoms/swiper';
 import Photo1 from '@assets/img/workshops/swiperPhotos/1.jpg';
 import Photo2 from '@assets/img/workshops/swiperPhotos/2.jpg';
 import Photo3 from '@assets/img/workshops/swiperPhotos/3.jpg';
-import Photo4 from '@assets/img/workshops/swiperPhotos/4.jpg';
 
 const modules = [Autoplay, Pagination];
 const breakPoints = reactive({
 	320: {
-		slidesPerView: 2,
+		slidesPerView: 1,
 	},
 	640: {
 		slidesPerView: 1.5,
@@ -66,8 +67,8 @@ const imgs = reactive<SwiperImage[]>([
 		src: Photo3,
 	},
 	{
-		key: '4',
-		src: Photo4,
+		key: '2',
+		src: Photo2,
 	},
 ]);
 </script>
