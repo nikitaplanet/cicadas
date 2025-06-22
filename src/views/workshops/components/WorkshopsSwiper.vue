@@ -1,5 +1,5 @@
 <template>
-	<div class="w-96 m-auto md:w-full">
+	<div class="w-[90%] m-auto md:w-full">
 		<swiper
 			:autoplay="{
 				delay: 5000,
