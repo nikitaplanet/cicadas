@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full px-8 m-auto" :class="{'section-container': hasMinHeight}">
+	<div class="w-full px-5 lg:px-8 m-auto" :class="{'section-container': hasMinHeight}">
 		<slot />
 	</div>
 </template>

@@ -87,6 +87,7 @@ const customize = {
 		scale2XL: ['48px', {lineHeight: '1.2'}],
 		scaleXL: ['32px', {lineHeight: '1.2'}],
 		scaleDef: ['18px', {lineHeight: '1.2'}],
+		scale2XS: ['10px', {lineHeight: '1'}],
 	},
 };
 
