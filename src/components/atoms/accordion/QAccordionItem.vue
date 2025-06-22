@@ -29,7 +29,7 @@ interface Props {
 	content?: string;
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
 	id: 0,
 	title: '',
 	content: '',

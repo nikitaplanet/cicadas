@@ -20,4 +20,12 @@ export const workshopsWording = {
 			9: 'Campaign Planning',
 		},
 	},
+	quoteList: [
+		{
+			id: 1,
+			title: null,
+			logoSrc: null,
+			content: `Singing Cicadas’ team …shared with us an approach to narrative building. The guided step by step process broadened our understanding and the hands on approach nudged us to use the framework and built relatability. A powerful engagement which will help us build our communications work more effectively.<br/><br/>- Lead of Programmes, a women's fund from South Asia`,
+		},
+	],
 };
