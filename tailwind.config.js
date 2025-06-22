@@ -80,7 +80,7 @@ const customize = {
 		h5: ['18px', {lineHeight: '1.2'}],
 		body: ['16px', {lineHeight: '1.2'}],
 		body18: ['18px', {lineHeight: '1.2'}],
-		labelLg: ['18px', {lineHeight: '1', letterSpacing: '0'}],
+		labelLg: ['18px', {lineHeight: '1.2', letterSpacing: '0'}],
 		labelMd: ['14px', {lineHeight: '1', letterSpacing: '0'}],
 		labelSm: ['12px', {lineHeight: '1', letterSpacing: '0'}],
 		scale3XL: ['80px', {lineHeight: '1.25', letterSpacing: '-1.6'}],
