@@ -49,7 +49,6 @@ import AboutUs from '@/views/home/components/AboutUs.vue';
 import SliderSection from '@/views/home/components/SliderSection.vue';
 import IssuesWeTackle from '@/views/home/components/IssuesWeTackle.vue';
 import Questions from '@/views/home/components/Questions.vue';
-import NFooter from '@/components/organisms/footer/NFooter.vue';
 </script>
 
 <style lang="scss" scoped>

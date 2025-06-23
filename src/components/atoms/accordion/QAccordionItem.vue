@@ -10,7 +10,7 @@
 		<AccordionContent class="italic font-semibold" unstyled>
 			<div class="m-0 mt-2 pl-3">
 				<div v-if="content" class="grid grid-cols-5">
-					<p class="col-span-4 font-body text-body18 italic font-medium">{{ content }}</p>
+					<p class="col-span-4 font-body text-body lg:text-body18 italic font-medium">{{ content }}</p>
 					<span class="col-span-1"></span>
 				</div>
 				<slot />
@@ -37,11 +37,11 @@ withDefaults(defineProps<Props>(), {
 
 //bg-surface-tertiary
 const accordionPanelPT = {
-	root: {class: 'w-full p-5 border-svg-mask'},
+	root: {class: 'w-full p-3 lg:p-5 border-svg-mask'},
 };
 
 const accordionHeaderPT = {
-	root: {class: 'w-full pl-3 flex justify-between items-center text-h4 font-h4 italic font-semibold'},
+	root: {class: 'w-full pl-3 flex justify-between items-center text-scaleMD lg:text-h4 font-h4 italic font-semibold text-left'},
 	toggleicon: {class: 'w-5 h-5'},
 };
 </script>

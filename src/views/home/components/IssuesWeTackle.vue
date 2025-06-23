@@ -1,5 +1,5 @@
 <template>
-	<div class="issues-bg pt-32 pb-36">
+	<div class="issues-bg py-24 lg:pt-32 lg:pb-36">
 		<SectionContainer :hasMinHeight="false">
 			<div class="w-full flex flex-col justify-center items-center">
 				<div class="w-full">

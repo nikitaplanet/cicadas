@@ -1,9 +1,9 @@
 <template>
 	<div class="flex justify-between flex-row gap-6 group cursor-pointer">
-		<div class="flex flex-col items-start gap-6">
+		<div class="flex flex-col items-start gap-4 lg:gap-6">
 			<button
 				@click="handelClick"
-				class="w-full italic font-semibold text-h1 font-h1 group-hover:text-text-def transition ease-in-out"
+				class="w-full italic font-semibold text-scaleLG lg:text-h1 font-h1 group-hover:text-text-def transition ease-in-out"
 				:class="{
 					[props.defaultColor]: !isActiveBox,
 					'text-text-def': isActiveBox,
@@ -14,7 +14,7 @@
 				{{ title }}
 			</button>
 			<div
-				class="w-full text-body18 italic font-body text-text-def font-semibold transition ease-linear group-hover:inline-block"
+				class="w-full text-body lg:text-body18 italic font-body text-text-def font-semibold transition ease-linear group-hover:inline-block"
 				:class="{
 					'inline-block translate-y-1': isActiveBox,
 					hidden: !isActiveBox,

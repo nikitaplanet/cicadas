@@ -82,7 +82,7 @@ export const contentText = {
 		],
 	},
 	issuesWeTackle: {
-		title: 'Issues we tackle',
+		title: 'Service Features',
 		contentTextList: [
 			{
 				title: 'Research, Analytics and Insights',

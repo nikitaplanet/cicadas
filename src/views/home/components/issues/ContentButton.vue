@@ -6,12 +6,14 @@
 		class="flex flex-col justify-start items-start"
 		type="button">
 		<span
-			class="font-h1 text-h3 italic font-semibold transition ease-in-out text-left"
+			class="font-h1 text-scaleLG lg:text-h3 italic font-semibold transition ease-in-out text-left"
 			:class="[isActiveStyle ? 'text-text-def' : defaultColorClass]">
 			{{ title }}
 		</span>
 		<span v-show="isActiveStyle" class="w-full flex flex-col justify-start items-start transition ease-in-out">
-			<span class="w-full font-semibold italic text-body18 mt-6 text-left" :class="[isActiveStyle ? 'text-text-def' : defaultColorClass]">
+			<span
+				class="w-full font-semibold italic text-body lg:text-body18 mt-6 text-left"
+				:class="[isActiveStyle ? 'text-text-def' : defaultColorClass]">
 				{{ content }}
 			</span>
 			<img v-if="defaultColorType === 'blue'" class="w-full mt-5" alt="underline" src="@/assets/img/home/issues/line.svg" />
