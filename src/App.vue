@@ -3,7 +3,7 @@
 		class="transition duration-300 ease-in-out"
 		:class="{block: !isHideLoading, hidden: isHideLoading, 'opacity-0': !isShowLoading, 'opacity-100': isShowLoading}" />
 	<div ref="nav" id="homeNav" class="py-5 transition-all duration-300" :class="navStyle">
-		<NavBar @showCommon="handleShowCommon" />
+		<NavBar @showCommon="handleShowCommon" :isNavBottom="isNavBottom" />
 	</div>
 
 	<Transition mode="out-in" name="fade">
@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, watch, computed, onMounted} from 'vue';
+import {ref, watch, computed} from 'vue';
 import LoadingOverlay from '@components/atoms/loading/LoadingOverlay.vue';
 import {useRoute} from 'vue-router';
 import CommonOverlay from '@components/layout/CommonOverlay.vue';
@@ -79,8 +79,11 @@ watch(
 );
 
 // Nav Style
+const isNavBottom = ref(false);
 const navStyle = computed(() => {
 	if (isHomePage.value) {
+		isNavBottom.value = !isScrolledPastLanding.value;
+
 		return [
 			isScrolledPastLanding.value ? 'fixed top-0 left-0 w-full z-20 bg-surface-def' : 'absolute bottom-0 left-0 w-full z-20',
 			{
@@ -89,6 +92,8 @@ const navStyle = computed(() => {
 			},
 		];
 	} else {
+		isNavBottom.value = false;
+
 		return [
 			isScrolledPastLanding.value ? 'fixed top-0 left-0 w-full z-20 bg-surface-def' : 'absolute top-0 left-0 w-full z-20',
 			showNavBar.value ? 'translate-y-0' : '-translate-y-full',

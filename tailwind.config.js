@@ -223,4 +223,5 @@ export default {
 			},
 		},
 	},
+	safelist: ['overflow-hidden'],
 };

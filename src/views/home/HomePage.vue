@@ -6,7 +6,7 @@
 		<Section1 />
 
 		<!--Wording-->
-		<Section2 />
+		<!--		<Section2 />-->
 
 		<!--BG 過場-->
 		<div class="section-gradient3"></div>
@@ -17,14 +17,14 @@
 		<!--BG 過場-->
 		<div class="section-gradient4"></div>
 
-		<!--About Us-->
-		<AboutUs />
+		<!--		&lt;!&ndash;About Us&ndash;&gt;-->
+		<!--		<AboutUs />-->
 
-		<!--BG 過場-->
-		<div class="section-gradient5"></div>
+		<!--		&lt;!&ndash;BG 過場&ndash;&gt;-->
+		<!--		<div class="section-gradient5"></div>-->
 
-		<!--Hear from our partners-->
-		<SliderSection />
+		<!--		&lt;!&ndash;Hear from our partners&ndash;&gt;-->
+		<!--		<SliderSection />-->
 
 		<!--BG 過場-->
 		<div class="section-gradient6"></div>
