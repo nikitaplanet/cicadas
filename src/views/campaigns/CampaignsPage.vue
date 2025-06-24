@@ -3,20 +3,18 @@
 		<LandingSection />
 
 		<template v-for="(item, index) in campaigns" :key="item.title">
-			<div :ref="(el) => (campaignRefs[index] = el)" class="campaign-item">
-				<CampaignSection
-					@click="handleClickCampaign(item.id)"
-					:id="item.id"
-					:img="item.img"
-					:isOngoing="item.isOngoing"
-					:issues="item.issues"
-					:region="item.region"
-					:services="item.services"
-					:title="item.title"
-					:year="item.year"
-					class="cursor-pointer" />
-				<img v-if="index !== campaigns.length - 1" class="w-full px-8" alt="line" src="@/assets/img/campaigns/listLine.svg" />
-			</div>
+			<CampaignSection
+				@click="handleClickCampaign(item.id)"
+				:id="item.id"
+				:img="item.img"
+				:isOngoing="item.isOngoing"
+				:issues="item.issues"
+				:region="item.region"
+				:services="item.services"
+				:title="item.title"
+				:year="item.year"
+				class="cursor-pointer" />
+			<img v-if="index !== campaigns.length - 1" class="w-full px-8" alt="line" src="@/assets/img/campaigns/listLine.svg" />
 		</template>
 	</div>
 </template>
@@ -29,32 +27,6 @@ import {campaignsWording} from '@assets/wording/campaigns/text.ts';
 import router from '@/router';
 import {ROUTER_NAME} from '@assets/js/enum/routerEnum.ts';
 
-// animation
-import gsap from 'gsap';
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-const campaignRefs = ref<HTMLElement[]>([]);
-let triggers: ScrollTrigger[] = [];
-onMounted(async () => {
-	await nextTick(); // 確保 DOM render 完成
-
-	triggers = campaignRefs.value.map((el) => {
-		const anim = gsap.fromTo(el, {autoAlpha: 0, y: 20}, {duration: 1, autoAlpha: 1, y: 0, ease: 'power2.out'});
-
-		return ScrollTrigger.create({
-			trigger: el,
-			animation: anim,
-			start: 'top 97%',
-			toggleActions: 'play reverse play reverse',
-		});
-	});
-});
-
-onUnmounted(() => {
-	triggers.forEach((trigger) => trigger.kill());
-});
-
 // Content
 const campaigns = ref(campaignsWording.campaigns);
 
@@ -65,6 +37,7 @@ const handleClickCampaign = (id: number) => {
 
 <style lang="scss" scoped>
 .campaign-item {
+	opacity: 0;
 	will-change: opacity, transform;
 }
 </style>

@@ -44,7 +44,7 @@ onMounted(() => {
 		});
 
 		useFadeInOnScroll(headerDesc.value.$el, main.value, {
-			direction: ScrollTriggerDirection.RIGHT,
+			direction: ScrollTriggerDirection.DOWN,
 		});
 	});
 });
