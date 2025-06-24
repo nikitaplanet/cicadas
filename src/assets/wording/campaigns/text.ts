@@ -1,20 +1,23 @@
 import c1 from '@/assets/img/campaigns/campaign1.jpg';
 import c2 from '@/assets/img/campaigns/campaign2.jpg';
 import c3 from '@/assets/img/campaigns/campaign3.jpg';
+import c4 from '@/assets/img/campaigns/campaign4.jpg';
+import c5 from '@/assets/img/campaigns/campaign5.jpg';
 
 // detailSrc
 
 export const campaignsWording = {
 	landing: {
-		headerTitle: 'Case Studies',
+		headerTitle: 'Campaigns',
 		description:
 			'We’re passionate about creating campaigns that make a real difference. Our journey typically begins with in-depth research and testing, allowing us to understand what works best and who we’re trying to reach. By clarifying goals and identifying the most effective target audience, we ensure every campaign has a powerful call to action. And it’s not just about the campaign itself; we aim to create an all round valuable learning experience for everyone involved. We have sustainability in mind, to not only drive impact today but also lay the groundwork for more effective campaigns in the future.',
 	},
 	campaigns: [
 		{
 			id: 1,
+			isOngoing: true,
 			title: `Strength Project`,
-			img: '',
+			img: c1,
 			year: '2025',
 			region: 'Hong Kong',
 			issues: 'Youth',
@@ -23,8 +26,9 @@ export const campaignsWording = {
 		},
 		{
 			id: 2,
+			isOngoing: false,
 			title: `Creativity is`,
-			img: '',
+			img: c2,
 			year: '2017-2020',
 			region: 'Hong Kong',
 			issues: 'Youth',
@@ -33,8 +37,9 @@ export const campaignsWording = {
 		},
 		{
 			id: 3,
+			isOngoing: false,
 			title: `Resource Mobilisation for Women’s Funds`,
-			img: '',
+			img: c3,
 			year: '2025',
 			region: 'South Korea and Hong Kong',
 			issues: 'Gender equality',
@@ -42,8 +47,9 @@ export const campaignsWording = {
 		},
 		{
 			id: 4,
-			title: `Knock. <br>Stop Domestic Violence`,
-			img: '',
+			isOngoing: false,
+			title: `Knock. Stop Domestic Violence`,
+			img: c4,
 			year: '2013',
 			region: 'China',
 			issues: 'Domestic Violence',
@@ -51,17 +57,9 @@ export const campaignsWording = {
 		},
 		{
 			id: 5,
-			title: `Gaming for <br> Change`,
-			img: c1,
-			year: '2019-2021',
-			region: 'Hong Kong',
-			issues: 'Social Change',
-			services: 'Events, Partnerships, Communication Strategy Development, Creative Design and Production',
-		},
-		{
-			id: 6,
-			title: `MADE: <br>Meet at the<br> End of the Assembly Line`,
-			img: c2,
+			isOngoing: false,
+			title: `MADE: meet me at the end of the assembly line`,
+			img: c5,
 			year: '2021',
 			region: 'North America & Europe',
 			issues: 'Living wage for factory workers',

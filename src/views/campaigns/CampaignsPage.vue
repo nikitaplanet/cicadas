@@ -7,6 +7,7 @@
 				@click="handleClickCampaign(item.id)"
 				:id="item.id"
 				:img="item.img"
+				:isOngoing="item.isOngoing"
 				:issues="item.issues"
 				:region="item.region"
 				:services="item.services"
