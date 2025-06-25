@@ -4,9 +4,20 @@ import c3 from '@/assets/img/campaigns/campaign3.jpg';
 import c4 from '@/assets/img/campaigns/campaign4.jpg';
 import c5 from '@/assets/img/campaigns/campaign5.jpg';
 
+import c1_1 from '@/assets/img/campaigns/detail/strengthProject/1.jpg';
+import c1_2 from '@/assets/img/campaigns/detail/strengthProject/2.jpg';
+import c1_swiper1 from '@/assets/img/campaigns/detail/strengthProject/swiper1.jpg';
+import c1_swiper2 from '@/assets/img/campaigns/detail/strengthProject/swiper2.jpg';
+import c1_swiper3 from '@/assets/img/campaigns/detail/strengthProject/swiper3.jpg';
+import c1_swiper4 from '@/assets/img/campaigns/detail/strengthProject/swiper4.jpg';
+
+import {MEDIA_DISPLAY_TYPE, MEDIA_TYPE} from '@assets/js/enum/media.ts';
+import {TEXT_TYPE} from '@assets/js/enum/textType.ts';
+import {CampaignWording} from '@/views/campaigns';
+
 // detailSrc
 
-export const campaignsWording = {
+export const campaignsWording: CampaignWording = {
 	landing: {
 		headerTitle: 'Campaigns',
 		description:
@@ -23,6 +34,71 @@ export const campaignsWording = {
 			issues: 'Youth',
 			services:
 				'Qualitative Research, Survey Build and Analysis, Social media data analysis, communication strategy development, creative design and production',
+			details: {
+				contentList: [
+					{
+						textType: TEXT_TYPE.PARAGRAPH,
+						title: 'Objective',
+						content:
+							'To create a space for 18–24-year-olds to explore their unique character strengths, derive meaning from their lived experiences, and find their purposeful place within their community.',
+						list: [],
+					},
+					{
+						textType: TEXT_TYPE.PARAGRAPH,
+						title: 'Audience',
+						content:
+							'Hong Kong youth aged 18–24 from diverse backgrounds, navigating the transition from secondary school to college or from college into society.',
+						list: [],
+					},
+					{
+						textType: TEXT_TYPE.PARAGRAPH,
+						title: 'Strategy',
+						content:
+							'The campaign centers around a 30-minute hybrid participatory documentary, supported by an extensive, in-development distribution and impact campaign designed to reach Hong Kong youth and foster engagement.',
+						list: [],
+					},
+				],
+				media: [
+					{
+						mediaDisplayType: MEDIA_DISPLAY_TYPE.COL,
+						mediaType: MEDIA_TYPE.IMAGE,
+						mediaList: [
+							{
+								key: 'c1_1',
+								src: c1_1,
+							},
+							{
+								key: 'c1_2',
+								src: c1_2,
+							},
+						],
+						url: '', // for video
+					},
+					{
+						mediaDisplayType: MEDIA_DISPLAY_TYPE.SWIPER,
+						mediaType: MEDIA_TYPE.IMAGE,
+						mediaList: [
+							{
+								key: 'c1_swiper1',
+								src: c1_swiper1,
+							},
+							{
+								key: 'c1_swiper2',
+								src: c1_swiper2,
+							},
+							{
+								key: 'c1_swiper3',
+								src: c1_swiper3,
+							},
+							{
+								key: 'c1_swiper4',
+								src: c1_swiper4,
+							},
+						],
+						url: '',
+					},
+				],
+			},
 		},
 		{
 			id: 2,
@@ -64,76 +140,6 @@ export const campaignsWording = {
 			region: 'North America & Europe',
 			issues: 'Living wage for factory workers',
 			services: 'Strategy Development, Stakeholder and Partnership Engagement, Creative Design and Production, Media Distribution',
-		},
-	],
-	campaignDetail: [
-		{
-			id: 1,
-			title: `Strength Project`,
-			img: '',
-			year: '2025',
-			region: 'Hong Kong',
-			issues: 'Youth',
-			services:
-				'Qualitative Research, Survey Build and Analysis, Social media data analysis, communication strategy development, creative design and production',
-			detail: '',
-			imageList: [],
-		},
-		{
-			id: 2,
-			title: `Creativity is`,
-			img: '',
-			year: '2017-2020',
-			region: 'Hong Kong',
-			issues: 'Youth',
-			services:
-				'Qualitative Research, Social media data analysis, communication strategy development, creative design and production, strategic partnership engagement, creative facilitation, youth engagement',
-			detail: '',
-			imageList: [],
-		},
-		{
-			id: 3,
-			title: `Resource<br> Mobilisation for<br> Women’s Funds`,
-			img: '',
-			year: '2025',
-			region: 'South Korea and Hong Kong',
-			issues: 'Gender equality',
-			services: 'Social media data analysis, Communication Strategy Development, Creative Design and Production',
-			detail: '',
-			imageList: [],
-		},
-		{
-			id: 4,
-			title: `Knock. <br>Stop Domestic<br> Violence`,
-			img: '',
-			year: '2013',
-			region: 'China',
-			issues: 'Domestic Violence',
-			services: 'Strategy Development, Stakeholder and Partnership Engagement, Creative Design and Production, Media Distribution',
-			detail: '',
-			imageList: [],
-		},
-		{
-			id: 5,
-			title: `Gaming for <br> Change`,
-			img: c1,
-			year: '2019-2021',
-			region: 'Hong Kong',
-			issues: 'Social Change',
-			services: 'Events, Partnerships, Communication Strategy Development, Creative Design and Production',
-			detail: '',
-			imageList: [],
-		},
-		{
-			id: 6,
-			title: `MADE: Meet at the End of the Assembly Line`,
-			img: c2,
-			year: '2021',
-			region: 'North America & Europe',
-			issues: 'Living wage for factory workers',
-			services: 'Strategy Development, Stakeholder and Partnership Engagement, Creative Design and Production, Media Distribution',
-			detail: '',
-			imageList: [],
 		},
 	],
 };

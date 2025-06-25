@@ -5,4 +5,5 @@ export enum TEXT_TYPE {
 	SWIPER_IMAGE = 4,
 	TEXT_LIST = 5,
 	SPACE = 6,
+	PARAGRAPH = 7,
 }

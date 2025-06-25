@@ -1,15 +1,112 @@
 <template>
-	<div class="w-full min-h-screen bg-surface-def">
-		<LandingSection />
+	<div class="w-full min-h-screen landing-bg pt-20 lg:pt-28">
+		<template v-if="data">
+			<h1 v-html="data.title" class="w-full px-8 text-center text-scale2XL lg:text-h1 font-h1 italic font-semibold"></h1>
 
-		<!--Footer-->
-		<NFooter />
+			<!--banner-->
+			<div class="w-[90%] max-w-[1045px] mx-auto my-10 lg:my-[60px] flex justify-center">
+				<img :alt="data.title" :src="data.img" class="w-full" />
+			</div>
+
+			<!--line-->
+			<img class="w-[95%] mx-auto" alt="line" src="@/assets/img/campaigns/detail/bannerLine.svg" />
+
+			<!--infoList-->
+			<div class="w-[90%] mx-auto mt-[40px] lg:mt-[60px] flex flex-col gap-[40px] lg:gap-0 lg:grid lg:grid-cols-12">
+				<div class="lg:col-span-3 flex flex-col gap-[13px]">
+					<div v-for="item in infoList" :key="item.name" class="grid grid-cols-[70px_1fr] items-start">
+						<div class="text-left font-semibold font-label text-scale3XS italic">{{ item.name }}</div>
+						<div class="text-scale2XS font-body text-text-def font-medium">{{ item.value }}</div>
+					</div>
+				</div>
+				<div class="hidden lg:block lg:col-span-1"></div>
+				<div class="lg:col-span-8 flex flex-col gap-10 lg:gap-[60px]">
+					<div v-for="item in data.details?.contentList">
+						<div class="font-label text-body lg:text-scaleDef italic font-semibold text-text-def">{{ item.title }}</div>
+						<div
+							v-if="item.textType === TEXT_TYPE.PARAGRAPH"
+							v-html="item.content"
+							class="font-body text-body lg:text-scaleDef italic font-medium mt-[10px]"></div>
+					</div>
+				</div>
+			</div>
+
+			<!--Media-->
+			<div class="w-full mt-20 flex flex-col gap-12 lg:gap-16">
+				<div v-for="item in data.details?.media" class="w-full">
+					<div
+						v-if="item.mediaDisplayType === MEDIA_DISPLAY_TYPE.COL"
+						class="w-[90%] mx-auto grid grid-cols-[4fr_8fr] gap-x-5 items-stretch">
+						<img
+							v-for="(image, subIndex) in item.mediaList"
+							:alt="`${subIndex}_image`"
+							:key="image.key"
+							:src="image.src"
+							class="h-full object-cover w-full" />
+					</div>
+
+					<!--swiper-->
+					<NImageSwiper v-if="item.mediaDisplayType === MEDIA_DISPLAY_TYPE.SWIPER" :mediaList="item.mediaList" />
+				</div>
+			</div>
+		</template>
+
+		<div v-else class="w-[90%] mx-auto font-body text-body divide-text-ui-error font-medium">
+			Wrong page, please go back to campaign list page.
+		</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
-import NFooter from '@components/organisms/footer/NFooter.vue';
-import LandingSection from '@/views/campaigns/components/detail/LandingSection.vue';
+import router from '@/router';
+import {campaignsWording} from '@assets/wording/campaigns/text.js';
+import {computed, reactive} from 'vue';
+import NImageSwiper from '@components/atoms/swiper/NImageSwiper.vue';
+import {CampaignItem} from '@/views/campaigns';
+import {TEXT_TYPE} from '@assets/js/enum/textType.ts';
+import {MEDIA_DISPLAY_TYPE} from '@assets/js/enum/media.ts';
+const id = Number(router.currentRoute.value.params.id);
+
+const defaultData = reactive<CampaignItem>({
+	id: 0,
+	isOngoing: false,
+	title: '',
+	img: '',
+	year: '',
+	region: '',
+	issues: '',
+	services: '',
+	details: null,
+});
+
+const data = reactive<CampaignItem>(campaignsWording.campaigns.find((item) => item.id === id) || defaultData);
+
+const infoList = computed(() => {
+	return data.id === 0
+		? []
+		: [
+				{
+					name: 'Year',
+					value: data.year,
+				},
+				{
+					name: 'Region',
+					value: data.region,
+				},
+				{
+					name: 'Issues',
+					value: data.issues,
+				},
+				{
+					name: 'Services',
+					value: data.services,
+				},
+			];
+});
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.landing-bg {
+	background: linear-gradient(180deg, var(--sc-color-surface-supportive-green-mid, #bbe5b8) 0%, var(--sc-color-surface-def, #fceee9) 34.62%);
+}
+</style>

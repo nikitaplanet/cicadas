@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, onMounted, onUnmounted, nextTick} from 'vue';
+import {ref} from 'vue';
 import LandingSection from '@/views/campaigns/components/LandingSection.vue';
 import CampaignSection from '@/views/campaigns/components/CampaignSection.vue';
 import {campaignsWording} from '@assets/wording/campaigns/text.ts';
