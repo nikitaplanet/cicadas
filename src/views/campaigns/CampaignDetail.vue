@@ -1,11 +1,11 @@
 <template>
 	<div class="w-full min-h-screen landing-bg pt-20 lg:pt-28">
 		<template v-if="data">
-			<h1 v-html="data.title" class="w-full px-8 text-center text-scale2XL lg:text-h1 font-h1 italic font-semibold"></h1>
+			<h1 v-html="data.detailTitle" class="w-full px-8 text-center text-scale2XL lg:text-h1 font-h1 italic font-semibold"></h1>
 
 			<!--banner-->
 			<div class="w-[90%] max-w-[1045px] mx-auto my-10 lg:my-[60px] flex justify-center">
-				<img :alt="data.title" :src="data.img" class="w-full" />
+				<img :alt="data.detailTitle" :src="data.img" class="w-full" />
 			</div>
 
 			<!--line-->
@@ -26,7 +26,13 @@
 						<div
 							v-if="item.textType === TEXT_TYPE.PARAGRAPH"
 							v-html="item.content"
-							class="font-body text-body lg:text-scaleDef italic font-medium mt-[10px]"></div>
+							class="font-body text-body lg:text-scaleDef font-medium mt-[10px]"></div>
+
+						<div v-if="item.textType === TEXT_TYPE.TEXT_LIST" class="font-body text-body lg:text-scaleDef font-medium mt-[10px]">
+							<ul class="flex flex-col list-[square] list-inside pl-3">
+								<li v-for="text in item.list" v-html="text"></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -71,6 +77,7 @@ const defaultData = reactive<CampaignItem>({
 	id: 0,
 	isOngoing: false,
 	title: '',
+	detailTitle: '',
 	img: '',
 	year: '',
 	region: '',

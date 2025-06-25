@@ -5,7 +5,7 @@ interface ContentItem {
 	textType: TEXT_TYPE;
 	title: string;
 	content: string;
-	list: [];
+	list: string[];
 }
 
 interface MediaList {
@@ -29,6 +29,7 @@ export interface CampaignItem {
 	id: number;
 	isOngoing: boolean;
 	title: string;
+	detailTitle: string;
 	img: string;
 	year: string;
 	region: string;
