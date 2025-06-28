@@ -1,5 +1,5 @@
 <template>
-	<div class="w-[90%] m-auto md:w-full">
+	<div class="w-full m-auto md:w-full">
 		<NImageSwiper :mediaList="imgs" />
 	</div>
 </template>
