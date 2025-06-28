@@ -12,8 +12,8 @@
 		<!--BG 過場-->
 		<div class="section-gradient1"></div>
 
-		<!--WorkWith-->
-		<WorkWithSwiperSection />
+		<!--		&lt;!&ndash;WorkWith&ndash;&gt;-->
+		<!--		<WorkWithSwiperSection />-->
 
 		<!--BG 過場-->
 		<div class="section-gradient2"></div>
@@ -23,9 +23,6 @@
 
 		<!--BG 過場-->
 		<div class="section-gradient3"></div>
-
-		<!--Issues we tackle-->
-		<AboutIssuesTackle />
 
 		<div class="section-gradient4"></div>
 	</div>
@@ -38,9 +35,6 @@ import OurTeam from '@/views/about/components/OurTeam.vue';
 import WorkWithSwiperSection from '@/views/about/components/WorkWithSwiperSection.vue';
 import ServiceWeOfferSection from '@/views/about/components/ServiceWeOfferSection.vue';
 import AboutIssuesTackle from '@/views/about/components/AboutIssuesTackle.vue';
-
-import {useScrollDirectionNav} from '@/hooks/useNavBar.ts';
-const {isScrolledPastLanding, showNavBar} = useScrollDirectionNav();
 </script>
 
 <style lang="scss" scoped>

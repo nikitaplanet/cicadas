@@ -12,7 +12,7 @@
 		</span>
 		<span v-show="isActiveStyle" class="w-full flex flex-col justify-start items-start transition ease-in-out">
 			<span
-				class="w-full font-semibold italic text-body lg:text-body18 mt-6 text-left"
+				class="w-full max-w-[500px] font-semibold font-body text-body lg:text-body18 mt-6 text-left"
 				:class="[isActiveStyle ? 'text-text-def' : defaultColorClass]">
 				{{ content }}
 			</span>

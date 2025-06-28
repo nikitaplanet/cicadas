@@ -2,8 +2,8 @@
 	<SectionContainer
 		ref="sectionRef"
 		:hasMinHeight="false"
-		class="h-screen text-h2 italic font-semibold font-h2sans flex items-center justify-center overflow-hidden">
-		<div ref="textBlockRef" class="w-full max-w-[1400px] m-auto">
+		class="h-screen text-h2 italic font-semibold font-h2 flex items-center justify-center overflow-hidden">
+		<div ref="textBlockRef" class="w-full max-w-[1090px] m-auto">
 			<span v-html="aboutWording.wordFadeAnimation.title1" class="line"></span>
 			<span v-html="aboutWording.wordFadeAnimation.title2" class="line"></span>
 		</div>

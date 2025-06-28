@@ -6,50 +6,36 @@
 					<SectionNameTag>{{ aboutWording.ourTeam.title }}</SectionNameTag>
 				</div>
 				<div class="w-full flex flex-col justify-center items-center mt-8">
-					<div class="w-full grid grid-cols-2">
-						<div
-							@mouseleave="isShowSharonChat = false"
-							@mouseover="isShowSharonChat = true"
-							class="flex justify-end items-center relative cursor-pointer">
-							<div class="transition-opacity ease-in-out" :class="{'opacity-10': isShowHanyanChat, 'opacity-100': !isShowHanyanChat}">
-								<img class="opacity-0" alt="Sharon" src="@/assets/img/about/sharon.svg" />
-								<img class="absolute top-0 right-[-17px]" alt="Sharon" src="@/assets/img/about/sharon.svg" />
-								<HeadingHomeMade class="absolute right-[160px] bottom-[-49px]">{{
-									aboutWording.ourTeam.sharon.name
-								}}</HeadingHomeMade>
-							</div>
-
-							<!--Hanyan Info-->
-							<div
-								v-html="aboutWording.ourTeam.hanyan.content"
-								class="hanyanInfo opacity-0 transition-opacity absolute top-14 right-[-120px] ease-in-out pl-10 pr-60 pt-16 w-[600px] h-[277px] text-body font-medium font-body text-text-supportive-violet-light"
-								:class="{'opacity-100': isShowHanyanChat}"></div>
-						</div>
-						<div
-							@mouseleave="isShowHanyanChat = false"
-							@mouseover="isShowHanyanChat = true"
-							class="flex justify-start items-center relative cursor-pointer">
-							<div class="transition-opacity ease-in-out" :class="{'opacity-10': isShowSharonChat, 'opacity-100': !isShowSharonChat}">
-								<img class="opacity-0" alt="Sharon" src="@/assets/img/about/hanyan.svg" />
-								<img class="absolute top-0 left-[-17px]" alt="Sharon" src="@/assets/img/about/hanyan.svg" />
-								<HeadingHomeMade class="absolute left-[235px] bottom-[-49px]">{{ aboutWording.ourTeam.hanyan.name }}</HeadingHomeMade>
-							</div>
-
-							<!--Sharon Info-->
-							<div
-								v-html="aboutWording.ourTeam.sharon.content"
-								class="sharonInfo opacity-0 transition-opacity absolute left-0 top-14 ease-in-out px-36 pt-16 w-[600px] h-[277px] text-body font-medium font-body text-text-supportive-violet-light"
-								:class="{'opacity-100': isShowSharonChat}"></div>
-						</div>
+					<div class="w-full flex flex-row justify-center items-start">
+						<button
+							@click="showOverlay(OUR_TEAM_INFO.SHARON)"
+							class="mr-[-50px] transition-all duration-300 hover:opacity-80"
+							type="button">
+							<img alt="Sharon" src="@/assets/img/about/profile/sharon.svg" />
+						</button>
+						<button @click="showOverlay(OUR_TEAM_INFO.HANYAN)" class="transition-all duration-300 hover:opacity-80" type="button">
+							<div class="w-full m-16"></div>
+							<img alt="Hanyan" src="@/assets/img/about/profile/hanyan.svg" />
+						</button>
+						<button
+							@click="showOverlay(OUR_TEAM_INFO.HANNA)"
+							class="ml-[-25px] transition-all duration-300 hover:opacity-80"
+							type="button">
+							<img alt="Hanna" src="@/assets/img/about/profile/hanna.svg" />
+						</button>
 					</div>
 
 					<div>
-						<img class="w-32 mt-16" alt="hoverUs" src="@/assets/img/about/hoverUs.svg" />
+						<img class="w-32 mt-10" alt="hoverUs" src="@/assets/img/about/clickUsButton.svg" />
 					</div>
 				</div>
 			</div>
 		</SectionContainer>
 	</div>
+
+	<Transition mode="out-in" name="fade">
+		<OurTeamInfoOverlay v-if="isShowOverlay" @close="handleClose" :id="currentOverlay" />
+	</Transition>
 </template>
 
 <script lang="ts" setup>
@@ -57,30 +43,20 @@ import {ref} from 'vue';
 import SectionContainer from '@components/layout/SectionContainer.vue';
 import SectionNameTag from '@components/atoms/text/SectionNameTag.vue';
 import {aboutWording} from '@assets/wording/about/text.ts';
-import HeadingHomeMade from '@components/atoms/text/HeadingHomeMade.vue';
+import OurTeamInfoOverlay from '@/views/about/components/OurTeamInfoOverlay.vue';
+import {OUR_TEAM_INFO} from '@/views/about';
 
-const isShowSharonChat = ref(false);
-const isShowHanyanChat = ref(false);
+const currentOverlay = ref(0);
+const isShowOverlay = ref(false);
 
-// function handleClickSharon() {
-// 	isShowSharonChat.value = true;
-// 	isShowHanyanChat.value = false;
-// }
-//
-// function handleClickHanyan() {
-// 	isShowHanyanChat.value = true;
-// 	isShowSharonChat.value = false;
-// }
+function showOverlay(id: OUR_TEAM_INFO) {
+	currentOverlay.value = id;
+	isShowOverlay.value = true;
+}
+
+function handleClose() {
+	isShowOverlay.value = false;
+}
 </script>
 
-<style lang="scss" scoped>
-.sharonInfo {
-	background: url('@/assets/img/about/sharon_infoBg.svg') no-repeat;
-	background-size: contain;
-}
-
-.hanyanInfo {
-	background: url('@/assets/img/about/hanyan_infoBg.svg') no-repeat;
-	background-size: contain;
-}
-</style>
+<style lang="scss" scoped></style>
