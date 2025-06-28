@@ -14,7 +14,7 @@
 				{{ title }}
 			</button>
 			<div
-				class="w-full text-body lg:text-body18 italic font-body text-text-def font-semibold transition ease-linear group-hover:inline-block"
+				class="w-full text-body lg:text-body18 font-body text-text-def font-semibold transition ease-linear group-hover:inline-block"
 				:class="{
 					'inline-block translate-y-1': isActiveBox,
 					hidden: !isActiveBox,

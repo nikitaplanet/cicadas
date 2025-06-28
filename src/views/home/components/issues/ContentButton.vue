@@ -17,7 +17,7 @@
 				{{ content }}
 			</span>
 			<img v-if="defaultColorType === 'blue'" class="w-full mt-5" alt="underline" src="@/assets/img/home/issues/line.svg" />
-			<img v-else class="w-full mt-5" alt="underline" src="@/assets/img/home/issues/line_violet.svg" />
+			<img v-else class="w-full mt-5" alt="underline" src="@/assets/img/home/issues/line_blue.svg" />
 		</span>
 	</button>
 </template>
