@@ -41,7 +41,7 @@ const globalWording = {
 		},
 	},
 	footer: {
-		heading: 'Curious?',
+		heading: `Let's talk!`,
 		description:
 			'We’d love to talk about your vision, explore potential collaboration, or<br> even just hear a friendly hello. Reach out—we’re excited to connect.',
 		button: 'How Can We Help?',

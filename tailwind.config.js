@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import plugin from 'tailwindcss/plugin';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 const customize = {
 	colors: {
@@ -97,6 +98,10 @@ const customize = {
 export default {
 	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
 	theme: {
+		screens: {
+			xs: {max: '380px'},
+			...defaultTheme.screens,
+		},
 		extend: {
 			aspectRatio: {
 				'4/3': '4 / 3',

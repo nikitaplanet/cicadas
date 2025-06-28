@@ -1,16 +1,16 @@
 <template>
-	<footer class="nFooter-bg pt-32 pb-10 lg:pb-36 relative">
+	<footer class="nFooter-bg pt-0 pb-10 lg:pt-32 lg:pb-36 relative">
 		<SectionContainer :hasMinHeight="false">
 			<div class="w-full section-container flex flex-col justify-center items-center">
 				<h2 class="font-h1 text-scale2XL lg:text-h1 italic font-semibold relative">
 					{{ globalWording.footer.heading }}
-					<span class="ease-in-out transition-all duration-500 lg:block" :class="{'opacity-1': isHover, 'opacity-0': !isHover}">
+					<span class="ease-in-out transition-all duration-500 lg:block" :class="{'lg:opacity-1': isHover, 'lg:opacity-0': !isHover}">
 						<img
-							class="absolute right-[-55px] top-[-60px] w-[70px] lg:right-[-270px] lg:top-[-100px] lg:w-[180px]"
+							class="absolute right-[-55px] top-[-60px] w-[70px] xs:w-[60px] xs:right-[-25px] lg:right-[-270px] lg:top-[-100px] lg:w-[180px]"
 							alt="cloud"
 							src="@/assets/img/components/footer/cloud.svg" />
 						<img
-							class="absolute w-[60px] left-[-70px] top-[160px] lg:left-[-230px] lg:top-[10px] lg:w-[130px]"
+							class="absolute w-[60px] left-[-70px] top-[160px] xs:w-[50px] xs:left-[-20px] lg:left-[-230px] lg:top-[10px] lg:w-[130px]"
 							alt="cloud"
 							src="@/assets/img/components/footer/eye.svg" />
 					</span>
@@ -22,7 +22,7 @@
 				<NLink
 					@mouseleave="handleHoverLeveButton"
 					@mouseover="handleHoverButton"
-					class="group relative w-[215px] h-[51px] mt-12"
+					class="group relative w-[215px] h-[51px] mt-12 xs:mb-20"
 					data-tally-emoji-animation="wave"
 					data-tally-emoji-text="👋"
 					data-tally-open="mZ1K9z">
