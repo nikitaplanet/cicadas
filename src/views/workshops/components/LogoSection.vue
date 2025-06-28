@@ -14,8 +14,19 @@
 				</div>
 			</div>
 			<div class="grid grid-cols-1 gap-12 mt-20">
-				<div v-for="item in groupRow" class="grid grid-cols-1 gap-20 md:grid-cols-3">
-					<LogoImage v-for="sub in item" :description="sub.description" :isHide="sub.isHide" :logoAlt="sub.alt" :logoSrc="sub.img" />
+				<div class="flex flex-col md:flex-row justify-center gap-20">
+					<div class="flex flex-col md:flex-row justify-center gap-20">
+						<LogoImage
+							v-for="item in row1"
+							:description="item.description"
+							:isHide="item.isHide"
+							:logoAlt="item.alt"
+							:logoSrc="item.img" />
+					</div>
+				</div>
+
+				<div class="grid grid-cols-1 gap-20 md:grid-cols-3">
+					<LogoImage v-for="item in row2" :description="item.description" :isHide="item.isHide" :logoAlt="item.alt" :logoSrc="item.img" />
 				</div>
 			</div>
 		</SectionContainer>
@@ -39,47 +50,39 @@ import LogoImage7 from '@/assets/img/workshops/logos/7.svg';
 import {TextMode} from '@components/atoms/text';
 import HeaderText from '@components/atoms/text/HeaderText.vue';
 import HeaderDescription from '@components/atoms/text/HeaderDescription.vue';
-const groupRow = reactive([
-	[
-		{
-			img: LogoImage1,
-			alt: '1',
-			description: workshopsWording.logoSection.logoList[1],
-			isHide: true,
-		},
-		{
-			img: LogoImage1,
-			alt: '1',
-			description: workshopsWording.logoSection.logoList[1],
-			isHide: false,
-		},
-		{
-			img: LogoImage4,
-			alt: '4',
-			description: workshopsWording.logoSection.logoList[4],
-			isHide: false,
-		},
-	],
-	[
-		{
-			img: LogoImage5,
-			alt: '5',
-			description: workshopsWording.logoSection.logoList[5],
-			isHide: false,
-		},
-		{
-			img: LogoImage7,
-			alt: '7',
-			description: workshopsWording.logoSection.logoList[7],
-			isHide: false,
-		},
-		{
-			img: LogoImage6,
-			alt: '6',
-			description: workshopsWording.logoSection.logoList[6],
-			isHide: false,
-		},
-	],
+const row1 = reactive([
+	{
+		img: LogoImage1,
+		alt: '1',
+		description: workshopsWording.logoSection.logoList[1],
+		isHide: false,
+	},
+	{
+		img: LogoImage4,
+		alt: '4',
+		description: workshopsWording.logoSection.logoList[4],
+		isHide: false,
+	},
+]);
+const row2 = reactive([
+	{
+		img: LogoImage5,
+		alt: '5',
+		description: workshopsWording.logoSection.logoList[5],
+		isHide: false,
+	},
+	{
+		img: LogoImage7,
+		alt: '7',
+		description: workshopsWording.logoSection.logoList[7],
+		isHide: false,
+	},
+	{
+		img: LogoImage6,
+		alt: '6',
+		description: workshopsWording.logoSection.logoList[6],
+		isHide: false,
+	},
 ]);
 </script>
 
