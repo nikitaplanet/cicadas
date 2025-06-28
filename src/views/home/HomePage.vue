@@ -30,7 +30,7 @@
 		<div class="section-gradient6"></div>
 
 		<!--Issue we tackle-->
-		<IssuesWeTackle />
+		<ServiceFeatures />
 
 		<!--BG 過場-->
 		<div class="section-gradient7"></div>
@@ -47,7 +47,7 @@ import Section2 from '@/views/home/components/Section2.vue';
 import OurWorks from '@/views/home/components/OurWorks.vue';
 import AboutUs from '@/views/home/components/AboutUs.vue';
 import SliderSection from '@/views/home/components/SliderSection.vue';
-import IssuesWeTackle from '@/views/home/components/IssuesWeTackle.vue';
+import ServiceFeatures from '@/views/home/components/ServiceFeatures.vue';
 import Questions from '@/views/home/components/Questions.vue';
 </script>
 

@@ -43,6 +43,8 @@
 
 <script lang="ts" setup>
 import {computed} from 'vue';
+import {useRouter} from 'vue-router';
+
 interface Props {
 	title: string;
 	description: string;
@@ -64,8 +66,11 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const emit = defineEmits(['click', 'clickArrow']);
+const router = useRouter();
+
 const handelClick = () => {
 	emit('click');
+	router.push(props.link);
 };
 
 const isActiveBox = computed(() => {

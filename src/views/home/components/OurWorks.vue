@@ -1,37 +1,32 @@
 <template>
-	<div class="section3-bg py-10 lg:py-28">
+	<div class="section3-bg py-10 md:py-28">
 		<SectionContainer :hasMinHeight="false">
-			<div class="w-full grid grid-cols-1 lg:grid-cols-12">
-				<div class="col-span-1 lg:col-span-5 flex flex-col">
+			<div class="w-full grid grid-cols-1 xl:grid-cols-12">
+				<div class="col-span-1 xl:col-span-5 flex flex-col">
 					<SectionNameTag>Our Works</SectionNameTag>
-					<div class="relative p-5 lg:p-16 mt-3">
+					<div class="relative p-5 xl:p-16 mt-3">
 						<div
 							:class="{
 								'inline-block opacity-100': hoverImage === 0,
 								'hidden opacity-0': hoverImage !== 0,
 							}">
 							<img alt="1" src="@/assets/img/home/section3/1.png" />
-							<!--							<img class="absolute top-6 left-4" alt="1 decor" src="@/assets/img/home/section3/1_decor.svg" />-->
 						</div>
 
 						<div :class="{'inline-block opacity-100': hoverImage === 1, 'hidden opacity-0': hoverImage !== 1}">
 							<img alt="2" src="@/assets/img/home/section3/2.png" />
-							<!--							<img class="absolute top-14 left-4" alt="2 decor" src="@/assets/img/home/section3/2_decor.svg" />-->
 						</div>
 
 						<div :class="{'inline-block opacity-100': hoverImage === 2, 'hidden opacity-0': hoverImage !== 2}">
 							<img alt="3" src="@/assets/img/home/section3/3.png" />
-							<!--							<img class="absolute top-2 left-5" alt="3 decor" src="@/assets/img/home/section3/3_decor.svg" />-->
 						</div>
 
 						<div :class="{'inline-block opacity-100': hoverImage === 3, 'hidden opacity-0': hoverImage !== 3}">
 							<img alt="4" src="@/assets/img/home/section3/4.png" />
-							<!--							<img class="absolute top-6 right-8" alt="4 decor" src="@/assets/img/home/section3/4_decor.svg" />-->
-							<!--							<img class="absolute top-6 right-16" alt="4 decor" src="@/assets/img/home/section3/4_decor.svg" />-->
 						</div>
 					</div>
 				</div>
-				<div class="col-span-1 lg:col-span-7 flex flex-col px-5 lg:p-10 gap-3 lg:gap-10 mt-5 lg:mt-7">
+				<div class="col-span-1 xl:col-span-7 flex flex-col px-5 xl:p-10 gap-3 xl:gap-10 mt-5 xl:mt-7">
 					<HoverTextBox
 						v-for="item in list"
 						@click="handleClick(item.id)"
