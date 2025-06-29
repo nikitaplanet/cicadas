@@ -20,11 +20,10 @@
 		<!--Horizon Slide--->
 		<!--About Us-->
 		<div id="homePage__aboutUs">
-			<AboutUsSlide1 class="homePage__aboutUs__items" />
-			<AboutUsSlide2 class="homePage__aboutUs__items" />
-			<AboutUsSlide3 class="homePage__aboutUs__items" />
+			<AboutUsSlide1 class="homePage__aboutUs__items homePage__aboutUs__item1" />
+			<AboutUsSlide2 class="homePage__aboutUs__items homePage__aboutUs__item2" />
+			<AboutUsSlide3 class="homePage__aboutUs__items homePage__aboutUs__item3" />
 		</div>
-
 		<!--BG 過場-->
 		<div class="section-gradient5"></div>
 
@@ -46,7 +45,7 @@
 </template>
 
 <script lang="ts" setup>
-import {onMounted, nextTick} from 'vue';
+import {onMounted, onUnmounted, nextTick} from 'vue';
 import LandingSection from '@/views/home/components/LandingSection.vue';
 import Section1 from '@/views/home/components/Section1.vue';
 import Section2 from '@/views/home/components/Section2.vue';
@@ -61,24 +60,32 @@ import ServiceFeatures from '@/views/home/components/ServiceFeatures.vue';
 import Questions from '@/views/home/components/Questions.vue';
 
 import gsap from 'gsap';
+let ctx: gsap.Context;
 
 onMounted(async () => {
-	await nextTick(); // 保證 DOM 已經渲染
-	const items = gsap.utils.toArray<HTMLElement>('.homePage__aboutUs__items');
-	const container = document.getElementById('homePage__aboutUs')!;
-	const totalWidth = container.offsetWidth;
+	await nextTick();
 
-	gsap.to(items, {
-		xPercent: -100 * (items.length - 1),
-		ease: 'sine.out',
-		scrollTrigger: {
-			trigger: container,
-			pin: true,
-			scrub: 3,
-			snap: 1 / (items.length - 1),
-			end: `+=${totalWidth}`,
-		},
+	ctx = gsap.context(() => {
+		const items = gsap.utils.toArray<HTMLElement>('.homePage__aboutUs__items');
+		const container = document.getElementById('homePage__aboutUs')!;
+		const totalWidth = container.offsetWidth;
+
+		gsap.to(items, {
+			xPercent: -100 * (items.length - 1),
+			ease: 'sine.out',
+			scrollTrigger: {
+				trigger: container,
+				pin: true,
+				scrub: 3,
+				snap: 1 / (items.length - 1),
+				end: `+=${totalWidth}`,
+			},
+		});
 	});
+});
+
+onUnmounted(() => {
+	ctx && ctx.revert();
 });
 </script>
 

@@ -1,16 +1,16 @@
 <template>
-	<div class="aboutUs-bg pt-32 pb-36">
+	<div class="aboutUs-bg pt-32 pb-32">
 		<SectionContainer :hasMinHeight="false">
-			<div class="w-full flex flex-col justify-center items-center">
+			<div class="w-full flex flex-col justify-center items-center pt-8">
 				<div class="w-full">
-					<SectionNameTag>{{ contentText.aboutUs.title }}1</SectionNameTag>
+					<SectionNameTag>{{ contentText.aboutUs.title }}</SectionNameTag>
 				</div>
 				<div class="w-full flex flex-col lg:flex-row justify-center items-center gap-10 mt-28">
-					<img alt="flower" src="../../../../assets/img/home/aboutUs/1.svg" />
+					<img class="w-[90%] max-w-[600px]" alt="flower" src="../../../../assets/img/home/aboutUs/1.svg" />
 					<div class="flex flex-col relative">
 						<img class="absolute top-[-135px] right-[-80px] w-32" alt="feather" src="../../../../assets/img/home/aboutUs/1_feather.svg" />
-						<h3 v-html="contentText.aboutUs.content1" class="font-h3sans italic text-h3 font-semibold"></h3>
-						<img class="w-48 mt-5 ml-3" alt="1 under" src="../../../../assets/img/home/aboutUs/1_under.svg" />
+						<h3 v-html="contentText.aboutUs.content1" class="font-h3sans text-h3 font-semibold"></h3>
+						<img class="w-48 mt-[-5px] ml-3" alt="1 under" src="../../../../assets/img/home/aboutUs/1_under.svg" />
 					</div>
 				</div>
 			</div>

@@ -57,6 +57,9 @@ export const contentText = {
 	aboutUs: {
 		title: 'About Us',
 		content1: 'We are<br /> storytellers & non<br /> profit founders<br /> ourselves',
+		content2:
+			'We know the challenges - <br/>limited time, resources, <br/>and capacity. You cannot<br/> do it alone. That is why we<br/> don’t just design<br/> campaigns, we can also<br/> implement them, always<br/> grounded in local context<br/> and real-world constraints.',
+		content3: 'The new world we envision<br/> is built on trust, inclusion<br/> and solidarity. Let’s create<br/> that world together.',
 	},
 	sliderSection: {
 		header: 'Hear from our partners',
