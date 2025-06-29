@@ -23,7 +23,11 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, watch, computed} from 'vue';
+import {ref, watch, computed, onMounted, onUnmounted} from 'vue';
+import Lenis from '@studio-freight/lenis';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
 import LoadingOverlay from '@components/atoms/loading/LoadingOverlay.vue';
 import {useRoute} from 'vue-router';
 import CommonOverlay from '@components/layout/CommonOverlay.vue';
@@ -108,6 +112,29 @@ const handleShowCommon = () => {
 const handleCloseCommon = () => {
 	isShowCommon.value = false;
 };
+
+// Lenis
+gsap.registerPlugin(ScrollTrigger);
+let lenis: Lenis;
+onMounted(() => {
+	lenis = new Lenis({
+		duration: 1.1,
+		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+		smooth: true,
+	});
+
+	const raf = (time: number) => {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	};
+	requestAnimationFrame(raf);
+
+	lenis.on('scroll', ScrollTrigger.update);
+});
+
+onUnmounted(() => {
+	lenis.destroy();
+});
 </script>
 
 <style scoped></style>
