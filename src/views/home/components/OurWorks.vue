@@ -1,7 +1,9 @@
 <template>
 	<div class="section3-bg py-10 md:py-28">
 		<SectionContainer :hasMinHeight="false">
-			<div class="w-full grid grid-cols-1 xl:grid-cols-12">
+			<div
+				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+				class="w-full grid grid-cols-1 xl:grid-cols-12 transition-all duration-500">
 				<div class="col-span-1 xl:col-span-5 flex flex-col">
 					<SectionNameTag>Our Works</SectionNameTag>
 					<div class="relative p-5 xl:p-16 mt-3">
