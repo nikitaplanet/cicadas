@@ -1,7 +1,15 @@
 <template>
-	<h2 class="font-superhighlight text-scale3XL md:text-superhighlight text-text-primary"><slot /></h2>
+	<h2
+		class="heading-home-made-text font-superhighlight text-scale3XL md:text-superhighlight xl:text-superhighlightSuper text-text-primary whitespace-nowrap">
+		<slot />
+	</h2>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import {ref, defineExpose} from 'vue';
+
+const root = ref<HTMLElement>();
+defineExpose({root});
+</script>
 
 <style lang="scss" scoped></style>

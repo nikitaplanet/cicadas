@@ -27,6 +27,11 @@
 		<!--BG 過場-->
 		<div class="section-gradient5"></div>
 
+		<!--Horizon 2-->
+		<div ref="headingWrapper" id="headingWrapper" class="heading-slide-wrapper">
+			<HeadingHomeMade ref="headingText">{{ contentText.sliderSection.header }}</HeadingHomeMade>
+		</div>
+
 		<!--Hear from our partners-->
 		<SliderSection />
 
@@ -45,7 +50,7 @@
 </template>
 
 <script lang="ts" setup>
-import {onMounted, onUnmounted, nextTick} from 'vue';
+import {ref, onMounted, onUnmounted, nextTick} from 'vue';
 import LandingSection from '@/views/home/components/LandingSection.vue';
 import Section1 from '@/views/home/components/Section1.vue';
 import Section2 from '@/views/home/components/Section2.vue';
@@ -55,12 +60,18 @@ import AboutUsSlide1 from '@/views/home/components/horizonSlide/AboutUsSlide1.vu
 import AboutUsSlide2 from '@/views/home/components/horizonSlide/AboutUsSlide2.vue';
 import AboutUsSlide3 from '@/views/home/components/horizonSlide/AboutUsSlide3.vue';
 
+import {contentText} from '@/assets/wording/home/text.ts';
+
 import SliderSection from '@/views/home/components/SliderSection.vue';
 import ServiceFeatures from '@/views/home/components/ServiceFeatures.vue';
 import Questions from '@/views/home/components/Questions.vue';
 
 import gsap from 'gsap';
+import HeadingHomeMade from '@components/atoms/text/HeadingHomeMade.vue';
 let ctx: gsap.Context;
+
+const headingWrapper = ref<HTMLElement>();
+const headingText = ref<HTMLElement>();
 
 onMounted(async () => {
 	await nextTick();
@@ -81,8 +92,37 @@ onMounted(async () => {
 				end: `+=${totalWidth}`,
 			},
 		});
+
+		// Heading
+		setTimeout(() => {
+			const headingWrapperDom = document.getElementById('headingWrapper')!;
+			const headingDom = headingWrapper.value?.querySelector('.heading-home-made-text') as HTMLElement;
+
+			if (!headingDom) return;
+
+			gsap.to(headingDom, {
+				x: getScrollAmount(headingDom),
+				ease: 'power2.out',
+				scrollTrigger: {
+					trigger: headingWrapperDom,
+					start: 'top 20%',
+					end: () => `+=${getScrollAmount(headingDom) * -1 + 200}`,
+					scrub: 3,
+					invalidateOnRefresh: true,
+					pin: true,
+					pinSpacing: true,
+					markers: true,
+				},
+			});
+		}, 50); // 延遲一點，確保文字 render 完成
 	});
 });
+
+function getScrollAmount(headingDom: HTMLElement) {
+	const headingWidth = headingDom.offsetWidth;
+	const amountToScroll = headingWidth - window.innerWidth + 200;
+	return -amountToScroll;
+}
 
 onUnmounted(() => {
 	ctx && ctx.revert();
@@ -131,5 +171,11 @@ onUnmounted(() => {
 	width: 100vw;
 	height: 100vh;
 	flex-shrink: 0;
+}
+
+.heading-slide-wrapper {
+	display: flex;
+	align-items: flex-end;
+	padding: 100px 0 100px 50px;
 }
 </style>

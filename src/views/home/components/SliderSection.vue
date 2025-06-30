@@ -1,10 +1,6 @@
 <template>
 	<div class="sliderSection">
 		<SectionContainer class="pt-16 pb-20">
-			<div class="w-full">
-				<HeadingHomeMade>{{ contentText.sliderSection.header }}</HeadingHomeMade>
-			</div>
-
 			<div class="mt-12">
 				<PartnerSwiper />
 			</div>

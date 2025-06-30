@@ -1,6 +1,6 @@
 <template>
-	<SectionContainer class="py-16">
-		<div class="w-full grid grid-cols-12">
+	<SectionContainer>
+		<div class="w-full grid grid-cols-12 pt-[200px]">
 			<div class="col-span-6 flex flex-col justify-center pl-10">
 				<SectionTitle>
 					<span v-html="contentText.section1.title"></span>

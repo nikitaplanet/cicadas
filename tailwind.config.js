@@ -73,6 +73,7 @@ const customize = {
 		bold: '700',
 	},
 	fontSize: {
+		superhighlightSuper: ['180px', {lineHeight: '1.25', letterSpacing: '-0.02em'}],
 		superhighlight: ['120px', {lineHeight: '1.25', letterSpacing: '-0.02em'}],
 		h1: ['80px', {lineHeight: '1', letterSpacing: '-0.02em'}],
 		h2: ['60px', {lineHeight: '1.2'}],
