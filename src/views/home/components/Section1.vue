@@ -1,15 +1,15 @@
 <template>
 	<SectionContainer>
-		<div class="w-full grid grid-cols-12 pt-[200px]">
+		<div class="w-full flex flex-col lg:grid lg:grid-cols-12 pt-[100px] lg:pt-[150px] xl:pt-[200px]">
 			<div class="col-span-6 flex flex-col justify-center pl-10">
 				<SectionTitle>
 					<span v-html="contentText.section1.title"></span>
 				</SectionTitle>
-				<SectionDescription class="mt-10">
+				<SectionDescription class="mt-5 lg:mt-10">
 					<span v-html="contentText.section1.description"></span>
 				</SectionDescription>
 			</div>
-			<div class="col-span-6">
+			<div class="mt-[60px] lg:mt-0 col-span-6">
 				<div style="padding: 56.25% 0 0 0; position: relative">
 					<iframe
 						@load="onIframeLoad"

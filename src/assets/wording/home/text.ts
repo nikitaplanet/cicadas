@@ -7,7 +7,7 @@ export const contentText = {
 		headerDescription: `Through data-driven insights and compelling storytelling,<br>we craft powerful campaigns that amplify the voices of<br>changemakers across Asia. Together, we’ll transform your message into a movement that changes perspectives and catalyses action.`,
 	},
 	section1: {
-		title: `More Than an Agency, <br>A Partner in<br> Transformation`,
+		title: `We are a one stop partner for nonprofits and purpose-driven businesses.`,
 		description: `We're here - whether you need to activate<br> funders, mobilize the public or build internal<br> capacity. We help you connect meaningfully<br> with your audience—bringing them one step<br> closer to action.`,
 	},
 	section2: {
