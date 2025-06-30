@@ -111,7 +111,6 @@ onMounted(async () => {
 					invalidateOnRefresh: true,
 					pin: true,
 					pinSpacing: true,
-					markers: true,
 				},
 			});
 		}, 50); // 延遲一點，確保文字 render 完成
