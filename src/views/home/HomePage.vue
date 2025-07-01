@@ -19,11 +19,17 @@
 
 		<!--Horizon Slide--->
 		<!--About Us-->
-		<div id="homePage__aboutUs">
+		<div v-if="!isMobile" id="homePage__aboutUs">
 			<AboutUsSlide1 class="homePage__aboutUs__items homePage__aboutUs__item1" />
 			<AboutUsSlide2 class="homePage__aboutUs__items homePage__aboutUs__item2" />
 			<AboutUsSlide3 class="homePage__aboutUs__items homePage__aboutUs__item3" />
 		</div>
+		<div v-if="isMobile" class="flex flex-col">
+			<AboutUsSlide1 />
+			<AboutUsSlide2 />
+			<AboutUsSlide3 />
+		</div>
+
 		<!--BG 過場-->
 		<div class="section-gradient5"></div>
 
@@ -50,7 +56,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, onMounted, onUnmounted, nextTick} from 'vue';
+import {computed, ref, onMounted, onUnmounted, nextTick} from 'vue';
 import LandingSection from '@/views/home/components/LandingSection.vue';
 import Section1 from '@/views/home/components/Section1.vue';
 import Section2 from '@/views/home/components/Section2.vue';
@@ -72,9 +78,13 @@ let ctx: gsap.Context;
 
 const headingWrapper = ref<HTMLElement>();
 const headingText = ref<HTMLElement>();
+const isMobile = computed(() => window.innerWidth < 768);
 
 onMounted(async () => {
 	await nextTick();
+
+	// ❗只讓桌機版 (lg 以上) 執行動畫
+	if (window.innerWidth < 1024) return;
 
 	ctx = gsap.context(() => {
 		const items = gsap.utils.toArray<HTMLElement>('.homePage__aboutUs__items');
