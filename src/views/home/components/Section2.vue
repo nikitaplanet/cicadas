@@ -1,13 +1,15 @@
 <template>
-	<SectionContainer
-		ref="sectionRef"
-		:hasMinHeight="false"
-		class="h-screen text-scaleXL lg:text-scale2XL xl:text-h2 italic font-semibold font-h2sans flex items-center justify-center overflow-hidden">
-		<div ref="textBlockRef">
-			<span v-html="contentText.section2.title1" class="line"></span>
-			<span v-html="contentText.section2.title2" class="line"></span>
-		</div>
-	</SectionContainer>
+	<div class="px-10">
+		<SectionContainer
+			ref="sectionRef"
+			:hasMinHeight="false"
+			class="h-screen text-scaleXL lg:text-scale2XL xl:text-h2 italic font-semibold font-h2sans flex items-center justify-center overflow-hidden">
+			<div ref="textBlockRef">
+				<span v-html="contentText.section2.title1" class="line"></span>
+				<span v-html="contentText.section2.title2" class="line"></span>
+			</div>
+		</SectionContainer>
+	</div>
 </template>
 
 <script lang="ts" setup>
