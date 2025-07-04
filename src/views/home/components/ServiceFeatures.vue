@@ -3,7 +3,7 @@
 		<SectionContainer :hasMinHeight="false">
 			<div
 				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
-				class="w-full flex flex-col justify-center items-center transition-all duration-500">
+				class="w-full flex flex-col justify-center items-center transition-all duration-700">
 				<div class="w-full">
 					<SectionNameTag>{{ contentText.issuesWeTackle.title }}</SectionNameTag>
 				</div>
@@ -14,7 +14,8 @@
 						:content="item.content"
 						:isActive="item.isActive"
 						:key="item.title"
-						:title="item.title" />
+						:title="item.title"
+						defaultColorType="blue" />
 				</div>
 			</div>
 		</SectionContainer>

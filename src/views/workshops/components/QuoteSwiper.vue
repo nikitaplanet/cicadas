@@ -1,5 +1,7 @@
 <template>
-	<div class="w-full pt-16 pb-24 md:py-24">
+	<div
+		v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+		class="w-full pt-16 pb-24 md:py-24 transition-all duration-500">
 		<swiper
 			:autoplay="{
 				delay: 10000,

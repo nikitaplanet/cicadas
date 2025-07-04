@@ -1,7 +1,9 @@
 <template>
 	<div class="pt-32 pb-36">
 		<SectionContainer :hasMinHeight="false">
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+			<div
+				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+				class="grid grid-cols-1 md:grid-cols-2 gap-5 transition-all duration-500">
 				<div>
 					<HeaderText ref="headerText" :mode="TextMode.dark" class="relative">
 						<span v-html="workshopsWording.logoSection.title"></span>
@@ -15,7 +17,9 @@
 			</div>
 			<div class="grid grid-cols-1 gap-12 mt-20">
 				<div class="flex flex-col md:flex-row justify-center gap-20">
-					<div class="flex flex-col md:flex-row justify-center gap-20">
+					<div
+						v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+						class="flex flex-col md:flex-row justify-center gap-20 ransition-all duration-500">
 						<LogoImage
 							v-for="item in row1"
 							:description="item.description"
@@ -25,7 +29,9 @@
 					</div>
 				</div>
 
-				<div class="grid grid-cols-1 gap-20 md:grid-cols-3">
+				<div
+					v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+					class="grid grid-cols-1 gap-20 md:grid-cols-3 transition-all duration-500">
 					<LogoImage v-for="item in row2" :description="item.description" :isHide="item.isHide" :logoAlt="item.alt" :logoSrc="item.img" />
 				</div>
 			</div>

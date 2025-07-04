@@ -1,5 +1,7 @@
 <template>
-	<footer class="nFooter-bg pt-0 pb-10 lg:pt-32 lg:pb-36 relative">
+	<footer
+		v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+		class="nFooter-bg pt-0 pb-10 lg:pt-32 lg:pb-36 relative transition-all duration-700">
 		<SectionContainer :hasMinHeight="false">
 			<div class="w-full section-container flex flex-col justify-center items-center">
 				<h2 class="font-h1 text-scale2XL lg:text-h1 italic font-semibold relative">

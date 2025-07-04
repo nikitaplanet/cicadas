@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full m-auto md:w-full">
+	<div v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}" class="w-full m-auto md:w-full transition-all duration-700">
 		<NImageSwiper :mediaList="imgs" />
 	</div>
 </template>

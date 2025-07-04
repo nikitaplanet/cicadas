@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full h-screen landing-bg">
+	<div ref="main" class="w-full h-screen landing-bg">
 		<div class="w-full px-8 h-screen m-auto grid grid-cols-12 pt-40 relative">
 			<div class="col-span-6">
 				<HeaderText ref="headerText" :mode="TextMode.dark" class="relative">
@@ -21,9 +21,16 @@
 </template>
 
 <script lang="ts" setup>
+import {ref, onMounted, onUnmounted} from 'vue';
 import {TextMode} from '@components/atoms/text';
 import HeaderText from '@components/atoms/text/HeaderText.vue';
 import HeaderDescription from '@components/atoms/text/HeaderDescription.vue';
+import gsap from 'gsap';
+import {ScrollTriggerDirection, useFadeInOnScroll} from '@/hooks/useFadeInOnScroll.js';
+
+const main = ref(null);
+const headerText = ref(null);
+const headerDesc = ref(null);
 
 const handleScrollDown = () => {};
 
@@ -35,6 +42,25 @@ interface Props {
 withDefaults(defineProps<Props>(), {
 	title: '',
 	description: '',
+});
+
+// 動畫淡入
+let ctx;
+
+onMounted(() => {
+	ctx = gsap.context(() => {
+		useFadeInOnScroll(headerText.value.$el, main.value, {
+			direction: ScrollTriggerDirection.LEFT,
+		});
+
+		useFadeInOnScroll(headerDesc.value.$el, main.value, {
+			direction: ScrollTriggerDirection.DOWN,
+		});
+	});
+});
+
+onUnmounted(() => {
+	ctx.revert();
 });
 </script>
 

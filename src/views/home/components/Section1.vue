@@ -1,6 +1,8 @@
 <template>
 	<SectionContainer>
-		<div class="w-full flex flex-col lg:grid lg:grid-cols-12 pt-[100px] lg:pt-[150px] xl:pt-[200px]">
+		<div
+			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+			class="w-full flex flex-col lg:grid lg:grid-cols-12 pt-[100px] lg:pt-[150px] xl:pt-[200px] transition-all duration-700">
 			<div class="px-6 col-span-6 flex flex-col justify-center">
 				<SectionTitle>
 					<span v-html="contentText.section1.title"></span>

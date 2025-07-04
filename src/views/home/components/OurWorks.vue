@@ -3,7 +3,7 @@
 		<SectionContainer :hasMinHeight="false">
 			<div
 				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
-				class="w-full grid grid-cols-1 xl:grid-cols-12 transition-all duration-500">
+				class="w-full grid grid-cols-1 xl:grid-cols-12 transition-all duration-700">
 				<div class="col-span-1 xl:col-span-5 flex flex-col">
 					<SectionNameTag>Our Works</SectionNameTag>
 					<div class="relative p-4 xl:p-16 mt-3">

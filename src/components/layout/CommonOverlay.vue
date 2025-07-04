@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full h-screen common-bg fixed top-0 left-0 z-30 grid grid-cols-1 pt-14 pb-24 px-10">
+	<div ref="main" class="w-full h-screen common-bg fixed top-0 left-0 z-30 grid grid-cols-1 pt-14 pb-24 px-10">
 		<div class="flex justify-between items-start">
 			<HeaderText ref="headerText" :mode="TextMode.light" class="relative">
 				<span v-html="commonWording.headerTitle"></span>
@@ -11,10 +11,12 @@
 			</button>
 		</div>
 
-		<div class="w-full flex flex-row justify-end items-start">
+		<div
+			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+			class="w-full flex flex-row justify-end items-start transition-all duration-700">
 			<div class="max-w-screen-sm">
 				<div v-html="commonWording.details.title" class="text-h5 font-h5 font-semibold"></div>
-				<div class="mt-5 font-body text-body font-medium">
+				<div ref="headerDesc" class="mt-5 font-body text-body font-medium">
 					<template v-for="item in commonWording.details.contents">
 						<template v-if="item.type === TEXT_TYPE.TEXT">
 							<div v-for="text in item.content" v-html="text"></div>
@@ -49,26 +51,49 @@
 </template>
 
 <script lang="ts" setup>
-import {onMounted, onUnmounted} from 'vue';
+import {ref, onMounted, onUnmounted} from 'vue';
 import {TextMode} from '@components/atoms/text';
 import HeaderText from '@components/atoms/text/HeaderText.vue';
 import {commonWording} from '@assets/wording/common/text.ts';
 import {TEXT_TYPE} from '@assets/js/enum/textType.ts';
+import gsap from 'gsap';
+import {ScrollTriggerDirection, useFadeInOnScroll} from '@/hooks/useFadeInOnScroll.js';
+
+const main = ref(null);
+const headerText = ref(null);
+const headerDesc = ref(null);
 
 const emit = defineEmits(['closeCommon']);
 
+// 動畫淡入
+let ctx;
+
 onMounted(() => {
+	ctx = gsap.context(() => {
+		useFadeInOnScroll(headerText.value.$el, main.value, {
+			direction: ScrollTriggerDirection.LEFT,
+		});
+
+		useFadeInOnScroll(headerDesc.value.$el, main.value, {
+			direction: ScrollTriggerDirection.DOWN,
+		});
+	});
+
+	const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 	setTimeout(() => {
 		document.body.style.overflow = 'hidden';
+		document.body.style.paddingRight = `${scrollbarWidth}px`;
 	}, 200);
 });
 
 onUnmounted(() => {
 	document.body.style.overflow = '';
+	document.body.style.paddingRight = '';
 });
 
 const handleCloseCommon = () => {
 	emit('closeCommon');
+	ctx.revert();
 };
 </script>
 

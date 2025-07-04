@@ -1,7 +1,7 @@
 <template>
 	<div class="pt-0 pb-10">
 		<SectionContainer :hasMinHeight="false">
-			<div class="flex flex-col">
+			<div v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}" class="flex flex-col transition-all duration-700">
 				<!---col-->
 				<div class="w-full grid grid-cols-1">
 					<!---row-->
