@@ -77,10 +77,12 @@ let ctx: gsap.Context;
 
 const headingWrapper = ref<HTMLElement>();
 const headingText = ref<HTMLElement>();
-const isMobile = computed(() => window.innerWidth < 768);
+const isMobile = ref(false);
 
 onMounted(async () => {
 	await nextTick();
+	resizeWindow();
+	window.addEventListener('resize', resizeWindow);
 
 	// ❗只讓桌機版 (lg 以上) 執行動畫
 	if (window.innerWidth < 1024) return;
@@ -134,7 +136,12 @@ function getScrollAmount(headingDom: HTMLElement) {
 
 onUnmounted(() => {
 	ctx && ctx.revert();
+	window.removeEventListener('resize', resizeWindow);
 });
+
+function resizeWindow() {
+	isMobile.value = window.innerWidth < 768;
+}
 </script>
 
 <style lang="scss" scoped>

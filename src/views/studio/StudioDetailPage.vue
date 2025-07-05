@@ -6,7 +6,10 @@
 		<!--Header-->
 		<LandingSection :description="detailData.detail.description" :title="detailData.title" />
 		<div class="w-full pt-32 px-6 md:px-10">
-			<div v-for="(item, index) in detailData.detail.list" class="w-full">
+			<div
+				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+				v-for="(item, index) in detailData.detail.list"
+				class="w-full transition-all duration-700">
 				<div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
 					<div class="flex flex-col justify-start items-start">
 						<div v-if="item.isOnGoing" class="flex justify-start items-center mb-3">

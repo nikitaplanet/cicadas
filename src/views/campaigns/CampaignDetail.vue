@@ -4,7 +4,9 @@
 			<h1 v-html="data.detailTitle" class="w-full px-8 text-center text-scale2XL lg:text-h1 font-h1 italic font-semibold"></h1>
 
 			<!--banner-->
-			<div class="w-[90%] max-w-[1045px] mx-auto my-10 lg:my-[60px] flex justify-center">
+			<div
+				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+				class="w-[90%] max-w-[1045px] mx-auto my-10 lg:my-[60px] flex justify-center transition-all duration-700">
 				<img :alt="data.detailTitle" :src="data.img" class="w-full" />
 			</div>
 
@@ -13,7 +15,9 @@
 
 			<!--infoList-->
 			<div class="w-[90%] mx-auto mt-[40px] lg:mt-[60px] flex flex-col gap-[40px] lg:gap-0 lg:grid lg:grid-cols-12">
-				<div class="lg:col-span-3 flex flex-col gap-[13px]">
+				<div
+					v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+					class="lg:col-span-3 flex flex-col gap-[13px] transition-all duration-700">
 					<div v-for="item in infoList" :key="item.name" class="grid grid-cols-[70px_1fr] items-start">
 						<div class="text-left font-semibold font-label text-scale3XS italic">{{ item.name }}</div>
 						<div class="text-scale2XS font-body text-text-def font-medium">{{ item.value }}</div>
@@ -21,7 +25,10 @@
 				</div>
 				<div class="hidden lg:block lg:col-span-1"></div>
 				<div class="lg:col-span-8 flex flex-col gap-10 lg:gap-[60px]">
-					<div v-for="item in data.details?.contentList">
+					<div
+						v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+						v-for="item in data.details?.contentList"
+						class="transition-all duration-700">
 						<div class="font-label text-body lg:text-scaleDef italic font-semibold text-text-def">{{ item.title }}</div>
 						<div
 							v-if="item.textType === TEXT_TYPE.PARAGRAPH"
@@ -39,7 +46,10 @@
 
 			<!--Media-->
 			<div class="w-full mt-20 flex flex-col gap-12 lg:gap-16">
-				<div v-for="item in data.details?.media" class="w-full">
+				<div
+					v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+					v-for="item in data.details?.media"
+					class="w-full transition-all duration-700">
 					<div
 						v-if="item.mediaDisplayType === MEDIA_DISPLAY_TYPE.COL"
 						class="w-[90%] mx-auto grid grid-cols-[4fr_8fr] gap-x-5 items-stretch">
