@@ -24,10 +24,8 @@
 			<AboutUsSlide2 class="homePage__aboutUs__items homePage__aboutUs__item2" />
 			<AboutUsSlide3 class="homePage__aboutUs__items homePage__aboutUs__item3" />
 		</div>
-		<div v-if="isMobile" class="flex flex-col">
-			<AboutUsSlide1 />
-			<AboutUsSlide2 />
-			<AboutUsSlide3 />
+		<div v-if="isMobile" class="w-full">
+			<AboutUsMobile />
 		</div>
 
 		<!--BG 過場-->
@@ -74,6 +72,7 @@ import Questions from '@/views/home/components/Questions.vue';
 
 import gsap from 'gsap';
 import HeadingHomeMade from '@components/atoms/text/HeadingHomeMade.vue';
+import AboutUsMobile from '@/views/home/components/horizonSlide/AboutUsMobile.vue';
 let ctx: gsap.Context;
 
 const headingWrapper = ref<HTMLElement>();
