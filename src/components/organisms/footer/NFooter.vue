@@ -5,7 +5,7 @@
 		<SectionContainer :hasMinHeight="false">
 			<div class="w-full section-container flex flex-col justify-center items-center">
 				<h2 class="font-h1 text-scale2XL lg:text-h1 italic font-semibold relative">
-					{{ globalWording.footer.heading }}
+					{{ heading }}
 					<span class="ease-in-out transition-all duration-500 lg:block" :class="{'lg:opacity-1': isHover, 'lg:opacity-0': !isHover}">
 						<img
 							class="absolute right-[-55px] top-[-60px] w-[70px] xs:w-[60px] xs:right-[-25px] lg:right-[-270px] lg:top-[-100px] lg:w-[180px]"
@@ -17,14 +17,12 @@
 							src="@/assets/img/components/footer/eye.svg" />
 					</span>
 				</h2>
-				<p
-					v-html="globalWording.footer.description"
-					class="text-center block font-h2sans text-body lg:text-body18 italic font-medium mt-5"></p>
+				<p v-html="description" class="text-center block font-h2sans text-body lg:text-body18 font-medium mt-5"></p>
 
 				<NLink
 					@mouseleave="handleHoverLeveButton"
 					@mouseover="handleHoverButton"
-					class="group relative w-[215px] h-[51px] mt-12 xs:mb-20"
+					class="flex items-center justify-center group relative w-[215px] h-[51px] mt-12 xs:mb-20"
 					data-tally-emoji-animation="wave"
 					data-tally-emoji-text="👋"
 					data-tally-open="mZ1K9z">
@@ -33,7 +31,7 @@
 						alt="bg"
 						src="@/assets/img/components/footer/help_hover.svg" />
 					<img
-						class="object-contain absolute left-0 bottom-0 group-hover:opacity-0 transition-opacity duration-200"
+						class="object-contain absolute left-[32px] bottom-[8px] group-hover:opacity-0 transition-opacity duration-200"
 						alt="bg"
 						src="@/assets/img/components/footer/help_def.svg" />
 				</NLink>
@@ -63,12 +61,15 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, reactive} from 'vue';
+import {ref, reactive, computed} from 'vue';
 import SectionContainer from '@components/layout/SectionContainer.vue';
 import NLink from '@components/atoms/link/NLink.vue';
 import {globalWording} from '@assets/wording/global/menu.ts';
 import dayjs from 'dayjs';
+import {useRoute} from 'vue-router';
+import {ROUTER_NAME} from '@assets/js/enum/routerEnum.ts';
 
+const route = useRoute();
 const currentYear = dayjs().year();
 
 const isHover = ref(false);
@@ -93,6 +94,22 @@ const socialInfoAry = reactive([
 		url: '',
 	},
 ]);
+
+const heading = computed(() => {
+	if (route.name === ROUTER_NAME.WORKSHOPS_PAGE) {
+		return globalWording.footer.heading2;
+	} else {
+		return globalWording.footer.heading;
+	}
+});
+
+const description = computed(() => {
+	if (route.name === ROUTER_NAME.WORKSHOPS_PAGE) {
+		return globalWording.footer.description2;
+	} else {
+		return globalWording.footer.description;
+	}
+});
 </script>
 
 <style lang="scss" scoped>

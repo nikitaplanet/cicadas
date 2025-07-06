@@ -17,10 +17,6 @@
 			class="px-4 pb-10 md:px-12 md:pb-16"
 			navigation>
 			<swiper-slide v-for="item in props.contentList" class="cursor-grab">
-				<!--				<div-->
-				<!--					class="w-[90%] m-auto px-10 pt-20 pb-10 md:px-20 bg-cover bg-center bg-[url(src/assets/img/home/sliderSection/content_background.svg)]">-->
-				<!--					<p v-html="item.content" class="text-body md:text-body18 italic font-body font-semibold"></p>-->
-				<!--				</div>-->
 				<div class="relative w-[90%] md:max-w-[800px] m-auto">
 					<img
 						class="w-full h-[380px] md:h-[400px] object-cover"

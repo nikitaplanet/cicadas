@@ -101,6 +101,7 @@ export default {
 	theme: {
 		screens: {
 			xs: {max: '380px'},
+			s_lg: {min: '500px'},
 			...defaultTheme.screens,
 		},
 		extend: {

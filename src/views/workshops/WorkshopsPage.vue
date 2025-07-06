@@ -4,7 +4,8 @@
 
 		<LogoSection />
 
-		<QuoteSwiper :contentList="workshopsWording.quoteList" />
+		<QuoteSection />
+		<!--		<QuoteSwiper :contentList="workshopsWording.quoteList" />-->
 
 		<WorkshopsSwiper />
 	</div>
@@ -14,8 +15,9 @@
 import LandingSection from '@/views/workshops/components/LandingSection.vue';
 import LogoSection from '@/views/workshops/components/LogoSection.vue';
 import WorkshopsSwiper from '@/views/workshops/components/WorkshopsSwiper.vue';
-import QuoteSwiper from '@/views/workshops/components/QuoteSwiper.vue';
-import {workshopsWording} from '@assets/wording/workshops/text.ts';
+// import QuoteSwiper from '@/views/workshops/components/QuoteSwiper.vue';
+// import {workshopsWording} from '@assets/wording/workshops/text.ts';
+import QuoteSection from '@/views/workshops/components/QuoteSection.vue';
 </script>
 
 <style lang="scss" scoped></style>

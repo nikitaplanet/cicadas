@@ -41,9 +41,11 @@ const globalWording = {
 		},
 	},
 	footer: {
-		heading: `Let's talk!`,
+		heading: `Curious?`,
+		heading2: 'Interested?',
 		description:
 			'We’d love to talk about your vision, explore potential collaboration, or<br> even just hear a friendly hello. Reach out—we’re excited to connect.',
+		description2: 'Reach out to learn more or customize a workshop for your team.',
 		button: 'How Can We Help?',
 		copyright: 'Singing Cicadas. All rights reserved.',
 		domain: 'hello@singingcicadas.com',

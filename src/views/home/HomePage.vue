@@ -85,6 +85,26 @@ onMounted(async () => {
 	resizeWindow();
 	window.addEventListener('resize', resizeWindow);
 
+	initAnimation();
+});
+
+function getScrollAmount(headingDom: HTMLElement) {
+	const headingWidth = headingDom.offsetWidth;
+	const amountToScroll = headingWidth - window.innerWidth + 200;
+	return -amountToScroll;
+}
+
+onUnmounted(() => {
+	ctx && ctx.revert();
+	ctxHeading && ctxHeading.revert();
+	window.removeEventListener('resize', resizeWindow);
+});
+
+function resizeWindow() {
+	isMobile.value = window.innerWidth < 768;
+}
+
+function initAnimation() {
 	ctxHeading = gsap.context(() => {
 		// Heading
 		setTimeout(() => {
@@ -129,22 +149,6 @@ onMounted(async () => {
 			},
 		});
 	});
-});
-
-function getScrollAmount(headingDom: HTMLElement) {
-	const headingWidth = headingDom.offsetWidth;
-	const amountToScroll = headingWidth - window.innerWidth + 200;
-	return -amountToScroll;
-}
-
-onUnmounted(() => {
-	ctx && ctx.revert();
-	ctxHeading && ctxHeading.revert();
-	window.removeEventListener('resize', resizeWindow);
-});
-
-function resizeWindow() {
-	isMobile.value = window.innerWidth < 768;
 }
 </script>
 

@@ -1,5 +1,15 @@
 /* 換行請使用 <br/> */
 import HerFundLogo from '@/assets/img/home/sliderSection/content1_logo.svg';
+import SparkFoundationLogo from '@/assets/img/home/sliderSection/content2_logo.svg';
+import KoreaFoundationLogo from '@/assets/img/home/sliderSection/content3_logo.svg';
+
+import slide1 from '@/assets/img/home/sliderSection/slide1.svg';
+import slide2 from '@/assets/img/home/sliderSection/slide1.svg';
+import slide3 from '@/assets/img/home/sliderSection/slide1.svg';
+
+import slideMobile1 from '@/assets/img/home/sliderSection/slide1_m.svg';
+import slideMobile2 from '@/assets/img/home/sliderSection/slide2_m.svg';
+import slideMobile3 from '@/assets/img/home/sliderSection/slide3_m.svg';
 
 export const contentText = {
 	landing: {
@@ -72,18 +82,24 @@ export const contentText = {
 				title: 'HERFUND',
 				logoSrc: HerFundLogo,
 				content: `HER Fund has collaborated with Singing Cicadas on numerous projects over the past few years, including audience research, narrative building workshops, creating videos for HER Hub, and a strategic document designed for corporate engagement. Our experience working with them has been exceptional. They prioritize a participatory approach, provide honest feedback from an objective perspective, and share our values. We highly recommend collaborating with Singing Cicadas.<br><br>-Judy Kan`,
+				slideImage: slide1,
+				slideImageMobile: slideMobile1,
 			},
 			{
 				id: 2,
 				title: 'Spark Foundation',
-				logoSrc: HerFundLogo,
+				logoSrc: SparkFoundationLogo,
 				content: `We enjoyed working with Singing Cicadas on a successful campaign with award-winning productions for young people. Their team guided us through research and execution, and we’re excited to collaborate again on a new project. What stands out is their thorough research and effective social listening tools which helped us better understand our audience. Han Yan and Sharon consistently deliver on their commitments, making them a reliable partner.<br><br>-Ron Tan`,
+				slideImage: slide2,
+				slideImageMobile: slideMobile2,
 			},
 			{
 				id: 3,
-				title: 'Spark Foundation',
-				logoSrc: HerFundLogo,
+				title: 'Korea Foundation for Women',
+				logoSrc: KoreaFoundationLogo,
 				content: `"The workshops delivered by Han Yan and Sharon equipped our team with immediately applicable strategies in effective narrative building, donor persona development, story frameworks, and campaign design. We gained a deeper and more nuanced understanding of key concepts crucial for women's funds, including resource mobilization, strategic processes, and narrative construction. What impressed us most was their patience and dedication in finding solutions despite various challenges we faced, while making complex professional concepts accessible and relevant to our organization's specific context. Their thoughtful and professional approach truly inspired us and reminded me why this work matters"<br><br>Keunyoung Jang, Korea Foundation for Women`,
+				slideImage: slide3,
+				slideImageMobile: slideMobile3,
 			},
 		],
 	},

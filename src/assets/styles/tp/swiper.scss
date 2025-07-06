@@ -43,3 +43,11 @@
 .swiper-button-disabled {
   display: none !important;
 }
+
+@media (max-width: 768px) {
+  // 手機版隱藏箭頭
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}
