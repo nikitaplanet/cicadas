@@ -29,31 +29,25 @@
 				{{ title }}
 			</button>
 
-			<div
-				class="w-full text-body hidden lg:text-body18 font-body text-text-def font-semibold transition ease-linear lg:group-hover:inline-block"
-				:class="{
-					'inline-block translate-y-1': isActiveBox,
-					hidden: !isActiveBox,
-					'text-left': align === 'left',
-					'text-right': align === 'right',
-				}">
-				{{ description }}
+			<div class="hidden lg:block">
+				<button
+					@click="handelClick"
+					class="w-full text-body lg:text-body18 font-body text-text-def font-semibold transition ease-linear lg:group-hover:inline-block"
+					:class="{
+						'inline-block translate-y-1': isActiveBox,
+						hidden: !isActiveBox,
+						'text-left': align === 'left',
+						'text-right': align === 'right',
+					}"
+					type="button">
+					{{ description }}
+
+					<div class="flex flex-row justify-end items-center mt-4">
+						<img alt="learnMore" src="@/assets/img/home/ourWorks/learnMore.svg" />
+					</div>
+				</button>
 			</div>
 		</div>
-		<router-link v-if="link" :to="link" class="hidden lg:block">
-			<img
-				class="group-hover:opacity-100"
-				:class="{'opacity-100': isActive, 'opacity-0': !isActive}"
-				alt="arrow"
-				src="../../assets/img/home/arrow.svg" />
-		</router-link>
-		<button v-if="isButton" @click="handleClickArrow" class="hidden lg:block" type="button">
-			<img
-				class="group-hover:opacity-100"
-				:class="{'opacity-100': isActive, 'opacity-0': !isActive}"
-				alt="arrow"
-				src="../../assets/img/home/arrow.svg" />
-		</button>
 	</div>
 </template>
 
@@ -85,8 +79,11 @@ const emit = defineEmits(['click', 'clickArrow']);
 const router = useRouter();
 
 const handelClick = () => {
+	if (!props.isButton) {
+		router.push(props.link);
+		return;
+	}
 	emit('click');
-	router.push(props.link);
 };
 
 const handelClickMobile = () => {
@@ -96,10 +93,6 @@ const handelClickMobile = () => {
 const isActiveBox = computed(() => {
 	return props.isActive;
 });
-
-const handleClickArrow = () => {
-	emit('clickArrow');
-};
 </script>
 
 <style scoped></style>

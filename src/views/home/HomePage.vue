@@ -54,7 +54,7 @@
 </template>
 
 <script lang="ts" setup>
-import {computed, ref, onMounted, onUnmounted, nextTick} from 'vue';
+import {ref, onMounted, onUnmounted, nextTick} from 'vue';
 import LandingSection from '@/views/home/components/LandingSection.vue';
 import Section1 from '@/views/home/components/Section1.vue';
 import Section2 from '@/views/home/components/Section2.vue';

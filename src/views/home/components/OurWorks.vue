@@ -32,7 +32,6 @@
 					<HoverTextBox
 						v-for="item in list"
 						@click="handleClick(item.id)"
-						@clickArrow="handleClickArrow(item.id)"
 						@mouseleave="hoverImage = showImage"
 						@mouseover="hoverImage = item.id"
 						:description="item.description"
@@ -76,13 +75,11 @@ const hoverImage = ref(0);
 
 const isShowCommon = ref(false);
 
-const handleClick = (val: number) => {
-	selectedContent.value = val;
-	showImage.value = val;
-	hoverImage.value = val;
-};
+const handleClick = (id: number) => {
+	selectedContent.value = id;
+	showImage.value = id;
+	hoverImage.value = id;
 
-const handleClickArrow = (id: number) => {
 	if (id === 3) {
 		// Commons
 		isShowCommon.value = true;
