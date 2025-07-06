@@ -74,6 +74,7 @@ import gsap from 'gsap';
 import HeadingHomeMade from '@components/atoms/text/HeadingHomeMade.vue';
 import AboutUsMobile from '@/views/home/components/horizonSlide/AboutUsMobile.vue';
 let ctx: gsap.Context;
+let ctxHeading: gsap.Context;
 
 const headingWrapper = ref<HTMLElement>();
 const headingText = ref<HTMLElement>();
@@ -84,26 +85,7 @@ onMounted(async () => {
 	resizeWindow();
 	window.addEventListener('resize', resizeWindow);
 
-	// ❗只讓桌機版 (lg 以上) 執行動畫
-	if (window.innerWidth < 1024) return;
-
-	ctx = gsap.context(() => {
-		const items = gsap.utils.toArray<HTMLElement>('.homePage__aboutUs__items');
-		const container = document.getElementById('homePage__aboutUs')!;
-		const totalWidth = container.offsetWidth;
-
-		gsap.to(items, {
-			xPercent: -100 * (items.length - 1),
-			ease: 'sine.out',
-			scrollTrigger: {
-				trigger: container,
-				pin: true,
-				scrub: 3,
-				snap: 1 / (items.length - 1),
-				end: `+=${totalWidth}`,
-			},
-		});
-
+	ctxHeading = gsap.context(() => {
 		// Heading
 		setTimeout(() => {
 			const headingWrapperDom = document.getElementById('headingWrapper')!;
@@ -126,6 +108,27 @@ onMounted(async () => {
 			});
 		}, 50); // 延遲一點，確保文字 render 完成
 	});
+
+	// ❗只讓桌機版 (lg 以上) 執行動畫
+	if (window.innerWidth < 1024) return;
+
+	ctx = gsap.context(() => {
+		const items = gsap.utils.toArray<HTMLElement>('.homePage__aboutUs__items');
+		const container = document.getElementById('homePage__aboutUs')!;
+		const totalWidth = container.offsetWidth;
+
+		gsap.to(items, {
+			xPercent: -100 * (items.length - 1),
+			ease: 'sine.out',
+			scrollTrigger: {
+				trigger: container,
+				pin: true,
+				scrub: 3,
+				snap: 1 / (items.length - 1),
+				end: `+=${totalWidth}`,
+			},
+		});
+	});
 });
 
 function getScrollAmount(headingDom: HTMLElement) {
@@ -136,6 +139,7 @@ function getScrollAmount(headingDom: HTMLElement) {
 
 onUnmounted(() => {
 	ctx && ctx.revert();
+	ctxHeading && ctxHeading.revert();
 	window.removeEventListener('resize', resizeWindow);
 });
 
