@@ -20,6 +20,7 @@ export default defineNuxtConfig({
 	},
 	vite: {
 		css: {
+			preprocessorMaxWorkers: true,
 			preprocessorOptions: {
 				scss: {
 					api: 'modern-compiler',

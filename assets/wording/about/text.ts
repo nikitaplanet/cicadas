@@ -7,7 +7,7 @@ import Tylor from '@/assets/img/about/workWith/Tylor.svg';
 import Sharon from '@/assets/img/about/profile/sharon.svg';
 import Hanyan from '@/assets/img/about/profile/hanyan.svg';
 import HannaShin from '@/assets/img/about/profile/hanna.svg';
-import {OUR_TEAM_INFO} from '@/views/about';
+import {OUR_TEAM_INFO} from '@/assets/js/enum/about';
 
 export const aboutWording = {
 	landing: {

@@ -10,13 +10,10 @@
 		<CommonOverlay v-if="isShowCommon" @closeCommon="handleCloseCommon" />
 	</Transition>
 
-	<div class="h-[2000px] w-full bg-slate-700 block"></div>
-
 	<div class="bg-surface-def">
 		<Transition name="fade" mode="out-in">
 			<NuxtPage v-if="!isShowLoading" />
 		</Transition>
-
 
 		<!--Footer-->
 		<NFooter />
