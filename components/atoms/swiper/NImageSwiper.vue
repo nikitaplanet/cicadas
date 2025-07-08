@@ -1,23 +1,25 @@
 <template>
 	<div class="w-[90%] m-auto md:w-full">
-		<Swiper
-			:autoplay="{
+		<ClientOnly>
+			<Swiper
+				:autoplay="{
 				delay: 5000,
 				disableOnInteraction: true,
 			}"
-			:breakpoints="breakPoints"
-			:centeredSlides="true"
-			:loop="true"
-			:modules="modules"
-			:pagination="{
+				:breakpoints="breakPoints"
+				:centeredSlides="true"
+				:loop="true"
+				:modules="modules"
+				:pagination="{
 				clickable: true,
 			}"
-			:spaceBetween="20"
-			class="mySwiper">
-			<SwiperSlide v-for="item in mediaList" class="swiper-slide-custom">
-				<img :alt="item.key" :src="item.src" class="aspect-[16/11]" />
-			</SwiperSlide>
-		</Swiper>
+				:spaceBetween="20"
+				class="mySwiper">
+				<SwiperSlide v-for="item in mediaList" class="swiper-slide-custom">
+					<img :alt="item.key" :src="item.src" class="aspect-[16/11]" />
+				</SwiperSlide>
+			</Swiper>
+		</ClientOnly>
 	</div>
 </template>
 
