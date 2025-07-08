@@ -4,6 +4,7 @@ export interface MenuItem {
 	label: string;
 	url: string;
 	name: ROUTER_NAME;
+	bgImage: string;
 }
 
 export interface NavMenuItem extends MenuItem {
