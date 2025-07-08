@@ -22,18 +22,22 @@
 							alt="bg" />
 						<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ item.label }}</span>
 					</NLink>
-					<NLink @click="handleShowCommon" class="group font-label text-def text-labelMd italic relative font-semibold">
+					<NLink @click="handleShowCommon"
+						   class="group font-label text-def text-labelMd italic relative font-semibold">
 						<img
 							class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
 							alt="bg"
 							src="@/assets/img/components/nav/menu4.svg" />
-						<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ globalWording.nav.button.common }}</span>
+						<span
+							class="w-full text-center absolute bottom-1 left-0 z-10">{{ globalWording.nav.button.common
+							}}</span>
 					</NLink>
 				</div>
 			</div>
 
 			<!--Let's talk-->
-			<NLink class="group relative" data-tally-emoji-animation="wave" data-tally-emoji-text="👋" data-tally-open="mZ1K9z">
+			<NLink class="group relative" data-tally-emoji-animation="wave" data-tally-emoji-text="👋"
+				   data-tally-open="mZ1K9z">
 				<img
 					class="object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-200"
 					alt="bg"
@@ -71,7 +75,8 @@
 						'flex-col bg-[linear-gradient(180deg,var(--sc-color-surface-tertiary,#F0E3DE)_50%,var(--sc-color-surface-primary,#DD5621)_92.44%)]':
 							!isNavBottom,
 					}">
-					<div class="w-full flex justify-between items-center" :class="{'py-[23px]': isNavBottom, 'py-[23px] ': !isNavBottom}">
+					<div class="w-full flex justify-between items-center"
+						 :class="{'py-[23px]': isNavBottom, 'py-[23px] ': !isNavBottom}">
 						<NLink @click="handleCloseMenuOverlay" to="/">
 							<img alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
 						</NLink>
@@ -106,11 +111,10 @@
 
 <script lang="ts" setup>
 import {ref, watch} from 'vue';
-import { useRoute } from 'vue-router';
-
 import {globalWording, navMenu} from '@/assets/wording/global/menu';
 import NLink from '@/components/atoms/link/NLink.vue';
 import type {NavMenuItem} from '~/components/organisms/navbar/index';
+
 const emit = defineEmits(['showCommon']);
 
 interface Props {
@@ -121,7 +125,7 @@ withDefaults(defineProps<Props>(), {
 	isNavBottom: false,
 });
 
-const route = useRoute();
+const route = useRouter();
 const navImages = navMenu.map((_, index) => new URL(`../../../assets/img/components/nav/menu${index}.svg`, import.meta.url).href);
 const menu = ref<NavMenuItem[]>(
 	navMenu.map((item) => {
@@ -133,8 +137,8 @@ const menu = ref<NavMenuItem[]>(
 );
 
 const checkLinkActive = (item: NavMenuItem) => {
-	return route.name === item.name
-}
+	return route.name === item.name;
+};
 
 const handleShowCommon = () => {
 	emit('showCommon');
@@ -157,5 +161,6 @@ watch(
 	},
 );
 </script>
+
 
 <style lang="scss" scoped></style>
