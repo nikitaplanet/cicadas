@@ -11,6 +11,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
+import { NuxtLink } from '#components';
 
 interface Props {
 	to?: string | Record<string, any> | null;
@@ -36,9 +37,10 @@ const isRouterLink = computed(() => !!props.to);
 const isAnchorLink = computed(() => !!props.href);
 const isButton = computed(() => !props.to && !props.href);
 
+// 直接使用導入的 NuxtLink 組件
 const tag = computed(() => {
 	if (isButton.value) return 'button';
-	if (isRouterLink.value) return 'NuxtLink';
+	if (isRouterLink.value) return NuxtLink;
 	return 'a';
 });
 

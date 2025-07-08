@@ -65,7 +65,7 @@
 
 		<!--Overlay-->
 		<transition mode="out-in" name="fade">
-			<teleport to="body">
+			<Teleport to="body">
 				<div
 					v-if="isShowMenuOverlay"
 					class="flex w-full px-4 h-screen fixed top-0 left-0 z-20 bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]"
@@ -104,7 +104,7 @@
 						</NLink>
 					</div>
 				</div>
-			</teleport>
+			</Teleport>
 		</transition>
 	</nav>
 </template>
@@ -125,8 +125,21 @@ withDefaults(defineProps<Props>(), {
 	isNavBottom: false,
 });
 
-const route = useRouter();
-const navImages = navMenu.map((_, index) => new URL(`../../../assets/img/components/nav/menu${index}.svg`, import.meta.url).href);
+const route = useRoute();
+// 動態載入導航圖片
+const { data: navImages } = await useLazyAsyncData('nav-images', async () => {
+	const images = [];
+	for (let i = 0; i < navMenu.length; i++) {
+		try {
+			const imageModule = await import(`~/assets/img/components/nav/menu${i}.svg`);
+			images.push(imageModule.default);
+		} catch (error) {
+			console.warn(`Failed to load nav image ${i}:`, error);
+			images.push('/assets/img/components/nav/menu0.svg');
+		}
+	}
+	return images;
+});
 const menu = ref<NavMenuItem[]>(
 	navMenu.map((item) => {
 		return {
