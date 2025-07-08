@@ -1,0 +1,75 @@
+<template>
+	<div class="w-full min-h-screen bg-surface-def">
+		<!--Landing-->
+		<LandingSection />
+
+		<!--WordFade-->
+		<WordFadeInSection />
+
+		<!--OurTeam-->
+		<OurTeam />
+
+		<!--BG 過場-->
+		<div class="section-gradient1"></div>
+
+		<!--		&lt;!&ndash;WorkWith&ndash;&gt;-->
+		<!--		<WorkWithSwiperSection />-->
+
+		<!--BG 過場-->
+		<div class="section-gradient2"></div>
+
+		<!--Service we offer-->
+		<ServiceWeOfferSection />
+
+		<!--BG 過場-->
+		<div class="section-gradient3"></div>
+
+		<div class="section-gradient4"></div>
+	</div>
+</template>
+
+<script lang="ts" setup>
+import LandingSection from '@/components/pages/about/LandingSection.vue';
+import WordFadeInSection from '@/components/pages/about/WordFadeInSection.vue';
+import OurTeam from '@/components/pages/about/OurTeam.vue';
+import WorkWithSwiperSection from '@/components/pages/about/WorkWithSwiperSection.vue';
+import ServiceWeOfferSection from '@/components/pages/about/ServiceWeOfferSection.vue';
+import AboutIssuesTackle from '@/components/pages/about/AboutIssuesTackle.vue';
+</script>
+
+<style lang="scss" scoped>
+.about-bg {
+	background: linear-gradient(
+			180deg,
+			var(--Surface-supportive-violet-dark, #d6b9e0) 0%,
+			var(--Surface-supportive-violet-mid, #e9c9f4) 50.33%,
+			var(--Surface-def, #fceee9) 100%
+	);
+}
+
+.section {
+	&-gradient1,
+	&-gradient2,
+	&-gradient3,
+	&-gradient4 {
+		width: 100%;
+		height: 120px;
+	}
+
+	&-gradient1 {
+		background: linear-gradient(180deg, var(--Surface-def, #fceee9) 0%, var(--Surface-supportive-violet-light, #f3e6f7) 100%);
+	}
+
+	&-gradient2 {
+		background: linear-gradient(180deg, var(--Surface-supportive-violet-light, #f3e6f7) 0%, var(--Surface-supportive-violet-mid, #e9c9f4) 100%);
+	}
+
+	&-gradient3 {
+		background: linear-gradient(180deg, var(--Surface-supportive-violet-mid, #e9c9f4) 0%, var(--Surface-supportive-violet-light, #f3e6f7) 100%);
+	}
+
+	&-gradient4 {
+		background: linear-gradient(180deg, var(--Surface-supportive-violet-light, #f3e6f7) 0%, var(--Surface-def, #fceee9) 100%);
+	}
+}
+</style>

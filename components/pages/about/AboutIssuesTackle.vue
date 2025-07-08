@@ -30,10 +30,10 @@
 
 <script lang="ts" setup>
 import {reactive, ref} from 'vue';
-import SectionContainer from '@components/layout/SectionContainer.vue';
-import SectionNameTag from '@components/atoms/text/SectionNameTag.vue';
-import {aboutWording} from '@assets/wording/about/text.ts';
-import HoverTextBox from '@components/molecules/HoverTextBox.vue';
+import SectionContainer from '@/components/layout/SectionContainer.vue';
+import SectionNameTag from '@/components/atoms/text/SectionNameTag.vue';
+import {aboutWording} from '@/assets/wording/about/text';
+import HoverTextBox from '@/components/molecules/HoverTextBox.vue';
 
 const selectedContent = ref(0);
 const showImage = ref(0);

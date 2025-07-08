@@ -13,7 +13,7 @@
 <script lang="ts" setup>
 import {onMounted, ref, nextTick} from 'vue';
 import SectionContainer from '@/components/layout/SectionContainer.vue';
-import {aboutWording} from '@assets/wording/about/text.ts';
+import {aboutWording} from '@/assets/wording/about/text';
 
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';

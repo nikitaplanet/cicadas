@@ -29,7 +29,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import {Autoplay, Pagination} from 'swiper/modules';
-import {SwiperImage} from '@/components/atoms/swiper';
+import type {SwiperImage} from '~/components/atoms/swiper/index';
 
 interface Props {
 	mediaList: SwiperImage[];

@@ -6,8 +6,6 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, defineExpose} from 'vue';
-
 const root = ref<HTMLElement>();
 defineExpose({root});
 </script>

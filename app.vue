@@ -12,11 +12,12 @@
 
 	<div class="bg-surface-def">
 		<Transition name="fade" mode="out-in">
-			<NuxtPage v-if="!isShowLoading" />
+			<div v-if="!isShowLoading">
+				<NuxtPage  />
+				<!--Footer-->
+				<NFooter />
+			</div>
 		</Transition>
-
-		<!--Footer-->
-		<NFooter />
 	</div>
 	<NCursor />
 </template>

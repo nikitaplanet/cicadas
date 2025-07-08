@@ -29,7 +29,7 @@
 <script lang="ts" setup>
 import {onMounted, onUnmounted, reactive} from 'vue';
 import {OUR_TEAM_INFO} from '@/assets/js/enum/about';
-import {aboutWording} from '@assets/wording/about/text';
+import {aboutWording} from '@/assets/wording/about/text';
 
 interface Props {
 	id: OUR_TEAM_INFO;

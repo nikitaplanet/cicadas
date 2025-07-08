@@ -19,9 +19,12 @@
 					:spaceBetween="20"
 					class="mySwiper">
 					<swiper-slide v-for="item in staffs">
-						<img :alt="item.name" :src="item.img" class="h-[150px] sm:h-[150px] md:h-[200px] lg:h-[280px] xl:h-[380px]" />
-						<h4 class="mt-5 w-full font-h3 text-text-def text-h3 font-semibold italic text-center">{{ item.name }}</h4>
-						<p class="mt-1 w-full text-center text-text-primary font-label text-labelSm font-semibold italic">{{ item.city }}</p>
+						<img :alt="item.name" :src="item.img"
+							 class="h-[150px] sm:h-[150px] md:h-[200px] lg:h-[280px] xl:h-[380px]" />
+						<h4 class="mt-5 w-full font-h3 text-text-def text-h3 font-semibold italic text-center">
+							{{ item.name }}</h4>
+						<p class="mt-1 w-full text-center text-text-primary font-label text-labelSm font-semibold italic">
+							{{ item.city }}</p>
 					</swiper-slide>
 				</swiper>
 			</div>
@@ -30,8 +33,8 @@
 </template>
 
 <script lang="ts" setup>
-import SectionNameTag from '@components/atoms/text/SectionNameTag.vue';
-import {aboutWording} from '@assets/wording/about/text.ts';
+import SectionNameTag from '@/components/atoms/text/SectionNameTag.vue';
+import {aboutWording} from '@/assets/wording/about/text';
 
 // Import Swiper Vue.js components
 import {Swiper, SwiperSlide} from 'swiper/vue';
