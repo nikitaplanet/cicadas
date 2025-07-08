@@ -15,7 +15,7 @@
 						:key="item.url"
 						:to="item.url"
 						class="group font-label text-def text-labelMd italic relative font-semibold">
-						<img
+						<img v-if="navImages?.length"
 							:src="navImages[index]"
 							class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
 							:class="{'opacity-100': checkLinkActive(item)}"
@@ -96,6 +96,7 @@
 							:to="item.url"
 							class="group font-label text-def text-labelMd italic relative font-semibold">
 							<img
+								v-if="navImages?.length"
 								:src="navImages[index]"
 								class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
 								:class="{'opacity-100': checkLinkActive(item)}"
@@ -129,15 +130,15 @@ const route = useRoute();
 // 動態載入導航圖片
 const { data: navImages } = await useLazyAsyncData('nav-images', async () => {
 	const images = [];
-	for (let i = 0; i < navMenu.length; i++) {
-		try {
-			const imageModule = await import(`~/assets/img/components/nav/menu${i}.svg`);
-			images.push(imageModule.default);
-		} catch (error) {
-			console.warn(`Failed to load nav image ${i}:`, error);
-			images.push('/assets/img/components/nav/menu0.svg');
-		}
-	}
+	// for (let i = 0; i < navMenu.length; i++) {
+	// 	try {
+	// 		const imageModule = await import(`~/assets/img/components/nav/menu${i}.svg`);
+	// 		images.push(imageModule.default);
+	// 	} catch (error) {
+	// 		console.warn(`Failed to load nav image ${i}:`, error);
+	// 		images.push('/assets/img/components/nav/menu0.svg');
+	// 	}
+	// }
 	return images;
 });
 const menu = ref<NavMenuItem[]>(
