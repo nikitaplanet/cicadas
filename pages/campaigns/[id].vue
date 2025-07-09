@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full min-h-screen landing-bg pt-20 lg:pt-28">
+	<article class="w-full min-h-screen landing-bg pt-20 lg:pt-28">
 		<template v-if="data.id !== 0">
 			<h1
 				v-html="data.detailTitle"
@@ -52,17 +52,17 @@
 						:key="index"
 						class="transition-all duration-700"
 					>
-						<div
+						<h4
 							class="font-label text-body lg:text-scaleDef italic font-semibold text-text-def"
 						>
 							{{ item.title }}
-						</div>
+						</h4>
 
-						<div
+						<p
 							v-if="item.textType === TEXT_TYPE.PARAGRAPH"
 							v-html="item.content"
 							class="font-body text-body lg:text-scaleDef font-medium mt-[10px]"
-						></div>
+						></p>
 
 						<div
 							v-if="item.textType === TEXT_TYPE.TEXT_LIST"
@@ -117,21 +117,21 @@
 		>
 			Wrong page, please go back to campaign list page.
 		</div>
-	</div>
+	</article>
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
-import { computed, reactive } from 'vue'
-import { campaignsWording } from '@/assets/wording/campaigns/text'
-import { TEXT_TYPE } from '@/assets/js/enum/textType'
-import { MEDIA_DISPLAY_TYPE } from '@/assets/js/enum/media'
-import NImageSwiper from '@/components/atoms/swiper/NImageSwiper.vue'
-import type { CampaignItem } from '@/assets/js/enum/campaigns'
+import {useRoute} from 'vue-router';
+import {computed, reactive} from 'vue';
+import {campaignsWording} from '@/assets/wording/campaigns/text';
+import {TEXT_TYPE} from '@/assets/js/enum/textType';
+import {MEDIA_DISPLAY_TYPE} from '@/assets/js/enum/media';
+import NImageSwiper from '@/components/atoms/swiper/NImageSwiper.vue';
+import type {CampaignItem} from '@/assets/js/enum/campaigns';
 
 // 取得 route param
-const route = useRoute()
-const id = Number(route.params.id)
+const route = useRoute();
+const id = Number(route.params.id);
 
 // 預設空資料
 const defaultData: CampaignItem = {
@@ -145,23 +145,53 @@ const defaultData: CampaignItem = {
 	issues: '',
 	services: '',
 	details: null,
-}
+};
 
 // 找資料
 const data = reactive<CampaignItem>(
-	campaignsWording.campaigns.find((item) => item.id === id) || defaultData
-)
+	campaignsWording.campaigns.find((item) => item.id === id) || defaultData,
+);
 
 // 推導 info list
 const infoList = computed(() => {
-	if (data.id === 0) return []
+	if (data.id === 0) return [];
 	return [
-		{ name: 'Year', value: data.year },
-		{ name: 'Region', value: data.region },
-		{ name: 'Issues', value: data.issues },
-		{ name: 'Services', value: data.services },
-	]
-})
+		{name: 'Year', value: data.year},
+		{name: 'Region', value: data.region},
+		{name: 'Issues', value: data.issues},
+		{name: 'Services', value: data.services},
+	];
+});
+
+const seoTitle = ref(`${data.detailTitle} | Cicadas`);
+const seoDescription = ref(data.services);
+const seoUrl = ref(`/campaigns/${id}`);
+
+useHead({
+	title: seoTitle,
+	meta: [
+		// 一般搜尋引擎
+		{name: 'description', content: seoDescription},
+		{name: 'keywords', content: `Cicadas, ${seoTitle}`},
+
+		// ✅ Open Graph (Facebook / LINE 用)
+		{property: 'og:title', content: seoTitle},
+		{property: 'og:description', content: seoDescription},
+		{property: 'og:image', content: data.img},
+		{property: 'og:url', content: seoUrl},
+		{property: 'og:type', content: 'article'},
+		{property: 'og:site_name', content: 'Cicadas'},
+
+		// ✅ Twitter Cards
+		{name: 'twitter:card', content: 'summary_large_image'}, // 可選 summary、summary_large_image
+		{name: 'twitter:title', content: seoTitle},
+		{name: 'twitter:description', content: seoDescription},
+		{name: 'twitter:image', content: data.img},
+	],
+	link: [
+		{rel: 'canonical', href: seoUrl},
+	],
+});
 </script>
 
 <style scoped lang="scss">
