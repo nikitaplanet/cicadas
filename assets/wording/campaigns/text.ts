@@ -51,7 +51,7 @@ export const campaignsWording: CampaignWording = {
 		{
 			id: 1,
 			isOngoing: true,
-			title: `Strength Projects`,
+			title: `Strength Project`,
 			detailTitle: `Strength Project`,
 			img: c1,
 			year: '2025',
