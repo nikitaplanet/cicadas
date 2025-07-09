@@ -5,6 +5,10 @@ export default defineNuxtConfig({
 	target: 'static', // 重點
 	nitro: {
 		preset: 'cloudflare-pages',
+		prerender: {
+			crawlLinks: true,
+			routes: ['/'],
+		},
 	},
 	app: {
 		baseURL: '/',
