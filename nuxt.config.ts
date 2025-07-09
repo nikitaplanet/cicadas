@@ -7,7 +7,12 @@ export default defineNuxtConfig({
 		preset: 'cloudflare-pages',
 		prerender: {
 			crawlLinks: true,
-			routes: ['/'],
+			routes: [
+				'/',
+				'/campaigns/1',
+				'/campaigns/2',
+				'/campaigns/3'
+			],
 		},
 	},
 	app: {
