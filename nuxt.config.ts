@@ -2,7 +2,7 @@
 
 export default defineNuxtConfig({
 	ssr: true,
-	target: 'static', // 重點
+	target: 'server', // 重點
 	nitro: {
 		preset: 'cloudflare-pages',
 		prerender: {
