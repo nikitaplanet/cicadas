@@ -60,6 +60,18 @@ definePageMeta({
 	name: ROUTER_NAME.HOME_PAGE,
 })
 
+useHead({
+	title: 'Cicadas',
+	viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+	charset: 'utf-8',
+	meta: [
+		{ name: 'description', content: '這裡是 Nuxt 3 學習筆記 實戰部落格' }
+	],
+	bodyAttrs: {
+		class: 'test'
+	}
+})
+
 import {ref, onMounted, onUnmounted, nextTick} from 'vue';
 import LandingSection from '@/components/pages/home/LandingSection.vue';
 import Section1 from '@/components/pages/home/Section1.vue';

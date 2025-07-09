@@ -13,7 +13,7 @@
 	<div class="bg-surface-def">
 		<Transition name="fade" mode="out-in">
 			<div v-if="!isShowLoading">
-				<NuxtPage  />
+				<NuxtPage />
 				<!--Footer-->
 				<NFooter />
 			</div>
@@ -39,6 +39,11 @@ import NFooter from '@/components/organisms/footer/NFooter.vue';
 
 const {isScrolledPastLanding, showNavBar} = useScrollDirectionNav();
 const route = useRoute();
+
+useHead({
+	meta: [{name: 'og:title', content: `${route.meta.title} | Cicadas`}],
+});
+
 
 const isShowLoading = ref(true);
 const isHideLoading = ref(false);

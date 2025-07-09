@@ -37,7 +37,7 @@ import c5_swiper4 from '@/assets/img/campaigns/detail/made/swiper4.jpg';
 
 import {MEDIA_DISPLAY_TYPE, MEDIA_TYPE} from '@/assets/js/enum/media.ts';
 import {TEXT_TYPE} from '@/assets/js/enum/textType.ts';
-import {CampaignWording} from '@/views/campaigns';
+import type {CampaignWording} from '@/assets/js/enum/campaigns';
 
 // detailSrc
 
