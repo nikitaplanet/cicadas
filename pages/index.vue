@@ -60,14 +60,6 @@ definePageMeta({
 	name: ROUTER_NAME.HOME_PAGE,
 })
 
-const title = 'Cicadas';
-const description = 'Through data-driven insights and compelling storytelling,\n' +
-	'we craft powerful campaigns that amplify the voices of\n' +
-	'changemakers across Asia. Together, we’ll transform your message into a movement that changes perspectives and catalyses action.';
-
-const metaTitle = 'Asia-Focused Creative Agency for NGOs | Singing Cicadas';
-const metaDescription = 'One-stop shop for social impact and fundraising campaigns. We combine data, storytelling & high production value to address climate change, gender inequality, LGBTQ rights, labour rights, discrimination and other human rights issues in Asia.';
-
 useHead({
 	viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 	charset: 'utf-8',
@@ -77,17 +69,17 @@ useHead({
 })
 
 useSeoMeta({
-	title: () => title,
-	ogTitle: () => metaTitle,
-	description: () => description,
-	ogDescription: () => metaDescription,
+	title: () => seoWording.home.title,
+	ogTitle: () => seoWording.home.metaTitle,
+	description: () => seoWording.home.description,
+	ogDescription: () => seoWording.home.metaDescription,
 	// ogImage: () => data?.img || '',
 	// ogUrl: () => `https://yourdomain.com/campaigns/${id}`, // ⚠️ 替換為你的正式網域
 	ogType: 'website',
 	ogSiteName: 'Cicadas',
 	twitterCard: 'summary_large_image',
-	twitterTitle: () => metaTitle,
-	twitterDescription: () => metaDescription,
+	twitterTitle: () => seoWording.home.metaTitle,
+	twitterDescription: () => seoWording.home.description,
 	// twitterImage: () => data?.img || ''
 });
 
@@ -110,6 +102,7 @@ import Questions from '@/components/pages/home/Questions.vue';
 import gsap from 'gsap';
 import HeadingHomeMade from '@/components/atoms/text/HeadingHomeMade.vue';
 import AboutUsMobile from '@/components/pages/home/horizonSlide/AboutUsMobile.vue';
+import {seoWording} from 'assets/wording/seoWording';
 let ctx: gsap.Context;
 let ctxHeading: gsap.Context;
 
