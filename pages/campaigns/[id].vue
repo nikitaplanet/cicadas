@@ -136,35 +136,33 @@ const defaultData: CampaignItem = {
 };
 
 // SSR fetch 資料
-const { data } = await useAsyncData<CampaignItem>(`campaign-${id}`, () => {
-	return campaignsWording.campaigns.find((item) => item.id === id) || defaultData;
-});
+const data = campaignsWording.campaigns.find((item) => item.id === id) || defaultData;
 
 // infoList
 const infoList = computed(() => {
-	if (!data.value || data.value.id === 0) return [];
+	if (!data || data.id === 0) return [];
 	return [
-		{ name: 'Year', value: data.value.year },
-		{ name: 'Region', value: data.value.region },
-		{ name: 'Issues', value: data.value.issues },
-		{ name: 'Services', value: data.value.services }
+		{ name: 'Year', value: data.year },
+		{ name: 'Region', value: data.region },
+		{ name: 'Issues', value: data.issues },
+		{ name: 'Services', value: data.services }
 	];
 });
 
 // SEO meta
 useSeoMeta({
-	title: () => `${data.value?.detailTitle || 'Campaign'} | Cicadas`,
-	ogTitle: () => `${data.value?.detailTitle || 'Campaign'} | Cicadas`,
-	description: () => data.value?.services || '',
-	ogDescription: () => data.value?.services || '',
-	ogImage: () => data.value?.img || '',
+	title: () => `${data?.detailTitle || 'Campaign'} | Cicadas`,
+	ogTitle: () => `${data?.detailTitle || 'Campaign'} | Cicadas`,
+	description: () => data?.services || '',
+	ogDescription: () => data?.services || '',
+	ogImage: () => data?.img || '',
 	ogUrl: () => `https://yourdomain.com/campaigns/${id}`, // ⚠️ 替換為你的正式網域
 	ogType: 'article',
 	ogSiteName: 'Cicadas',
 	twitterCard: 'summary_large_image',
-	twitterTitle: () => `${data.value?.detailTitle || 'Campaign'} | Cicadas`,
-	twitterDescription: () => data.value?.services || '',
-	twitterImage: () => data.value?.img || ''
+	twitterTitle: () => `${data?.detailTitle || 'Campaign'} | Cicadas`,
+	twitterDescription: () => data?.services || '',
+	twitterImage: () => data?.img || ''
 });
 </script>
 
