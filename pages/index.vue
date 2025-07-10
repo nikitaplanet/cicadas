@@ -60,17 +60,36 @@ definePageMeta({
 	name: ROUTER_NAME.HOME_PAGE,
 })
 
+const title = 'Cicadas';
+const description = 'Through data-driven insights and compelling storytelling,\n' +
+	'we craft powerful campaigns that amplify the voices of\n' +
+	'changemakers across Asia. Together, we’ll transform your message into a movement that changes perspectives and catalyses action.';
+
+const metaTitle = 'Asia-Focused Creative Agency for NGOs | Singing Cicadas';
+const metaDescription = 'One-stop shop for social impact and fundraising campaigns. We combine data, storytelling & high production value to address climate change, gender inequality, LGBTQ rights, labour rights, discrimination and other human rights issues in Asia.';
+
 useHead({
-	title: 'Cicadas',
 	viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 	charset: 'utf-8',
-	meta: [
-		{ name: 'description', content: '這裡是 Nuxt 3 學習筆記 實戰部落格' }
-	],
 	bodyAttrs: {
 		class: 'test'
 	}
 })
+
+useSeoMeta({
+	title: () => title,
+	ogTitle: () => metaTitle,
+	description: () => description,
+	ogDescription: () => metaDescription,
+	// ogImage: () => data?.img || '',
+	// ogUrl: () => `https://yourdomain.com/campaigns/${id}`, // ⚠️ 替換為你的正式網域
+	ogType: 'website',
+	ogSiteName: 'Cicadas',
+	twitterCard: 'summary_large_image',
+	twitterTitle: () => metaTitle,
+	twitterDescription: () => metaDescription,
+	// twitterImage: () => data?.img || ''
+});
 
 import {ref, onMounted, onUnmounted, nextTick} from 'vue';
 import LandingSection from '@/components/pages/home/LandingSection.vue';
