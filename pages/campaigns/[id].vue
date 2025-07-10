@@ -1,29 +1,28 @@
 <template>
 	<article class="w-full min-h-screen landing-bg pt-20 lg:pt-28">
-		<template v-if="data.id !== 0">
+		<template v-if="data?.id !== 0">
 			<h1
 				v-html="data.detailTitle"
 				class="w-full px-8 text-center text-scale2XL lg:text-h1 font-h1 italic font-semibold"
-			></h1>
+			/>
 
 			<!-- banner -->
 			<div
 				v-animateonscroll="{ enterClass: 'fadein', leaveClass: 'fadeout', once: true }"
-				class="w-[90%] max-w-[1045px] mx-auto my-10 lg:my-[60px] flex justify-center transition-all duration-700">
+				class="w-[90%] max-w-[1045px] mx-auto my-10 lg:my-[60px] flex justify-center transition-all duration-700"
+			>
 				<img :alt="data.detailTitle" :src="data.img" class="w-full" />
 			</div>
 
 			<!-- line -->
-			<img
-				class="w-[95%] mx-auto"
-				alt="line"
-				src="@/assets/img/campaigns/detail/bannerLine.svg" />
+			<img class="w-[95%] mx-auto" alt="line" src="@/assets/img/campaigns/detail/bannerLine.svg" />
 
 			<!-- infoList -->
 			<div class="w-[90%] mx-auto mt-[40px] lg:mt-[60px] flex flex-col gap-[40px] lg:gap-0 lg:grid lg:grid-cols-12">
 				<div
 					v-animateonscroll="{ enterClass: 'fadein', leaveClass: 'fadeout', once: true }"
-					class="lg:col-span-3 flex flex-col gap-[13px] transition-all duration-700">
+					class="lg:col-span-3 flex flex-col gap-[13px] transition-all duration-700"
+				>
 					<div
 						v-for="item in infoList"
 						:key="item.name"
@@ -47,9 +46,7 @@
 						:key="index"
 						class="transition-all duration-700"
 					>
-						<h4
-							class="font-label text-body lg:text-scaleDef italic font-semibold text-text-def"
-						>
+						<h4 class="font-label text-body lg:text-scaleDef italic font-semibold text-text-def">
 							{{ item.title }}
 						</h4>
 
@@ -57,18 +54,14 @@
 							v-if="item.textType === TEXT_TYPE.PARAGRAPH"
 							v-html="item.content"
 							class="font-body text-body lg:text-scaleDef font-medium mt-[10px]"
-						></p>
+						/>
 
 						<div
 							v-if="item.textType === TEXT_TYPE.TEXT_LIST"
 							class="font-body text-body lg:text-scaleDef font-medium mt-[10px]"
 						>
 							<ul class="flex flex-col list-[square] list-inside pl-3">
-								<li
-									v-for="(text, i) in item.list"
-									:key="i"
-									v-html="text"
-								></li>
+								<li v-for="(text, i) in item.list" :key="i" v-html="text" />
 							</ul>
 						</div>
 					</div>
@@ -116,19 +109,19 @@
 </template>
 
 <script setup lang="ts">
-import {useRoute} from 'vue-router';
-import {computed, reactive} from 'vue';
-import {campaignsWording} from '@/assets/wording/campaigns/text';
-import {TEXT_TYPE} from '@/assets/js/enum/textType';
-import {MEDIA_DISPLAY_TYPE} from '@/assets/js/enum/media';
+import { useRoute } from 'vue-router';
+import { computed } from 'vue';
+import { campaignsWording } from '@/assets/wording/campaigns/text';
+import { TEXT_TYPE } from '@/assets/js/enum/textType';
+import { MEDIA_DISPLAY_TYPE } from '@/assets/js/enum/media';
 import NImageSwiper from '@/components/atoms/swiper/NImageSwiper.vue';
-import type {CampaignItem} from '@/assets/js/enum/campaigns';
+import type { CampaignItem } from '@/assets/js/enum/campaigns';
 
-// 取得 route param
+// route 參數
 const route = useRoute();
 const id = Number(route.params.id);
 
-// 預設空資料
+// default data
 const defaultData: CampaignItem = {
 	id: 0,
 	isOngoing: false,
@@ -142,55 +135,36 @@ const defaultData: CampaignItem = {
 	details: null,
 };
 
-const { data: data } = await useAsyncData(id, () =>
-	campaignsWording.campaigns.find((item) => item.id === id) || defaultData
-);
+// SSR fetch 資料
+const { data } = await useAsyncData<CampaignItem>(`campaign-${id}`, () => {
+	return campaignsWording.campaigns.find((item) => item.id === id) || defaultData;
+});
 
-// // 找資料
-// const data = reactive<CampaignItem>(
-// 	campaignsWording.campaigns.find((item) => item.id === id) || defaultData,
-// );
-
-// 推導 info list
+// infoList
 const infoList = computed(() => {
-	if (data.id === 0) return [];
+	if (!data.value || data.value.id === 0) return [];
 	return [
-		{name: 'Year', value: data.year},
-		{name: 'Region', value: data.region},
-		{name: 'Issues', value: data.issues},
-		{name: 'Services', value: data.services},
+		{ name: 'Year', value: data.value.year },
+		{ name: 'Region', value: data.value.region },
+		{ name: 'Issues', value: data.value.issues },
+		{ name: 'Services', value: data.value.services }
 	];
 });
 
-const seoTitle = computed(() => data.value?.detailTitle ?? 'Campaign')
-const seoDescription = computed(() => data.value?.services ?? '')
-const seoImage = computed(() => data.value?.img ?? '')
-const seoUrl = computed(() => `https://yourdomain.com/campaigns/${id}`) // ⚠️ 一定要用絕對網址
-
-useHead({
-	title: seoTitle,
-	meta: [
-		// 一般搜尋引擎
-		{name: 'description', content: seoDescription},
-		{name: 'keywords', content: `Cicadas, ${seoTitle}`},
-
-		// ✅ Open Graph (Facebook / LINE 用)
-		{property: 'og:title', content: seoTitle},
-		{property: 'og:description', content: seoDescription},
-		{property: 'og:image', content: data.img},
-		{property: 'og:url', content: seoUrl},
-		{property: 'og:type', content: 'article'},
-		{property: 'og:site_name', content: 'Cicadas'},
-
-		// ✅ Twitter Cards
-		{name: 'twitter:card', content: 'summary_large_image'}, // 可選 summary、summary_large_image
-		{name: 'twitter:title', content: seoTitle},
-		{name: 'twitter:description', content: seoDescription},
-		{name: 'twitter:image', content: data.img},
-	],
-	link: [
-		{rel: 'canonical', href: seoUrl},
-	],
+// SEO meta
+useSeoMeta({
+	title: () => `${data.value?.detailTitle || 'Campaign'} | Cicadas`,
+	ogTitle: () => `${data.value?.detailTitle || 'Campaign'} | Cicadas`,
+	description: () => data.value?.services || '',
+	ogDescription: () => data.value?.services || '',
+	ogImage: () => data.value?.img || '',
+	ogUrl: () => `https://yourdomain.com/campaigns/${id}`, // ⚠️ 替換為你的正式網域
+	ogType: 'article',
+	ogSiteName: 'Cicadas',
+	twitterCard: 'summary_large_image',
+	twitterTitle: () => `${data.value?.detailTitle || 'Campaign'} | Cicadas`,
+	twitterDescription: () => data.value?.services || '',
+	twitterImage: () => data.value?.img || ''
 });
 </script>
 
