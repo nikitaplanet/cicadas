@@ -162,9 +162,10 @@ const infoList = computed(() => {
 	];
 });
 
-const seoTitle = ref(`${data.detailTitle} | Cicadas`);
-const seoDescription = ref(data.services);
-const seoUrl = ref(`/campaigns/${id}`);
+const seoTitle = computed(() => data.value?.detailTitle ?? 'Campaign')
+const seoDescription = computed(() => data.value?.services ?? '')
+const seoImage = computed(() => data.value?.img ?? '')
+const seoUrl = computed(() => `https://yourdomain.com/campaigns/${id}`) // ⚠️ 一定要用絕對網址
 
 useHead({
 	title: seoTitle,
