@@ -9,8 +9,7 @@
 			<!-- banner -->
 			<div
 				v-animateonscroll="{ enterClass: 'fadein', leaveClass: 'fadeout', once: true }"
-				class="w-[90%] max-w-[1045px] mx-auto my-10 lg:my-[60px] flex justify-center transition-all duration-700"
-			>
+				class="w-[90%] max-w-[1045px] mx-auto my-10 lg:my-[60px] flex justify-center transition-all duration-700">
 				<img :alt="data.detailTitle" :src="data.img" class="w-full" />
 			</div>
 
@@ -18,17 +17,13 @@
 			<img
 				class="w-[95%] mx-auto"
 				alt="line"
-				src="@/assets/img/campaigns/detail/bannerLine.svg"
-			/>
+				src="@/assets/img/campaigns/detail/bannerLine.svg" />
 
 			<!-- infoList -->
-			<div
-				class="w-[90%] mx-auto mt-[40px] lg:mt-[60px] flex flex-col gap-[40px] lg:gap-0 lg:grid lg:grid-cols-12"
-			>
+			<div class="w-[90%] mx-auto mt-[40px] lg:mt-[60px] flex flex-col gap-[40px] lg:gap-0 lg:grid lg:grid-cols-12">
 				<div
 					v-animateonscroll="{ enterClass: 'fadein', leaveClass: 'fadeout', once: true }"
-					class="lg:col-span-3 flex flex-col gap-[13px] transition-all duration-700"
-				>
+					class="lg:col-span-3 flex flex-col gap-[13px] transition-all duration-700">
 					<div
 						v-for="item in infoList"
 						:key="item.name"
@@ -147,10 +142,14 @@ const defaultData: CampaignItem = {
 	details: null,
 };
 
-// 找資料
-const data = reactive<CampaignItem>(
-	campaignsWording.campaigns.find((item) => item.id === id) || defaultData,
+const { data: data } = await useAsyncData(id, () =>
+	campaignsWording.campaigns.find((item) => item.id === id) || defaultData
 );
+
+// // 找資料
+// const data = reactive<CampaignItem>(
+// 	campaignsWording.campaigns.find((item) => item.id === id) || defaultData,
+// );
 
 // 推導 info list
 const infoList = computed(() => {
