@@ -5,7 +5,6 @@
 		<LogoSection />
 
 		<QuoteSection />
-		<!--		<QuoteSwiper :contentList="workshopsWording.quoteList" />-->
 
 		<WorkshopsSwiper />
 	</div>
@@ -15,8 +14,6 @@
 import LandingSection from '@/components/pages/workshops/LandingSection.vue';
 import LogoSection from '@/components/pages/workshops/LogoSection.vue';
 import WorkshopsSwiper from '@/components/pages/workshops/WorkshopsSwiper.vue';
-// import QuoteSwiper from '@/components/pages/workshops/QuoteSwiper.vue';
-// import {workshopsWording} from '@/assets/wording/workshops/text';
 import QuoteSection from '@/components/pages/workshops/QuoteSection.vue';
 </script>
 

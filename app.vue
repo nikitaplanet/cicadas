@@ -11,7 +11,7 @@
 	</Transition>
 
 	<div class="bg-surface-def">
-		<Transition name="fade" mode="out-in">
+		<Transition mode="out-in" name="fade">
 			<div v-if="!isShowLoading">
 				<NuxtPage />
 				<!--Footer-->
@@ -44,10 +44,19 @@ useHead({
 		{
 			name: 'viewport',
 			content: 'width=device-width, initial-scale=1.0',
-		}],
-	script: [{src: 'https://tally.so/widgets/embed.js', async: true}],
+		},
+	],
+	script: [
+		{src: 'https://tally.so/widgets/embed.js', async: true},
+		{
+			id: 'Cookiebot',
+			src: 'https://consent.cookiebot.com/uc.js',
+			type: 'text/javascript',
+			'data-cbid': '5efa9b8a-2cc4-485e-9d86-54b078df59e8',
+			'data-blockingmode': 'auto',
+		},
+	],
 });
-
 
 const isShowLoading = ref(true);
 const isHideLoading = ref(false);

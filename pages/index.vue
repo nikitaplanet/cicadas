@@ -53,20 +53,12 @@
 	</div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import {ROUTER_NAME} from 'assets/js/enum/routerEnum';
 
 definePageMeta({
 	name: ROUTER_NAME.HOME_PAGE,
-})
-
-useHead({
-	viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
-	charset: 'utf-8',
-	bodyAttrs: {
-		class: 'test'
-	}
-})
+});
 
 useSeoMeta({
 	title: () => seoWording.home.title,
@@ -103,6 +95,7 @@ import gsap from 'gsap';
 import HeadingHomeMade from '@/components/atoms/text/HeadingHomeMade.vue';
 import AboutUsMobile from '@/components/pages/home/horizonSlide/AboutUsMobile.vue';
 import {seoWording} from 'assets/wording/seoWording';
+
 let ctx: gsap.Context;
 let ctxHeading: gsap.Context;
 
@@ -182,7 +175,7 @@ function initAnimation() {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .section {
 	&-gradient3,
 	&-gradient4,

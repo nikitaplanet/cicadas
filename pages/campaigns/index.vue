@@ -14,8 +14,7 @@
 				:title="item.title"
 				:year="item.year"
 				class="cursor-pointer" />
-			<img v-if="index !== campaigns.length - 1" class="w-full px-8" alt="line"
-				 src="@/assets/img/campaigns/listLine.svg" />
+			<img v-if="index !== campaigns.length - 1" class="w-full px-8" alt="line" src="@/assets/img/campaigns/listLine.svg" />
 		</template>
 	</div>
 </template>

@@ -40,10 +40,10 @@ import AboutIssuesTackle from '@/components/pages/about/AboutIssuesTackle.vue';
 <style lang="scss" scoped>
 .about-bg {
 	background: linear-gradient(
-			180deg,
-			var(--Surface-supportive-violet-dark, #d6b9e0) 0%,
-			var(--Surface-supportive-violet-mid, #e9c9f4) 50.33%,
-			var(--Surface-def, #fceee9) 100%
+		180deg,
+		var(--Surface-supportive-violet-dark, #d6b9e0) 0%,
+		var(--Surface-supportive-violet-mid, #e9c9f4) 50.33%,
+		var(--Surface-def, #fceee9) 100%
 	);
 }
 

@@ -1,7 +1,8 @@
- <template>
+<template>
 	<div class="pt-0 pb-0 md:pb-10">
 		<SectionContainer :hasMinHeight="false">
-			<div v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}" class="flex flex-col transition-all duration-700">
+			<div v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+				 class="flex flex-col transition-all duration-700">
 				<!---col-->
 				<div class="w-full grid grid-cols-1">
 					<!---row-->
@@ -19,7 +20,7 @@
 						<div
 							class="w-[90%] mt-5 md:mt-12 flex items-center cursor-pointer"
 							:class="{'justify-start': align === 'left', 'justify-end': align === 'right'}">
-							<img :alt="title" :src="img" class="w-[650px]" />
+							<img :alt="title" :src="img" loading="lazy" class="w-[650px]" />
 						</div>
 					</router-link>
 				</div>
