@@ -49,7 +49,7 @@ function onIframeLoad() {
 }
 
 function handleClickVideo() {
-	window.open('https://player.vimeo.com/video/1059379503?autoplay=1');
+	window.open('https://player.vimeo.com/video/1059379503?autoplay=1&muted=1');
 }
 
 

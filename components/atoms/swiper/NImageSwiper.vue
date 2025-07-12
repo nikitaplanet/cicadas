@@ -3,9 +3,9 @@
 		<ClientOnly>
 			<Swiper
 				:autoplay="{
-				delay: 5000,
-				disableOnInteraction: true,
-			}"
+					delay: 5000,
+					disableOnInteraction: true,
+				}"
 				:breakpoints="breakPoints"
 				:centeredSlides="true"
 				:loop="true"
