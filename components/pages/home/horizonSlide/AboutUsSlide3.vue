@@ -12,13 +12,17 @@
 			</div>
 		</SectionContainer>
 
-		<img class="absolute bottom-[120px] right-[130px] w-[130px]" alt="feather" src="@/assets/img/home/aboutUs/learnMore.svg" />
+		<NLink to="/about" class="absolute bottom-[120px] right-[130px] w-[130px]">
+			<img class="w-full cursor-pointer" alt="feather" src="@/assets/img/home/aboutUs/learnMore.svg" />
+		</NLink>
+
 	</div>
 </template>
 
 <script lang="ts" setup>
 import SectionContainer from '@/components/layout/SectionContainer.vue';
-import {contentText} from '@/assets/wording/home/text.ts';
+import {contentText} from '@/assets/wording/home/text';
+import NLink from '~/components/atoms/link/NLink.vue';
 </script>
 
 <style lang="scss" scoped>

@@ -42,6 +42,7 @@ const route = useRoute();
 
 useHead({
 	meta: [{name: 'og:title', content: `${route.meta.title} | Cicadas`}],
+	script: [{ src: 'https://tally.so/widgets/embed.js', async: true }],
 });
 
 

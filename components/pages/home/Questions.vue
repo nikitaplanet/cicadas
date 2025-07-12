@@ -8,9 +8,13 @@
 				<div
 					v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
 					class="col-span-1 mt-8 lg:mt-0 lg:col-span-8 w-full flex flex-col justify-center items-start gap-5 transition-all duration-700">
-					<QAccordion>
-						<QAccordionItem v-for="item in qaList" :content="item.content" :id="item.id" :title="item.title"></QAccordionItem>
-					</QAccordion>
+					<ClientOnly>
+						<QAccordion>
+							<QAccordionItem v-for="item in qaList" :content="item.content" :id="item.id"
+											:key="`toggle_${item.id}`"
+											:title="item.title" />
+						</QAccordion>
+					</ClientOnly>
 				</div>
 			</div>
 		</SectionContainer>
@@ -21,7 +25,7 @@
 import {reactive} from 'vue';
 import SectionContainer from '@/components/layout/SectionContainer.vue';
 import SectionNameTag from '@/components/atoms/text/SectionNameTag.vue';
-import {contentText} from '@/assets/wording/home/text.ts';
+import {contentText} from '@/assets/wording/home/text';
 import QAccordion from '@/components/atoms/accordion/QAccordion.vue';
 import QAccordionItem from '@/components/atoms/accordion/QAccordionItem.vue';
 
