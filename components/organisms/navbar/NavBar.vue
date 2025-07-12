@@ -136,7 +136,7 @@ const menu = ref<NavMenuItem[]>(
 );
 
 const checkLinkActive = (item: NavMenuItem) => {
-	return route.name === item.name;
+	return route.path === item.url;
 };
 
 const handleShowCommon = () => {
