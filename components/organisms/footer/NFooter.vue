@@ -66,7 +66,6 @@ import SectionContainer from '@/components/layout/SectionContainer.vue';
 import NLink from '@/components/atoms/link/NLink.vue';
 import {globalWording} from '@/assets/wording/global/menu';
 import dayjs from 'dayjs';
-import {useRoute} from 'vue-router';
 import {ROUTER_NAME} from '@/assets/js/enum/routerEnum';
 
 const route = useRoute();
@@ -96,7 +95,7 @@ const socialInfoAry = reactive([
 ]);
 
 const heading = computed(() => {
-	if (route.name === ROUTER_NAME.WORKSHOPS_PAGE) {
+	if (route.path === '/workshops') {
 		return globalWording.footer.heading2;
 	} else {
 		return globalWording.footer.heading;
@@ -104,7 +103,7 @@ const heading = computed(() => {
 });
 
 const description = computed(() => {
-	if (route.name === ROUTER_NAME.WORKSHOPS_PAGE) {
+	if (route.path === '/workshops') {
 		return globalWording.footer.description2;
 	} else {
 		return globalWording.footer.description;
