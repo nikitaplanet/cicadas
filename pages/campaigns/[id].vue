@@ -18,7 +18,8 @@
 			<img class="w-[95%] mx-auto" alt="line" src="@/assets/img/campaigns/detail/bannerLine.svg" />
 
 			<!-- infoList -->
-			<div class="w-[90%] mx-auto mt-[40px] lg:mt-[60px] flex flex-col gap-[40px] lg:gap-0 lg:grid lg:grid-cols-12">
+			<div
+				class="w-[90%] mx-auto mt-[40px] lg:mt-[60px] flex flex-col gap-[40px] lg:gap-0 lg:grid lg:grid-cols-12">
 				<div
 					v-animateonscroll="{ enterClass: 'fadein', leaveClass: 'fadeout', once: true }"
 					class="lg:col-span-3 flex flex-col gap-[13px] transition-all duration-700"
@@ -74,13 +75,11 @@
 					v-animateonscroll="{ enterClass: 'fadein', leaveClass: 'fadeout', once: true }"
 					v-for="(item, i) in data.details?.media"
 					:key="i"
-					class="w-full transition-all duration-700"
-				>
+					class="w-full transition-all duration-700">
 					<!-- 2-col -->
 					<div
 						v-if="item.mediaDisplayType === MEDIA_DISPLAY_TYPE.COL"
-						class="w-[90%] mx-auto grid grid-cols-[4fr_8fr] gap-x-5 items-stretch"
-					>
+						class="w-[90%] mx-auto grid grid-cols-[4fr_8fr] gap-x-5 items-stretch">
 						<img
 							v-for="(image, subIndex) in item.mediaList"
 							:alt="`${subIndex}_image`"
@@ -89,6 +88,12 @@
 							class="h-full object-cover w-full"
 						/>
 					</div>
+
+					<!-- video -->
+					<div class="px-10" v-if="item.mediaDisplayType === MEDIA_DISPLAY_TYPE.VIDEO && item.url">
+						<NVideo :videoUrl="item.url" />
+					</div>
+
 
 					<!-- swiper -->
 					<NImageSwiper
@@ -101,21 +106,21 @@
 
 		<div
 			v-else
-			class="w-[90%] mx-auto font-body text-body divide-text-ui-error font-medium"
-		>
+			class="w-[90%] mx-auto font-body text-body divide-text-ui-error font-medium">
 			Wrong page, please go back to campaign list page.
 		</div>
 	</article>
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
-import { computed } from 'vue';
-import { campaignsWording } from '@/assets/wording/campaigns/text';
-import { TEXT_TYPE } from '@/assets/js/enum/textType';
-import { MEDIA_DISPLAY_TYPE } from '@/assets/js/enum/media';
+import {useRoute} from 'vue-router';
+import {computed} from 'vue';
+import {campaignsWording} from '@/assets/wording/campaigns/text';
+import {TEXT_TYPE} from '@/assets/js/enum/textType';
+import {MEDIA_DISPLAY_TYPE, MEDIA_TYPE} from '@/assets/js/enum/media';
 import NImageSwiper from '@/components/atoms/swiper/NImageSwiper.vue';
-import type { CampaignItem } from '@/assets/js/enum/campaigns';
+import type {CampaignItem} from '@/assets/js/enum/campaigns';
+import NVideo from '~/components/atoms/videoSec/NVideo.vue';
 
 // route 參數
 const route = useRoute();
@@ -142,10 +147,10 @@ const data = campaignsWording.campaigns.find((item) => item.id === id) || defaul
 const infoList = computed(() => {
 	if (!data || data.id === 0) return [];
 	return [
-		{ name: 'Year', value: data.year },
-		{ name: 'Region', value: data.region },
-		{ name: 'Issues', value: data.issues },
-		{ name: 'Services', value: data.services }
+		{name: 'Year', value: data.year},
+		{name: 'Region', value: data.region},
+		{name: 'Issues', value: data.issues},
+		{name: 'Services', value: data.services},
 	];
 });
 
@@ -162,7 +167,7 @@ useSeoMeta({
 	twitterCard: 'summary_large_image',
 	twitterTitle: () => `${data?.detailTitle || 'Campaign'} | Cicadas`,
 	twitterDescription: () => data?.services || '',
-	twitterImage: () => data?.img || ''
+	twitterImage: () => data?.img || '',
 });
 </script>
 

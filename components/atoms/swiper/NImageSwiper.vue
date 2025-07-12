@@ -16,7 +16,7 @@
 				:spaceBetween="20"
 				class="mySwiper">
 				<SwiperSlide v-for="item in mediaList" class="swiper-slide-custom">
-					<img :alt="item.key" :src="item.src" class="aspect-[16/11]" />
+					<img :alt="item.key" :src="item.src" class="aspect-[16/11] object-cover" />
 				</SwiperSlide>
 			</Swiper>
 		</ClientOnly>

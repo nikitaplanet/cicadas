@@ -92,6 +92,7 @@ const customize = {
 		scaleLG: ['24px', { lineHeight: '1.2' }],
 		scaleMD: ['20px', { lineHeight: '1.2' }],
 		scaleDef: ['18px', { lineHeight: '1.2' }],
+		scaleSM: ['14px', { lineHeight: '1.2' }],
 		scale2XS: ['10.486px', { lineHeight: '1.2' }],
 		scale3XS: ['9.175px', { lineHeight: '1' }],
 	},

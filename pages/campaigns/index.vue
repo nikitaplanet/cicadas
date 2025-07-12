@@ -25,7 +25,6 @@ import {ref} from 'vue';
 import LandingSection from '@/components/pages/campaigns/LandingSection.vue';
 import CampaignSection from '@/components/pages/campaigns/CampaignSection.vue';
 import {campaignsWording} from '@/assets/wording/campaigns/text';
-import {useRouter} from 'vue-router';
 
 const router = useRouter();
 

@@ -1,5 +1,5 @@
-<template>
-	<div class="pt-0 pb-10">
+ <template>
+	<div class="pt-0 pb-0 md:pb-10">
 		<SectionContainer :hasMinHeight="false">
 			<div v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}" class="flex flex-col transition-all duration-700">
 				<!---col-->
@@ -13,11 +13,11 @@
 						}">
 						<h2
 							v-html="title"
-							class="italic font-semibold text-h2 font-h2 cursor-pointer"
+							class="italic font-semibold text-scaleXL md:text-h2 font-h2 cursor-pointer"
 							:class="{'text-left': align === 'left', 'text-right': align === 'right'}"></h2>
 
 						<div
-							class="w-full mt-12 flex items-center cursor-pointer"
+							class="w-[90%] mt-5 md:mt-12 flex items-center cursor-pointer"
 							:class="{'justify-start': align === 'left', 'justify-end': align === 'right'}">
 							<img :alt="title" :src="img" class="w-[650px]" />
 						</div>

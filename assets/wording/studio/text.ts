@@ -2,10 +2,13 @@ import swiper1_1 from '@/assets/img/studio/swiper1/1.jpg';
 import swiper2_1 from '@/assets/img/studio/swiper2/1.jpg';
 import swiper3_1 from '@/assets/img/studio/swiper3/1.jpg';
 import swiper4_1 from '@/assets/img/studio/swiper4/1.jpg';
-import {MEDIA_TYPE} from '@/assets/js/enum/media.ts';
+import {MEDIA_TYPE} from '@/assets/js/enum/media';
 
 import detail3_1_image from '@/assets/img/studio/detail/id3/image_3_1.jpg';
 import detail3_2_image from '@/assets/img/studio/detail/id3/image_3_2.jpg';
+import detail3_3_image from '@/assets/img/studio/detail/id3/image_3_3.jpg';
+
+import detail4_1_image from '@/assets/img/studio/detail/id4/image_4_1.jpg';
 
 export const studioWording = {
 	landing: {
@@ -154,8 +157,8 @@ export const studioWording = {
 						content:
 							'In response to the profound impact of COVID-19 on students, parents, and teachers, Ednovators engaged us to develop a mental wellness toolkit for their Better Me Better We platform. We distributed 500 curated boxes filled with a comprehensive guide, 30 daily exercises, and soothing audio meditations, providing hope, resilience, and tools to thrive amid adversity. ',
 						media: {
-							type: MEDIA_TYPE.VIMEO,
-							src: '',
+							type: MEDIA_TYPE.IMAGE,
+							src: detail3_3_image,
 						},
 						isOnGoing: false,
 					},
@@ -179,7 +182,7 @@ export const studioWording = {
 							'In collaboration with Press Start Academy and Eaton Hotel, we hosted Hong Kong’s first-ever event exploring gaming as an innovative medium for advocacy-driven storytelling —creating new opportunities to integrate games into social impact initiatives.<br/><br/>The landmark event combines panel discussions, hands-on workshops, and a game exhibition, to showcase the potential of gaming in advocacy.<br/><br/>Around 70 industry professionals and change-makers attended the event, sparking conversations to incorporate games into social impact initiatives.',
 						media: {
 							type: MEDIA_TYPE.IMAGE,
-							src: '',
+							src: detail4_1_image,
 						},
 						isOnGoing: true,
 					},

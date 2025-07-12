@@ -16,11 +16,12 @@ import c2_swiper2 from '@/assets/img/campaigns/detail/creativityIs/swiper2.jpg';
 import c2_swiper3 from '@/assets/img/campaigns/detail/creativityIs/swiper3.jpg';
 import c2_swiper4 from '@/assets/img/campaigns/detail/creativityIs/swiper4.jpg';
 import c2_swiper5 from '@/assets/img/campaigns/detail/creativityIs/swiper5.jpg';
-import c2_swiper6 from '@/assets/img/campaigns/detail/creativityIs/swiper6.jpg';
 
 import c3_swiper1 from '@/assets/img/campaigns/detail/resource/swiper1.jpg';
 import c3_swiper2 from '@/assets/img/campaigns/detail/resource/swiper2.jpg';
 import c3_swiper3 from '@/assets/img/campaigns/detail/resource/swiper3.jpg';
+import c3_swiper4 from '@/assets/img/campaigns/detail/resource/swiper4.jpg';
+import c3_swiper5 from '@/assets/img/campaigns/detail/resource/swiper5.jpg';
 
 import c4_swiper1 from '@/assets/img/campaigns/detail/knock/swiper1.jpg';
 import c4_swiper2 from '@/assets/img/campaigns/detail/knock/swiper2.jpg';
@@ -118,6 +119,10 @@ export const campaignsWording: CampaignWording = {
 								key: 'c1_swiper4',
 								src: c1_swiper4,
 							},
+							{
+								key: 'c1_swiper5', // for loop
+								src: c1_swiper3,
+							},
 						],
 						url: '',
 					},
@@ -180,6 +185,12 @@ export const campaignsWording: CampaignWording = {
 				],
 				media: [
 					{
+						mediaDisplayType: MEDIA_DISPLAY_TYPE.VIDEO,
+						mediaType: MEDIA_TYPE.VIMEO,
+						mediaList: [],
+						url: 'https://vimeo.com/1089965527'
+					},
+					{
 						mediaDisplayType: MEDIA_DISPLAY_TYPE.SWIPER,
 						mediaType: MEDIA_TYPE.IMAGE,
 						mediaList: [
@@ -202,10 +213,6 @@ export const campaignsWording: CampaignWording = {
 							{
 								key: 'c2_swiper5',
 								src: c2_swiper5,
-							},
-							{
-								key: 'c2_swiper6',
-								src: c2_swiper6,
 							},
 						],
 						url: '',
@@ -270,6 +277,14 @@ export const campaignsWording: CampaignWording = {
 								key: 'c3_swiper3',
 								src: c3_swiper3,
 							},
+							{
+								key: 'c3_swiper4',
+								src: c3_swiper4,
+							},
+							{
+								key: 'c3_swiper5',
+								src: c3_swiper5,
+							},
 						],
 						url: '',
 					},
@@ -325,19 +340,10 @@ export const campaignsWording: CampaignWording = {
 				],
 				media: [
 					{
-						mediaDisplayType: MEDIA_DISPLAY_TYPE.COL,
-						mediaType: MEDIA_TYPE.IMAGE,
-						mediaList: [
-							{
-								key: 'c1_1',
-								src: c1_1,
-							},
-							{
-								key: 'c1_2',
-								src: c1_2,
-							},
-						],
-						url: '', // for video
+						mediaDisplayType: MEDIA_DISPLAY_TYPE.VIDEO,
+						mediaType: MEDIA_TYPE.VIMEO,
+						mediaList: [],
+						url: 'https://vimeo.com/1093634184?share=copy', // for video
 					},
 					{
 						mediaDisplayType: MEDIA_DISPLAY_TYPE.SWIPER,
@@ -348,15 +354,15 @@ export const campaignsWording: CampaignWording = {
 								src: c4_swiper1,
 							},
 							{
-								key: 'c4_swiper1',
+								key: 'c4_swiper2',
 								src: c4_swiper2,
 							},
 							{
-								key: 'c4_swiper1',
+								key: 'c4_swiper3',
 								src: c4_swiper3,
 							},
 							{
-								key: 'c4_swiper1',
+								key: 'c4_swiper4',
 								src: c4_swiper4,
 							},
 							{
@@ -444,6 +450,10 @@ export const campaignsWording: CampaignWording = {
 							{
 								key: 'c5_swiper4',
 								src: c5_swiper4,
+							},
+							{
+								key: 'c5_swiper5',
+								src: c5_swiper3,
 							},
 						],
 						url: '',

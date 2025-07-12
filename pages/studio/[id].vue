@@ -19,7 +19,7 @@
 				:key="item.id"
 				v-animateonscroll="{ enterClass: 'fadein', leaveClass: 'fadeout', once: true }"
 				class="w-full transition-all duration-700">
-				<div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
+				<div class="w-full grid grid-cols-1 gap-5 lg:grid-cols-2 md:gap-12">
 					<div class="flex flex-col justify-start items-start">
 						<div
 							v-if="item.isOnGoing"
@@ -33,20 +33,17 @@
 						</div>
 						<h2
 							v-html="item.title"
-							class="italic font-semibold text-h2 font-h2">
+							class="italic font-semibold font-h2 text-scaleXL md:text-h2">
 						</h2>
 					</div>
 
 					<div>
 						<p
 							v-html="item.content"
-							class="text-body font-body font-medium">
+							class="text-scaleSM font-body font-medium md:text-scaleMD">
 						</p>
 						<div class="w-full mt-10">
-							<img
-								v-if="item.media.type === MEDIA_TYPE.VIMEO"
-								alt="None"
-								src="@/assets/img/studio/detail/none.png" />
+							<NVideo v-if="item.media.type === MEDIA_TYPE.VIMEO" :videoUrl="item.media.src"/>
 							<img
 								v-else
 								:alt="item.title"
@@ -58,7 +55,7 @@
 
 				<img
 					v-if="index !== detailData.detail.list.length - 1"
-					class="w-full py-20"
+					class="w-full py-10 lg:py-20"
 					alt="line"
 					src="@/assets/img/campaigns/listLine.svg"
 				/>
@@ -75,6 +72,7 @@ import {studioWording} from '@/assets/wording/studio/text';
 import LandingSection from '@/components/pages/studio/LandingSection.vue';
 import {MEDIA_TYPE} from '@/assets/js/enum/media';
 import NLink from '@/components/atoms/link/NLink.vue';
+import NVideo from '~/components/atoms/videoSec/NVideo.vue';
 
 interface StudioDetailListItem {
 	id: string;

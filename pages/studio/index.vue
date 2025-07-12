@@ -2,10 +2,11 @@
 	<div class="w-full min-h-screen bg-surface-def">
 		<LandingSection :description="studioWording.landing.description" :title="studioWording.landing.headerTitle" />
 
-		<template v-for="item in studioInfo" :key="item.title">
+		<div class="md:pb-5" :class="{'pb-[120px]': index !== studioInfo.length - 1, 'pb-[80px]': index === studioInfo.length - 1}"
+			 v-for="(item, index) in studioInfo" :key="item.title">
 			<StudioSection :align="item.align" :id="item.id" :img="item.img" :swiperClass="item.swiperClass"
 						   :title="item.title" />
-		</template>
+		</div>
 	</div>
 </template>
 
