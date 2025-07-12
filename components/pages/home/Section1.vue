@@ -44,7 +44,7 @@ const iframeSrc = 'https://player.vimeo.com/video/1059379503?autoplay=1&muted=1&
 function onIframeLoad() {
 	setTimeout(() => {
 		isLoaded.value = true;
-	}, 1000);
+	}, 300);
 
 }
 

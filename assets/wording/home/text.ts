@@ -21,8 +21,8 @@ export const contentText = {
 		description: `We're here - whether you need to activate funders, mobilize the public or build internal capacity. We help you connect meaningfully with your audience—bringing them one step closer to action.`,
 	},
 	section2: {
-		title1: 'Cicadas may be small, but they rarely go <br />unnoticed. The space within them<br />' + 'amplifies their',
-		title2: ' sound and collectively<br />they make a spectacular noise that must<br />' + 'be reckoned with.',
+		title1: 'Cicadas may be small, but they rarely go unnoticed. The space within them amplifies their ',
+		title2: 'sound and collectively they make a spectacular noise that no one can ignore.',
 	},
 	ourWorks: {
 		list: [

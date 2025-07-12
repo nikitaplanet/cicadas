@@ -63,7 +63,7 @@ import {computed, reactive, ref} from 'vue';
 import SectionContainer from '@/components/layout/SectionContainer.vue';
 import SectionNameTag from '@/components/atoms/text/SectionNameTag.vue';
 import HoverTextBox from '@/components/molecules/HoverTextBox.vue';
-import {contentText} from '@/assets/wording/home/text.ts';
+import {contentText} from '@/assets/wording/home/text';
 import CommonOverlay from '@/components/layout/CommonOverlay.vue';
 
 import {useRouter} from 'vue-router';
