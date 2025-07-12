@@ -4,8 +4,8 @@ import SparkFoundationLogo from '@/assets/img/home/sliderSection/content2_logo.s
 import KoreaFoundationLogo from '@/assets/img/home/sliderSection/content3_logo.svg';
 
 import slide1 from '@/assets/img/home/sliderSection/slide1.svg';
-import slide2 from '@/assets/img/home/sliderSection/slide1.svg';
-import slide3 from '@/assets/img/home/sliderSection/slide1.svg';
+import slide2 from '@/assets/img/home/sliderSection/slide2.svg';
+import slide3 from '@/assets/img/home/sliderSection/slide3.svg';
 
 import slideMobile1 from '@/assets/img/home/sliderSection/slide1_m.svg';
 import slideMobile2 from '@/assets/img/home/sliderSection/slide2_m.svg';

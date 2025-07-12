@@ -11,6 +11,7 @@ import type {SwiperImage} from '@/components/atoms/swiper';
 import Photo1 from '@/assets/img/workshops/swiperPhotos/1.jpg';
 import Photo2 from '@/assets/img/workshops/swiperPhotos/2.jpg';
 import Photo3 from '@/assets/img/workshops/swiperPhotos/3.jpg';
+import Photo4 from '@/assets/img/workshops/swiperPhotos/4.jpg';
 
 const imgs = reactive<SwiperImage[]>([
 	{
@@ -26,8 +27,12 @@ const imgs = reactive<SwiperImage[]>([
 		src: Photo3,
 	},
 	{
-		key: '2',
-		src: Photo2,
+		key: '4',
+		src: Photo4,
+	},
+	{
+		key: '5',
+		src: Photo3,
 	},
 ]);
 </script>
