@@ -1,5 +1,5 @@
 <template>
-	<div class="sliderSection w-full pt-16 pb-24 md:pb-32">
+	<div class="sliderSection w-full pt-16 pb-24 px-5 md:pb-32">
 		<PartnerSwiper />
 	</div>
 </template>

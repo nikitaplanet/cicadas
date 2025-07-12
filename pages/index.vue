@@ -32,7 +32,7 @@
 		<div class="section-gradient5"></div>
 
 		<!--Horizon 2-->
-		<div ref="headingWrapper" id="headingWrapper" class="heading-slide-wrapper">
+		<div ref="headingWrapper" id="headingWrapper" class="heading-slide-wrapper overflow-x-hidden">
 			<HeadingHomeMade ref="headingText">{{ contentText.sliderSection.header }}</HeadingHomeMade>
 		</div>
 
@@ -55,6 +55,7 @@
 
 <script lang="ts" setup>
 import {ROUTER_NAME} from 'assets/js/enum/routerEnum';
+import {useMediaQuery} from '@vueuse/core';
 
 definePageMeta({
 	name: ROUTER_NAME.HOME_PAGE,
@@ -101,30 +102,25 @@ let ctxHeading: gsap.Context;
 
 const headingWrapper = ref<HTMLElement>();
 const headingText = ref<HTMLElement>();
-const isMobile = ref(false);
+const isMobile = useMediaQuery('(max-width: 1279px)');
+const previousIsMobile = ref(isMobile.value);
 
 onMounted(async () => {
 	await nextTick();
-	resizeWindow();
-	window.addEventListener('resize', resizeWindow);
-
 	initAnimation();
 });
-
-function getScrollAmount(headingDom: HTMLElement) {
-	const headingWidth = headingDom.offsetWidth;
-	const amountToScroll = headingWidth - window.innerWidth + 200;
-	return -amountToScroll;
-}
 
 onUnmounted(() => {
 	ctx && ctx.revert();
 	ctxHeading && ctxHeading.revert();
-	window.removeEventListener('resize', resizeWindow);
 });
 
-function resizeWindow() {
-	isMobile.value = window.innerWidth < 768;
+function getScrollAmount(headingDom: HTMLElement) {
+	const headingWidth = headingDom.offsetWidth;
+	const distance = 200;
+	const amountToScroll = headingWidth - window.innerWidth + distance;
+	console.log(-amountToScroll, 'headingWidth', headingWidth);
+	return -amountToScroll;
 }
 
 function initAnimation() {
@@ -149,11 +145,11 @@ function initAnimation() {
 					pinSpacing: true,
 				},
 			});
-		}, 50); // 延遲一點，確保文字 render 完成
+		}, 200); // 延遲一點，確保文字 render 完成
 	});
 
 	// ❗只讓桌機版 (lg 以上) 執行動畫
-	if (window.innerWidth < 1024) return;
+	if (isMobile.value) return;
 
 	ctx = gsap.context(() => {
 		const items = gsap.utils.toArray<HTMLElement>('.homePage__aboutUs__items');

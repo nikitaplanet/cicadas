@@ -15,28 +15,25 @@
 						:key="item.url"
 						:to="item.url"
 						class="group font-label text-def text-labelMd italic relative font-semibold">
-						<img :src="item.bgImage"
-							 class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-							 :class="{'opacity-100': checkLinkActive(item)}"
-							 alt="bg" />
+						<img
+							:src="item.bgImage"
+							class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+							:class="{'opacity-100': checkLinkActive(item)}"
+							alt="bg" />
 						<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ item.label }}</span>
 					</NLink>
-					<NLink @click="handleShowCommon"
-						   class="group font-label text-def text-labelMd italic relative font-semibold">
+					<NLink @click="handleShowCommon" class="group font-label text-def text-labelMd italic relative font-semibold">
 						<img
 							class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
 							alt="bg"
 							src="@/assets/img/components/nav/menu4.svg" />
-						<span
-							class="w-full text-center absolute bottom-1 left-0 z-10">{{ globalWording.nav.button.common
-							}}</span>
+						<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ globalWording.nav.button.common }}</span>
 					</NLink>
 				</div>
 			</div>
 
 			<!--Let's talk-->
-			<NLink class="group relative" data-tally-emoji-animation="wave" data-tally-emoji-text="👋"
-				   data-tally-open="mZ1K9z">
+			<NLink class="group relative" data-tally-emoji-animation="wave" data-tally-emoji-text="👋" data-tally-open="mZ1K9z">
 				<img
 					class="object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-200"
 					alt="bg"
@@ -67,15 +64,14 @@
 				<transition mode="out-in" name="fade">
 					<div
 						v-if="isShowMenuOverlay"
-						class="flex w-full px-4 h-screen fixed top-0 left-0 z-30 bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]"
+						class="flex w-screen px-4 h-screen fixed top-0 left-0 z-30 bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]"
 						:class="{
-						'flex-col-reverse bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]':
-							isNavBottom,
-						'flex-col bg-[linear-gradient(180deg,var(--sc-color-surface-tertiary,#F0E3DE)_50%,var(--sc-color-surface-primary,#DD5621)_92.44%)]':
-							!isNavBottom,
-					}">
-						<div class="w-full flex justify-between items-center"
-							 :class="{'py-[23px]': isNavBottom, 'py-[23px] ': !isNavBottom}">
+							'flex-col-reverse bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]':
+								isNavBottom,
+							'flex-col bg-[linear-gradient(180deg,var(--sc-color-surface-tertiary,#F0E3DE)_50%,var(--sc-color-surface-primary,#DD5621)_92.44%)]':
+								!isNavBottom,
+						}">
+						<div class="w-full flex justify-between items-center" :class="{'py-[23px]': isNavBottom, 'py-[23px] ': !isNavBottom}">
 							<NLink @click="handleCloseMenuOverlay" to="/">
 								<img alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
 							</NLink>
@@ -86,7 +82,7 @@
 						<!--MenuList-->
 						<div class="w-full flex-grow flex flex-col justify-center items-center gap-5">
 							<NLink
-								v-for="(item) in menu"
+								v-for="item in menu"
 								@click="handleCloseMenuOverlay"
 								@mouseleave="item.isHover = false"
 								@mouseover="item.isHover = true"
@@ -160,6 +156,5 @@ watch(
 	},
 );
 </script>
-
 
 <style lang="scss" scoped></style>

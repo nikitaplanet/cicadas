@@ -7,12 +7,7 @@ export default defineNuxtConfig({
 		preset: 'cloudflare-pages',
 		prerender: {
 			crawlLinks: true,
-			routes: [
-				'/',
-				'/campaigns/1',
-				'/campaigns/2',
-				'/campaigns/3'
-			],
+			routes: ['/', '/campaigns/1', '/campaigns/2', '/campaigns/3'],
 		},
 	},
 	app: {
@@ -20,10 +15,8 @@ export default defineNuxtConfig({
 	},
 	compatibilityDate: '2025-05-15',
 	devtools: {enabled: false},
-	modules: ['nuxt-swiper', '@primevue/nuxt-module', '@nuxtjs/tailwindcss',],
-	css: [
-		'~/assets/styles/index.scss',
-	],
+	modules: ['nuxt-swiper', '@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@vueuse/nuxt'],
+	css: ['~/assets/styles/index.scss'],
 	primevue: {
 		autoImport: true,
 		components: {
@@ -31,7 +24,7 @@ export default defineNuxtConfig({
 		},
 		options: {
 			unstyled: true,
-		}
+		},
 	},
 	vite: {
 		css: {

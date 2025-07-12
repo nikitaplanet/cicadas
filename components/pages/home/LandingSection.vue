@@ -1,12 +1,11 @@
 <template>
 	<div
 		ref="main"
-		class="w-full bg-[linear-gradient(180deg,var(--sc-color-border-primary,#DD5621)_75.98%,rgba(221,86,33,0)_100%)] lg:bg-[linear-gradient(180deg,var(--Border-primary,#dd5621)_38.08%,rgba(221,86,33,0)_100%)]">
+		class="w-full overflow-hidden bg-[linear-gradient(180deg,var(--sc-color-border-primary,#DD5621)_75.98%,rgba(221,86,33,0)_100%)] lg:bg-[linear-gradient(180deg,var(--Border-primary,#dd5621)_38.08%,rgba(221,86,33,0)_100%)]">
 		<div class="w-11/12 m-auto">
 			<div class="w-full h-screen relative">
 				<div class="w-full h-full absolute left-0 top-0 flex align-center justify-center">
-					<img ref="logo" class="block w-1/2 lg:w-9/12 max-w-[450px]" alt="LogoIcon"
-						 src="~@/assets/img/home/brand/LogoIcon.svg" />
+					<img ref="logo" class="block w-1/2 lg:w-9/12 max-w-[450px]" alt="LogoIcon" src="~@/assets/img/home/brand/LogoIcon.svg" />
 				</div>
 				<div class="w-full h-full grid grid-cols-1 pt-12 absolute md:grid-cols-12">
 					<div class="col-span-1 md:col-span-8">
@@ -16,7 +15,7 @@
 					</div>
 
 					<div class="flex items-end pb-24 col-span-1 md:col-span-4 md:items-start">
-						<HeaderDescription isHome ref="headerDesc" :mode="TextMode.light">
+						<HeaderDescription ref="headerDesc" :mode="TextMode.light" isHome>
 							<span v-html="contentText.landing.headerDescription"></span>
 						</HeaderDescription>
 					</div>

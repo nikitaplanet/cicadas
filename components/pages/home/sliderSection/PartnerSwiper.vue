@@ -1,14 +1,14 @@
 <template>
 	<ClientOnly>
 		<Swiper
-			effect="fade"
 			:modules="modules"
 			:pagination="{
-			clickable: true,
-		}"
+				clickable: true,
+			}"
 			:slidesPerView="1"
 			:spaceBetween="50"
-			class="w-full max-w-[1000px] mx-auto mySwiper"
+			class="w-full max-w-[1000px] mx-auto !pb-[40px] md:!pb-[70px] mySwiper"
+			effect="fade"
 			navigation>
 			<SwiperSlide v-for="(item, index) in contentList" :key="`slide-${index}`" class="cursor-grab">
 				<!--Desk-->
@@ -49,6 +49,5 @@ const contentList = reactive([...contentText.sliderSection.contentList]);
 	width: 100%;
 	max-width: 1000px;
 	margin: 0 auto;
-	padding-bottom: 70px;
 }
 </style>

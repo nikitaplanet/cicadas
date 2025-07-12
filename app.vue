@@ -13,7 +13,7 @@
 	<div class="bg-surface-def">
 		<Transition mode="out-in" name="fade">
 			<div v-if="!isShowLoading">
-				<NuxtPage />
+				<NuxtPage :key="pageKey" />
 				<!--Footer-->
 				<NFooter />
 			</div>
@@ -36,8 +36,9 @@ import {useScrollDirectionNav} from '@/assets/js/hooks/useNavBar';
 import NCursor from '@/components/atoms/cursor/NCursor.vue';
 import NFooter from '@/components/organisms/footer/NFooter.vue';
 
+import {useMediaQuery, useDebounceFn} from '@vueuse/core';
+
 const {isScrolledPastLanding, showNavBar} = useScrollDirectionNav();
-const route = useRoute();
 
 useHead({
 	meta: [
@@ -48,46 +49,66 @@ useHead({
 	],
 	script: [
 		{src: 'https://tally.so/widgets/embed.js', async: true},
-		// {
-		// 	id: 'Cookiebot',
-		// 	src: 'https://consent.cookiebot.com/uc.js',
-		// 	type: 'text/javascript',
-		// 	'data-cbid': '5efa9b8a-2cc4-485e-9d86-54b078df59e8',
-		// 	'data-blockingmode': 'auto',
-		// 	async: true
-		// },
+		{
+			id: 'Cookiebot',
+			src: 'https://consent.cookiebot.com/uc.js',
+			type: 'text/javascript',
+			'data-cbid': '5efa9b8a-2cc4-485e-9d86-54b078df59e8',
+			'data-blockingmode': 'auto',
+			async: true,
+		},
 	],
 });
 
+const route = useRoute();
 const isShowLoading = ref(true);
 const isHideLoading = ref(false);
 const isHomePage = computed(() => route.path === '/');
-
 const isShowCommon = ref(false);
+const isMobile = useMediaQuery('(max-width: 1279px)');
+const previousIsMobile = ref(isMobile.value);
+const pageKey = ref(`${route.fullPath}-${isMobile.value ? 'm' : 'd'}`);
 
-setTimeout(() => {
-	isShowLoading.value = false;
-}, 2200);
+initPageLoading();
+function initPageLoading() {
+	isShowLoading.value = true;
+	setTimeout(() => {
+		isShowLoading.value = false;
+	}, 2200);
 
-setTimeout(() => {
-	isHideLoading.value = true;
-}, 2500);
+	isHideLoading.value = false;
+	setTimeout(() => {
+		isHideLoading.value = true;
+	}, 2500);
+}
 
 watch(
 	() => route.fullPath,
 	() => {
-		isShowLoading.value = true;
-		isHideLoading.value = false;
-
-		setTimeout(() => {
-			isShowLoading.value = false;
-		}, 2200);
-
-		setTimeout(() => {
-			isHideLoading.value = true;
-		}, 2500);
+		initPageLoading();
 	},
 );
+
+// 監聽路由變化（正常情況下 NuxtPage 會自動換，但保險加上）
+watch(
+	() => route.fullPath,
+	(newPath) => {
+		pageKey.value = `${newPath}-${isMobile.value ? 'm' : 'd'}`;
+	},
+);
+
+const handleMobileSwitch = useDebounceFn(() => {
+	const wasMobile = previousIsMobile.value;
+	const nowMobile = isMobile.value;
+
+	if (wasMobile !== nowMobile) {
+		initPageLoading();
+		pageKey.value = `${route.fullPath}-${nowMobile ? 'm' : 'd'}`;
+		previousIsMobile.value = nowMobile;
+	}
+}, 200);
+
+watch(isMobile, handleMobileSwitch);
 
 // Nav Style
 const isNavBottom = ref(false);
