@@ -67,7 +67,7 @@
 				<transition mode="out-in" name="fade">
 					<div
 						v-if="isShowMenuOverlay"
-						class="flex w-full px-4 h-screen fixed top-0 left-0 z-20 bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]"
+						class="flex w-full px-4 h-screen fixed top-0 left-0 z-30 bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]"
 						:class="{
 						'flex-col-reverse bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]':
 							isNavBottom,

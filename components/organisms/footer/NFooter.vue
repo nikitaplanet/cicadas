@@ -66,7 +66,6 @@ import SectionContainer from '@/components/layout/SectionContainer.vue';
 import NLink from '@/components/atoms/link/NLink.vue';
 import {globalWording} from '@/assets/wording/global/menu';
 import dayjs from 'dayjs';
-import {ROUTER_NAME} from '@/assets/js/enum/routerEnum';
 
 const route = useRoute();
 const currentYear = dayjs().year();

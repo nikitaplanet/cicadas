@@ -33,7 +33,6 @@ import CommonOverlay from '@/components/layout/CommonOverlay.vue';
 import NavBar from '@/components/organisms/navbar/NavBar.vue';
 
 import {useScrollDirectionNav} from '@/assets/js/hooks/useNavBar';
-import {ROUTER_NAME} from '@/assets/js/enum/routerEnum';
 import NCursor from '@/components/atoms/cursor/NCursor.vue';
 import NFooter from '@/components/organisms/footer/NFooter.vue';
 
@@ -52,7 +51,7 @@ useHead({
 
 const isShowLoading = ref(true);
 const isHideLoading = ref(false);
-const isHomePage = ref(route.name === ROUTER_NAME.HOME_PAGE);
+const isHomePage = computed(() => route.path === '/');
 
 const isShowCommon = ref(false);
 
@@ -65,19 +64,8 @@ setTimeout(() => {
 }, 2500);
 
 watch(
-	() => isShowLoading.value,
-	(newValue) => {
-		if (!newValue) {
-			isHomePage.value = route.name === ROUTER_NAME.HOME_PAGE;
-		}
-	},
-);
-
-watch(
 	() => route.fullPath,
 	() => {
-		isHomePage.value = route.name === ROUTER_NAME.HOME_PAGE;
-
 		isShowLoading.value = true;
 		isHideLoading.value = false;
 
