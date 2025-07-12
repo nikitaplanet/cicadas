@@ -119,7 +119,6 @@ function getScrollAmount(headingDom: HTMLElement) {
 	const headingWidth = headingDom.offsetWidth;
 	const distance = 200;
 	const amountToScroll = headingWidth - window.innerWidth + distance;
-	console.log(-amountToScroll, 'headingWidth', headingWidth);
 	return -amountToScroll;
 }
 

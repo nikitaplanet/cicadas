@@ -95,7 +95,7 @@ import {useRoute} from 'vue-router';
 import {computed} from 'vue';
 import {campaignsWording} from '@/assets/wording/campaigns/text';
 import {TEXT_TYPE} from '@/assets/js/enum/textType';
-import {MEDIA_DISPLAY_TYPE, MEDIA_TYPE} from '@/assets/js/enum/media';
+import {MEDIA_DISPLAY_TYPE} from '@/assets/js/enum/media';
 import NImageSwiper from '@/components/atoms/swiper/NImageSwiper.vue';
 import type {CampaignItem} from '@/assets/js/enum/campaigns';
 import NVideo from '~/components/atoms/videoSec/NVideo.vue';

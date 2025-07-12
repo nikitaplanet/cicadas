@@ -45,7 +45,8 @@ import type {CampaignWording} from '@/assets/js/enum/campaigns';
 export const campaignsWording: CampaignWording = {
 	landing: {
 		headerTitle: 'Campaigns',
-		description: 'Our campaigns begin with deep listening and rigorous research to understand the issue and the motivations of the people we aim to reach. These insights shape strategic, emotionally resonant campaigns that drive people beyond awareness and into meaningful action.',
+		description:
+			'Our campaigns begin with deep listening and rigorous research to understand the issue and the motivations of the people we aim to reach. These insights shape strategic, emotionally resonant campaigns that drive people beyond awareness and into meaningful action.',
 	},
 	campaigns: [
 		{
@@ -188,7 +189,7 @@ export const campaignsWording: CampaignWording = {
 						mediaDisplayType: MEDIA_DISPLAY_TYPE.VIDEO,
 						mediaType: MEDIA_TYPE.VIMEO,
 						mediaList: [],
-						url: 'https://vimeo.com/1089965527'
+						url: 'https://vimeo.com/1089965527',
 					},
 					{
 						mediaDisplayType: MEDIA_DISPLAY_TYPE.SWIPER,
@@ -379,7 +380,7 @@ export const campaignsWording: CampaignWording = {
 			id: 5,
 			isOngoing: false,
 			title: `MADE: meet me at the end of the assembly line`,
-			detailTitle: `MADE: meet me at the end of<br/> the assembly line`,
+			detailTitle: `MADE: meet me at the end of the assembly line`,
 			img: c5,
 			year: '2021',
 			region: 'North America & Europe',
