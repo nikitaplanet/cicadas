@@ -83,15 +83,15 @@ const handleHoverLeveButton = () => {
 const socialInfoAry = reactive([
 	{
 		title: 'Facebook',
-		url: '',
+		url: 'https://www.facebook.com/thesingingcicadas',
 	},
 	{
 		title: 'Instagram',
-		url: '',
+		url: 'https://www.instagram.com/singingcicadasco/',
 	},
 	{
 		title: 'LinkedIn',
-		url: '',
+		url: 'https://www.linkedin.com/company/13634014/admin/dashboard/',
 	},
 ]);
 

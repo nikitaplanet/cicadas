@@ -61,50 +61,50 @@
 				</button>
 			</div>
 		</div>
-
-		<!--Overlay-->
-		<transition mode="out-in" name="fade">
+		<ClientOnly>
 			<Teleport to="body">
-				<div
-					v-if="isShowMenuOverlay"
-					class="flex w-full px-4 h-screen fixed top-0 left-0 z-20 bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]"
-					:class="{
+				<!--Overlay-->
+				<transition mode="out-in" name="fade">
+					<div
+						v-if="isShowMenuOverlay"
+						class="flex w-full px-4 h-screen fixed top-0 left-0 z-20 bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]"
+						:class="{
 						'flex-col-reverse bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]':
 							isNavBottom,
 						'flex-col bg-[linear-gradient(180deg,var(--sc-color-surface-tertiary,#F0E3DE)_50%,var(--sc-color-surface-primary,#DD5621)_92.44%)]':
 							!isNavBottom,
 					}">
-					<div class="w-full flex justify-between items-center"
-						 :class="{'py-[23px]': isNavBottom, 'py-[23px] ': !isNavBottom}">
-						<NLink @click="handleCloseMenuOverlay" to="/">
-							<img alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
-						</NLink>
-						<button @click="handleToggleMenuOverlay" type="button">
-							<img alt="closeMenu" src="@/assets/img/icons/menu/closeMenu.svg" />
-						</button>
+						<div class="w-full flex justify-between items-center"
+							 :class="{'py-[23px]': isNavBottom, 'py-[23px] ': !isNavBottom}">
+							<NLink @click="handleCloseMenuOverlay" to="/">
+								<img alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
+							</NLink>
+							<button @click="handleToggleMenuOverlay" type="button">
+								<img alt="closeMenu" src="@/assets/img/icons/menu/closeMenu.svg" />
+							</button>
+						</div>
+						<!--MenuList-->
+						<div class="w-full flex-grow flex flex-col justify-center items-center gap-5">
+							<NLink
+								v-for="(item) in menu"
+								@click="handleCloseMenuOverlay"
+								@mouseleave="item.isHover = false"
+								@mouseover="item.isHover = true"
+								:key="item.url"
+								:to="item.url"
+								class="group font-label text-def text-labelMd italic relative font-semibold">
+								<img
+									:src="item.bgImage"
+									class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+									:class="{'opacity-100': checkLinkActive(item)}"
+									alt="bg" />
+								<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ item.label }}</span>
+							</NLink>
+						</div>
 					</div>
-
-					<!--MenuList-->
-					<div class="w-full flex-grow flex flex-col justify-center items-center gap-5">
-						<NLink
-							v-for="(item, index) in menu"
-							@click="handleCloseMenuOverlay"
-							@mouseleave="item.isHover = false"
-							@mouseover="item.isHover = true"
-							:key="item.url"
-							:to="item.url"
-							class="group font-label text-def text-labelMd italic relative font-semibold">
-							<img
-								:src="item.bgImage"
-								class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-								:class="{'opacity-100': checkLinkActive(item)}"
-								alt="bg" />
-							<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ item.label }}</span>
-						</NLink>
-					</div>
-				</div>
+				</transition>
 			</Teleport>
-		</transition>
+		</ClientOnly>
 	</nav>
 </template>
 
