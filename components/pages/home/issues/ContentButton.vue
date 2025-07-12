@@ -5,20 +5,36 @@
 		@mouseover="handleHover"
 		class="flex flex-col justify-start items-start"
 		type="button">
-		<span
-			class="font-h1 text-scaleLG lg:text-h3 italic font-semibold transition ease-in-out text-left"
-			:class="[isActiveStyle ? 'text-text-def' : defaultColorClass]">
-			{{ title }}
-		</span>
+    <span
+		class=" font-h1 text-scaleLG lg:text-h3 italic font-semibold text-left transition-colors ease-in-out"
+		:class="{
+        'text-text-def': isActiveStyle,
+        'text-text-supportive-blue-blue100': !isActiveStyle && defaultColorType === 'blue',
+      }">
+      {{ title }}
+    </span>
+
 		<span v-show="isActiveStyle" class="w-full flex flex-col justify-start items-start transition ease-in-out">
-			<span
-				class="w-full max-w-[500px] font-semibold font-body text-body lg:text-body18 mt-6 text-left"
-				:class="[isActiveStyle ? 'text-text-def' : defaultColorClass]">
-				{{ content }}
-			</span>
-			<img v-if="defaultColorType === 'blue'" class="w-full mt-5" alt="underline" src="@/assets/img/home/issues/line.svg" />
-			<img v-else class="w-full mt-5" alt="underline" src="@/assets/img/home/issues/line_violet.svg" />
-		</span>
+      <span
+		  class="w-full max-w-[500px] font-semibold font-body text-body lg:text-body18 mt-6 text-left transition-colors"
+		  :class="{
+          'text-text-def': isActiveStyle,
+          'text-text-supportive-blue-blue100': !isActiveStyle && defaultColorType === 'blue',
+        }">
+        {{ content }}
+      </span>
+
+      <img
+		  v-if="defaultColorType === 'blue'"
+		  class="w-full mt-5"
+		  alt="underline"
+		  src="@/assets/img/home/issues/line.svg" />
+      <img
+		  v-else
+		  class="w-full mt-5"
+		  alt="underline"
+		  src="@/assets/img/home/issues/line_violet.svg" />
+    </span>
 	</button>
 </template>
 
@@ -35,14 +51,9 @@ const props = withDefaults(defineProps<Props>(), {
 	title: '',
 	content: '',
 	isActive: false,
-	defaultColorClass: 'blue',
+	defaultColorType: 'blue',
 });
 const emit = defineEmits(['click']);
-
-const colorVariants = {
-	blue: 'text-text-supportive-blue-dark',
-	violet: 'text-text-supportive-violet-dark',
-};
 
 const isHover = ref(false);
 
@@ -61,10 +72,4 @@ const handleClick = () => {
 const isActiveStyle = computed(() => {
 	return props.isActive || isHover.value;
 });
-
-const defaultColorClass = computed(() => {
-	return props.defaultColorType ? colorVariants[props.defaultColorType] : colorVariants.blue;
-});
 </script>
-
-<style scoped></style>
