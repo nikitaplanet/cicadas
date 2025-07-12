@@ -20,7 +20,7 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
 	mode: TextMode.dark,
-	isItalic: true,
+	isItalic: false,
 });
 </script>
 
