@@ -10,6 +10,7 @@
 		:class="{
         'text-text-def': isActiveStyle,
         'text-text-supportive-blue-blue100': !isActiveStyle && defaultColorType === 'blue',
+        'text-text-supportive-violet-violet100': !isActiveStyle && defaultColorType === 'violet',
       }">
       {{ title }}
     </span>
@@ -20,6 +21,7 @@
 		  :class="{
           'text-text-def': isActiveStyle,
           'text-text-supportive-blue-blue100': !isActiveStyle && defaultColorType === 'blue',
+          'text-text-supportive-violet-violet100': !isActiveStyle && defaultColorType === 'violet',
         }">
         {{ content }}
       </span>

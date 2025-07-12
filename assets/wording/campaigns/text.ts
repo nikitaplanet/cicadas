@@ -44,8 +44,7 @@ import type {CampaignWording} from '@/assets/js/enum/campaigns';
 export const campaignsWording: CampaignWording = {
 	landing: {
 		headerTitle: 'Campaigns',
-		description:
-			'We’re passionate about creating campaigns that make a real difference. Our journey typically begins with in-depth research and testing, allowing us to understand what works best and who we’re trying to reach. By clarifying goals and identifying the most effective target audience, we ensure every campaign has a powerful call to action. And it’s not just about the campaign itself; we aim to create an all round valuable learning experience for everyone involved. We have sustainability in mind, to not only drive impact today but also lay the groundwork for more effective campaigns in the future.',
+		description: 'Our campaigns begin with deep listening and rigorous research to understand the issue and the motivations of the people we aim to reach. These insights shape strategic, emotionally resonant campaigns that drive people beyond awareness and into meaningful action.',
 	},
 	campaigns: [
 		{

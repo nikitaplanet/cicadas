@@ -1,6 +1,6 @@
 <template>
 	<p
-		class="font-body text-body"
+		class="font-body text-scaleMD"
 		:class="{
 			italic: isItalic,
 			'text-text-alternate': mode === TextMode.light,

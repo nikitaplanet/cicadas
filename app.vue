@@ -41,8 +41,12 @@ const {isScrolledPastLanding, showNavBar} = useScrollDirectionNav();
 const route = useRoute();
 
 useHead({
-	meta: [{name: 'og:title', content: `${route.meta.title} | Cicadas`}],
-	script: [{ src: 'https://tally.so/widgets/embed.js', async: true }],
+	meta: [
+		{
+			name: 'viewport',
+			content: 'width=device-width, initial-scale=1.0',
+		}],
+	script: [{src: 'https://tally.so/widgets/embed.js', async: true}],
 });
 
 

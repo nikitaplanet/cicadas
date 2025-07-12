@@ -10,8 +10,7 @@ import detail3_2_image from '@/assets/img/studio/detail/id3/image_3_2.jpg';
 export const studioWording = {
 	landing: {
 		headerTitle: 'Studio',
-		description:
-			'We began our own journey as filmmakers and multi-media storytellers. We have a rich history of making award-winning films, games and immersive experiences independently as well by commission with various arts and cultural institutions. Our deep experience and extensive network empower us to create high-quality, emotionally resonant works where we dream big while staying connected to the personal stories that matter.',
+		description: 'We started our journey as filmmakers and multimedia storytellers, crafting award-winning films, games, and immersive experiences that inspire and connect. Whether independently or in collaboration with arts and cultural institutions, our work has always been driven by a passion for creativity and meaningful narratives.',
 	},
 	studioInfo: [
 		{
