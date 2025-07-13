@@ -7,7 +7,7 @@
 				<div class="w-full h-full absolute left-0 top-0 flex align-center justify-center">
 					<img ref="logo" class="block w-1/2 lg:w-9/12 max-w-[450px]" alt="LogoIcon" src="~@/assets/img/home/brand/LogoIcon.svg" />
 				</div>
-				<div class="w-full h-full grid grid-cols-1 pt-12 absolute md:grid-cols-12">
+				<div class="w-full h-full grid grid-cols-1 pt-20 absolute md:grid-cols-12">
 					<div class="col-span-1 md:col-span-8">
 						<HeaderText ref="headerText" :mode="TextMode.light">
 							<span v-html="contentText.landing.headerTitle"></span>

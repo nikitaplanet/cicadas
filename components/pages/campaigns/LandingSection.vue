@@ -1,7 +1,6 @@
 <template>
 	<div ref="main" class="w-full h-screen landing-bg">
-		<div
-			class="w-full px-6 lg:px-8 h-screen m-auto flex flex-col gap-10 lg:gap-3 lg:grid lg:grid-cols-12 pt-20 lg:pt-40 relative">
+		<div class="w-full px-6 lg:px-8 h-screen m-auto flex flex-col gap-10 lg:gap-3 lg:grid lg:grid-cols-12 pt-24 lg:pt-40 relative">
 			<div class="lg:col-span-6">
 				<HeaderText ref="headerText" :mode="TextMode.dark" class="relative">
 					<span v-html="campaignsWording.landing.headerTitle"></span>
@@ -33,8 +32,7 @@ const main = ref(null);
 const headerText = ref(null);
 const headerDesc = ref(null);
 
-const handleScrollDown = () => {
-};
+const handleScrollDown = () => {};
 
 // 動畫淡入
 let ctx;
@@ -59,10 +57,10 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .landing-bg {
 	background: linear-gradient(
-			180deg,
-			var(--sc-color-surface-supportive-green-dark, #add4aa) 0%,
-			var(--sc-color-surface-supportive-green-mid, #bbe5b8) 50.33%,
-			var(--sc-color-surface-def, #fceee9) 100%
+		180deg,
+		var(--sc-color-surface-supportive-green-dark, #add4aa) 0%,
+		var(--sc-color-surface-supportive-green-mid, #bbe5b8) 50.33%,
+		var(--sc-color-surface-def, #fceee9) 100%
 	);
 }
 </style>

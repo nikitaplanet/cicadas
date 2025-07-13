@@ -49,12 +49,14 @@
 		<div class="w-full px-4 flex justify-between items-center lg:hidden">
 			<div>
 				<NLink to="/">
-					<img alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
+					<img v-if="!isLight" class="h-[24px]" alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
+					<img v-else alt="logo default" src="@/assets/img/components/nav/navLogo_w.svg" />
 				</NLink>
 			</div>
 			<div>
 				<button @click="handleToggleMenuOverlay" type="button">
-					<img alt="Hamburger" src="@/assets/img/icons/menu/hamburger.svg" />
+					<img v-if="!isLight" alt="Hamburger" src="@/assets/img/icons/menu/hamburger.svg" />
+					<img v-else alt="Hamburger" src="@/assets/img/icons/menu/hamburger_w.svg" />
 				</button>
 			</div>
 		</div>
@@ -73,7 +75,7 @@
 						}">
 						<div class="w-full flex justify-between items-center" :class="{'py-[23px]': isNavBottom, 'py-[23px] ': !isNavBottom}">
 							<NLink @click="handleCloseMenuOverlay" to="/">
-								<img alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
+								<img class="h-[24px]" alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
 							</NLink>
 							<button @click="handleToggleMenuOverlay" type="button">
 								<img alt="closeMenu" src="@/assets/img/icons/menu/closeMenu.svg" />
@@ -114,10 +116,12 @@ const emit = defineEmits(['showCommon']);
 
 interface Props {
 	isNavBottom: boolean;
+	isLight: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
 	isNavBottom: false,
+	isLight: false,
 });
 
 const route = useRoute();

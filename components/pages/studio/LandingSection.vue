@@ -1,6 +1,6 @@
 <template>
 	<div ref="main" class="w-full h-screen landing-bg">
-		<div class="w-full px-6 lg:px-8 h-screen m-auto flex flex-col gap-10 lg:gap-3 lg:grid lg:grid-cols-12 pt-20 lg:pt-40 relative">
+		<div class="w-full px-6 lg:px-8 h-screen m-auto flex flex-col gap-10 lg:gap-3 lg:grid lg:grid-cols-12 pt-24 lg:pt-40 relative">
 			<div class="col-span-6">
 				<HeaderText ref="headerText" :mode="TextMode.dark" class="relative">
 					<span v-html="title"></span>
@@ -21,13 +21,13 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted, nextTick } from 'vue';
+import {ref, onMounted, onUnmounted, nextTick} from 'vue';
 import gsap from 'gsap';
 
-import { TextMode } from '@/components/atoms/text';
+import {TextMode} from '@/components/atoms/text';
 import HeaderText from '@/components/atoms/text/HeaderText.vue';
 import HeaderDescription from '@/components/atoms/text/HeaderDescription.vue';
-import { ScrollTriggerDirection, useFadeInOnScroll } from '@/assets/js/hooks/useFadeInOnScroll.js';
+import {ScrollTriggerDirection, useFadeInOnScroll} from '@/assets/js/hooks/useFadeInOnScroll.js';
 
 // DOM refs
 const main = ref<HTMLElement | null>(null);

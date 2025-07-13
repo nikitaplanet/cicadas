@@ -2,8 +2,8 @@
 	<LoadingOverlay
 		class="transition duration-300 ease-in-out"
 		:class="{block: !isHideLoading, hidden: isHideLoading, 'opacity-0': !isShowLoading, 'opacity-100': isShowLoading}" />
-	<div ref="nav" id="homeNav" class="py-5 transition-all duration-300" :class="navStyle">
-		<NavBar @showCommon="handleShowCommon" :isNavBottom="isNavBottom" />
+	<div ref="nav" id="homeNav" class="py-[23px] transition-all duration-300" :class="navStyle">
+		<NavBar @showCommon="handleShowCommon" :isLight="isLightNav" :isNavBottom="isNavBottom" />
 	</div>
 
 	<Transition mode="out-in" name="fade">
@@ -119,10 +119,11 @@ watch(isMobile, handleMobileSwitch);
 const isNavBottom = ref(false);
 const navStyle = computed(() => {
 	if (isHomePage.value) {
-		isNavBottom.value = !isScrolledPastLanding.value;
+		isNavBottom.value = false;
+		// isNavBottom.value = !isScrolledPastLanding.value;
 
 		return [
-			isScrolledPastLanding.value ? 'fixed top-0 left-0 w-full z-20 bg-surface-def' : 'absolute bottom-0 left-0 w-full z-20',
+			isScrolledPastLanding.value ? 'fixed top-0 left-0 w-full z-20 bg-surface-def' : 'absolute top-0 left-0 w-full z-20',
 			{
 				'-translate-y-full': !showNavBar.value,
 				'translate-y-0': !!showNavBar.value,
@@ -136,6 +137,14 @@ const navStyle = computed(() => {
 			showNavBar.value ? 'translate-y-0' : '-translate-y-full',
 		];
 	}
+});
+
+const isLightNav = computed(() => {
+	if (isHomePage.value) {
+		return !isScrolledPastLanding.value;
+	}
+
+	return false;
 });
 
 const handleShowCommon = () => {
