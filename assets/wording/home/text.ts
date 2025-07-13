@@ -18,8 +18,8 @@ export const contentText = {
 			'We believe in the power of narratives to shape our future. The new world we envision is built on trust, inclusion and solidarity. Let’s create that world together.',
 	},
 	section1: {
-		title: `We create powerful campaigns fo non-profits and purpose-driven businesses to catalyze change in Asia. `,
-		description: `We're here - whether you need to activate funders, mobilize the public or build internal capacity. We help you connect meaningfully with your audience—bringing them one step closer to action.`,
+		title: `We create powerful campaigns for non-profits and purpose-driven businesses to catalyze change in Asia. `,
+		description: `Through data-driven insights and compelling storytelling, we help you connect meaningfully with your audience, transforming your message into a force for change.`,
 	},
 	section2: {
 		title1: 'Cicadas may be small, but they rarely go unnoticed. The space within them amplifies their ',
@@ -109,36 +109,40 @@ export const contentText = {
 		contentTextList: [
 			{
 				title: 'Research, Analytics and Insights',
-				content: 'We conduct comprehensive research and data analysis to provide you with actionable insights to inform your decisions.',
+				content:
+					'We help you gain a deeper understanding of your region, issue and audience through tailored research—including social media monitoring, nationally representative surveys, qualitative focus groups, and audience behavior and segmentation analysis. Our actionable data and insights will empower you to make informed, strategic decisions.',
 			},
 			{
 				title: 'Strategy Development',
 				content:
-					'We deliver a tailored creative strategy that aligns your objectives, highlights new narratives, address key challenges and captures the opportunities in sight.',
+					'We craft strategies that are carefully tailored to the cultures, languages and digital access of your audience in Asia– ensuring alignment with your impact goals, uncovering new opportunities, and bringing fresh perspectives to the table.',
 			},
 			{
 				title: 'Digital Strategy and Marketing',
-				content: 'We design and implement effective digital marketing to engage target audiences, and drive conversions.',
+				content:
+					'By delivering precise messaging through the right channels, we create campaigns that captivate and convert the digital audiences most essential to the change you seek. From strategy to execution, we create campaigns that captivate and convert digital audiences.',
 			},
 			{
 				title: 'Visual Branding',
-				content: 'We create memorable visual identities that reflect your values and resonate with your audience across various platforms.',
+				content: 'We design cohesive, memorable identities that reflect your mission and resonate across all platforms.',
 			},
 			{
 				title: 'Content Creation',
-				content: 'We develop high-quality, engaging content with our network of creatives.',
+				content:
+					'We develop bold and creative content - be it films, interactive experiences, or events - to amplify your campaign. Check out our Studio page for more.',
 			},
 			{
-				title: 'Partner & Influencer Engagement',
-				content: 'We identify and cultivate relationships with strategic partners and influencers to amplify outreach.',
+				title: 'Partner and Influencer Engagement',
+				content:
+					'We identify and cultivate relationships with strategic partners and influencers to effectively reach your target audience and amplify outreach.',
 			},
 			{
 				title: 'Education Guides and Impact Kits',
-				content: 'We produce informative guides and impact kits that educate stakeholders on the campaign issue.',
+				content: 'We create resources that engage and educate stakeholders on critical campaign issues.',
 			},
 			{
 				title: 'Training, Workshops and Capacity Building',
-				content: 'We facilitate training sessions to enhance the skills and capabilities of your teams and other stakeholders.',
+				content: 'We train your team to strengthen skills in messaging, storytelling and advocacy.',
 			},
 			{
 				title: 'Media Relations',
@@ -147,7 +151,7 @@ export const contentText = {
 			{
 				title: 'Community and Stakeholder Engagement',
 				content:
-					'We foster relationships with community stakeholders to build trust, gather feedback, and ensure alignment with campaign objective.',
+					'We cultivate relationships with community stakeholders to learn and build trust, remaining mindful of the community’s context and sensitivities, and collaborate with them to amplify impact.',
 			},
 		],
 	},
@@ -157,26 +161,24 @@ export const contentText = {
 			{
 				title: 'Would this be very expensive?',
 				content:
-					'It depends on the scale of your campaign. We know a thing or two about how to be creatively economical so we can customize our services to fit your needs and resources. Plus, through our Commons program, we offer limited pro bono support for under-resourced NGOs.',
+					'It depends on the scope of your campaign. We excel at being creatively economical so we can craft solutions specific to your budget. Reach out to us to get an estimate of costs. Our Commons program also offers limited pro bono support for under-resourced NGOs.',
 			},
 			{
 				title: 'What if we are not sure we need a campaign?',
-				content:
-					'No worries! Just reach out to us, and we can chat about your work to help determine what you might need. We’re here to explore the possibilities with you.',
+				content: 'That’s okay! Reach out, and we’ll help you explore your needs and options.',
 			},
 			{
 				title: 'Do you work with corporates?',
-				content:
-					'Absolutely! We collaborate with corporates on their community-focused initiatives as part of their Environmental, Social, and Governance (ESG) efforts.',
+				content: 'Yes, we partner with corporates to advance community-centered initiatives as part of their ESG goals.',
 			},
 			{
 				title: 'When is the best time to engage your company?',
 				content:
-					'The earlier, the better! Getting started with us as soon as possible allows for thorough preparation and insights, ensuring you make the most of your resources.',
+					'The earlier, the better. Collaboration at the planning stage allows us to maximize your impact through insights and planning.',
 			},
 			{
 				title: 'Do you work with organizations not based in Asia?',
-				content: 'Yes, we do, we work with organizations who work on Asia even if they are not based in Asia.',
+				content: 'We collaborate with organizations worldwide who focus on work related to Asia.',
 			},
 		],
 	},

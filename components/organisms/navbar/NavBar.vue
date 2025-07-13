@@ -14,7 +14,8 @@
 						@mouseover="item.isHover = true"
 						:key="item.url"
 						:to="item.url"
-						class="group font-label text-def text-labelMd italic relative font-semibold">
+						class="group font-label text-def text-labelMd italic relative font-semibold"
+						:class="{'ml-2': index === 2, 'ml-[-3px]': index === 3}">
 						<img
 							:src="item.bgImage"
 							class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -22,7 +23,7 @@
 							alt="bg" />
 						<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ item.label }}</span>
 					</NLink>
-					<NLink @click="handleShowCommon" class="group font-label text-def text-labelMd italic relative font-semibold">
+					<NLink @click="handleShowCommon" class="ml-[-12px] group font-label text-def text-labelMd italic relative font-semibold">
 						<img
 							class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
 							alt="bg"
