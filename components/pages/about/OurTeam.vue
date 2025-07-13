@@ -1,9 +1,10 @@
 <template>
-	<div class="pt-32 pb-36">
+	<div class="py-20 md:pt-[160px] md:pb-[100px]">
 		<SectionContainer :hasMinHeight="false">
+			<!--Desktop-->
 			<div
 				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
-				class="w-full flex flex-col justify-center items-center transition-all duration-700">
+				class="hidden lg:flex w-full flex-col justify-center items-center transition-all duration-700">
 				<div class="w-full">
 					<SectionNameTag>{{ aboutWording.ourTeam.title }}</SectionNameTag>
 				</div>
@@ -30,6 +31,24 @@
 					<div>
 						<img class="w-32 mt-10" alt="hoverUs" src="@/assets/img/about/clickUsButton.svg" />
 					</div>
+				</div>
+			</div>
+
+			<!--Mobile-->
+			<div class="w-full block lg:hidden">
+				<div class="w-full flex items-center justify-start">
+					<SectionNameTag>{{ aboutWording.ourTeam.title }}</SectionNameTag>
+				</div>
+				<div class="w-full flex flex-col justify-center items-center gap-20 mt-[60px]">
+					<button @click="showOverlay(OUR_TEAM_INFO.SHARON)" class="w-[90%] transition-all duration-300 hover:opacity-80" type="button">
+						<img class="w-full" alt="Sharon" src="@/assets/img/about/profile/sharon_m.svg" />
+					</button>
+					<button @click="showOverlay(OUR_TEAM_INFO.HANYAN)" class="w-[80%] transition-all duration-300 hover:opacity-80" type="button">
+						<img class="w-full" alt="Hanyan" src="@/assets/img/about/profile/hanyan.svg" />
+					</button>
+					<button @click="showOverlay(OUR_TEAM_INFO.HANNA)" class="w-[75%] transition-all duration-300 hover:opacity-80" type="button">
+						<img class="w-full" alt="Hanna" src="@/assets/img/about/profile/hanna.svg" />
+					</button>
 				</div>
 			</div>
 		</SectionContainer>

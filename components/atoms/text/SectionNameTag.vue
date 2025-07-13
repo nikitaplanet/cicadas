@@ -1,5 +1,5 @@
 <template>
-	<div class="text-h5 italic font-semibold text-text-def font-h1">
+	<div class="text-body md:text-h5 italic font-semibold text-text-def font-h1">
 		<slot />
 	</div>
 </template>
