@@ -95,6 +95,9 @@ export const aboutWording = {
 			},
 		],
 	},
+	ourStory: {
+		title: 'Our Story',
+	},
 	issuesWeTackle: {
 		title: 'Issues we tackle',
 		issueList: [

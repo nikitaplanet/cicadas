@@ -103,7 +103,6 @@ let ctxHeading: gsap.Context;
 const headingWrapper = ref<HTMLElement>();
 const headingText = ref<HTMLElement>();
 const isMobile = useMediaQuery('(max-width: 1279px)');
-const previousIsMobile = ref(isMobile.value);
 
 onMounted(async () => {
 	await nextTick();

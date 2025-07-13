@@ -58,15 +58,6 @@ table {
 /* src/assets/main.css 或 main.scss */
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Besley:ital,wght@0,400..900;1,400..900&family=Homemade+Apple&family=Hanken+Grotesk&display=swap');
 
-//@tailwind base;
-//@tailwind components;
-//@tailwind utilities;
-
-
-html, body, * {
-  cursor: none !important;
-}
-
 body{
   overflow-x: hidden !important;
 }

@@ -26,10 +26,12 @@ function handleMouseMove(e: MouseEvent): void {
 }
 
 onMounted(() => {
+	document.body.classList.add('hide-cursor');
 	window.addEventListener('mousemove', handleMouseMove);
 });
 
 onBeforeUnmount(() => {
+	document.body.classList.remove('hide-cursor');
 	window.removeEventListener('mousemove', handleMouseMove);
 });
 </script>
@@ -49,5 +51,11 @@ onBeforeUnmount(() => {
 
 .custom-cursor.is-clickable {
 	background-image: url('@/assets/img/icons/cursor/hover.svg');
+}
+</style>
+<style lang="scss">
+body.hide-cursor,
+body.hide-cursor * {
+	cursor: none !important;
 }
 </style>

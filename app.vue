@@ -19,7 +19,10 @@
 			</div>
 		</Transition>
 	</div>
-	<NCursor />
+
+	<ClientOnly>
+		<NCursor v-if="!isMobile" />
+	</ClientOnly>
 </template>
 
 <script lang="ts" setup>

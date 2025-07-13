@@ -41,7 +41,7 @@
 
 			<!--Content-->
 			<div class="ourTeamOverlay__content__mobile bg-cover flex-grow px-6 pb-10 pt-5">
-				<div class="relative w-full h-full bg-surface-tertiary px-4 py-10">
+				<div class="relative w-full h-full bg-surface-tertiary px-4 py-10 rounded-xl">
 					<!--					<img class="absolute top-[-10px] left-0" alt="top" src="@/assets/img/about/bgimage/bottom_m.svg" />-->
 					<div class="ourTeamOverlay__content__scroll w-full h-full overflow-y-auto overscroll-contain">
 						<div class="text-scaleLG font-h4 font-semibold">{{ profileInfo.name }}</div>
@@ -99,7 +99,6 @@ const profileInfo = reactive(aboutWording.ourTeam.ourTeamList.find((item) => ite
 	&__content {
 		&__mobile {
 			height: calc(100vh - 84px - 268px);
-			-webkit-overflow-scrolling: touch;
 
 			&__info {
 				height: calc(100vh - 84px - 268px - 140px);

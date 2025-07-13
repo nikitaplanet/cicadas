@@ -14,7 +14,8 @@ import slideMobile3 from '@/assets/img/home/sliderSection/slide3_m.svg';
 export const contentText = {
 	landing: {
 		headerTitle: 'We are a<br />social impact <br />agency',
-		headerDescription: `Through data-driven insights and compelling storytelling,<br>we craft powerful campaigns that amplify the voices of<br>changemakers across Asia. Together, we’ll transform your message into a movement that changes perspectives and catalyses action.`,
+		headerDescription:
+			'We believe in the power of narratives to shape our future. The new world we envision is built on trust, inclusion and solidarity. Let’s create that world together.',
 	},
 	section1: {
 		title: `We create powerful campaigns fo non-profits and purpose-driven businesses to catalyze change in Asia. `,

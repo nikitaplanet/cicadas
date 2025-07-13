@@ -12,8 +12,16 @@
 		<!--BG 過場-->
 		<div class="section-gradient1"></div>
 
-		<!--		&lt;!&ndash;WorkWith&ndash;&gt;-->
-		<!--		<WorkWithSwiperSection />-->
+		<div v-if="!isMobile" id="homePage__aboutUs">
+			<OurStorySlide1 class="homePage__aboutUs__items homePage__aboutUs__item1" />
+			<OurStorySlide2 class="homePage__aboutUs__items homePage__aboutUs__item2" />
+			<OurStorySlide3 class="homePage__aboutUs__items homePage__aboutUs__item3" />
+			<OurStorySlide4 class="homePage__aboutUs__items homePage__aboutUs__item4" />
+			<OurStorySlide5 class="homePage__aboutUs__items homePage__aboutUs__item5" />
+		</div>
+		<div v-if="isMobile" class="w-full">
+			<OurStoryMobile />
+		</div>
 
 		<!--BG 過場-->
 		<div class="section-gradient2"></div>
@@ -29,12 +37,63 @@
 </template>
 
 <script lang="ts" setup>
+import {ref, onMounted, onUnmounted, nextTick} from 'vue';
 import LandingSection from '@/components/pages/about/LandingSection.vue';
 import WordFadeInSection from '@/components/pages/about/WordFadeInSection.vue';
 import OurTeam from '@/components/pages/about/OurTeam.vue';
-import WorkWithSwiperSection from '@/components/pages/about/WorkWithSwiperSection.vue';
 import ServiceWeOfferSection from '@/components/pages/about/ServiceWeOfferSection.vue';
-import AboutIssuesTackle from '@/components/pages/about/AboutIssuesTackle.vue';
+import OurStorySlide1 from '~/components/pages/about/horizonSlide/OurStorySlide1.vue';
+import OurStorySlide2 from '~/components/pages/about/horizonSlide/OurStorySlide2.vue';
+import OurStorySlide3 from '~/components/pages/about/horizonSlide/OurStorySlide3.vue';
+import OurStoryMobile from '~/components/pages/about/horizonSlide/OurStoryMobile.vue';
+
+import {useMediaQuery} from '@vueuse/core';
+import gsap from 'gsap';
+import OurStorySlide4 from '~/components/pages/about/horizonSlide/OurStorySlide4.vue';
+import OurStorySlide5 from '~/components/pages/about/horizonSlide/OurStorySlide5.vue';
+
+let ctx: gsap.Context;
+
+const isMobile = useMediaQuery('(max-width: 1279px)');
+
+onMounted(async () => {
+	await nextTick();
+	initAnimation();
+});
+
+onUnmounted(() => {
+	ctx && ctx.revert();
+});
+
+function getScrollAmount(headingDom: HTMLElement) {
+	const headingWidth = headingDom.offsetWidth;
+	const distance = 200;
+	const amountToScroll = headingWidth - window.innerWidth + distance;
+	return -amountToScroll;
+}
+
+function initAnimation() {
+	// ❗只讓桌機版 (lg 以上) 執行動畫
+	if (isMobile.value) return;
+
+	ctx = gsap.context(() => {
+		const items = gsap.utils.toArray<HTMLElement>('.homePage__aboutUs__items');
+		const container = document.getElementById('homePage__aboutUs')!;
+		const totalWidth = container.offsetWidth;
+
+		gsap.to(items, {
+			xPercent: -100 * (items.length - 1),
+			ease: 'sine.out',
+			scrollTrigger: {
+				trigger: container,
+				pin: true,
+				scrub: 3,
+				snap: 1 / (items.length - 1),
+				end: `+=${totalWidth}`,
+			},
+		});
+	});
+}
 </script>
 
 <style lang="scss" scoped>
@@ -71,5 +130,23 @@ import AboutIssuesTackle from '@/components/pages/about/AboutIssuesTackle.vue';
 	&-gradient4 {
 		background: linear-gradient(180deg, var(--Surface-supportive-violet-light, #f3e6f7) 0%, var(--Surface-def, #fceee9) 100%);
 	}
+}
+
+#homePage__aboutUs {
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+}
+
+.homePage__aboutUs__items {
+	width: 100vw;
+	height: 100vh;
+	flex-shrink: 0;
+}
+
+.heading-slide-wrapper {
+	display: flex;
+	align-items: flex-end;
+	padding: 100px 0 100px 50px;
 }
 </style>
