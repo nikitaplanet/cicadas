@@ -5,6 +5,7 @@ import Marias from '@/assets/img/about/workWith/Marias.svg';
 import Tylor from '@/assets/img/about/workWith/Tylor.svg';
 
 import Sharon from '@/assets/img/about/profile/sharon.svg';
+import SharonMobile from '@/assets/img/about/profile/sharon_m.svg';
 import Hanyan from '@/assets/img/about/profile/hanyan.svg';
 import HannaShin from '@/assets/img/about/profile/hanna.svg';
 import {OUR_TEAM_INFO} from '@/assets/js/enum/about';
@@ -26,6 +27,7 @@ export const aboutWording = {
 			{
 				id: OUR_TEAM_INFO.SHARON,
 				img: Sharon,
+				imgMobile: SharonMobile,
 				name: 'Sharon Yeung',
 				description:
 					'I’m a multimedia storyteller and community builder based in Hong Kong, who loves creating engaging narratives across diverse platforms. From films and web games to VR and interactive experiences, I’m passionate about inspiring and connecting communities. I’ve had the opportunity for training with organizations like Sundance, and Berlinale, which really honed my skills as a storyteller and producer. I’m committed to creating independent documentaries that explore complex subjects and diverse perspectives.',
@@ -33,6 +35,7 @@ export const aboutWording = {
 			{
 				id: OUR_TEAM_INFO.HANYAN,
 				img: Hanyan,
+				imgMobile: Hanyan,
 				name: 'Han Yan Yuen',
 				description:
 					'I am an impact strategist based in Taipei/ Hong Kong. I founded an NGO in Asia and was the Director of Communications at a global NGO. I’ve worked with complex audiences in Asia across a mosaic of cultures, languages and digital access levels. By tailoring strategies to each unique context, I deliver impactful campaigns to address a broad range of social issues. I was recognized by UN Women China as the Women of the Year in Media in 2011.',
@@ -40,6 +43,7 @@ export const aboutWording = {
 			{
 				id: OUR_TEAM_INFO.HANNA,
 				img: HannaShin,
+				imgMobile: HannaShin,
 				name: 'Hanna Shin',
 				description:
 					'I am an experienced campaign strategist with a strong background in corporate social responsibility and human rights in Korea. I specialize in strategic planning and stakeholder engagement, and have worked with international organizations including the British Council, Médecins Sans Frontières and Amnesty International.',
