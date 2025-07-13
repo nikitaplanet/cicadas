@@ -90,13 +90,13 @@
 								@mouseover="item.isHover = true"
 								:key="item.url"
 								:to="item.url"
-								class="group font-label text-def text-labelMd italic relative font-semibold">
+								class="group font-label text-def italic relative font-semibold h-[22px]">
 								<img
 									:src="item.bgImage"
 									class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
 									:class="{'opacity-100': checkLinkActive(item)}"
 									alt="bg" />
-								<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ item.label }}</span>
+								<span class="w-full text-scaleDef text-center absolute bottom-1 left-0 z-10">{{ item.label }}</span>
 							</NLink>
 						</div>
 					</div>
