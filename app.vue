@@ -123,7 +123,11 @@ const navStyle = computed(() => {
 		// isNavBottom.value = !isScrolledPastLanding.value;
 
 		return [
-			isScrolledPastLanding.value ? 'fixed top-0 left-0 w-full z-20 bg-surface-def' : 'absolute top-0 left-0 w-full z-20',
+			isScrolledPastLanding.value
+				? 'fixed top-0 left-0 w-full z-20 bg-surface-def'
+				: isMobile.value
+					? 'absolute top-0 left-0 w-full z-20'
+					: 'absolute bottom-0 left-0 w-full z-20',
 			{
 				'-translate-y-full': !showNavBar.value,
 				'translate-y-0': !!showNavBar.value,

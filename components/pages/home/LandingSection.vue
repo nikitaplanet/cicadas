@@ -14,7 +14,7 @@
 						</HeaderText>
 					</div>
 
-					<div class="flex items-end pb-24 col-span-1 md:col-span-4 md:items-start">
+					<div class="flex items-end pb-[60px] lg:pb-24 col-span-1 md:col-span-4 md:items-start">
 						<HeaderDescription ref="headerDesc" :mode="TextMode.light" isHome>
 							<span v-html="contentText.landing.headerDescription"></span>
 						</HeaderDescription>

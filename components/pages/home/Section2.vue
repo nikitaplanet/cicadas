@@ -1,5 +1,5 @@
 <template>
-	<div class="px-10">
+	<div class="lg:px-10">
 		<SectionContainer
 			ref="sectionRef"
 			:hasMinHeight="false"
