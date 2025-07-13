@@ -224,8 +224,8 @@ export const campaignsWording: CampaignWording = {
 		{
 			id: 3,
 			isOngoing: false,
-			title: `Resource Mobilisation for Women’s Funds`,
-			detailTitle: `Resource Mobilisation for Women’s Funds`,
+			title: `Resource Mobilization for Women’s Funds`,
+			detailTitle: `Resource Mobilization for Women’s Funds`,
 			img: c3,
 			year: '2025',
 			region: 'South Korea and Hong Kong',
@@ -379,8 +379,8 @@ export const campaignsWording: CampaignWording = {
 		{
 			id: 5,
 			isOngoing: false,
-			title: `MADE: meet me at the end of the assembly line`,
-			detailTitle: `MADE: meet me at the end of the assembly line`,
+			title: `MADE: meet at the end of the assembly line`,
+			detailTitle: `MADE: meet at the end of the assembly line`,
 			img: c5,
 			year: '2021',
 			region: 'North America & Europe',

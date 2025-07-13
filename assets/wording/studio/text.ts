@@ -13,7 +13,8 @@ import detail4_1_image from '@/assets/img/studio/detail/id4/image_4_1.jpg';
 export const studioWording = {
 	landing: {
 		headerTitle: 'Studio',
-		description: 'We started our journey as filmmakers and multimedia storytellers, crafting award-winning films, games, and immersive experiences that inspire and connect. Whether independently or in collaboration with arts and cultural institutions, our work has always been driven by a passion for creativity and meaningful narratives.',
+		description:
+			'We started our journey as filmmakers and multimedia storytellers, crafting award-winning films, games, and immersive experiences that inspire and connect. Whether independently or in collaboration with arts and cultural institutions, our work has always been driven by a passion for creativity and meaningful narratives.',
 	},
 	studioInfo: [
 		{
@@ -133,7 +134,7 @@ export const studioWording = {
 						id: '3-2',
 						title: 'MADE VR',
 						content:
-							'MADE: meet me at the end of the assembly line is a choose-your-own-adventure experience, viewers form a personal connection with an Apple factory worker, Xiaowu,  gaining insight into her daily life, family, and inner thoughts.<br/><br/>At the end of the journey, viewers are invited to take action by sending a letter to tech companies with factories in China, advocating for a living wage for workers.',
+							'"MADE: meet at the end of the assembly" line is a choose-your-own-adventure experience, viewers form a personal connection with an Apple factory worker, Xiaowu,  gaining insight into her daily life, family, and inner thoughts.<br/><br/>At the end of the journey, viewers are invited to take action by sending a letter to tech companies with factories in China, advocating for a living wage for workers.',
 						media: {
 							type: MEDIA_TYPE.IMAGE,
 							src: detail3_2_image,
@@ -144,7 +145,7 @@ export const studioWording = {
 						id: '3-3',
 						title: 'Journey In',
 						content:
-							'Journey In is a storytelling board game that connects strangers through meaningful conversations and self-discovery. Players embark on a shared journey, opening up their worlds to one another while uncovering their own stories along the way. The game includes narrator scripts, conversation cards, and a step-by-step guide to create a personalized map of each player’s unique exploration.',
+							'"Journey In" is a storytelling board game that connects strangers through meaningful conversations and self-discovery. Players embark on a shared journey, opening up their worlds to one another while uncovering their own stories along the way. The game includes narrator scripts, conversation cards, and a step-by-step guide to create a personalized map of each player’s unique exploration.',
 						media: {
 							type: MEDIA_TYPE.VIMEO,
 							src: 'https://vimeo.com/1090060829',
@@ -190,7 +191,7 @@ export const studioWording = {
 						id: '4-2',
 						title: 'Creativity is Anniversary',
 						content:
-							'We organized two celebratory large scale events for Creativity is. The Film Premiere had over 280 people in attendance and the interactive web game launch with over 120 people in attendance. Both events included exhibitions, talks with speakers and activities designed bespokely for the attendees. ',
+							'We organized two celebratory large scale events for "Creativity is". The Film Premiere had over 280 people in attendance and the interactive web game launch with over 120 people in attendance. Both events included exhibitions, talks with speakers and activities designed bespokely for the attendees. ',
 						media: {
 							type: MEDIA_TYPE.VIMEO,
 							src: 'https://vimeo.com/1089965527',
