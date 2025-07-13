@@ -1,6 +1,6 @@
 <template>
 	<div ref="main" class="w-full h-screen landing-bg">
-		<div class="w-full px-8 h-screen m-auto grid grid-cols-12 pt-40 relative">
+		<div class="w-full px-6 lg:px-8 h-screen m-auto flex flex-col gap-10 lg:gap-3 lg:grid lg:grid-cols-12 pt-20 lg:pt-40 relative">
 			<div class="col-span-6">
 				<HeaderText ref="headerText" :mode="TextMode.dark" class="relative">
 					<span v-html="aboutWording.landing.headerTitle"></span>
@@ -21,12 +21,12 @@
 
 <script lang="ts" setup>
 import gsap from 'gsap';
-import { onMounted, onUnmounted, ref, nextTick } from 'vue';
-import { aboutWording } from '@/assets/wording/about/text';
-import { TextMode } from '@/components/atoms/text';
+import {onMounted, onUnmounted, ref, nextTick} from 'vue';
+import {aboutWording} from '@/assets/wording/about/text';
+import {TextMode} from '@/components/atoms/text';
 import HeaderText from '@/components/atoms/text/HeaderText.vue';
 import HeaderDescription from '@/components/atoms/text/HeaderDescription.vue';
-import { ScrollTriggerDirection, useFadeInOnScroll } from '@/assets/js/hooks/useFadeInOnScroll.js';
+import {ScrollTriggerDirection, useFadeInOnScroll} from '@/assets/js/hooks/useFadeInOnScroll.js';
 
 const handleScrollDown = () => {};
 
@@ -55,7 +55,6 @@ onUnmounted(() => {
 	ctx?.revert();
 });
 </script>
-
 
 <style lang="scss" scoped>
 .landing-bg {
