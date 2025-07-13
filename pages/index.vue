@@ -55,8 +55,6 @@
 
 <script lang="ts" setup>
 import {ROUTER_NAME} from 'assets/js/enum/routerEnum';
-import {useMediaQuery} from '@vueuse/core';
-
 definePageMeta({
 	name: ROUTER_NAME.HOME_PAGE,
 });
@@ -97,12 +95,14 @@ import HeadingHomeMade from '@/components/atoms/text/HeadingHomeMade.vue';
 import AboutUsMobile from '@/components/pages/home/horizonSlide/AboutUsMobile.vue';
 import {seoWording} from 'assets/wording/seoWording';
 
+import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
+const {isMobile} = useGetMediaQuery();
+
 let ctx: gsap.Context;
 let ctxHeading: gsap.Context;
 
 const headingWrapper = ref<HTMLElement>();
 const headingText = ref<HTMLElement>();
-const isMobile = useMediaQuery('(max-width: 1279px)');
 
 onMounted(async () => {
 	await nextTick();

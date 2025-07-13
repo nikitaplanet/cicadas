@@ -39,9 +39,12 @@ import {useScrollDirectionNav} from '@/assets/js/hooks/useNavBar';
 import NCursor from '@/components/atoms/cursor/NCursor.vue';
 import NFooter from '@/components/organisms/footer/NFooter.vue';
 
-import {useMediaQuery, useDebounceFn} from '@vueuse/core';
+import {useDebounceFn} from '@vueuse/core';
 
 const {isScrolledPastLanding, showNavBar} = useScrollDirectionNav();
+
+import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
+const {isMobile} = useGetMediaQuery();
 
 useHead({
 	meta: [
@@ -68,7 +71,6 @@ const isShowLoading = ref(true);
 const isHideLoading = ref(false);
 const isHomePage = computed(() => route.path === '/');
 const isShowCommon = ref(false);
-const isMobile = useMediaQuery('(max-width: 1279px)');
 const previousIsMobile = ref(isMobile.value);
 const pageKey = ref(`${route.fullPath}-${isMobile.value ? 'm' : 'd'}`);
 

@@ -32,7 +32,13 @@ import ContentButton from '@/components/pages/home/issues/ContentButton.vue';
 const textAry = reactive(contentText.issuesWeTackle.contentTextList.map((item, index) => ({...item, id: index, isActive: index === 0})));
 const selectedContent = ref(textAry[0]);
 
+import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
+const {isMobile} = useGetMediaQuery();
+
 const handleClickItem = (item: any) => {
+	if (!isMobile.value) {
+		return;
+	}
 	textAry.forEach((i) => {
 		i.isActive = i.id === item.id;
 	});

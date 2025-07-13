@@ -47,14 +47,14 @@ import OurStorySlide2 from '~/components/pages/about/horizonSlide/OurStorySlide2
 import OurStorySlide3 from '~/components/pages/about/horizonSlide/OurStorySlide3.vue';
 import OurStoryMobile from '~/components/pages/about/horizonSlide/OurStoryMobile.vue';
 
-import {useMediaQuery} from '@vueuse/core';
 import gsap from 'gsap';
 import OurStorySlide4 from '~/components/pages/about/horizonSlide/OurStorySlide4.vue';
 import OurStorySlide5 from '~/components/pages/about/horizonSlide/OurStorySlide5.vue';
 
-let ctx: gsap.Context;
+import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
+const {isMobile} = useGetMediaQuery();
 
-const isMobile = useMediaQuery('(max-width: 1279px)');
+let ctx: gsap.Context;
 
 onMounted(async () => {
 	await nextTick();
