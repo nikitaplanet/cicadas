@@ -17,7 +17,8 @@ export const aboutWording = {
 	},
 	wordFadeAnimation: {
 		title1: 'Another world is not only possible, she is on her way.',
-		title2: 'On a quiet day, <br>I can hear her breathing.<br>- Arundhati Roy',
+		title2: 'On a quiet day, I can hear her breathing.<br>',
+		naming: '- Arundhati Roy',
 	},
 	ourTeam: {
 		title: 'Our Team',
