@@ -3,31 +3,40 @@
 		<div
 			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
 			class="flex flex-col items-center justify-start gap-[60px] transition-all duration-700">
-			<img class="w-full max-w-[515px]" alt="flower" src="@/assets/img/home/aboutUs/1.svg" />
-			<img class="w-11/12 max-w-[400px]" alt="word" src="@/assets/img/home/aboutUs/word/1_m.svg" />
+			<img class="w-full max-w-[500px]" alt="flower" src="@/assets/img/about/ourStory/mobile1.svg" />
 			<div class="w-full flex flex-row items-center justify-end">
-				<img alt="feather" src="@/assets/img/home/aboutUs/1_feather.svg" />
+				<img class="w-[120px]" alt="feather" src="@/assets/img/about/ourStory/feather.svg" />
 			</div>
 		</div>
 
 		<div
 			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
 			class="flex flex-col items-center justify-start gap-[60px] transition-all duration-700">
-			<img class="w-11/12 max-w-[515px]" alt="flower" src="@/assets/img/home/aboutUs/2.svg" />
-			<img class="w-11/12 max-w-[400px]" alt="word" src="@/assets/img/home/aboutUs/word/2_m.svg" />
-			<div class="w-full flex flex-row items-center justify-start mt-8">
-				<img alt="feather" src="@/assets/img/home/aboutUs/feather2.svg" />
+			<img class="w-full max-w-[500px]" alt="flower" src="@/assets/img/about/ourStory/mobile2.svg" />
+			<div class="w-full flex flex-row items-center justify-start pl-10">
+				<img class="w-[120px]" alt="feather" src="@/assets/img/about/ourStory/feather2.svg" />
 			</div>
 		</div>
 
 		<div
 			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
 			class="flex flex-col items-center justify-start gap-[60px] transition-all duration-700">
-			<img class="w-[85%] max-w-[515px]" alt="flower" src="@/assets/img/home/aboutUs/3.svg" />
-			<img class="w-11/12 max-w-[400px]" alt="word" src="@/assets/img/home/aboutUs/word/3_m.svg" />
-			<router-link class="w-full flex flex-row items-center justify-center mt-8" to="/">
-				<img alt="feather" src="@/assets/img/home/aboutUs/learnMore.svg" />
-			</router-link>
+			<img class="w-[90%] max-w-[430px]" alt="flower" src="@/assets/img/about/ourStory/mobile3.svg" />
+		</div>
+
+		<div
+			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+			class="flex flex-col items-center justify-start gap-[60px] transition-all duration-700">
+			<img class="w-[90%] max-w-[420px]" alt="flower" src="@/assets/img/about/ourStory/mobile4.svg" />
+			<div class="w-full flex flex-row items-center justify-start pl-10">
+				<img class="w-[120px]" alt="feather" src="@/assets/img/about/ourStory/feather4.svg" />
+			</div>
+		</div>
+
+		<div
+			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+			class="flex flex-col items-center justify-start gap-[60px] transition-all duration-700">
+			<img class="w-[90%] max-w-[430px]" alt="flower" src="@/assets/img/about/ourStory/mobile5.svg" />
 		</div>
 	</div>
 </template>
