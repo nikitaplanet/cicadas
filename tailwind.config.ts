@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss';
+import type {Config} from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
@@ -73,28 +73,28 @@ const customize = {
 		bold: '700',
 	},
 	fontSize: {
-		superhighlightSuper: ['180px', { lineHeight: '1.25', letterSpacing: '-0.02em' }],
-		superhighlight: ['120px', { lineHeight: '1.25', letterSpacing: '-0.02em' }],
-		h1: ['80px', { lineHeight: '1', letterSpacing: '-0.02em' }],
-		h2: ['60px', { lineHeight: '1.2' }],
-		h3: ['38px', { lineHeight: '1.2' }],
-		h4: ['24px', { lineHeight: '1.2' }],
-		h5: ['18px', { lineHeight: '1.2' }],
-		body: ['16px', { lineHeight: '1.2' }],
-		body18: ['18px', { lineHeight: '1.2' }],
-		labelLg: ['18px', { lineHeight: '1.2', letterSpacing: '0' }],
-		labelMd: ['14px', { lineHeight: '1', letterSpacing: '0' }],
-		labelSm: ['12px', { lineHeight: '1', letterSpacing: '0' }],
-		scale3XL: ['80px', { lineHeight: '1.25', letterSpacing: '-1.6' }],
-		scale2XL: ['48px', { lineHeight: '1.2' }],
-		scale1XL: ['38px', { lineHeight: '1.2' }],
-		scaleXL: ['32px', { lineHeight: '1.2' }],
-		scaleLG: ['24px', { lineHeight: '1.2' }],
-		scaleMD: ['20px', { lineHeight: '1.2' }],
-		scaleDef: ['18px', { lineHeight: '1.2' }],
-		scaleSM: ['14px', { lineHeight: '1.2' }],
-		scale2XS: ['10.486px', { lineHeight: '1.2' }],
-		scale3XS: ['9.175px', { lineHeight: '1' }],
+		superhighlightSuper: ['180px', {lineHeight: '1.25', letterSpacing: '-0.02em'}],
+		superhighlight: ['120px', {lineHeight: '1.25', letterSpacing: '-0.02em'}],
+		h1: ['80px', {lineHeight: '1', letterSpacing: '-0.02em'}],
+		h2: ['60px', {lineHeight: '1.2'}],
+		h3: ['38px', {lineHeight: '1.2'}],
+		h4: ['24px', {lineHeight: '1.2'}],
+		h5: ['18px', {lineHeight: '1.2'}],
+		body: ['16px', {lineHeight: '1.2'}],
+		body18: ['18px', {lineHeight: '1.2'}],
+		labelLg: ['18px', {lineHeight: '1.2', letterSpacing: '0'}],
+		labelMd: ['14px', {lineHeight: '1', letterSpacing: '0'}],
+		labelSm: ['12px', {lineHeight: '1', letterSpacing: '0'}],
+		scale3XL: ['80px', {lineHeight: '1.25', letterSpacing: '-1.6'}],
+		scale2XL: ['48px', {lineHeight: '1.2'}],
+		scale1XL: ['38px', {lineHeight: '1.2'}],
+		scaleXL: ['32px', {lineHeight: '1.2'}],
+		scaleLG: ['24px', {lineHeight: '1.2'}],
+		scaleMD: ['20px', {lineHeight: '1.2'}],
+		scaleDef: ['18px', {lineHeight: '1.2'}],
+		scaleSM: ['14px', {lineHeight: '1.2'}],
+		scale2XS: ['10px', {lineHeight: '1.2'}],
+		scale3XS: ['9.175px', {lineHeight: '1'}],
 	},
 };
 
@@ -110,8 +110,8 @@ const config: Config = {
 	safelist: ['overflow-hidden'],
 	theme: {
 		screens: {
-			xs: { max: '380px' },
-			s_lg: { min: '500px' },
+			xs: {max: '380px'},
+			s_lg: {min: '500px'},
 			...defaultTheme.screens,
 		},
 		extend: {

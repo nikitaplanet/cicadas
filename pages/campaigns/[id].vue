@@ -19,10 +19,10 @@
 					v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
 					class="lg:col-span-3 flex flex-col gap-[13px] transition-all duration-700">
 					<div v-for="item in infoList" :key="item.name" class="grid grid-cols-[70px_1fr] items-start">
-						<div class="text-left font-semibold font-label text-scale3XS italic">
+						<div class="text-left text-scale2XS lg:text-labelSm text-sc font-semibold font-label italic">
 							{{ item.name }}
 						</div>
-						<div class="text-scale2XS font-body text-text-def font-medium">
+						<div class="text-labelSm lg:text-scaleSM font-body text-text-def font-medium">
 							{{ item.value }}
 						</div>
 					</div>
