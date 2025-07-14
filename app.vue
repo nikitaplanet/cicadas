@@ -2,9 +2,11 @@
 	<LoadingOverlay
 		class="transition duration-300 ease-in-out"
 		:class="{block: !isHideLoading, hidden: isHideLoading, 'opacity-0': !isShowLoading, 'opacity-100': isShowLoading}" />
-	<div ref="nav" id="homeNav" class="py-[23px] transition-all duration-300" :class="navStyle">
-		<NavBar @showCommon="handleShowCommon" :isLight="isLightNav" :isNavBottom="isNavBottom" />
-	</div>
+	<ClientOnly>
+		<div ref="nav" id="homeNav" class="py-[23px] transition-all duration-300" :class="navStyle">
+			<NavBar @showCommon="handleShowCommon" :isLight="isLightNav" :isNavBottom="isNavBottom" />
+		</div>
+	</ClientOnly>
 
 	<Transition mode="out-in" name="fade">
 		<CommonOverlay v-if="isShowCommon" @closeCommon="handleCloseCommon" />
@@ -120,7 +122,6 @@ const isNavBottom = ref(false);
 const navStyle = computed(() => {
 	if (isHomePage.value) {
 		isNavBottom.value = false;
-		// isNavBottom.value = !isScrolledPastLanding.value;
 
 		return [
 			isScrolledPastLanding.value
