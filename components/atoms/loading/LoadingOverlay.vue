@@ -1,5 +1,5 @@
 <template>
-	<div class="fixed top-0 left-0 z-50 w-full h-screen bg-surface-primary flex justify-center items-center">
+	<div class="fixed top-0 left-0 z-50 w-full h-full bg-surface-primary flex justify-center items-center">
 		<svg
 			class="draw-path w-[200px] h-[200px] md:w-[355px] md:h-[355px]"
 			fill="none"

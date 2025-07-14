@@ -9,7 +9,7 @@
 					<SectionNameTag>{{ aboutWording.ourTeam.title }}</SectionNameTag>
 				</div>
 				<div class="w-full flex flex-col justify-center items-center mt-8">
-					<div class="w-full flex flex-row justify-center items-start">
+					<div class="w-full max-w-[1100px] flex flex-row justify-center items-start">
 						<button
 							@click="showOverlay(OUR_TEAM_INFO.SHARON)"
 							class="mr-[-50px] transition-all duration-300 hover:opacity-80"
@@ -29,7 +29,7 @@
 					</div>
 
 					<div>
-						<img class="w-32 mt-10" alt="hoverUs" src="@/assets/img/about/clickUsButton.svg" />
+						<img class="w-[250px] mt-10" alt="hoverUs" src="@/assets/img/about/clickUsButton.svg" />
 					</div>
 				</div>
 			</div>
@@ -40,14 +40,23 @@
 					<SectionNameTag>{{ aboutWording.ourTeam.title }}</SectionNameTag>
 				</div>
 				<div class="w-full flex flex-col justify-center items-center gap-20 mt-[60px]">
-					<button @click="showOverlay(OUR_TEAM_INFO.SHARON)" class="w-[90%] transition-all duration-300 hover:opacity-80" type="button">
+					<button
+						@click="showOverlay(OUR_TEAM_INFO.SHARON)"
+						class="w-[90%] max-w-[444px] xs:max-w-[286px] transition-all duration-300 hover:opacity-80"
+						type="button">
 						<img class="w-full" alt="Sharon" src="@/assets/img/about/profile/sharon_m.svg" />
 					</button>
-					<button @click="showOverlay(OUR_TEAM_INFO.HANYAN)" class="w-[80%] transition-all duration-300 hover:opacity-80" type="button">
-						<img class="w-full" alt="Hanyan" src="@/assets/img/about/profile/hanyan.svg" />
+					<button
+						@click="showOverlay(OUR_TEAM_INFO.HANYAN)"
+						class="w-[90%] max-w-[444px] xs:max-w-[286px] transition-all duration-300 hover:opacity-80"
+						type="button">
+						<img class="w-full" alt="Hanyan" src="@/assets/img/about/profile/hanyan_m.svg" />
 					</button>
-					<button @click="showOverlay(OUR_TEAM_INFO.HANNA)" class="w-[75%] transition-all duration-300 hover:opacity-80" type="button">
-						<img class="w-full" alt="Hanna" src="@/assets/img/about/profile/hanna.svg" />
+					<button
+						@click="showOverlay(OUR_TEAM_INFO.HANNA)"
+						class="w-[90%] max-w-[444px] xs:max-w-[286px] transition-all duration-300 hover:opacity-80"
+						type="button">
+						<img class="w-full" alt="Hanna" src="@/assets/img/about/profile/hanna_m.svg" />
 					</button>
 				</div>
 			</div>

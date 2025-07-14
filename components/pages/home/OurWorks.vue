@@ -69,7 +69,10 @@ import CommonOverlay from '@/components/layout/CommonOverlay.vue';
 import {useRouter} from 'vue-router';
 const router = useRouter();
 
-const selectedContent = ref(0);
+import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
+const {isMobile} = useGetMediaQuery();
+
+const selectedContent = ref(isMobile.value ? 1 : 0);
 const showImage = ref(0);
 const hoverImage = ref(0);
 
@@ -80,7 +83,7 @@ const handleClick = (id: number) => {
 	showImage.value = id;
 	hoverImage.value = id;
 
-	if (id === 3) {
+	if (id === 4) {
 		// Commons
 		isShowCommon.value = true;
 	}
@@ -98,7 +101,7 @@ const currentDescription = computed(() => {
 });
 
 const handleClickMore = () => {
-	if (selectedContent.value === 3) {
+	if (selectedContent.value === 4) {
 		// Common
 		isShowCommon.value = true;
 	} else {

@@ -59,21 +59,21 @@ export const campaignsWording: CampaignWording = {
 			region: 'Hong Kong',
 			issues: 'Youth',
 			services:
-				'Qualitative Research, Survey Build and Analysis, Social media data analysis, communication strategy development, creative design and production',
+				'Qualitative Research, Survey Build and Analysis, Social Media Data Analysis, Communication Strategy Development, Creative Design and Production',
 			details: {
 				contentList: [
 					{
 						textType: TEXT_TYPE.PARAGRAPH,
 						title: 'Objective',
 						content:
-							'To create a space for 18–24-year-olds to explore their unique character strengths, derive meaning from their lived experiences, and find their purposeful place within their community.',
+							'To create a space for 18–24-year-olds to explore their unique character strengths, derive meaning from their lived experiences and find their purposeful place within their community.',
 						list: [],
 					},
 					{
 						textType: TEXT_TYPE.PARAGRAPH,
 						title: 'Audience',
 						content:
-							'Hong Kong youth aged 18–24 from diverse backgrounds, navigating the transition from secondary school to college or from college into society.',
+							'Hong Kong youth aged 18–24 from diverse backgrounds, navigating the transition from secondary school to university or from university into society.',
 						list: [],
 					},
 					{
@@ -140,14 +140,14 @@ export const campaignsWording: CampaignWording = {
 			region: 'Hong Kong',
 			issues: 'Youth',
 			services:
-				'Qualitative Research, Social media data analysis, communication strategy development, creative design and production, strategic partnership engagement, creative facilitation, youth engagement',
+				'Qualitative Research, Social Media Data Analysis, Communication Strategy Development, Creative Design and Production, Strategic Partnership Engagement, Creative Facilitation, Youth Engagement',
 			details: {
 				contentList: [
 					{
 						textType: TEXT_TYPE.PARAGRAPH,
 						title: 'Objective',
 						content:
-							'Empower Hong Kong youth through exploring their creativity and agency in response to concerns about mental health statistics among Hong Kong students.',
+							'Empower Hong Kong youth by fostering their creativity and sense of agency in response to growing concerns about mental health statistics among students.',
 						list: [],
 					},
 					{
@@ -167,7 +167,7 @@ export const campaignsWording: CampaignWording = {
 						textType: TEXT_TYPE.PARAGRAPH,
 						title: 'Distribution',
 						content:
-							'We launched a short documentary as the centerpiece for community, corporate, and school screenings, supported by six interactive workshop formats designed to deepen dialogue and engagement. For broader reach, we partnered with CNEX—the largest Chinese-language documentary platform—for distribution across their extensive network.<br/><br/>To sustain momentum, we built a strong social media presence and maintained a blog to grow our audience. In the following years, we introduced new centerpiece projects, including Create Your Own—an award-winning interactive web game recognized by W3 and the Design for Asia Awards—and Journey In, an innovative storytelling board game that continued to spark meaningful conversation and connection.',
+							'We launched a short documentary as the centerpiece for community, corporate and school screenings, supported by six interactive workshop formats designed to deepen dialogue and engagement. For broader reach, we partnered with CNEX—the largest Chinese-language documentary platform—for distribution across their extensive network.<br/><br/>To sustain momentum, we built a strong social media presence and maintained a blog to grow our audience. In the following years, we introduced new centerpiece projects, including Create Your Own—an award-winning interactive web game recognized by W3 and the Design for Asia Awards—and Journey In, an innovative storytelling board game that continued to spark meaningful conversation and connection.',
 						list: [],
 					},
 					{
@@ -175,7 +175,7 @@ export const campaignsWording: CampaignWording = {
 						title: 'Outcome & Impact',
 						content: '',
 						list: [
-							'110 community screenings across Hong Kong, Taiwan, and China.',
+							'110 community screenings across Hong Kong, Taiwan and China.',
 							'50+ event partner organizations.',
 							'Over 40,000 engaged with the interactive web documentary.',
 							'200 participants experienced the "Journey In" board game.',
@@ -230,7 +230,7 @@ export const campaignsWording: CampaignWording = {
 			year: '2025',
 			region: 'South Korea and Hong Kong',
 			issues: 'Gender equality',
-			services: 'Social media data analysis, Communication Strategy Development, Creative Design and Production',
+			services: 'Social Media Data Analysis, Communication Strategy Development, Creative Design and Production',
 			details: {
 				contentList: [
 					{
@@ -250,7 +250,7 @@ export const campaignsWording: CampaignWording = {
 						textType: TEXT_TYPE.PARAGRAPH,
 						title: 'Strategy',
 						content:
-							'To reach ESG professionals, we created an ESG strategy with tailored corporate partnership packages—brought to life through impactful brochures, compelling donor stories, a targeted webpage, and a strategic LinkedIn outreach campaign.<br/><br/>To reach women corporate executives, we conducted in-depth audience analysis and created assets to appeal to their values and emotions.',
+							'To reach ESG professionals, we created an ESG strategy with tailored corporate partnership packages—brought to life through impactful brochures, compelling donor stories, a targeted webpage and a strategic LinkedIn outreach campaign.<br/><br/>To reach women corporate executives, we conducted in-depth audience analysis and created assets to appeal to their values and emotions.',
 						list: [],
 					},
 					{
@@ -292,95 +292,12 @@ export const campaignsWording: CampaignWording = {
 				],
 			},
 		},
+
 		{
 			id: 4,
 			isOngoing: false,
-			title: `Knock. Stop Domestic Violence`,
-			detailTitle: `Knock. Stop Domestic Violence`,
-			img: c4,
-			year: '2013',
-			region: 'China',
-			issues: 'Domestic Violence',
-			services: 'Strategy Development, Stakeholder and Partnership Engagement, Creative Design and Production, Media Distribution',
-			details: {
-				contentList: [
-					{
-						textType: TEXT_TYPE.PARAGRAPH,
-						title: 'Objective',
-						content:
-							'In collaboration with UN Women China, raise awareness about domestic violence in China and empower neighbors to intervene when they suspect abuse.',
-						list: [],
-					},
-					{
-						textType: TEXT_TYPE.PARAGRAPH,
-						title: 'Audience',
-						content: 'Adults throughout China.',
-						list: [],
-					},
-					{
-						textType: TEXT_TYPE.PARAGRAPH,
-						title: 'Strategy',
-						content:
-							'In 2013, launched a nationwide public service campaign encouraging neighbors to “knock” as an intervention tactic, offering pretexts to disrupt suspected violence.<br/><br/>In 2015, after the first domestic violence law was passed, we renewed the campaign, urging bystanders to call the police.',
-						list: [],
-					},
-					{
-						textType: TEXT_TYPE.PARAGRAPH,
-						title: 'Distribution',
-						content:
-							'Extensive dissemination of PSAs on television, digital platforms, and public spaces garnered 9.6 million views, driving a national conversation around domestic violence.',
-						list: [],
-					},
-					{
-						textType: TEXT_TYPE.PARAGRAPH,
-						title: 'Outcome & Impact',
-						content:
-							"With the support of media and women's organizations, the campaign sparked a national conversation on domestic violence and promoted the 2015 passing of China’s first domestic violence law.",
-						list: [],
-					},
-				],
-				media: [
-					{
-						mediaDisplayType: MEDIA_DISPLAY_TYPE.VIDEO,
-						mediaType: MEDIA_TYPE.VIMEO,
-						mediaList: [],
-						url: 'https://vimeo.com/1093634184?share=copy', // for video
-					},
-					{
-						mediaDisplayType: MEDIA_DISPLAY_TYPE.SWIPER,
-						mediaType: MEDIA_TYPE.IMAGE,
-						mediaList: [
-							{
-								key: 'c4_swiper1',
-								src: c4_swiper1,
-							},
-							{
-								key: 'c4_swiper2',
-								src: c4_swiper2,
-							},
-							{
-								key: 'c4_swiper3',
-								src: c4_swiper3,
-							},
-							{
-								key: 'c4_swiper4',
-								src: c4_swiper4,
-							},
-							{
-								key: 'c4_swiper5',
-								src: c4_swiper5,
-							},
-						],
-						url: '',
-					},
-				],
-			},
-		},
-		{
-			id: 5,
-			isOngoing: false,
-			title: `MADE: meet at the end of the assembly line`,
-			detailTitle: `MADE: meet at the end of the assembly line`,
+			title: `MADE: meet me at the end of the assembly line`,
+			detailTitle: `MADE: meet me at the end of the assembly line`,
 			img: c5,
 			year: '2021',
 			region: 'North America & Europe',
@@ -392,7 +309,7 @@ export const campaignsWording: CampaignWording = {
 						textType: TEXT_TYPE.PARAGRAPH,
 						title: 'Objective',
 						content:
-							'Call for urgent wage reform in supply chains of electronic goods through the VR documentary "MADE: Meet at the End of the Assembly Line".',
+							'Call for urgent wage reform in supply chains of electronic goods through the VR documentary "MADE: meet me at the end of the assembly line".',
 						list: [],
 					},
 					{
@@ -405,14 +322,14 @@ export const campaignsWording: CampaignWording = {
 						textType: TEXT_TYPE.PARAGRAPH,
 						title: 'Strategy',
 						content:
-							'Through a choose-your-own-adventure experience, viewers form a personal connection with an Apple factory worker, gaining insight into her daily life, family, and inner thoughts.<br/><br/>At the end of the journey, viewers are invited to take action by sending a letter to tech companies with factories in China, advocating for a living wage for workers.<br/><br/>We developed this call to action in collaboration with Xiaowu, the Apple factory worker at the center of the film. While Xiaowu is overworked, she believes calls to limit working hours are misguided if wages are not increased, leading to a call for living wage.',
+							'Through a choose-your-own-adventure experience, viewers form a personal connection with an Apple factory worker, gaining insight into her daily life, family and inner thoughts.<br/><br/>At the end of the journey, viewers are invited to take action by sending a letter to tech companies with factories in China, advocating for a living wage for workers.<br/><br/>We developed this call to action in collaboration with Xiaowu, the Apple factory worker at the center of the film. While Xiaowu is overworked, she believes calls to limit working hours are misguided if wages are not increased, leading to a call for living wage.',
 						list: [],
 					},
 					{
 						textType: TEXT_TYPE.PARAGRAPH,
 						title: 'Distribution',
 						content:
-							"The documentary premiered at the Games for Change Festival in New York and was nominated for the Most Significant Impact Award. It also exhibited at Eaton Hotel Hong Kong, Space4 in the UK and Nowhere Bookstore in Taipei. The experience was later made available via the Google Play store and the project's dedicated website.",
+							"The documentary premiered at the Games for Change Festival in New York and was nominated for the Most Significant Impact Award. It also exhibited at Eaton Hotel Hong Kong, Space4 in the UK and Nowhere Bookstore in Taipei. The experience was later made available via the Google Play store and the project's <a class='underline underline-offset-4' href='https://madevr.com/' target='_blank'>dedicated website.</a>",
 						list: [],
 					},
 				],
@@ -455,6 +372,90 @@ export const campaignsWording: CampaignWording = {
 							{
 								key: 'c5_swiper5',
 								src: c5_swiper3,
+							},
+						],
+						url: '',
+					},
+				],
+			},
+		},
+		{
+			id: 5,
+			isOngoing: false,
+			title: `Knock. Stop Domestic Violence`,
+			detailTitle: `Knock. Stop Domestic Violence`,
+			img: c4,
+			year: '2013',
+			region: 'China',
+			issues: 'Domestic Violence',
+			services: 'Strategy Development, Stakeholder and Partnership Engagement, Creative Design and Production, Media Distribution',
+			details: {
+				contentList: [
+					{
+						textType: TEXT_TYPE.PARAGRAPH,
+						title: 'Objective',
+						content:
+							'In collaboration with UN Women China, raise awareness about domestic violence in China and empower neighbors to intervene when they suspect abuse.',
+						list: [],
+					},
+					{
+						textType: TEXT_TYPE.PARAGRAPH,
+						title: 'Audience',
+						content: 'Adults throughout China.',
+						list: [],
+					},
+					{
+						textType: TEXT_TYPE.PARAGRAPH,
+						title: 'Strategy',
+						content:
+							'In 2013, launched a nationwide public service campaign encouraging neighbors to “knock” as an intervention tactic, offering pretexts to disrupt suspected violence.<br/><br/>In 2015, after the first domestic violence law was passed, we renewed the campaign, urging bystanders to call the police.',
+						list: [],
+					},
+					{
+						textType: TEXT_TYPE.PARAGRAPH,
+						title: 'Distribution',
+						content:
+							'Extensive dissemination of PSAs on television, digital platforms and public spaces garnered 9.6 million views, driving a national conversation around domestic violence.',
+						list: [],
+					},
+					{
+						textType: TEXT_TYPE.PARAGRAPH,
+						title: 'Outcome & Impact',
+						content:
+							"With the support of media and women's organizations, the campaign sparked a national conversation on domestic violence and promoted the 2015 passing of China’s first domestic violence law.",
+						list: [],
+					},
+				],
+				media: [
+					{
+						mediaDisplayType: MEDIA_DISPLAY_TYPE.VIDEO,
+						mediaType: MEDIA_TYPE.VIMEO,
+						mediaList: [],
+						url: 'https://vimeo.com/1093634184?share=copy', // for video
+					},
+					{
+						mediaDisplayType: MEDIA_DISPLAY_TYPE.SWIPER,
+						mediaType: MEDIA_TYPE.IMAGE,
+						mediaList: [
+							{
+								key: 'c4_swiper1',
+								src: c4_swiper1,
+							},
+							{
+								key: 'c4_swiper2',
+								src: c4_swiper2,
+							},
+							{
+								key: 'c4_swiper3',
+								src: c4_swiper3,
+							},
+							{
+								key: 'c4_swiper4',
+								src: c4_swiper4,
+							},
+							{
+								key: 'c4_swiper5',
+								src: c4_swiper5,
 							},
 						],
 						url: '',

@@ -28,28 +28,28 @@ export const contentText = {
 	ourWorks: {
 		list: [
 			{
-				id: 0,
+				id: 1,
 				title: 'Campaigns',
 				description:
 					'Our campaigns begin with understanding your audience, refining your narrative, and bringing ideas to life through creative production and purposeful distribution. The result? Impactful messaging that demands attention and drives change.',
 				link: '/campaigns',
 			},
 			{
-				id: 1,
+				id: 2,
 				title: 'Studio',
 				description:
 					'From films to VR experiences, our studio produces emotionally resonant, multi-format content that amplifies your story and sparks connections across platforms.',
 				link: '/studio',
 			},
 			{
-				id: 2,
+				id: 3,
 				title: 'Workshops',
 				description:
 					'We strengthen your team’s capacity with hands-on workshops in audience design, storytelling, and strategic messaging, empowering you to lead the change you envision.',
 				link: '/workshops',
 			},
 			{
-				id: 3,
+				id: 4,
 				title: 'Commons',
 				description:
 					'Recognizing the resource constraints many NGOs face, our Commons program connects under-supported organizations with the tools, resources, and networks they need to make an immediate impact.',

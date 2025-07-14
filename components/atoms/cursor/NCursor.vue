@@ -14,7 +14,14 @@ function isElementClickable(el: Element | null): boolean {
 
 	const tag = el.tagName.toUpperCase();
 	if (['A', 'BUTTON'].includes(tag)) return true;
-	return el.getAttribute('data-clickable') === 'true';
+
+	if (el.getAttribute('data-clickable') === 'true') return true;
+
+	const style = getComputedStyle(el);
+
+	if (style.cursor === 'pointer') return true;
+
+	return false;
 }
 
 function handleMouseMove(e: MouseEvent): void {

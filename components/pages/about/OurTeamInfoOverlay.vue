@@ -1,14 +1,20 @@
 <template>
 	<!--Desktop-->
 	<div>
-		<div class="ourTeamOverlay w-full h-screen hidden lg:flex flex-col justify-center items-center fixed top-0 left-0 z-30 pt-14 pb-24 px-10">
+		<div class="ourTeamOverlay w-screen h-screen hidden lg:flex flex-col justify-center items-center fixed top-0 left-0 z-30 pt-14 pb-24 px-10">
 			<div class="w-full max-w-[1300px] flex justify-end items-center">
 				<button @click="handleClose" class="w-11 h-11 flex justify-end items-start" type="button">
 					<img class="w-6 h-6" alt="Close" src="@/assets/img/components/overlay/close.svg" />
 				</button>
 			</div>
 			<div class="w-full max-w-[1300px] gap-8 flex flex-col md:flex-row justify-center items-center">
-				<div class="flex-shrink-0 w-[35%]">
+				<div
+					class="flex-shrink-0 w-[35%]"
+					:class="{
+						'max-w-[426px]': profileInfo.id === OUR_TEAM_INFO.SHARON,
+						'max-w-[404px]': profileInfo.id === OUR_TEAM_INFO.HANYAN,
+						'max-w-[344px]': profileInfo.id === OUR_TEAM_INFO.HANNA,
+					}">
 					<img :alt="profileInfo.name" :src="profileInfo.img" class="w-full h-auto" />
 				</div>
 
@@ -42,11 +48,10 @@
 			<!--Content-->
 			<div class="ourTeamOverlay__content__mobile bg-cover flex-grow px-6 pb-10 pt-5">
 				<div class="relative w-full h-full bg-surface-tertiary px-4 py-10 rounded-xl">
-					<!--					<img class="absolute top-[-10px] left-0" alt="top" src="@/assets/img/about/bgimage/bottom_m.svg" />-->
 					<div class="ourTeamOverlay__content__scroll w-full h-full overflow-y-auto overscroll-contain">
 						<div class="text-scaleLG font-h4 font-semibold">{{ profileInfo.name }}</div>
 						<div class="mt-5 text-body font-body font-medium">
-							{{ profileInfo.description }}{{ profileInfo.description }}{{ profileInfo.description }}{{ profileInfo.description }}
+							{{ profileInfo.description }}
 						</div>
 					</div>
 				</div>
