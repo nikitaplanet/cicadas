@@ -28,12 +28,13 @@ import {contentText} from '@/assets/wording/home/text';
 import SectionContainer from '@/components/layout/SectionContainer.vue';
 import SectionNameTag from '@/components/atoms/text/SectionNameTag.vue';
 import ContentButton from '@/components/pages/home/issues/ContentButton.vue';
-
-const textAry = reactive(contentText.issuesWeTackle.contentTextList.map((item, index) => ({...item, id: index, isActive: index === 0})));
-const selectedContent = ref(textAry[0]);
-
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
 const {isMobile} = useGetMediaQuery();
+
+const textAry = reactive(
+	contentText.issuesWeTackle.contentTextList.map((item, index) => ({...item, id: index, isActive: isMobile.value ? index === 0 : false})),
+);
+const selectedContent = ref(textAry[0]);
 
 const handleClickItem = (item: any) => {
 	if (!isMobile.value) {
