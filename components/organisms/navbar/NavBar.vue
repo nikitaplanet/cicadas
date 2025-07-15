@@ -93,11 +93,20 @@
 								:to="item.url"
 								class="group font-label text-def italic relative font-semibold h-[22px]">
 								<img
+									:alt="item.label"
 									:src="item.bgImage"
 									class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-									:class="{'opacity-100': checkLinkActive(item)}"
-									alt="bg" />
+									:class="{'opacity-100': checkLinkActive(item)}" />
 								<span class="w-full text-scaleDef text-center absolute bottom-1 left-0 z-10">{{ item.label }}</span>
+							</NLink>
+							<NLink @click="handleShowCommon" class="group font-label text-def italic relative font-semibold h-[22px]">
+								<img
+									class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+									alt="common"
+									src="@/assets/img/components/nav/menu4.svg" />
+								<span class="w-full text-scaleDef text-center absolute bottom-1 left-0 z-10">{{
+									globalWording.nav.button.common
+								}}</span>
 							</NLink>
 						</div>
 					</div>
@@ -141,6 +150,7 @@ const checkLinkActive = (item: NavMenuItem) => {
 };
 
 const handleShowCommon = () => {
+	isShowMenuOverlay.value = false;
 	emit('showCommon');
 };
 
