@@ -9,21 +9,21 @@
 					<div class="relative p-4 xl:p-16 mt-3">
 						<div
 							:class="{
-								'inline-block opacity-100': hoverImage === 0,
-								'hidden opacity-0': hoverImage !== 0,
+								'inline-block opacity-100': hoverImage === 1 || hoverImage === 0,
+								'hidden opacity-0': hoverImage !== 1 && hoverImage !== 0,
 							}">
 							<img alt="1" src="@/assets/img/home/section3/1.png" />
 						</div>
 
-						<div :class="{'inline-block opacity-100': hoverImage === 1, 'hidden opacity-0': hoverImage !== 1}">
+						<div :class="{'inline-block opacity-100': hoverImage === 2, 'hidden opacity-0': hoverImage !== 2}">
 							<img alt="2" src="@/assets/img/home/section3/2.png" />
 						</div>
 
-						<div :class="{'inline-block opacity-100': hoverImage === 2, 'hidden opacity-0': hoverImage !== 2}">
+						<div :class="{'inline-block opacity-100': hoverImage === 3, 'hidden opacity-0': hoverImage !== 3}">
 							<img alt="3" src="@/assets/img/home/section3/3.png" />
 						</div>
 
-						<div :class="{'inline-block opacity-100': hoverImage === 3, 'hidden opacity-0': hoverImage !== 3}">
+						<div :class="{'inline-block opacity-100': hoverImage === 4, 'hidden opacity-0': hoverImage !== 4}">
 							<img alt="4" src="@/assets/img/home/section3/4.png" />
 						</div>
 					</div>
@@ -36,7 +36,7 @@
 						@mouseover="hoverImage = item.id"
 						:description="item.description"
 						:isActive="selectedContent === item.id"
-						:isButton="item.id === 3"
+						:isButton="item.id === 4"
 						:key="item.title"
 						:link="item.link"
 						:title="item.title" />

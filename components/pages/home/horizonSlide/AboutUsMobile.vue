@@ -1,5 +1,8 @@
 <template>
 	<div class="aboutUs-bg px-4 py-[120px] flex flex-col gap-[100px]">
+		<div class="w-full">
+			<SectionNameTag>{{ contentText.aboutUs.title }}</SectionNameTag>
+		</div>
 		<div
 			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
 			class="flex flex-col items-center justify-start gap-[60px] transition-all duration-700">
@@ -25,14 +28,17 @@
 			class="flex flex-col items-center justify-start gap-[60px] transition-all duration-700">
 			<img class="w-[85%] max-w-[515px]" alt="flower" src="@/assets/img/home/aboutUs/3.svg" />
 			<img class="w-11/12 max-w-[400px]" alt="word" src="@/assets/img/home/aboutUs/word/3_m.svg" />
-			<router-link class="w-full flex flex-row items-center justify-center mt-8" to="/">
+			<router-link class="w-full flex flex-row items-center justify-center mt-8" to="/about">
 				<img alt="feather" src="@/assets/img/home/aboutUs/learnMore.svg" />
 			</router-link>
 		</div>
 	</div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import {contentText} from 'assets/wording/home/text';
+import SectionNameTag from '~/components/atoms/text/SectionNameTag.vue';
+</script>
 
 <style lang="scss" scoped>
 .aboutUs-bg {

@@ -2,9 +2,8 @@
 
 export default defineNuxtConfig({
 	ssr: true,
-	target: 'server', // 重點
 	nitro: {
-		preset: 'cloudflare-pages',
+		preset: 'node-server',
 		prerender: {
 			crawlLinks: true,
 			routes: ['/', '/campaigns/1', '/campaigns/2', '/campaigns/3'],
@@ -13,10 +12,20 @@ export default defineNuxtConfig({
 	app: {
 		baseURL: '/',
 		head: {
+			title: 'Cicadas',
+
 			meta: [
 				{
 					name: 'viewport',
 					content: 'width=device-width, initial-scale=1.0',
+				},
+				{
+					hid: 'description',
+					name: 'description',
+					content:
+						'Through data-driven insights and compelling storytelling,\n' +
+						'we craft powerful campaigns that amplify the voices of\n' +
+						'changemakers across Asia. Together, we’ll transform your message into a movement that changes perspectives and catalyses action.',
 				},
 			],
 			script: [
