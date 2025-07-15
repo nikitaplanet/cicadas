@@ -76,7 +76,7 @@ export const studioWording = {
 		},
 		{
 			id: '2',
-			title: 'Indepen&shy;dent<br/>Documenta&shy;ries',
+			title: 'Independent<br/>Documentaries',
 			img: swiper2_1,
 			align: 'right',
 			swiperClass: 'aspect-[1/1.6]',
