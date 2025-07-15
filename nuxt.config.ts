@@ -2,8 +2,10 @@
 
 export default defineNuxtConfig({
 	ssr: true,
+	target: 'server',
 	nitro: {
-		preset: 'node-server',
+		preset: 'cloudflare-pages',
+		// preset: 'node-server',
 		prerender: {
 			crawlLinks: true,
 			routes: ['/', '/campaigns/1', '/campaigns/2', '/campaigns/3'],
