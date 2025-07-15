@@ -26,7 +26,7 @@
 					<div>
 						<p v-html="item.content" class="text-scaleSM font-body font-medium md:text-scaleMD"></p>
 						<div class="w-full mt-10">
-							<NVideo v-if="item.media.type === MEDIA_TYPE.VIMEO" :videoUrl="item.media.src" />
+							<NVideo v-if="item.media.type === MEDIA_TYPE.VIMEO" :videoUrl="item.media.src" isAutoPlay isShowLinkOutside />
 							<img v-else :alt="item.title" :src="item.media.src" />
 						</div>
 					</div>

@@ -13,6 +13,7 @@ function isElementClickable(el: Element | null): boolean {
 	if (!el) return false;
 
 	const tag = el.tagName.toUpperCase();
+	console.log(el.tagName);
 	if (['A', 'BUTTON'].includes(tag)) return true;
 
 	if (el.getAttribute('data-clickable') === 'true') return true;

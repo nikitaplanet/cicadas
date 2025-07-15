@@ -34,7 +34,7 @@ export const studioWording = {
 							'HER Fund is a women`s fund based in Hong Kong. They engaged us to create two videos to introduce their Transformative Feminist Leadership program and their HER Hub program.',
 						media: {
 							type: MEDIA_TYPE.VIMEO,
-							src: 'https://vimeo.com/video/1090045308',
+							src: 'https://player.vimeo.com/video/1090045308',
 						},
 						isOnGoing: true,
 					},
