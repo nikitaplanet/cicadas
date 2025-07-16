@@ -20,6 +20,11 @@ import StudioSection from '@/components/pages/studio/StudioSection.vue';
 
 // Content
 const studioInfo = ref(studioWording.studioInfo);
+
+definePageMeta({
+	title: 'Studio',
+	keepalive: true,
+});
 </script>
 
 <style lang="scss" scoped></style>

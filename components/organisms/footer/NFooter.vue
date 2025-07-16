@@ -41,17 +41,18 @@
 			<div class="w-full absolute bottom-0 left-0">
 				<div
 					class="w-full lg:px-8 m-auto flex flex-col items-center gap-5 justify-start lg:flex-row lg:justify-between font-label text-scale2XS lg:text-labelSm font-semibold text-text-alternate italic p-5">
-					<div>{{ globalWording.footer.domain }}</div>
+					<a :href="`mailto:${globalWording.footer.email}`">{{ globalWording.footer.email }}</a>
 					<div class="hidden lg:block">© {{ currentYear }} {{ globalWording.footer.copyright }}</div>
 					<div class="flex flex-row gap-6">
 						<NLink
 							v-for="item in socialInfoAry"
 							:hasUnderline="false"
 							:href="item.url"
+							:key="item.url"
 							class="font-label text-scale2XS lg:text-labelSm font-semibold text-text-alternate italic transition ease-in-out hover:underline hover:underline-offset-4"
-							target="_blank"
-							>{{ item.title }}</NLink
-						>
+							target="_blank">
+							{{ item.title }}
+						</NLink>
 					</div>
 					<div class="block lg:hidden">© {{ currentYear }} {{ globalWording.footer.copyright }}</div>
 				</div>

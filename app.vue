@@ -69,13 +69,6 @@ function initPageLoading() {
 	}, 2500);
 }
 
-watch(
-	() => route.fullPath,
-	() => {
-		initPageLoading();
-	},
-);
-
 // 監聽路由變化（正常情況下 NuxtPage 會自動換，但保險加上）
 watch(
 	() => route.fullPath,

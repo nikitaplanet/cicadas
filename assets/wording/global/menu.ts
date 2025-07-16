@@ -8,22 +8,22 @@ const navMenu: MenuItem[] = [
 	{
 		label: 'About',
 		url: '/about',
-		bgImage: Navbg0
+		bgImage: Navbg0,
 	},
 	{
 		label: 'Campaigns',
 		url: '/campaigns',
-		bgImage: Navbg1
+		bgImage: Navbg1,
 	},
 	{
 		label: 'Studio',
 		url: '/studio',
-		bgImage: Navbg2
+		bgImage: Navbg2,
 	},
 	{
 		label: 'Workshops',
 		url: '/workshops',
-		bgImage: Navbg3
+		bgImage: Navbg3,
 	},
 ];
 
@@ -40,7 +40,7 @@ const globalWording = {
 	},
 	nav: {
 		button: {
-			common: 'Common',
+			common: 'Commons',
 		},
 	},
 	footer: {
@@ -51,7 +51,7 @@ const globalWording = {
 		description2: 'Reach out to learn more or customize a workshop for your team.',
 		button: 'How Can We Help?',
 		copyright: 'Singing Cicadas. All rights reserved.',
-		domain: 'hello@singingcicadas.com',
+		email: 'hello@singingcicadas.com',
 	},
 };
 
