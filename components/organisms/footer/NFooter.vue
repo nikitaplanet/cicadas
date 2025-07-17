@@ -42,7 +42,7 @@
 				<div
 					class="w-full lg:px-8 m-auto flex flex-col items-center gap-5 justify-start lg:flex-row lg:justify-between font-label text-scale2XS lg:text-labelSm font-semibold text-text-alternate italic p-5">
 					<a :href="`mailto:${globalWording.footer.email}`">{{ globalWording.footer.email }}</a>
-					<div class="hidden lg:block">© {{ currentYear }} {{ globalWording.footer.copyright }}</div>
+					<div class="hidden lg:block">© {{ currentYear }} {{ globalWording.footer.copyright }} {{ version }}</div>
 					<div class="flex flex-row gap-6">
 						<NLink
 							v-for="item in socialInfoAry"
@@ -54,7 +54,7 @@
 							{{ item.title }}
 						</NLink>
 					</div>
-					<div class="block lg:hidden">© {{ currentYear }} {{ globalWording.footer.copyright }}</div>
+					<div class="block lg:hidden">© {{ currentYear }} {{ globalWording.footer.copyright }} {{ version }}</div>
 				</div>
 			</div>
 		</SectionContainer>
@@ -67,6 +67,7 @@ import SectionContainer from '@/components/layout/SectionContainer.vue';
 import NLink from '@/components/atoms/link/NLink.vue';
 import {globalWording} from '@/assets/wording/global/menu';
 import dayjs from 'dayjs';
+import {version} from 'assets/js/base';
 
 const route = useRoute();
 const currentYear = dayjs().year();
