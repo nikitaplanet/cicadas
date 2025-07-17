@@ -77,6 +77,19 @@ watch(
 	},
 );
 
+watch(
+	() => route.fullPath,
+	() => {
+		isShowLoading.value = true;
+		isHideLoading.value = false;
+
+		setTimeout(() => {
+			isShowLoading.value = false;
+		}, 2200);
+		initPageLoading();
+	},
+);
+
 const handleMobileSwitch = useDebounceFn(() => {
 	const wasMobile = previousIsMobile.value;
 	const nowMobile = isMobile.value;
