@@ -17,6 +17,8 @@ import {ref} from 'vue';
 import LandingSection from '@/components/pages/studio/LandingSection.vue';
 import {studioWording} from '@/assets/wording/studio/text';
 import StudioSection from '@/components/pages/studio/StudioSection.vue';
+import {seoWording} from 'assets/wording/seoWording';
+import seoBanner from 'assets/img/seo/cicadas_banner.png';
 
 // Content
 const studioInfo = ref(studioWording.studioInfo);
@@ -24,6 +26,21 @@ const studioInfo = ref(studioWording.studioInfo);
 definePageMeta({
 	title: 'Studio',
 	keepalive: true,
+});
+
+useSeoMeta({
+	title: () => seoWording.studioList.title,
+	description: () => seoWording.studioList.description,
+	ogTitle: () => seoWording.studioList.metaTitle,
+	ogDescription: () => seoWording.studioList.metaDescription,
+	ogImage: () => seoBanner || '',
+	ogUrl: () => seoWording.domain,
+	ogType: 'website',
+	ogSiteName: seoWording.siteName,
+	twitterCard: 'summary_large_image',
+	twitterTitle: () => seoWording.studioList.metaTitle,
+	twitterDescription: () => seoWording.studioList.description,
+	twitterImage: () => seoBanner || '',
 });
 </script>
 

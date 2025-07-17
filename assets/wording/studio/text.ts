@@ -123,7 +123,7 @@ export const studioWording = {
 						id: '3-1',
 						title: 'Create Your Own <span style="font-style: normal;">原來我：未定型</span>',
 						content:
-							'The journey of “creating-your-own-documentary” delves into the essence of creativity, exploring what defines it, why we might feel constrained and how we can reignite that spark within ourselves. Users craft a unique planet based on their choices and the final version is sent to their email as a powerful reminder that they are shaped by their decisions. Together, with others on this shared path, it’s both possible and extraordinary to make bolder, more inspired choices in shaping their identities.',
+							'The journey of “creating-your-own-documentary” delves into the essence of creativity, exploring what defines it, why we might feel constrained and how we can reignite that spark within ourselves. Users craft a unique planet based on their choices and the final base is sent to their email as a powerful reminder that they are shaped by their decisions. Together, with others on this shared path, it’s both possible and extraordinary to make bolder, more inspired choices in shaping their identities.',
 						media: {
 							type: MEDIA_TYPE.IMAGE,
 							src: detail3_1_image,

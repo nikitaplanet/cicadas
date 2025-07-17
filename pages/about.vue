@@ -37,7 +37,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, onMounted, onUnmounted, nextTick} from 'vue';
+import {onMounted, onUnmounted, nextTick} from 'vue';
 import LandingSection from '@/components/pages/about/LandingSection.vue';
 import WordFadeInSection from '@/components/pages/about/WordFadeInSection.vue';
 import OurTeam from '@/components/pages/about/OurTeam.vue';
@@ -52,7 +52,24 @@ import OurStorySlide4 from '~/components/pages/about/horizonSlide/OurStorySlide4
 import OurStorySlide5 from '~/components/pages/about/horizonSlide/OurStorySlide5.vue';
 
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
+import {seoWording} from 'assets/wording/seoWording';
+import seoBanner from 'assets/img/seo/cicadas_banner.png';
 const {isMobile} = useGetMediaQuery();
+
+useSeoMeta({
+	title: () => seoWording.about.title,
+	description: () => seoWording.about.description,
+	ogTitle: () => seoWording.about.metaTitle,
+	ogDescription: () => seoWording.about.metaDescription,
+	ogImage: () => seoBanner || '',
+	ogUrl: () => seoWording.domain,
+	ogType: 'website',
+	ogSiteName: seoWording.siteName,
+	twitterCard: 'summary_large_image',
+	twitterTitle: () => seoWording.about.metaTitle,
+	twitterDescription: () => seoWording.about.description,
+	twitterImage: () => seoBanner || '',
+});
 
 let ctx: gsap.Context;
 

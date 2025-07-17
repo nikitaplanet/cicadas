@@ -24,6 +24,23 @@ import {ref} from 'vue';
 import LandingSection from '@/components/pages/campaigns/LandingSection.vue';
 import CampaignSection from '@/components/pages/campaigns/CampaignSection.vue';
 import {campaignsWording} from '@/assets/wording/campaigns/text';
+import {seoWording} from 'assets/wording/seoWording';
+import seoBanner from 'assets/img/seo/cicadas_banner.png';
+
+useSeoMeta({
+	title: () => seoWording.campaignList.title,
+	description: () => seoWording.campaignList.description,
+	ogTitle: () => seoWording.campaignList.metaTitle,
+	ogDescription: () => seoWording.campaignList.metaDescription,
+	ogImage: () => seoBanner || '',
+	ogUrl: () => seoWording.domain,
+	ogType: 'website',
+	ogSiteName: seoWording.siteName,
+	twitterCard: 'summary_large_image',
+	twitterTitle: () => seoWording.campaignList.metaTitle,
+	twitterDescription: () => seoWording.campaignList.description,
+	twitterImage: () => seoBanner || '',
+});
 
 const router = useRouter();
 

@@ -54,24 +54,26 @@
 </template>
 
 <script lang="ts" setup>
-import {ROUTER_NAME} from 'assets/js/enum/routerEnum';
+import {ROUTER_NAME} from '@/assets/js/enum/routerEnum';
+import seoBanner from '@/assets/img/seo/cicadas_banner.png';
+
 definePageMeta({
 	name: ROUTER_NAME.HOME_PAGE,
 });
 
 useSeoMeta({
 	title: () => seoWording.home.title,
-	ogTitle: () => seoWording.home.metaTitle,
 	description: () => seoWording.home.description,
+	ogTitle: () => seoWording.home.metaTitle,
 	ogDescription: () => seoWording.home.metaDescription,
-	// ogImage: () => data?.img || '',
-	// ogUrl: () => `https://yourdomain.com/campaigns/${id}`, // ⚠️ 替換為你的正式網域
+	ogImage: () => seoBanner || '',
+	ogUrl: () => seoWording.domain,
 	ogType: 'website',
-	ogSiteName: 'Cicadas',
+	ogSiteName: seoWording.siteName,
 	twitterCard: 'summary_large_image',
 	twitterTitle: () => seoWording.home.metaTitle,
 	twitterDescription: () => seoWording.home.description,
-	// twitterImage: () => data?.img || ''
+	twitterImage: () => seoBanner || '',
 });
 
 import {ref, onMounted, onUnmounted, nextTick} from 'vue';

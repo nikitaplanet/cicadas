@@ -8,38 +8,35 @@ export default defineNuxtConfig({
 		preset: 'node-server',
 		prerender: {
 			crawlLinks: true,
-			routes: ['/', '/campaigns/1', '/campaigns/2', '/campaigns/3'],
 		},
 	},
 	app: {
 		baseURL: '/',
 		head: {
-			title: 'Cicadas',
-
+			// title: 'Cicadas',
 			meta: [
 				{
 					name: 'viewport',
 					content: 'width=device-width, initial-scale=1.0',
 				},
 				{
-					hid: 'description',
-					name: 'description',
-					content:
-						'Through data-driven insights and compelling storytelling,\n' +
-						'we craft powerful campaigns that amplify the voices of\n' +
-						'changemakers across Asia. Together, we’ll transform your message into a movement that changes perspectives and catalyses action.',
+					name: 'keywords',
+					content: 'Cicadas, singingcicadas, Sharon Yeung, Han Yan Yuen, Hanna Shin',
 				},
+				{name: 'author', content: 'Cicadas'},
+				{name: 'robots', content: 'index, follow'},
 			],
 			script: [
 				{src: 'https://tally.so/widgets/embed.js', async: true},
-				{
-					id: 'Cookiebot',
-					src: 'https://consent.cookiebot.com/uc.js',
-					'data-cbid': '5efa9b8a-2cc4-485e-9d86-54b078df59e8',
-					'data-blockingmode': 'auto',
-					type: 'text/javascript',
-				},
+				// {
+				// 	id: 'Cookiebot',
+				// 	src: 'https://consent.cookiebot.com/uc.js',
+				// 	'data-cbid': '5efa9b8a-2cc4-485e-9d86-54b078df59e8',
+				// 	'data-blockingmode': 'auto',
+				// 	type: 'text/javascript',
+				// },
 			],
+			link: [{rel: 'canonical', href: 'https://singingcicadas.com'}],
 		},
 	},
 	compatibilityDate: '2025-05-15',
