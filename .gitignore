@@ -25,3 +25,4 @@ logs
 
 *.pem
 *.sh
+*.tar.gz

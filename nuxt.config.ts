@@ -32,13 +32,13 @@ export default defineNuxtConfig({
 			],
 			script: [
 				{src: 'https://tally.so/widgets/embed.js', async: true},
-				// {
-				// 	id: 'Cookiebot',
-				// 	src: 'https://consent.cookiebot.com/uc.js',
-				// 	'data-cbid': '5efa9b8a-2cc4-485e-9d86-54b078df59e8',
-				// 	'data-blockingmode': 'auto',
-				// 	type: 'text/javascript',
-				// },
+				{
+					id: 'Cookiebot',
+					src: 'https://consent.cookiebot.com/uc.js',
+					'data-cbid': '5efa9b8a-2cc4-485e-9d86-54b078df59e8',
+					'data-blockingmode': 'auto',
+					type: 'text/javascript',
+				},
 			],
 		},
 	},
@@ -62,6 +62,15 @@ export default defineNuxtConfig({
 				scss: {
 					api: 'modern-compiler',
 					additionalData: '@use "@/assets/styles/animation.scss" as *;@use "@/assets/styles/tp/swiper.scss" as *;',
+				},
+			},
+		},
+		build: {
+			rollupOptions: {
+				output: {
+					entryFileNames: '_nuxt/my-[name]-[hash].js',
+					chunkFileNames: '_nuxt/my-[name]-[hash].js',
+					assetFileNames: '_nuxt/my-[name]-[hash].[ext]',
 				},
 			},
 		},
