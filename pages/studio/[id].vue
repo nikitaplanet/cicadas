@@ -51,6 +51,7 @@ import LandingSection from '@/components/pages/studio/LandingSection.vue';
 import {MEDIA_TYPE} from '@/assets/js/enum/media';
 import NLink from '@/components/atoms/link/NLink.vue';
 import NVideo from '~/components/atoms/videoSec/NVideo.vue';
+import {seoWording} from 'assets/wording/seoWording';
 
 interface StudioDetailListItem {
 	id: string;
@@ -77,6 +78,23 @@ interface StudioData {
 const route = useRoute();
 const data = studioWording.studioInfo.find((item: StudioData) => item.id === String(route.params.id));
 const detailData = ref(data);
+
+console.log(detailData);
+
+useSeoMeta({
+	title: () => `${detailData?.value.title || 'Studio'} | Cicadas`,
+	ogTitle: () => `${detailData?.value.title || 'Studio'} | Cicadas`,
+	description: () => detailData?.value.detail.description || '',
+	ogDescription: () => detailData?.value.detail.description || '',
+	ogImage: () => data?.img || '',
+	ogUrl: () => `${seoWording.domain}/studio/${detailData?.value.id}`,
+	ogType: 'article',
+	ogSiteName: 'Cicadas',
+	twitterCard: 'summary_large_image',
+	twitterTitle: () => `${detailData?.value.title || 'Campaign'} | Cicadas`,
+	twitterDescription: () => detailData?.value.detail.description || '',
+	twitterImage: () => data?.img || '',
+});
 </script>
 
 <style lang="scss" scoped></style>

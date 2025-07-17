@@ -99,6 +99,7 @@ import {MEDIA_DISPLAY_TYPE} from '@/assets/js/enum/media';
 import NImageSwiper from '@/components/atoms/swiper/NImageSwiper.vue';
 import type {CampaignItem} from '@/assets/js/enum/campaigns';
 import NVideo from '~/components/atoms/videoSec/NVideo.vue';
+import {seoWording} from 'assets/wording/seoWording';
 
 // route 參數
 const route = useRoute();
@@ -139,7 +140,7 @@ useSeoMeta({
 	description: () => data?.services || '',
 	ogDescription: () => data?.services || '',
 	ogImage: () => data?.img || '',
-	ogUrl: () => `https://yourdomain.com/campaigns/${id}`, // ⚠️ 替換為你的正式網域
+	ogUrl: () => `${seoWording.domain}/campaigns/${id}`,
 	ogType: 'article',
 	ogSiteName: 'Cicadas',
 	twitterCard: 'summary_large_image',
