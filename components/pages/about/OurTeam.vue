@@ -12,17 +12,20 @@
 					<div class="w-full max-w-[1100px] flex flex-row justify-center items-start">
 						<button
 							@click="showOverlay(OUR_TEAM_INFO.SHARON)"
-							class="mr-[-50px] transition-all duration-300 hover:opacity-80"
+							class="clickCursor mr-[-50px] transition-all duration-300 hover:opacity-80"
 							type="button">
 							<img alt="Sharon" src="@/assets/img/about/profile/sharon.svg" />
 						</button>
-						<button @click="showOverlay(OUR_TEAM_INFO.HANYAN)" class="transition-all duration-300 hover:opacity-80" type="button">
+						<button
+							@click="showOverlay(OUR_TEAM_INFO.HANYAN)"
+							class="clickCursor transition-all duration-300 hover:opacity-80"
+							type="button">
 							<div class="w-full m-16"></div>
 							<img alt="Hanyan" src="@/assets/img/about/profile/hanyan.svg" />
 						</button>
 						<button
 							@click="showOverlay(OUR_TEAM_INFO.HANNA)"
-							class="ml-[-25px] transition-all duration-300 hover:opacity-80"
+							class="clickCursor ml-[-25px] transition-all duration-300 hover:opacity-80"
 							type="button">
 							<img alt="Hanna" src="@/assets/img/about/profile/hanna.svg" />
 						</button>

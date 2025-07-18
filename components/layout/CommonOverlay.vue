@@ -6,7 +6,7 @@
 				<img class="absolute bottom-[-57px] left-0" alt="underline" src="@/assets/img/common/headingUnderline.svg" />
 			</HeaderText>
 
-			<button @click="handleCloseCommon" class="w-11 h-11 flex justify-end items-start" type="button">
+			<button @click="handleCloseCommon" class="clickCursor w-11 h-11 flex justify-end items-start" type="button">
 				<img class="w-6 h-6" alt="Close" src="@/assets/img/components/overlay/close.svg" />
 			</button>
 		</div>
@@ -36,7 +36,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="w-full flex flex-row justify-end items-end mt-10">
+			<div class="clickCursor w-full flex flex-row justify-end items-end mt-10">
 				<a class="group relative" href="https://cryptpad.fr/form/#/2/form/view/vDSfK5jM2RgWSrtLZlCO6-XqmJbux9fOm1sr5xgRS0s/" target="_blank">
 					<img
 						class="absolute left-0 bottom-[3px] group-hover:opacity-0 transition-opacity duration-200"

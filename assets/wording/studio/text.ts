@@ -36,7 +36,7 @@ export const studioWording = {
 							type: MEDIA_TYPE.VIMEO,
 							src: 'https://player.vimeo.com/video/1090045308',
 						},
-						isOnGoing: true,
+						isOnGoing: false,
 					},
 					{
 						id: '1-2',
@@ -45,7 +45,7 @@ export const studioWording = {
 							'RS Group is a family office with a mission to help people invest in a way that contributes to the well-being of society and the planet, while generating a financial return. They commissioned a video to introduce their work and the importance of impact investing for a sustainable world.',
 						media: {
 							type: MEDIA_TYPE.VIMEO,
-							src: 'https://vimeo.com/video/1090061807',
+							src: 'https://player.vimeo.com/video/1090061807',
 						},
 						isOnGoing: false,
 					},
@@ -56,7 +56,7 @@ export const studioWording = {
 							'BOLD-ED empowers students to transform their futures by connecting ambitious night school students with inspiring mentors from Silicon Valley, creating a pathway to meaningful internships at tech companies in Manila. This short portrait highlights the incredible journey of one student whose determination and resilience shine through.',
 						media: {
 							type: MEDIA_TYPE.VIMEO,
-							src: 'https://vimeo.com/video/1090058413',
+							src: 'https://player.vimeo.com/video/1090058413',
 						},
 						isOnGoing: false,
 					},
@@ -67,7 +67,7 @@ export const studioWording = {
 							'Lyfta is a Finnish education platform that introduce diverse cultures and perspectives to the classroom through 360° spaces and inspiring short films. They engaged us to tell a story about Kootyin, a land rights protector turned oral history collector in Hong Kong.',
 						media: {
 							type: MEDIA_TYPE.VIMEO,
-							src: 'https://vimeo.com/video/1090046874',
+							src: 'https://player.vimeo.com/video/1090046874',
 						},
 						isOnGoing: false,
 					},
@@ -91,7 +91,7 @@ export const studioWording = {
 							'"When peaceful protests fail to sway the country’s dictator, a Burmese poet and his fellow artists pick up arms to fight the well-resourced military junta. Deep in the jungles they are gaining ground, but the former pacifists struggle with the mental and physical realities of a brutal war."<br/><br/>This feature-length documentary follows the journey of Saungkha, a renowned poet-turned-opposition army general as Myanmar descends into a brutal civil war. The project has received support from IDFA Bertha Fund, Purin Foundation and has received the Docs by the Sea Award at TCCF (Taiwan).',
 						media: {
 							type: MEDIA_TYPE.VIMEO,
-							src: 'https://vimeo.com/1090011632',
+							src: 'https://player.vimeo.com/video/1090011632',
 						},
 						isOnGoing: true,
 					},
@@ -102,7 +102,7 @@ export const studioWording = {
 							'Are you creative? This is the question that kickstarts this short documentary. Through a group of students and six individuals – an inventor, a psychologist, an activist, a startup entrepreneur, a yoga teacher, and a spatial designer - "Creativity is" explores the possibilities and definitions of creativity beyond the conventional understanding - the search and expansion of ourselves is what we all ultimately create.',
 						media: {
 							type: MEDIA_TYPE.VIMEO,
-							src: 'https://vimeo.com/manage/videos/1089955625',
+							src: 'https://player.vimeo.com/video/1089955625',
 						},
 						isOnGoing: false,
 					},
@@ -128,7 +128,7 @@ export const studioWording = {
 							type: MEDIA_TYPE.IMAGE,
 							src: detail3_1_image,
 						},
-						isOnGoing: true,
+						isOnGoing: false,
 					},
 					{
 						id: '3-2',
@@ -148,7 +148,7 @@ export const studioWording = {
 							'"Journey In" is a storytelling board game that connects strangers through meaningful conversations and self-discovery. Players embark on a shared journey, opening up their worlds to one another while uncovering their own stories along the way. The game includes narrator scripts, conversation cards and a step-by-step guide to create a personalized map of each player’s unique exploration.',
 						media: {
 							type: MEDIA_TYPE.VIMEO,
-							src: 'https://vimeo.com/1090060829',
+							src: 'https://player.vimeo.com/video/1090060829',
 						},
 						isOnGoing: false,
 					},
@@ -185,7 +185,7 @@ export const studioWording = {
 							type: MEDIA_TYPE.IMAGE,
 							src: detail4_1_image,
 						},
-						isOnGoing: true,
+						isOnGoing: false,
 					},
 					{
 						id: '4-2',
@@ -194,7 +194,7 @@ export const studioWording = {
 							'We organized two celebratory large scale events for "Creativity is". The Film Premiere had over 280 people in attendance and the interactive web game launch with over 120 people in attendance. Both events included exhibitions, talks with speakers and activities designed bespokely for the attendees. ',
 						media: {
 							type: MEDIA_TYPE.VIMEO,
-							src: 'https://vimeo.com/1089965527',
+							src: 'https://player.vimeo.com/video/1089965527',
 						},
 						isOnGoing: false,
 					},

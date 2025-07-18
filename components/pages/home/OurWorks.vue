@@ -28,7 +28,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-span-1 xl:col-span-7 flex flex-col px-5 xl:p-10 gap-3 xl:gap-10 mt-5 xl:mt-7">
+				<div class="clickCursor col-span-1 xl:col-span-7 flex flex-col px-5 xl:p-10 gap-3 xl:gap-10 mt-5 xl:mt-7">
 					<HoverTextBox
 						v-for="item in list"
 						@click="handleClick(item.id)"

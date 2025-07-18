@@ -55,6 +55,7 @@ export const campaignsWording: CampaignWording = {
 			title: `Strength Project`,
 			detailTitle: `Strength Project`,
 			img: c1,
+			imageLinkOut: '',
 			year: '2025',
 			region: 'Hong Kong',
 			issues: 'Youth',
@@ -136,6 +137,7 @@ export const campaignsWording: CampaignWording = {
 			title: `Creativity is`,
 			detailTitle: `Creativity is`,
 			img: c2,
+			imageLinkOut: '',
 			year: '2017-2020',
 			region: 'Hong Kong',
 			issues: 'Youth',
@@ -189,7 +191,7 @@ export const campaignsWording: CampaignWording = {
 						mediaDisplayType: MEDIA_DISPLAY_TYPE.VIDEO,
 						mediaType: MEDIA_TYPE.VIMEO,
 						mediaList: [],
-						url: 'https://vimeo.com/1089965527',
+						url: 'https://player.vimeo.com/video/1089965527',
 					},
 					{
 						mediaDisplayType: MEDIA_DISPLAY_TYPE.SWIPER,
@@ -227,6 +229,7 @@ export const campaignsWording: CampaignWording = {
 			title: `Resource Mobilization for Women’s Funds`,
 			detailTitle: `Resource Mobilization for Women’s Funds`,
 			img: c3,
+			imageLinkOut: '',
 			year: '2025',
 			region: 'South Korea and Hong Kong',
 			issues: 'Gender equality',
@@ -278,10 +281,10 @@ export const campaignsWording: CampaignWording = {
 								key: 'c3_swiper3',
 								src: c3_swiper3,
 							},
-							{
-								key: 'c3_swiper4',
-								src: c3_swiper4,
-							},
+							// {
+							// 	key: 'c3_swiper4',
+							// 	src: c3_swiper4,
+							// },
 							{
 								key: 'c3_swiper5',
 								src: c3_swiper5,
@@ -299,6 +302,7 @@ export const campaignsWording: CampaignWording = {
 			title: `MADE: meet me at the end of the assembly line`,
 			detailTitle: `MADE: meet me at the end of the assembly line`,
 			img: c5,
+			imageLinkOut: 'https://madevr.com/',
 			year: '2021',
 			region: 'North America & Europe',
 			issues: 'Living wage for factory workers',
@@ -385,6 +389,7 @@ export const campaignsWording: CampaignWording = {
 			title: `Knock. Stop Domestic Violence`,
 			detailTitle: `Knock. Stop Domestic Violence`,
 			img: c4,
+			imageLinkOut: '',
 			year: '2013',
 			region: 'China',
 			issues: 'Domestic Violence',
@@ -427,12 +432,6 @@ export const campaignsWording: CampaignWording = {
 					},
 				],
 				media: [
-					{
-						mediaDisplayType: MEDIA_DISPLAY_TYPE.VIDEO,
-						mediaType: MEDIA_TYPE.VIMEO,
-						mediaList: [],
-						url: 'https://vimeo.com/1093634184?share=copy', // for video
-					},
 					{
 						mediaDisplayType: MEDIA_DISPLAY_TYPE.SWIPER,
 						mediaType: MEDIA_TYPE.IMAGE,

@@ -31,6 +31,7 @@ export interface CampaignItem {
 	title: string;
 	detailTitle: string;
 	img: string;
+	imageLinkOut: string;
 	year: string;
 	region: string;
 	issues: string;

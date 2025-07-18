@@ -20,7 +20,7 @@
 								<div class="flex-grow text-scaleSM lg:text-scaleMD font-body font-medium">{{ item.content }}</div>
 							</div>
 						</div>
-						<img :alt="`${id}.jpg`" :src="img" />
+						<img :alt="`${id}.jpg`" :src="img" class="clickCursor" />
 					</div>
 				</div>
 			</div>

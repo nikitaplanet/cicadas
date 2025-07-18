@@ -1,9 +1,13 @@
 import {useMediaQuery} from '@vueuse/core';
 
 export function useGetMediaQuery() {
-	const isMobile = useMediaQuery('(max-width: 1279px)');
+	const isMobile = useMediaQuery('(max-width: 639px)');
+	const isTablet = useMediaQuery('(min-width: 640px)');
+	const isDesktop = useMediaQuery('(min-width: 1024px)');
 
 	return {
 		isMobile,
+		isTablet,
+		isDesktop,
 	};
 }

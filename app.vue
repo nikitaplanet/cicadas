@@ -23,7 +23,7 @@
 	</div>
 
 	<ClientOnly>
-		<NCursor v-if="!isMobile" />
+		<NCursor v-if="isDesktop" />
 	</ClientOnly>
 </template>
 
@@ -46,15 +46,15 @@ import {useDebounceFn} from '@vueuse/core';
 const {isScrolledPastLanding, showNavBar} = useScrollDirectionNav();
 
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
-const {isMobile} = useGetMediaQuery();
+const {isMobile, isTablet, isDesktop} = useGetMediaQuery();
 
 const route = useRoute();
 const isShowLoading = ref(true);
 const isHideLoading = ref(false);
 const isHomePage = computed(() => route.path === '/');
 const isShowCommon = ref(false);
-const previousIsMobile = ref(isMobile.value);
-const pageKey = ref(`${route.fullPath}-${isMobile.value ? 'm' : 'd'}`);
+const previousIsMobile = ref(!isDesktop.value);
+const pageKey = ref(`${route.fullPath}-${!isDesktop.value ? 'm' : 'd'}`);
 
 initPageLoading();
 function initPageLoading() {
@@ -73,26 +73,20 @@ function initPageLoading() {
 watch(
 	() => route.fullPath,
 	(newPath) => {
-		pageKey.value = `${newPath}-${isMobile.value ? 'm' : 'd'}`;
+		pageKey.value = `${newPath}-${!isDesktop.value ? 'm' : 'd'}`;
 	},
 );
 
 watch(
 	() => route.fullPath,
 	() => {
-		isShowLoading.value = true;
-		isHideLoading.value = false;
-
-		setTimeout(() => {
-			isShowLoading.value = false;
-		}, 2200);
 		initPageLoading();
 	},
 );
 
 const handleMobileSwitch = useDebounceFn(() => {
 	const wasMobile = previousIsMobile.value;
-	const nowMobile = isMobile.value;
+	const nowMobile = !isDesktop.value;
 
 	if (wasMobile !== nowMobile) {
 		initPageLoading();
@@ -101,7 +95,7 @@ const handleMobileSwitch = useDebounceFn(() => {
 	}
 }, 200);
 
-watch(isMobile, handleMobileSwitch);
+watch(isDesktop, handleMobileSwitch);
 
 // Nav Style
 const isNavBottom = ref(false);
@@ -112,7 +106,7 @@ const navStyle = computed(() => {
 		return [
 			isScrolledPastLanding.value
 				? 'fixed top-0 left-0 w-full z-20 bg-surface-def'
-				: isMobile.value
+				: !isDesktop.value
 					? 'absolute top-0 left-0 w-full z-20'
 					: 'absolute bottom-0 left-0 w-full z-20',
 			{

@@ -7,7 +7,10 @@
 			<div
 				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
 				class="w-[90%] max-w-[1045px] mx-auto my-10 lg:my-[60px] flex justify-center transition-all duration-700">
-				<img :alt="data.detailTitle" :src="data.img" class="w-full" />
+				<a v-if="data.imageLinkOut" :href="data.imageLinkOut" class="w-full hover:opacity-90 transition-all duration-300" target="_blank">
+					<img :alt="data.detailTitle" :src="data.img" class="w-full clickCursor" />
+				</a>
+				<img v-else :alt="data.detailTitle" :src="data.img" class="w-full" />
 			</div>
 
 			<!-- line -->
@@ -75,7 +78,7 @@
 
 					<!-- video -->
 					<div v-if="item.mediaDisplayType === MEDIA_DISPLAY_TYPE.VIDEO && item.url" class="px-10">
-						<NVideo :videoUrl="item.url" />
+						<NVideo isShowControls:videoUrl="item.url" />
 					</div>
 
 					<!-- swiper -->

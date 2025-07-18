@@ -2,12 +2,12 @@
 	<div
 		ref="main"
 		class="w-full overflow-hidden bg-[linear-gradient(180deg,var(--sc-color-border-primary,#DD5621)_75.98%,rgba(221,86,33,0)_100%)] lg:bg-[linear-gradient(180deg,var(--Border-primary,#dd5621)_38.08%,rgba(221,86,33,0)_100%)]">
-		<div class="w-full px-6 lg:px-0 lg:w-11/12 m-auto">
+		<div class="w-full px-6 lg:px-10 m-auto">
 			<div class="w-full h-screen relative">
 				<div class="w-full h-full absolute left-0 top-0 flex align-center justify-center">
 					<img ref="logo" class="block w-1/2 lg:w-9/12 max-w-[450px]" alt="LogoIcon" src="~@/assets/img/home/brand/LogoIcon.svg" />
 				</div>
-				<div class="w-full h-full grid grid-cols-1 pt-20 absolute md:grid-cols-12">
+				<div class="w-full h-full grid grid-cols-1 pt-20 lg:pt-10 absolute lg:grid-cols-12">
 					<div class="col-span-1 md:col-span-8">
 						<HeaderText ref="headerText" :mode="TextMode.light">
 							<span v-html="contentText.landing.headerTitle"></span>

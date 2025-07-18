@@ -3,15 +3,15 @@
 		v-bind="linkProps"
 		@click="handleClick"
 		:is="tag"
-		:class="['cursor-pointer', { 'underline underline-offset-4 font-bold text-sm': hasUnderline }]"
-	>
+		class="clickCursor"
+		:class="['cursor-pointer', {'underline underline-offset-4 font-bold text-sm': hasUnderline}]">
 		<slot />
 	</component>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
-import { NuxtLink } from '#components';
+import {computed} from 'vue';
+import {NuxtLink} from '#components';
 
 interface Props {
 	to?: string | Record<string, any> | null;
@@ -46,9 +46,9 @@ const tag = computed(() => {
 
 const linkProps = computed(() => {
 	if (isButton.value) {
-		return { type: 'button', disabled: props.disabled };
+		return {type: 'button', disabled: props.disabled};
 	} else if (isRouterLink.value) {
-		return { to: props.to, target: props.target };
+		return {to: props.to, target: props.target};
 	} else {
 		return {
 			href: props.href,

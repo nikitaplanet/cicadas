@@ -197,3 +197,5 @@ const config: Config = {
 };
 
 export default config;
+
+// RWD https://v3.tailwindcss.com/docs/responsive-design
