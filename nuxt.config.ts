@@ -4,8 +4,8 @@ export default defineNuxtConfig({
 	ssr: true,
 	target: 'server',
 	nitro: {
-		// preset: 'cloudflare-pages',
-		preset: 'node-server',
+		preset: 'cloudflare-pages',
+		// preset: 'node-server',
 		prerender: {
 			crawlLinks: true,
 		},
