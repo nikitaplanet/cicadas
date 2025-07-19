@@ -29,15 +29,15 @@ import SectionContainer from '@/components/layout/SectionContainer.vue';
 import SectionNameTag from '@/components/atoms/text/SectionNameTag.vue';
 import ContentButton from '@/components/pages/home/issues/ContentButton.vue';
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
-const {isMobile} = useGetMediaQuery();
+const {isDesktop} = useGetMediaQuery();
 
 const textAry = reactive(
-	contentText.issuesWeTackle.contentTextList.map((item, index) => ({...item, id: index, isActive: isMobile.value ? index === 0 : false})),
+	contentText.issuesWeTackle.contentTextList.map((item, index) => ({...item, id: index, isActive: !isDesktop.value ? index === 0 : false})),
 );
 const selectedContent = ref(textAry[0]);
 
 const handleClickItem = (item: any) => {
-	if (!isMobile.value) {
+	if (isDesktop.value) {
 		return;
 	}
 	textAry.forEach((i) => {

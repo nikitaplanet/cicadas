@@ -11,15 +11,15 @@
 
 		<!--BG 過場-->
 		<div class="section-gradient1"></div>
-
-		<div v-if="!isMobile" id="homePage__aboutUs">
-			<OurStorySlide1 class="homePage__aboutUs__items homePage__aboutUs__item1" />
-			<OurStorySlide2 class="homePage__aboutUs__items homePage__aboutUs__item2" />
-			<OurStorySlide3 class="homePage__aboutUs__items homePage__aboutUs__item3" />
-			<OurStorySlide4 class="homePage__aboutUs__items homePage__aboutUs__item4" />
-			<OurStorySlide5 class="homePage__aboutUs__items homePage__aboutUs__item5" />
-		</div>
-		<div v-if="isMobile" class="w-full">
+		<AboutHorizonScrollCard v-if="isDesktop" />
+		<!--		<div v-if="isDesktop" id="homePage__aboutUs">-->
+		<!--			<OurStorySlide1 class="homePage__aboutUs__items homePage__aboutUs__item1" />-->
+		<!--			<OurStorySlide2 class="homePage__aboutUs__items homePage__aboutUs__item2" />-->
+		<!--			<OurStorySlide3 class="homePage__aboutUs__items homePage__aboutUs__item3" />-->
+		<!--			<OurStorySlide4 class="homePage__aboutUs__items homePage__aboutUs__item4" />-->
+		<!--			<OurStorySlide5 class="homePage__aboutUs__items homePage__aboutUs__item5" />-->
+		<!--		</div>-->
+		<div v-if="!isDesktop" class="w-full">
 			<OurStoryMobile />
 		</div>
 
@@ -54,7 +54,8 @@ import OurStorySlide5 from '~/components/pages/about/horizonSlide/OurStorySlide5
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
 import {seoWording} from 'assets/wording/seoWording';
 import seoBanner from 'assets/img/seo/cicadas_banner.png';
-const {isMobile} = useGetMediaQuery();
+import AboutHorizonScrollCard from '~/components/pages/about/horizonSlide/AboutHorizonScrollCard.vue';
+const {isDesktop} = useGetMediaQuery();
 
 useSeoMeta({
 	title: () => seoWording.about.title,
@@ -91,25 +92,25 @@ function getScrollAmount(headingDom: HTMLElement) {
 
 function initAnimation() {
 	// ❗只讓桌機版 (lg 以上) 執行動畫
-	if (isMobile.value) return;
-
-	ctx = gsap.context(() => {
-		const items = gsap.utils.toArray<HTMLElement>('.homePage__aboutUs__items');
-		const container = document.getElementById('homePage__aboutUs')!;
-		const totalWidth = container.offsetWidth;
-
-		gsap.to(items, {
-			xPercent: -100 * (items.length - 1),
-			ease: 'sine.out',
-			scrollTrigger: {
-				trigger: container,
-				pin: true,
-				scrub: 3,
-				snap: 1 / (items.length - 1),
-				end: `+=${totalWidth}`,
-			},
-		});
-	});
+	// if (!isDesktop.value) return;
+	//
+	// ctx = gsap.context(() => {
+	// 	const items = gsap.utils.toArray<HTMLElement>('.homePage__aboutUs__items');
+	// 	const container = document.getElementById('homePage__aboutUs')!;
+	// 	const totalWidth = container.offsetWidth;
+	//
+	// 	gsap.to(items, {
+	// 		xPercent: -100 * (items.length - 1),
+	// 		ease: 'sine.out',
+	// 		scrollTrigger: {
+	// 			trigger: container,
+	// 			pin: true,
+	// 			scrub: 3,
+	// 			snap: 1 / (items.length - 1),
+	// 			end: `+=${totalWidth}`,
+	// 		},
+	// 	});
+	// });
 }
 </script>
 

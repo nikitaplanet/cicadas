@@ -17,14 +17,10 @@
 		<!--BG 過場-->
 		<div class="section-gradient4"></div>
 
+		<HomeAboutHorizonScrollCard v-if="isDesktop" />
+
 		<!--Horizon Slide--->
-		<!--About Us-->
-		<div v-if="!isMobile" id="homePage__aboutUs">
-			<AboutUsSlide1 class="homePage__aboutUs__items homePage__aboutUs__item1" />
-			<AboutUsSlide2 class="homePage__aboutUs__items homePage__aboutUs__item2" />
-			<AboutUsSlide3 class="homePage__aboutUs__items homePage__aboutUs__item3" />
-		</div>
-		<div v-if="isMobile" class="w-full">
+		<div v-if="!isDesktop" class="w-full">
 			<AboutUsMobile />
 		</div>
 
@@ -56,6 +52,7 @@
 <script lang="ts" setup>
 import {ROUTER_NAME} from '@/assets/js/enum/routerEnum';
 import seoBanner from '@/assets/img/seo/cicadas_banner.png';
+import HomeAboutHorizonScrollCard from '~/components/pages/home/horizonSlide/HomeAboutHorizonScrollCard.vue';
 
 definePageMeta({
 	name: ROUTER_NAME.HOME_PAGE,
@@ -82,10 +79,6 @@ import Section1 from '@/components/pages/home/Section1.vue';
 import Section2 from '@/components/pages/home/Section2.vue';
 import OurWorks from '@/components/pages/home/OurWorks.vue';
 
-import AboutUsSlide1 from '@/components/pages/home/horizonSlide/AboutUsSlide1.vue';
-import AboutUsSlide2 from '@/components/pages/home/horizonSlide/AboutUsSlide2.vue';
-import AboutUsSlide3 from '@/components/pages/home/horizonSlide/AboutUsSlide3.vue';
-
 import {contentText} from '@/assets/wording/home/text';
 
 import SliderSection from '@/components/pages/home/SliderSection.vue';
@@ -98,7 +91,7 @@ import AboutUsMobile from '@/components/pages/home/horizonSlide/AboutUsMobile.vu
 import {seoWording} from 'assets/wording/seoWording';
 
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
-const {isMobile} = useGetMediaQuery();
+const {isDesktop} = useGetMediaQuery();
 
 let ctx: gsap.Context;
 let ctxHeading: gsap.Context;
@@ -146,27 +139,6 @@ function initAnimation() {
 				},
 			});
 		}, 200); // 延遲一點，確保文字 render 完成
-	});
-
-	// ❗只讓桌機版 (lg 以上) 執行動畫
-	if (isMobile.value) return;
-
-	ctx = gsap.context(() => {
-		const items = gsap.utils.toArray<HTMLElement>('.homePage__aboutUs__items');
-		const container = document.getElementById('homePage__aboutUs')!;
-		const totalWidth = container.offsetWidth;
-
-		gsap.to(items, {
-			xPercent: -100 * (items.length - 1),
-			ease: 'sine.out',
-			scrollTrigger: {
-				trigger: container,
-				pin: true,
-				scrub: 3,
-				snap: 1 / (items.length - 1),
-				end: `+=${totalWidth}`,
-			},
-		});
 	});
 }
 </script>

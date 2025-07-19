@@ -34,8 +34,6 @@
 
 <script lang="ts" setup>
 import {ref, computed} from 'vue';
-import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
-const {isMobile} = useGetMediaQuery();
 
 interface Props {
 	title: string;
@@ -62,9 +60,7 @@ const handleHoverLeave = () => {
 };
 
 const handleClick = () => {
-	if (isMobile.value) {
-		emit('click');
-	}
+	emit('click');
 };
 
 const isActiveStyle = computed(() => {

@@ -1,21 +1,30 @@
 <template>
-	<div class="relative aboutUs-bg pt-32 pb-32">
+	<div class="relative aboutUs-bg">
 		<SectionContainer :hasMinHeight="false">
-			<div class="w-full flex flex-col justify-center items-center pt-12">
-				<div class="w-full flex flex-col lg:flex-row justify-center items-center gap-10 mt-28">
+			<div
+				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+				class="w-full flex flex-col justify-center items-center transition-all duration-500">
+				<div class="w-full flex flex-col lg:flex-row justify-center items-center gap-10 my-28">
 					<div class="flex flex-col">
-						<img alt="" src="@/assets/img/home/aboutUs/word/3.svg" />
-						<h3 v-html="contentText.aboutUs.content3" class="font-h3sans italic text-h4 font-semibold"></h3>
+						<img class="w-full min-w-[350px] max-w-[350px]" alt="" src="@/assets/img/home/aboutUs/word/3.svg" />
 					</div>
 					<img class="w-[90%] max-w-[580px] pb-5 ml-24" alt="bird" src="@/assets/img/home/aboutUs/3.svg" />
 				</div>
 			</div>
 		</SectionContainer>
 
-		<NLink to="/about" class="absolute bottom-[120px] right-[130px] w-[130px]">
-			<img class="w-full cursor-pointer" alt="feather" src="@/assets/img/home/aboutUs/learnMore.svg" />
+		<NLink class="group absolute bottom-[120px] right-[130px] w-[130px] h-[25px]" to="/about">
+			<div class="w-full relative">
+				<img
+					class="absolute top-0 left-0 cursor-pointer opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+					alt="feather"
+					src="@/assets/img/home/aboutUs/learnMore.svg" />
+				<img
+					class="absolute top-0 left-0 w-full cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+					alt="feather"
+					src="@/assets/img/home/aboutUs/learnMore_hover.svg" />
+			</div>
 		</NLink>
-
 	</div>
 </template>
 

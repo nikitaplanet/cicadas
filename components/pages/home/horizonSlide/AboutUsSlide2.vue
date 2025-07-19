@@ -1,8 +1,10 @@
 <template>
-	<div class="aboutUs-bg pt-32 pb-32">
+	<div class="aboutUs-bg">
 		<SectionContainer :hasMinHeight="false">
-			<div class="w-full flex flex-col justify-center items-center">
-				<div class="w-full flex flex-col lg:flex-row justify-center items-center gap-10 mt-28">
+			<div
+				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+				class="w-full flex flex-col justify-center items-center transition-all duration-500">
+				<div class="w-full flex flex-col lg:flex-row justify-center items-center gap-10 my-28">
 					<div class="flex flex-col">
 						<img alt="wording" src="@/assets/img/home/aboutUs/word/2.svg" />
 					</div>

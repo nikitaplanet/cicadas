@@ -32,18 +32,21 @@ import SectionNameTag from '@/components/atoms/text/SectionNameTag.vue';
 import ContentButton from '@/components/pages/home/issues/ContentButton.vue';
 
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
-const {isMobile} = useGetMediaQuery();
+const {isDesktop} = useGetMediaQuery();
 
 const textAry = reactive(
 	contentText.issuesWeTackle.contentTextList.map((item, index) => ({
 		...item,
 		id: index,
-		isActive: isMobile.value ? index === 0 : false,
+		isActive: !isDesktop.value ? index === 0 : false,
 	})),
 );
 const selectedContent = ref(textAry[0]);
 
 const handleClickItem = (item: any) => {
+	if (isDesktop.value) {
+		return;
+	}
 	textAry.forEach((i) => {
 		i.isActive = i.id === item.id;
 	});
