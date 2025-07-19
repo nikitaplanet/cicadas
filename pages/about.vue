@@ -11,14 +11,9 @@
 
 		<!--BG 過場-->
 		<div class="section-gradient1"></div>
+
 		<AboutHorizonScrollCard v-if="isDesktop" />
-		<!--		<div v-if="isDesktop" id="homePage__aboutUs">-->
-		<!--			<OurStorySlide1 class="homePage__aboutUs__items homePage__aboutUs__item1" />-->
-		<!--			<OurStorySlide2 class="homePage__aboutUs__items homePage__aboutUs__item2" />-->
-		<!--			<OurStorySlide3 class="homePage__aboutUs__items homePage__aboutUs__item3" />-->
-		<!--			<OurStorySlide4 class="homePage__aboutUs__items homePage__aboutUs__item4" />-->
-		<!--			<OurStorySlide5 class="homePage__aboutUs__items homePage__aboutUs__item5" />-->
-		<!--		</div>-->
+
 		<div v-if="!isDesktop" class="w-full">
 			<OurStoryMobile />
 		</div>

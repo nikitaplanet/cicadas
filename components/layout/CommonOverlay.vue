@@ -7,7 +7,7 @@
 			</HeaderText>
 
 			<button @click="handleCloseCommon" class="clickCursor w-11 h-11 flex justify-end items-start" type="button">
-				<img class="w-6 h-6" alt="Close" src="@/assets/img/components/overlay/close.svg" />
+				<img class="w-8 h-8" alt="Close" src="@/assets/img/components/overlay/close_w.svg" />
 			</button>
 		</div>
 

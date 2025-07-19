@@ -6,7 +6,7 @@
 			class="max-w-[900px] 2xl:max-w-[1200px] h-screen text-scaleXL md:text-scale1XL 2xl:text-h2 font-semibold font-h2sans flex items-center justify-center overflow-hidden">
 			<div ref="textBlockRef">
 				<span v-html="contentText.section2.title1" class="line"></span>
-				<span v-html="contentText.section2.title2" class="line"></span>
+				<!--				<span v-html="contentText.section2.title2" class="line"></span>-->
 			</div>
 		</SectionContainer>
 	</div>

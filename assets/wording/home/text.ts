@@ -22,7 +22,7 @@ export const contentText = {
 		description: `Through data-driven insights and compelling storytelling, we help you connect meaningfully with your audience, transforming your message into a force for change.`,
 	},
 	section2: {
-		title1: 'Cicadas may be small, but they rarely go unnoticed. The space within them amplifies their ',
+		title1: 'Cicadas may be small, but they rarely go unnoticed. The space within them amplifies their sound and collectively they make a spectacular noise that no one can ignore.',
 		title2: 'sound and collectively they make a spectacular noise that no one can ignore.',
 	},
 	ourWorks: {
