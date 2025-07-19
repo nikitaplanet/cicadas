@@ -78,7 +78,7 @@
 
 					<!-- video -->
 					<div v-if="item.mediaDisplayType === MEDIA_DISPLAY_TYPE.VIDEO && item.url" class="px-10">
-						<NVideo isShowControls:videoUrl="item.url" />
+						<NVideo :videoUrl="item.url" isShowControls />
 					</div>
 
 					<!-- swiper -->

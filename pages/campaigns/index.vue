@@ -3,18 +3,35 @@
 		<LandingSection />
 
 		<template v-for="(item, index) in campaigns" :key="item.title">
-			<CampaignSection
-				@click="handleClickCampaign(item.id)"
-				:id="item.id"
-				:img="item.img"
-				:isOngoing="item.isOngoing"
-				:issues="item.issues"
-				:region="item.region"
-				:services="item.services"
-				:title="item.title"
-				:year="item.year"
-				class="cursor-pointer" />
-			<img v-if="index !== campaigns.length - 1" class="w-full px-8" alt="line" src="@/assets/img/campaigns/listLine.svg" />
+			<div v-if="index !== 0" v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}" class="transition-all duration-700">
+				<CampaignSection
+					@click="handleClickCampaign(item.id)"
+					:id="item.id"
+					:img="item.img"
+					:isOngoing="item.isOngoing"
+					:issues="item.issues"
+					:region="item.region"
+					:services="item.services"
+					:title="item.title"
+					:year="item.year"
+					class="cursor-pointer" />
+				<img v-if="index !== campaigns.length - 1" class="w-full px-8" alt="line" src="@/assets/img/campaigns/listLine.svg" />
+			</div>
+
+			<template v-else>
+				<CampaignSection
+					@click="handleClickCampaign(item.id)"
+					:id="item.id"
+					:img="item.img"
+					:isOngoing="item.isOngoing"
+					:issues="item.issues"
+					:region="item.region"
+					:services="item.services"
+					:title="item.title"
+					:year="item.year"
+					class="cursor-pointer" />
+				<img v-if="index !== campaigns.length - 1" class="w-full px-8" alt="line" src="@/assets/img/campaigns/listLine.svg" />
+			</template>
 		</template>
 	</div>
 </template>
