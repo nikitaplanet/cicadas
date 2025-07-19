@@ -46,6 +46,8 @@ import {useDebounceFn} from '@vueuse/core';
 const {isScrolledPastLanding, showNavBar} = useScrollDirectionNav();
 
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
+import {seoWording} from 'assets/wording/seoWording';
+import seoBanner from 'assets/img/seo/cicadas_banner.png';
 const {isMobile, isTablet, isDesktop} = useGetMediaQuery();
 
 const route = useRoute();
@@ -164,6 +166,21 @@ onMounted(() => {
 onUnmounted(() => {
 	if (!import.meta.client) return;
 	lenis.destroy();
+});
+
+useSeoMeta({
+	title: () => seoWording.siteName,
+	description: () => seoWording.home.description,
+	ogTitle: () => seoWording.siteName,
+	ogDescription: () => seoWording.home.description,
+	ogImage: () => seoBanner || '',
+	ogUrl: () => seoWording.domain,
+	ogType: 'website',
+	ogSiteName: seoWording.siteName,
+	twitterCard: 'summary_large_image',
+	twitterTitle: () => seoWording.siteName,
+	twitterDescription: () => seoWording.home.description,
+	twitterImage: () => seoBanner || '',
 });
 </script>
 
