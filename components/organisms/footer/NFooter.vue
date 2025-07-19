@@ -12,7 +12,7 @@
 							alt="cloud"
 							src="@/assets/img/components/footer/cloud.svg" />
 						<img
-							class="absolute w-[60px] left-[-70px] top-[160px] xs:w-[50px] xs:left-[20px] lg:left-[-230px] lg:top-[10px] lg:w-[130px]"
+							class="absolute w-[60px] left-[-50px] top-[160px] xs:w-[50px] xs:left-[-20px] lg:left-[-230px] lg:top-[10px] lg:w-[130px]"
 							alt="cloud"
 							src="@/assets/img/components/footer/eye.svg" />
 					</span>
