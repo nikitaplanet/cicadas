@@ -24,15 +24,14 @@
 				</div>
 
 				<!--手機版-->
-				<div class="w-full h-full flex items-center justify-center lg:hidden">
+				<div class="w-full h-full flex flex-col justify-center pt-20 lg:hidden relative">
+					<div class="absolute top-20">
+						<HeaderText ref="headerTextM" :mode="TextMode.light">
+							<span v-html="contentText.landing.headerTitle"></span>
+						</HeaderText>
+					</div>
 					<div>
-						<div>
-							<HeaderText ref="headerTextM" :mode="TextMode.light">
-								<span v-html="contentText.landing.headerTitle"></span>
-							</HeaderText>
-						</div>
-
-						<div class="flex items-center justify-center my-10">
+						<div class="flex items-center justify-center mb-10 md:mb-24">
 							<img ref="logoM" class="block w-1/2 lg:w-9/12 max-w-[450px]" alt="LogoIcon" src="~@/assets/img/home/brand/LogoIcon.svg" />
 						</div>
 
