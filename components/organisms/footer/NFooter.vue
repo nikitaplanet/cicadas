@@ -31,7 +31,7 @@
 						alt="bg"
 						src="@/assets/img/components/footer/help_hover.svg" />
 					<img
-						class="object-contain absolute left-[32px] bottom-[8px] group-hover:opacity-0 transition-opacity duration-200"
+						class="object-contain absolute left-[32px] bottom-[8px] lg:group-hover:opacity-0 transition-opacity duration-200"
 						alt="bg"
 						src="@/assets/img/components/footer/help_def.svg" />
 				</NLink>
