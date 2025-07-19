@@ -87,10 +87,23 @@ onBeforeUnmount(() => {
 	transform: translate(-50%, -50%);
 	z-index: 9999;
 	mix-blend-mode: difference;
+	animation: cursorBlink 1s steps(1) infinite;
 }
 
 .custom-cursor.is-clickable {
 	background-image: url('@/assets/img/icons/cursor/hover.svg');
+}
+
+@keyframes cursorBlink {
+	0% {
+		background-image: url('@/assets/img/icons/cursor/default_b.svg');
+	}
+	50% {
+		background-image: url('@/assets/img/icons/cursor/default_c.svg');
+	}
+	100% {
+		background-image: url('@/assets/img/icons/cursor/default_b.svg');
+	}
 }
 </style>
 <style lang="scss">
