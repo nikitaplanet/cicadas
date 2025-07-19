@@ -111,9 +111,10 @@ const config: Config = {
 	safelist: ['overflow-hidden'],
 	theme: {
 		screens: {
+			...defaultTheme.screens,
+			lg: {min: '1025px'},
 			xs: {max: '380px'},
 			s_lg: {min: '500px'},
-			...defaultTheme.screens,
 		},
 		extend: {
 			aspectRatio: {

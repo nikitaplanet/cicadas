@@ -27,7 +27,7 @@
 					data-tally-emoji-text="👋"
 					data-tally-open="mZ1K9z">
 					<img
-						class="object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+						class="object-contain opacity-0 lg:group-hover:opacity-100 transition-opacity duration-200"
 						alt="bg"
 						src="@/assets/img/components/footer/help_hover.svg" />
 					<img

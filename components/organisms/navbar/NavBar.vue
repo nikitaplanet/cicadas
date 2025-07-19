@@ -162,6 +162,7 @@ const handleToggleMenuOverlay = () => {
 
 const handleCloseMenuOverlay = () => {
 	isShowMenuOverlay.value = false;
+	console.log('handleCloseMenuOverlay');
 };
 
 watch(

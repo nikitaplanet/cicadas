@@ -1,8 +1,7 @@
 <template>
 	<component
 		v-bind="linkProps"
-		@click="!isTouchDevice ? handleClick : null"
-		@touchstart="isTouchDevice ? handleClick : null"
+		@click="handleClick"
 		ref="elRef"
 		:is="tag"
 		class="clickCursor"
@@ -69,6 +68,7 @@ const handleClick = (event: Event) => {
 		event.preventDefault();
 		return;
 	}
+
 	emit('click', event);
 };
 </script>
