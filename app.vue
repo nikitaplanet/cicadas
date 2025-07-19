@@ -80,7 +80,7 @@ watch(
 watch(
 	() => route.fullPath,
 	() => {
-		// initPageLoading();
+		initPageLoading();
 	},
 );
 
