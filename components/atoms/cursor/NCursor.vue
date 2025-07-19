@@ -1,40 +1,55 @@
 <template>
-	<div v-show="!isInIframe" :style="{left: x + 'px', top: y + 'px'}" class="custom-cursor" :class="{'is-clickable': isClickable}"></div>
+	<div v-show="!isInIframe" :style="{left: x + 'px', top: y + 'px'}" class="custom-cursor">
+		<img v-show="isClickable" ref="cursorImg" :src="hoverCursor" :class="['cursor-img', {'is-clickable': isClickable}]" />
+		<img v-show="!isClickable" ref="cursorImg" :src="currentCursor" :class="['cursor-img', {'is-clickable': isClickable}]" />
+	</div>
 </template>
 
 <script lang="ts" setup>
-import {ref, onMounted, onBeforeUnmount} from 'vue';
+import {ref, onMounted, onBeforeUnmount, watch} from 'vue';
 
-const x = ref<number>(0);
-const y = ref<number>(0);
-const isInIframe = ref<boolean>(false);
-const isClickable = ref<boolean>(false);
+// 游標位置與狀態
+const x = ref(0);
+const y = ref(0);
+const isInIframe = ref(false);
+const isClickable = ref(false);
+
+// 游標圖與動畫資源
+const cursorImg = ref<HTMLImageElement | null>(null);
+const currentCursor = ref('');
+const hoverCursor = new URL('@/assets/img/icons/cursor/hover.svg', import.meta.url).href;
+
+const cursorImages = [
+	new URL('@/assets/img/icons/cursor/default_b.svg', import.meta.url).href,
+	new URL('@/assets/img/icons/cursor/default_c.svg', import.meta.url).href,
+];
+
+let cursorIndex = 0;
 let iframeCheckInterval: number;
+let blinkInterval: number;
 
 function isElementClickable(el: Element | null): boolean {
 	if (!el) return false;
 
-	// 1. 原生 tag 判斷
 	const tag = el.tagName.toUpperCase();
 	if (['A', 'BUTTON'].includes(tag)) return true;
-
-	// 2. 判斷 data-clickable 屬性
 	if (el.getAttribute('data-clickable') === 'true') return true;
 
-	// 3. 判斷游標樣式
 	const style = getComputedStyle(el);
 	if (style.cursor === 'pointer') return true;
 
-	// 4. 向上查找是否有 clickCursor class
 	let current: Element | null = el;
 	while (current) {
-		if (current.classList.contains('clickCursor')) return true;
-		if (current.classList.contains('swiper-button-next')) return true;
-		if (current.classList.contains('swiper-button-prev')) return true;
-		if (current.classList.contains('swiper-pagination-bullet')) return true;
+		if (
+			current.classList.contains('clickCursor') ||
+			current.classList.contains('swiper-button-next') ||
+			current.classList.contains('swiper-button-prev') ||
+			current.classList.contains('swiper-pagination-bullet')
+		) {
+			return true;
+		}
 		current = current.parentElement;
 	}
-
 	return false;
 }
 
@@ -45,7 +60,6 @@ function handleMouseMove(e: MouseEvent): void {
 	const el = document.elementFromPoint(e.clientX, e.clientY);
 	isClickable.value = isElementClickable(el);
 
-	// 判斷是否進入 iframe
 	if (el?.tagName.toLowerCase() === 'iframe') {
 		isInIframe.value = true;
 		document.body.classList.remove('hide-cursor');
@@ -66,14 +80,33 @@ onMounted(() => {
 			document.body.classList.remove('hide-cursor');
 		}
 	}, 500);
+
+	// 初始圖
+	currentCursor.value = cursorImages[0];
+
+	// 動畫切圖
+	initInterval();
 });
 
 onBeforeUnmount(() => {
 	document.body.classList.remove('hide-cursor');
 	window.removeEventListener('mousemove', handleMouseMove);
-
 	clearInterval(iframeCheckInterval);
+	clearInterval(blinkInterval);
 });
+
+function initInterval() {
+	blinkInterval = window.setInterval(() => {
+		if (!isClickable.value) {
+			cursorImg.value!.style.opacity = '0.9';
+			setTimeout(() => {
+				cursorIndex = (cursorIndex + 1) % cursorImages.length;
+				currentCursor.value = cursorImages[cursorIndex];
+				cursorImg.value!.style.opacity = '1';
+			}, 200);
+		}
+	}, 500);
+}
 </script>
 
 <style lang="scss" scoped>
@@ -81,28 +114,21 @@ onBeforeUnmount(() => {
 	position: fixed;
 	width: 24px;
 	height: 24px;
-	background: url('@/assets/img/icons/cursor/default_b.svg') no-repeat center center;
-	background-size: contain;
 	pointer-events: none;
 	transform: translate(-50%, -50%);
 	z-index: 9999;
 	mix-blend-mode: difference;
-	animation: cursorBlink 1s steps(1) infinite;
-}
 
-.custom-cursor.is-clickable {
-	background-image: url('@/assets/img/icons/cursor/hover.svg');
-}
+	.cursor-img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		opacity: 1;
+		transition: opacity 0.1s ease;
+	}
 
-@keyframes cursorBlink {
-	0% {
-		background-image: url('@/assets/img/icons/cursor/default_b.svg');
-	}
-	50% {
-		background-image: url('@/assets/img/icons/cursor/default_c.svg');
-	}
-	100% {
-		background-image: url('@/assets/img/icons/cursor/default_b.svg');
+	.cursor-img.is-clickable {
+		filter: brightness(1.5) saturate(1.2); // 點擊狀態效果
 	}
 }
 </style>
