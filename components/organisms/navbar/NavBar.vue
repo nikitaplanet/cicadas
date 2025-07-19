@@ -83,7 +83,7 @@
 							</button>
 						</div>
 						<!--MenuList-->
-						<div class="w-full flex-grow flex flex-col justify-center items-center gap-5">
+						<div class="w-full pb-16 flex-grow flex flex-col justify-center items-center gap-5">
 							<NLink
 								v-for="item in menu"
 								@click="handleCloseMenuOverlay"

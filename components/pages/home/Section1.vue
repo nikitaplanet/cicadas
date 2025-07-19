@@ -1,5 +1,5 @@
 <template>
-	<SectionContainer>
+	<SectionContainer :hasMinHeight="false" class="lg:pb-20">
 		<div
 			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
 			class="w-full flex flex-col md:gap-5 xl:gap-10 lg:grid lg:grid-cols-12 pt-[60px] lg:pt-[150px] xl:pt-[200px] transition-all duration-700">
