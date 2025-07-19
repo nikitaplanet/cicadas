@@ -1,5 +1,5 @@
 <template>
-	<div ref="main" class="w-full h-screen common-bg fixed top-0 left-0 z-30 grid grid-cols-1 py-[60px] px-10">
+	<div ref="main" class="w-full h-screen common-bg fixed top-0 left-0 z-30 grid grid-cols-1 py-[60px] px-6 lg:px-10">
 		<div class="flex justify-between items-start">
 			<HeaderText ref="headerText" :mode="TextMode.light" class="relative">
 				<span v-html="commonWording.headerTitle"></span>
@@ -11,13 +11,13 @@
 			</button>
 		</div>
 
-		<div class="flex justify-end items-end flex-col">
+		<div class="flex justify-between items-end flex-col lg:justify-end">
 			<div
 				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
 				class="w-full flex flex-row justify-end items-start transition-all duration-700">
 				<div class="max-w-screen-sm">
-					<div v-html="commonWording.details.title" class="text-scaleMD font-body font-medium"></div>
-					<div ref="headerDesc" class="mt-5 font-body text-scaleMD font-medium">
+					<div v-html="commonWording.details.title" class="text-scaleSM lg:text-scaleMD font-body font-medium"></div>
+					<div ref="headerDesc" class="mt-5 font-body text-scaleSM lg:text-scaleMD font-medium">
 						<template v-for="item in commonWording.details.contents">
 							<template v-if="item.type === TEXT_TYPE.TEXT">
 								<div v-for="text in item.content" v-html="text"></div>

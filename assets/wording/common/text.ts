@@ -3,7 +3,7 @@ import {TEXT_TYPE} from '@/assets/js/enum/textType.ts';
 export const commonWording = {
 	headerTitle: 'Commons',
 	details: {
-		title: `We provide pro bono support to a select number of non-profits, charities, and media organizations in Asia. Our goal is to empower organizations that work in some of the most underserved regions or under challenging circumstances.<br><br>Are you eligible?`,
+		title: `We provide pro bono support to a select number of non-profits, charities and media organizations in Asia. Our goal is to empower organizations that work in some of the most underserved regions or under challenging circumstances.<br><br>Are you eligible?`,
 		contents: [
 			{
 				type: TEXT_TYPE.TEXT,
@@ -12,8 +12,8 @@ export const commonWording = {
 			{
 				type: TEXT_TYPE.TEXT_LIST,
 				content: [
-					'Based in an OECD-designated “least developed country.”',
-					'Operates in a region ranked 100 or lower on the World Press Freedom Index.',
+					'Based in an <a target="_blank" class="underline" href="https://www.oecd.org/content/dam/oecd/en/topics/policy-sub-issues/oda-eligibility-and-conditions/DAC-List-of-ODA-Recipients-for-reporting-2024-25-flows.pdf">OECD</a>-designated “least developed country.”',
+					'Operates in a region ranked 100 or lower on the <a target="_blank" class="underline" href="https://rsf.org/en/index">World Press Freedom Index</a>.',
 				],
 			},
 			{

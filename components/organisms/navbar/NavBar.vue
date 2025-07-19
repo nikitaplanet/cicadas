@@ -47,7 +47,7 @@
 		</div>
 
 		<!--Mobile-->
-		<div class="w-full px-4 flex justify-between items-center lg:hidden">
+		<div class="w-full px-6 flex justify-between items-center lg:hidden">
 			<div>
 				<NLink to="/">
 					<img v-if="!isLight" class="h-[24px]" alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
@@ -67,7 +67,7 @@
 				<transition mode="out-in" name="fade">
 					<div
 						v-if="isShowMenuOverlay"
-						class="flex w-screen px-4 h-screen fixed top-0 left-0 z-30 bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]"
+						class="flex w-screen px-6 h-full fixed top-0 left-0 z-30 bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]"
 						:class="{
 							'flex-col-reverse bg-[linear-gradient(180deg,var(--sc-color-surface-primary,#DD5621)_7.56%,var(--sc-color-surface-tertiary,#F0E3DE)_50%)]':
 								isNavBottom,
@@ -76,7 +76,7 @@
 						}">
 						<div class="w-full flex justify-between items-center" :class="{'py-[23px]': isNavBottom, 'py-[23px] ': !isNavBottom}">
 							<NLink @click="handleCloseMenuOverlay" to="/">
-								<img class="h-[24px]" alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
+								<img class="h-6" alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
 							</NLink>
 							<button @click="handleToggleMenuOverlay" type="button">
 								<img alt="closeMenu" src="@/assets/img/icons/menu/closeMenu.svg" />
