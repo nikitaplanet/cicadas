@@ -1,12 +1,12 @@
 <template>
 	<article class="w-full min-h-screen landing-bg pt-20 lg:pt-28">
 		<template v-if="data?.id !== 0">
-			<h1 v-html="data.detailTitle" class="w-full px-8 text-center text-scale2XL lg:text-h1 font-h1 italic font-semibold" />
+			<h1 v-html="data.detailTitle" class="w-full px-6 text-center text-scale2XL lg:text-h1 font-h1 italic font-semibold" />
 
 			<!-- banner -->
 			<div
 				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
-				class="w-[90%] max-w-[1045px] mx-auto my-10 lg:my-[60px] flex justify-center transition-all duration-700">
+				class="w-[100%] max-w-[1045px] px-6 mx-auto my-10 lg:my-[60px] flex justify-center transition-all duration-700">
 				<a v-if="data.imageLinkOut" :href="data.imageLinkOut" class="w-full hover:opacity-90 transition-all duration-300" target="_blank">
 					<img :alt="data.detailTitle" :src="data.img" class="w-full clickCursor" />
 				</a>
@@ -25,7 +25,7 @@
 						<div class="text-left text-scale2XS lg:text-labelSm text-sc font-semibold font-label italic">
 							{{ item.name }}
 						</div>
-						<div class="text-labelSm lg:text-scaleSM font-body text-text-def font-medium">
+						<div class="text-scaleXS lg:text-scaleSM font-body text-text-def font-medium">
 							{{ item.value }}
 						</div>
 					</div>

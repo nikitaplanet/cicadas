@@ -1,7 +1,9 @@
 <template>
 	<component
 		v-bind="linkProps"
-		@click="handleClick"
+		@click="!isTouchDevice ? handleClick : null"
+		@touchstart="isTouchDevice ? handleClick : null"
+		ref="elRef"
 		:is="tag"
 		class="clickCursor"
 		:class="['cursor-pointer', {'underline underline-offset-4 font-bold text-sm': hasUnderline}]">
@@ -12,6 +14,10 @@
 <script lang="ts" setup>
 import {computed} from 'vue';
 import {NuxtLink} from '#components';
+import {usePointer} from '@vueuse/core';
+const {pointerType} = usePointer();
+
+const isTouchDevice = computed(() => pointerType.value === 'touch');
 
 interface Props {
 	to?: string | Record<string, any> | null;

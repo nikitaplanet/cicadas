@@ -6,7 +6,7 @@
 				class="w-full grid grid-cols-1 xl:grid-cols-12 transition-all duration-700">
 				<div class="col-span-1 xl:col-span-5 flex flex-col">
 					<SectionNameTag>Our Works</SectionNameTag>
-					<div class="relative p-4 xl:p-16 mt-3">
+					<div class="relative py-4 lg:p-4 xl:p-16 mt-3">
 						<div
 							:class="{
 								'inline-block opacity-100': hoverImage === 1 || hoverImage === 0,
@@ -28,7 +28,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="clickCursor col-span-1 xl:col-span-7 flex flex-col px-5 xl:p-10 gap-3 xl:gap-10 mt-5 xl:mt-7">
+				<div class="clickCursor col-span-1 flex flex-col lg:px-5 gap-3 xl:p-10 xl:gap-10 mt-5 xl:mt-7 xl:col-span-7">
 					<HoverTextBox
 						v-for="item in list"
 						@click="handleClick(item.id)"

@@ -1,5 +1,5 @@
 <template>
-	<div class="w-[90%] m-auto md:w-full">
+	<div class="w-full m-auto px-6 lg:px-0">
 		<ClientOnly>
 			<Swiper
 				:autoplay="{
@@ -11,8 +11,8 @@
 				:loop="true"
 				:modules="modules"
 				:pagination="{
-				clickable: true,
-			}"
+					clickable: true,
+				}"
 				:spaceBetween="20"
 				class="mySwiper">
 				<SwiperSlide v-for="item in mediaList" class="swiper-slide-custom">

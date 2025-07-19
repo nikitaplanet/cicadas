@@ -93,6 +93,7 @@ const customize = {
 		scaleMD: ['20px', {lineHeight: '1.2'}],
 		scaleDef: ['18px', {lineHeight: '1.2'}],
 		scaleSM: ['14px', {lineHeight: '1.2'}],
+		scaleXS: ['12px', {lineHeight: '1.2'}],
 		scale2XS: ['10px', {lineHeight: '1.2'}],
 		scale3XS: ['9.175px', {lineHeight: '1'}],
 	},

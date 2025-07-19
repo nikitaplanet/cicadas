@@ -1,5 +1,5 @@
 <template>
-	<div class="aboutUs-bg px-4 py-[120px] flex flex-col gap-[100px]">
+	<div class="aboutUs-bg px-6 py-[120px] flex flex-col gap-[100px]">
 		<div class="w-full">
 			<SectionNameTag>{{ contentText.aboutUs.title }}</SectionNameTag>
 		</div>

@@ -16,7 +16,9 @@
 					<div class="w-full grid grid-cols-1 gap-7 lg:gap-16">
 						<div class="grid grid-cols-1 gap-5">
 							<div v-for="item in infos" :key="item.title" class="grid grid-cols-[65px_1fr] gap-10">
-								<div class="w-[65px] italic text-labelSm lg:text-labelMd font-semibold font-label pt-[5px]">{{ item.title }}</div>
+								<div class="w-[65px] italic text-labelSm lg:text-labelMd font-semibold font-label pt-[1px] lg:pt-[5px]">
+									{{ item.title }}
+								</div>
 								<div class="flex-grow text-scaleSM lg:text-scaleMD font-body font-medium">{{ item.content }}</div>
 							</div>
 						</div>

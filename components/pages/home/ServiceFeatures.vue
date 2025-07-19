@@ -8,7 +8,7 @@
 					<SectionNameTag>{{ contentText.issuesWeTackle.title }}</SectionNameTag>
 				</div>
 				<ClientOnly>
-					<div class="w-full px-4 lg:px-0 flex flex-col gap-5 items-start mt-14 lg:pl-[15%] lg:justify-center">
+					<div class="w-full flex flex-col gap-5 items-start mt-14 lg:pl-[15%] lg:justify-center">
 						<ContentButton
 							v-for="item in textAry"
 							@click="handleClickItem(item)"
