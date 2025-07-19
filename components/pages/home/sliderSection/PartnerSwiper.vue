@@ -1,16 +1,18 @@
 <template>
 	<ClientOnly>
 		<Swiper
+			:loop="false"
 			:modules="modules"
 			:pagination="{
 				clickable: true,
 			}"
 			:slidesPerView="1"
 			:spaceBetween="50"
+			:watchSlidesProgress="true"
 			class="w-full max-w-[1000px] mx-auto !pb-[40px] md:!pb-[70px] mySwiper"
 			effect="fade"
 			navigation>
-			<SwiperSlide v-for="(item, index) in contentList" :key="`slide-${index}`" class="cursor-grab">
+			<SwiperSlide v-for="(item, index) in contentList" :key="`slide-quote-${index}`" class="cursor-grab">
 				<!--Desk-->
 				<div class="w-full relative justify-center items-center hidden s_lg:flex">
 					<img :alt="item.title" :src="item.slideImage" class="w-full max-w-[700px]" />
