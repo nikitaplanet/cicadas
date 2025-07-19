@@ -7,7 +7,7 @@
 					<!---row-->
 					<router-link
 						:to="`/studio/${id}`"
-						class="clickCursor flex flex-col cursor-pointer transition ease-in-out hover:opacity-90"
+						class="flex flex-col cursor-pointer transition ease-in-out hover:opacity-90"
 						:class="{
 							'items-end justify-start': align === 'right',
 						}">
@@ -19,7 +19,7 @@
 						<div
 							class="w-[90%] mt-5 md:mt-12 flex items-center cursor-pointer"
 							:class="{'justify-start': align === 'left', 'justify-end': align === 'right'}">
-							<img :alt="title" :src="img" class="w-[650px]" loading="lazy" />
+							<img :alt="title" :src="img" class="clickCursor w-[650px]" loading="lazy" />
 						</div>
 					</router-link>
 				</div>
