@@ -134,7 +134,7 @@ export const studioWording = {
 						id: '3-2',
 						title: 'MADE VR',
 						content:
-							'"MADE: Meet me at the end of the assembly line" is a choose-your-own-adventure experience, viewers form a personal connection with an Apple factory worker, Xiaowu, gaining insight into her daily life, family and inner thoughts.<br/><br/>At the end of the journey, viewers are invited to take action by sending a letter to tech companies with factories in China, advocating for a living wage for workers.',
+							'"MADE: Meet me at the end of the assembly line" is a choose-your-own-adventure experience, viewers form a personal connection with an Apple factory worker, Xiaowu, gaining insight into her daily life, family and inner thoughts.<br/><br/>At the end of the journey, viewers are invited to take action by sending a letter to tech companies with factories in China, advocating for a living wage for workers.<br><br><a target="_blank" class="text-labelMd font-label font-semibold italic underline" href="https://madevr.com/">Experience Made VR</a>',
 						media: {
 							type: MEDIA_TYPE.IMAGE,
 							src: detail3_2_image,
