@@ -134,6 +134,10 @@ const infoList = computed(() => {
 	];
 });
 
+onMounted(() => {
+	window.scrollTo(0, 0);
+});
+
 // SEO meta
 useSeoMeta({
 	title: () => `${data?.detailTitle || 'Campaign'} | Cicadas`,

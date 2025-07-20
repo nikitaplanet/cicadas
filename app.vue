@@ -8,7 +8,7 @@
 		:class="{block: !isHideLightLoading, hidden: isHideLightLoading, 'opacity-0': !isShowLightLoading, 'opacity-100': isShowLightLoading}" />
 	<ClientOnly>
 		<div ref="nav" id="homeNav" class="py-[23px] transition-all duration-300" :class="navStyle">
-			<NavBar @showCommon="handleShowCommon" :isLight="isLightNav" :isNavBottom="isNavBottom" />
+			<NavBar @showCommon="handleShowCommon" :isLight="isLightNav" :isNavBottom="isNavBottom" :isScrolledPastLanding="isScrolledPastLanding" />
 		</div>
 	</ClientOnly>
 
@@ -126,7 +126,7 @@ const navStyle = computed(() => {
 
 		return [
 			isScrolledPastLanding.value
-				? 'fixed top-0 left-0 w-full z-20 bg-surface-def'
+				? 'fixed top-0 left-0 w-full z-20 nav-gradient-bg'
 				: !isDesktop.value
 					? 'absolute top-0 left-0 w-full z-20'
 					: 'absolute bottom-0 left-0 w-full z-20',
@@ -139,7 +139,7 @@ const navStyle = computed(() => {
 		isNavBottom.value = false;
 
 		return [
-			isScrolledPastLanding.value ? 'fixed top-0 left-0 w-full z-20 bg-surface-def' : 'absolute top-0 left-0 w-full z-20',
+			isScrolledPastLanding.value ? 'fixed top-0 left-0 w-full z-20 nav-gradient-bg' : 'absolute top-0 left-0 w-full z-20',
 			showNavBar.value ? 'translate-y-0' : '-translate-y-full',
 		];
 	}
@@ -203,4 +203,8 @@ useSeoMeta({
 });
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.nav-gradient-bg {
+	background: linear-gradient(180deg, #dd5621 15%, rgba(221, 86, 33, 0) 100%);
+}
+</style>

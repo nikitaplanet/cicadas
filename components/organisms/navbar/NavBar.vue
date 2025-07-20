@@ -4,7 +4,8 @@
 		<div class="hidden lg:flex w-full justify-between items-center px-8">
 			<div class="flex gap-10">
 				<NLink to="/">
-					<img alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
+					<img v-if="!isScrolledPastLanding" alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
+					<img v-else alt="logo default" src="@/assets/img/components/nav/navLogo_w.svg" />
 				</NLink>
 
 				<div class="flex gap-1">
@@ -21,14 +22,22 @@
 							class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
 							:class="{'opacity-100': checkLinkActive(item)}"
 							alt="bg" />
-						<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ item.label }}</span>
+						<span
+							class="w-full text-center absolute bottom-1 left-0 z-10"
+							:class="{'text-text-alternate group-hover:text-black': isScrolledPastLanding && !checkLinkActive(item)}"
+							>{{ item.label }}</span
+						>
 					</NLink>
 					<NLink @click="handleShowCommon" class="ml-[-12px] group font-label text-def text-labelMd italic relative font-semibold">
 						<img
 							class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
 							alt="bg"
 							src="@/assets/img/components/nav/menu4.svg" />
-						<span class="w-full text-center absolute bottom-1 left-0 z-10">{{ globalWording.nav.button.common }}</span>
+						<span
+							class="w-full text-center absolute bottom-1 left-0 z-10"
+							:class="{'text-text-alternate group-hover:text-black': isScrolledPastLanding}"
+							>{{ globalWording.nav.button.common }}</span
+						>
 					</NLink>
 				</div>
 			</div>
@@ -36,13 +45,25 @@
 			<!--Let's talk-->
 			<NLink class="group relative" data-tally-emoji-animation="wave" data-tally-emoji-text="👋" data-tally-open="mZ1K9z">
 				<img
+					v-if="!isScrolledPastLanding"
 					class="object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-200"
 					alt="bg"
 					src="@/assets/img/components/nav/talk__hover.svg" />
 				<img
+					v-if="isScrolledPastLanding"
+					class="object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+					alt="bg"
+					src="@/assets/img/components/nav/talk__w__hover.svg" />
+				<img
+					v-if="!isScrolledPastLanding"
 					class="object-contain absolute left-0 bottom-1 group-hover:opacity-0 transition-opacity duration-200"
 					alt="bg"
 					src="@/assets/img/components/nav/talk__default.svg" />
+				<img
+					v-if="isScrolledPastLanding"
+					class="object-contain absolute left-0 bottom-1 group-hover:opacity-0 transition-opacity duration-200"
+					alt="bg"
+					src="@/assets/img/components/nav/talk__w.svg" />
 			</NLink>
 		</div>
 
@@ -50,14 +71,18 @@
 		<div class="w-full px-6 flex justify-between items-center lg:hidden">
 			<div>
 				<NLink to="/">
-					<img v-if="!isLight" class="h-[24px]" alt="logo default" src="@/assets/img/components/nav/navLogo.svg" />
-					<img v-else alt="logo default" src="@/assets/img/components/nav/navLogo_w.svg" />
+					<img
+						v-if="!isLight && !isScrolledPastLanding"
+						class="h-[24px]"
+						alt="logo default"
+						src="@/assets/img/components/nav/navLogo.svg" />
+					<img v-else-if="isLight || isScrolledPastLanding" alt="logo default" src="@/assets/img/components/nav/navLogo_w.svg" />
 				</NLink>
 			</div>
 			<div>
 				<button @click="handleToggleMenuOverlay" type="button">
-					<img v-if="!isLight" alt="Hamburger" src="@/assets/img/icons/menu/hamburger.svg" />
-					<img v-else alt="Hamburger" src="@/assets/img/icons/menu/hamburger_w.svg" />
+					<img v-if="!isLight && !isScrolledPastLanding" alt="Hamburger" src="@/assets/img/icons/menu/hamburger.svg" />
+					<img v-else-if="isLight || isScrolledPastLanding" alt="Hamburger" src="@/assets/img/icons/menu/hamburger_w.svg" />
 				</button>
 			</div>
 		</div>
@@ -127,11 +152,13 @@ const emit = defineEmits(['showCommon']);
 interface Props {
 	isNavBottom: boolean;
 	isLight: boolean;
+	isScrolledPastLanding: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
 	isNavBottom: false,
 	isLight: false,
+	isScrolledPastLanding: false,
 });
 
 const route = useRoute();
@@ -162,7 +189,6 @@ const handleToggleMenuOverlay = () => {
 
 const handleCloseMenuOverlay = () => {
 	isShowMenuOverlay.value = false;
-	console.log('handleCloseMenuOverlay');
 };
 
 watch(

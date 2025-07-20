@@ -62,7 +62,7 @@ const LazySwiper = defineAsyncComponent(() => import('swiper/vue').then((module)
 const SwiperSlide = defineAsyncComponent(() => import('swiper/vue').then((module) => module.SwiperSlide));
 
 // 動態導入 CSS
-if (process.client) {
+if (import.meta.client) {
 	import('swiper/css');
 	import('swiper/css/effect-fade');
 	import('swiper/css/pagination');
@@ -77,7 +77,7 @@ let slideChangeTimeout = null;
 
 // 動態導入模組
 const modules = await (async () => {
-	if (process.client) {
+	if (import.meta.client) {
 		const {Pagination, Navigation, EffectFade} = await import('swiper/modules');
 		return [Pagination, Navigation, EffectFade];
 	}
@@ -86,7 +86,7 @@ const modules = await (async () => {
 
 const onSwiper = (swiper) => {
 	swiperInstance = swiper;
-	console.log('Swiper instance created');
+	// console.log('Swiper instance created');
 };
 
 const onSwiperInit = (swiper) => {
@@ -94,8 +94,6 @@ const onSwiperInit = (swiper) => {
 
 	isInitialized = true;
 	swiperInstance = swiper;
-
-	console.log('Swiper initialized in production');
 
 	// 生產環境特殊處理
 	nextTick(() => {
@@ -122,7 +120,7 @@ const onSlideChange = (swiper) => {
 
 onMounted(() => {
 	// 確保在客戶端完全載入後初始化
-	if (process.client) {
+	if (import.meta.client) {
 		nextTick(() => {
 			setTimeout(() => {
 				if (swiperInstance && !isInitialized) {

@@ -62,7 +62,9 @@ const route = useRoute();
 const data = studioWording.studioInfo.find((item: StudioData) => item.id === String(route.params.id));
 const detailData = ref(data);
 
-console.log(detailData);
+onMounted(() => {
+	window.scrollTo(0, 0);
+});
 
 useSeoMeta({
 	title: () => `${detailData?.value.title || 'Studio'} | Cicadas`,
