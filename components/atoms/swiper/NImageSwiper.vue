@@ -16,7 +16,9 @@
 				:spaceBetween="20"
 				class="mySwiper">
 				<SwiperSlide v-for="item in mediaList" class="swiper-slide-custom">
-					<img :alt="item.key" :src="item.src" class="aspect-[16/11] object-cover" />
+					<div class="aspect-16-11">
+						<img :alt="item.key" :src="item.src" class="object-cover" />
+					</div>
 				</SwiperSlide>
 			</Swiper>
 		</ClientOnly>
@@ -73,5 +75,21 @@ const breakPoints = reactive({
 	.swiper-slide-active {
 		opacity: 1 !important;
 	}
+}
+
+.aspect-16-11 {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 68.75%; /* 16:11 */
+}
+
+.aspect-16-11 img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 </style>
