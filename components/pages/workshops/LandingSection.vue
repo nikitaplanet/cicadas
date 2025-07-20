@@ -14,7 +14,7 @@
 			</div>
 
 			<button @click="handleScrollDown" class="absolute right-0 bottom-32" type="button">
-				<img alt="ScrollDown" src="@/assets/img/workshops/scrollDown.svg" />
+				<img class="slideDownRepeat" alt="ScrollDown" src="@/assets/img/workshops/scrollDown.svg" />
 			</button>
 		</div>
 	</div>

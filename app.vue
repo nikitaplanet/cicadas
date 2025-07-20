@@ -2,6 +2,9 @@
 	<LoadingOverlay
 		class="transition duration-300 ease-in-out"
 		:class="{block: !isHideLoading, hidden: isHideLoading, 'opacity-0': !isShowLoading, 'opacity-100': isShowLoading}" />
+	<!--	<LightLoadingOverlay-->
+	<!--		class="transition duration-300 ease-in-out"-->
+	<!--		:class="{block: !isHideLoading, hidden: isHideLoading, 'opacity-0': !isShowLoading, 'opacity-100': isShowLoading}" />-->
 	<ClientOnly>
 		<div ref="nav" id="homeNav" class="py-[23px] transition-all duration-300" :class="navStyle">
 			<NavBar @showCommon="handleShowCommon" :isLight="isLightNav" :isNavBottom="isNavBottom" />
@@ -48,10 +51,12 @@ const {isScrolledPastLanding, showNavBar} = useScrollDirectionNav();
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
 import {seoWording} from 'assets/wording/seoWording';
 import seoBanner from 'assets/img/seo/cicadas_banner.png';
+import LightLoadingOverlay from '~/components/atoms/loading/LightLoadingOverlay.vue';
 const {isMobile, isTablet, isDesktop} = useGetMediaQuery();
 
 const route = useRoute();
 const isShowLoading = ref(true);
+const isShowLightLoading = ref(true);
 const isHideLoading = ref(false);
 const isHomePage = computed(() => route.path === '/');
 const isShowCommon = ref(false);
@@ -68,7 +73,19 @@ function initPageLoading() {
 	isHideLoading.value = false;
 	setTimeout(() => {
 		isHideLoading.value = true;
-	}, 2500);
+	}, 2300);
+}
+
+function initLightLoading() {
+	isShowLightLoading.value = true;
+	setTimeout(() => {
+		isShowLightLoading.value = false;
+	}, 2200);
+
+	isHideLoading.value = false;
+	setTimeout(() => {
+		isHideLoading.value = true;
+	}, 2300);
 }
 
 // 監聽路由變化（正常情況下 NuxtPage 會自動換，但保險加上）

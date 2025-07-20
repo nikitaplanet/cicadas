@@ -18,3 +18,15 @@
 .v-leave-to {
   opacity: 0;
 }
+
+
+// 下移
+.slideDownRepeat {
+  animation: slideDownRepeat 2s ease-in-out infinite;
+}
+
+@keyframes slideDownRepeat {
+  0% { transform: translateY(0); }     /* 起始位置 */
+  50% { transform: translateY(20px); } /* 中間位置（下移） */
+  100% { transform: translateY(0); }   /* 結束位置（回到原位） */
+}

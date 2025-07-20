@@ -13,7 +13,7 @@
 			</div>
 
 			<button @click="handleScrollDown" class="absolute right-0 bottom-32" type="button">
-				<img alt="ScrollDown" src="@/assets/img/about/scrollDown.svg" />
+				<img class="slideDownRepeat" alt="ScrollDown" src="@/assets/img/about/scrollDown.svg" />
 			</button>
 		</div>
 	</div>
