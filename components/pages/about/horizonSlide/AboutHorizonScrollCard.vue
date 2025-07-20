@@ -126,6 +126,7 @@ onUnmounted(() => {
 
 	background: var(--Surface-supportive-violet-light, #f3e6f7);
 
+	scrollbar-width: none;
 	&::-webkit-scrollbar {
 		display: none;
 	}

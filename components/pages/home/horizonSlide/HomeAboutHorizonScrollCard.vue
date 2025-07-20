@@ -2,13 +2,13 @@
 	<div>
 		<section ref="horizonSection" class="section -b -horizon">
 			<div ref="horizonContainer" class="section__horizon">
-				<div class="section__horizon-block">
+				<div class="section__horizon-block pl-[100px]">
 					<AboutUsSlide1 />
 				</div>
-				<div class="section__horizon-block pl-[160px]">
+				<div class="section__horizon-block">
 					<AboutUsSlide2 />
 				</div>
-				<div class="section__horizon-block pl-[260px] pr-[100px]">
+				<div class="section__horizon-block pl-[100px] pr-[100px]">
 					<AboutUsSlide3 />
 				</div>
 			</div>
@@ -22,8 +22,6 @@ import {ref, onMounted, onUnmounted} from 'vue';
 import AboutUsSlide1 from '~/components/pages/home/horizonSlide/AboutUsSlide1.vue';
 import AboutUsSlide2 from '~/components/pages/home/horizonSlide/AboutUsSlide2.vue';
 import AboutUsSlide3 from '~/components/pages/home/horizonSlide/AboutUsSlide3.vue';
-
-import AboutUsMobile from '~/components/pages/home/horizonSlide/AboutUsMobile.vue';
 
 // 使用 ref 來取得 DOM 元素
 const horizonSection = ref(null);

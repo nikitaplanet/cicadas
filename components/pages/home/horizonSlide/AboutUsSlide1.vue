@@ -1,7 +1,7 @@
 <template>
 	<div class="aboutUs-bg">
 		<SectionContainer :hasMinHeight="false" :isAutoWidth="true">
-			<div class="w-full lg:w-[70vw] flex flex-col justify-center items-center pt-8">
+			<div class="w-full lg:w-[80vw] flex flex-col justify-center items-center pt-8">
 				<div class="w-full">
 					<SectionNameTag>{{ contentText.aboutUs.title }}</SectionNameTag>
 				</div>
