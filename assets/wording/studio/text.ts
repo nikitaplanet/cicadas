@@ -4,6 +4,7 @@ import swiper3_1 from '@/assets/img/studio/swiper3/1.jpg';
 import swiper4_1 from '@/assets/img/studio/swiper4/1.jpg';
 import {MEDIA_TYPE} from '@/assets/js/enum/media';
 
+import detail2_1_image from '@/assets/img/studio/detail/id2/image_2_1.jpg';
 import detail3_1_image from '@/assets/img/studio/detail/id3/image_3_1.jpg';
 import detail3_2_image from '@/assets/img/studio/detail/id3/image_3_2.jpg';
 import detail3_3_image from '@/assets/img/studio/detail/id3/image_3_3.jpg';
@@ -89,9 +90,13 @@ export const studioWording = {
 						title: 'When a Poet Goes to War',
 						content:
 							'"When peaceful protests fail to sway the country’s dictator, a Burmese poet and his fellow artists pick up arms to fight the well-resourced military junta. Deep in the jungles they are gaining ground, but the former pacifists struggle with the mental and physical realities of a brutal war."<br/><br/>This feature-length documentary follows the journey of Saungkha, a renowned poet-turned-opposition army general as Myanmar descends into a brutal civil war. The project has received support from IDFA Bertha Fund, Purin Foundation and has received the Docs by the Sea Award at TCCF (Taiwan).',
+						// media: {
+						// 	type: MEDIA_TYPE.VIMEO,
+						// 	src: 'https://player.vimeo.com/video/1090011632',
+						// },
 						media: {
-							type: MEDIA_TYPE.VIMEO,
-							src: 'https://player.vimeo.com/video/1090011632',
+							type: MEDIA_TYPE.IMAGE,
+							src: detail2_1_image,
 						},
 						isOnGoing: true,
 					},

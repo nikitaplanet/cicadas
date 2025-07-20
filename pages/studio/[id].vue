@@ -32,9 +32,7 @@ import {useRoute} from 'vue-router';
 
 import {studioWording} from '@/assets/wording/studio/text';
 import LandingSection from '@/components/pages/studio/LandingSection.vue';
-import {MEDIA_TYPE} from '@/assets/js/enum/media';
 import NLink from '@/components/atoms/link/NLink.vue';
-import NVideo from '~/components/atoms/videoSec/NVideo.vue';
 import {seoWording} from 'assets/wording/seoWording';
 import StudioDetailListCard from '~/components/pages/studio/detail/StudioDetailListCard.vue';
 
