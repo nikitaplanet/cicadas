@@ -2,9 +2,10 @@
 	<LoadingOverlay
 		class="transition duration-300 ease-in-out"
 		:class="{block: !isHideLoading, hidden: isHideLoading, 'opacity-0': !isShowLoading, 'opacity-100': isShowLoading}" />
-	<!--	<LightLoadingOverlay-->
-	<!--		class="transition duration-300 ease-in-out"-->
-	<!--		:class="{block: !isHideLoading, hidden: isHideLoading, 'opacity-0': !isShowLoading, 'opacity-100': isShowLoading}" />-->
+	<LightLoadingOverlay
+		:isShow="isShowLightLoading"
+		class="transition duration-300 ease-in-out"
+		:class="{block: !isHideLightLoading, hidden: isHideLightLoading, 'opacity-0': !isShowLightLoading, 'opacity-100': isShowLightLoading}" />
 	<ClientOnly>
 		<div ref="nav" id="homeNav" class="py-[23px] transition-all duration-300" :class="navStyle">
 			<NavBar @showCommon="handleShowCommon" :isLight="isLightNav" :isNavBottom="isNavBottom" />
@@ -17,7 +18,7 @@
 
 	<div class="bg-surface-def">
 		<Transition mode="out-in" name="fade">
-			<div v-if="!isShowLoading">
+			<div v-if="!isShowLoading && !isShowLightLoading">
 				<NuxtPage :key="pageKey" />
 				<!--Footer-->
 				<NFooter />
@@ -52,12 +53,13 @@ import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
 import {seoWording} from 'assets/wording/seoWording';
 import seoBanner from 'assets/img/seo/cicadas_banner.png';
 import LightLoadingOverlay from '~/components/atoms/loading/LightLoadingOverlay.vue';
-const {isMobile, isTablet, isDesktop} = useGetMediaQuery();
+const {isDesktop} = useGetMediaQuery();
 
 const route = useRoute();
 const isShowLoading = ref(true);
-const isShowLightLoading = ref(true);
+const isShowLightLoading = ref(false);
 const isHideLoading = ref(false);
+const isHideLightLoading = ref(true);
 const isHomePage = computed(() => route.path === '/');
 const isShowCommon = ref(false);
 const previousIsMobile = ref(!isDesktop.value);
@@ -80,12 +82,12 @@ function initLightLoading() {
 	isShowLightLoading.value = true;
 	setTimeout(() => {
 		isShowLightLoading.value = false;
-	}, 2200);
+	}, 800);
 
-	isHideLoading.value = false;
+	isHideLightLoading.value = false;
 	setTimeout(() => {
-		isHideLoading.value = true;
-	}, 2300);
+		isHideLightLoading.value = true;
+	}, 900);
 }
 
 // 監聽路由變化（正常情況下 NuxtPage 會自動換，但保險加上）
@@ -99,7 +101,7 @@ watch(
 watch(
 	() => route.fullPath,
 	() => {
-		initPageLoading();
+		initLightLoading();
 	},
 );
 
