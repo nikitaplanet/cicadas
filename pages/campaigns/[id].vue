@@ -4,9 +4,7 @@
 			<h1 v-html="data.detailTitle" class="w-full px-6 text-center text-scale2XL lg:text-h1 font-h1 italic font-semibold" />
 
 			<!-- banner -->
-			<div
-				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
-				class="w-[100%] max-w-[1045px] px-6 mx-auto my-10 lg:my-[60px] flex justify-center transition-all duration-700">
+			<div class="w-[100%] max-w-[1045px] px-6 mx-auto my-10 lg:my-[60px] flex justify-center transition-all duration-700">
 				<a v-if="data.imageLinkOut" :href="data.imageLinkOut" class="w-full hover:opacity-90 transition-all duration-300" target="_blank">
 					<img :alt="data.detailTitle" :src="data.img" class="w-full clickCursor" />
 				</a>

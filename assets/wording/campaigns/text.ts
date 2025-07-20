@@ -35,6 +35,7 @@ import c5_swiper1 from '@/assets/img/campaigns/detail/made/swiper1.jpg';
 import c5_swiper2 from '@/assets/img/campaigns/detail/made/swiper2.jpg';
 import c5_swiper3 from '@/assets/img/campaigns/detail/made/swiper3.jpg';
 import c5_swiper4 from '@/assets/img/campaigns/detail/made/swiper4.jpg';
+import c5_swiper5 from '@/assets/img/campaigns/detail/made/swiper5.jpg';
 
 import {MEDIA_DISPLAY_TYPE, MEDIA_TYPE} from '@/assets/js/enum/media';
 import {TEXT_TYPE} from '@/assets/js/enum/textType';
@@ -375,7 +376,7 @@ export const campaignsWording: CampaignWording = {
 							},
 							{
 								key: 'c5_swiper5',
-								src: c5_swiper3,
+								src: c5_swiper5,
 							},
 						],
 						url: '',

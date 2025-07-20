@@ -82,12 +82,12 @@ function initLightLoading() {
 	isShowLightLoading.value = true;
 	setTimeout(() => {
 		isShowLightLoading.value = false;
-	}, 800);
+	}, 700);
 
 	isHideLightLoading.value = false;
 	setTimeout(() => {
 		isHideLightLoading.value = true;
-	}, 900);
+	}, 800);
 }
 
 // 監聽路由變化（正常情況下 NuxtPage 會自動換，但保險加上）
