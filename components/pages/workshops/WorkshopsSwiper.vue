@@ -12,6 +12,7 @@ import Photo1 from '@/assets/img/workshops/swiperPhotos/1.jpg';
 import Photo2 from '@/assets/img/workshops/swiperPhotos/2.jpg';
 import Photo3 from '@/assets/img/workshops/swiperPhotos/3.jpg';
 import Photo4 from '@/assets/img/workshops/swiperPhotos/4.jpg';
+import Photo5 from '@/assets/img/workshops/swiperPhotos/5.jpg';
 
 const imgs = reactive<SwiperImage[]>([
 	{
@@ -32,7 +33,7 @@ const imgs = reactive<SwiperImage[]>([
 	},
 	{
 		key: '5',
-		src: Photo3,
+		src: Photo5,
 	},
 ]);
 </script>
