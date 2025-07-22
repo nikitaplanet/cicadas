@@ -44,7 +44,7 @@
 						<p
 							v-if="item.textType === TEXT_TYPE.PARAGRAPH"
 							v-html="item.content"
-							class="font-body text-body lg:text-scaleDef font-medium mt-[10px]" />
+							class="font-body text-body lg:text-scaleDef font-medium mt-5 lg:mt-6" />
 
 						<div v-if="item.textType === TEXT_TYPE.TEXT_LIST" class="font-body text-body lg:text-scaleDef font-medium mt-[10px]">
 							<ul class="flex flex-col list-[square] list-inside pl-3">
