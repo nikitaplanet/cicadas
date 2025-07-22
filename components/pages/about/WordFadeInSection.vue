@@ -2,7 +2,7 @@
 	<SectionContainer
 		ref="sectionRef"
 		:hasMinHeight="false"
-		class="max-w-[900px] 2xl:max-w-[1200px] h-screen text-scaleXL md:text-scale1XL 2xl:text-h2 italic font-semibold font-h2 flex items-center justify-center overflow-hidden">
+		class="max-w-[1000px] 2xl:max-w-[1200px] h-screen text-scaleXL md:text-scale2XL 2xl:text-h2 italic font-semibold font-h2 flex items-center justify-center overflow-hidden">
 		<div ref="textBlockRef">
 			<span v-html="aboutWording.wordFadeAnimation.title1" class="line"></span>
 			<span class="line">

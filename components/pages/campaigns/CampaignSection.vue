@@ -22,7 +22,17 @@
 								<div class="flex-grow text-scaleSM lg:text-scaleMD font-body font-medium">{{ item.content }}</div>
 							</div>
 						</div>
-						<img :alt="`${id}.jpg`" :src="img" class="clickCursor" />
+						<div class="clickCursor bg-cover bg-center transition-transform duration-500 ease-in-out overflow-hidden relative group">
+							<img :src="img" class="transition-transform duration-500 ease-in-out lg:group-hover:scale-105" alt="img" />
+							<img
+								class="hidden lg:inline-block absolute right-6 bottom-5 opacity-0 transition-opacity duration-300 ease-in group-hover:opacity-100"
+								alt="learn more"
+								src="@/assets/img/campaigns/learnmore.svg" />
+
+							<div class="flex lg:hidden justify-end items-center mt-7">
+								<img alt="learn more" src="@/assets/img/campaigns/learnmore.svg" />
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
