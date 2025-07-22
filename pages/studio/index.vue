@@ -7,12 +7,27 @@
 			:key="item.title"
 			class="md:pb-5"
 			:class="{'pb-[120px]': index !== studioInfo.length - 1, 'pb-[80px]': index === studioInfo.length - 1}">
-			<StudioSection v-if="index === 0" :align="item.align" :id="item.id" :img="item.img" :swiperClass="item.swiperClass" :title="item.title" />
+			<StudioSection
+				v-if="index === 0"
+				:align="item.align"
+				:amount="item.detail.list.length"
+				:detailList="item.detail.list"
+				:id="item.id"
+				:img="item.img"
+				:swiperClass="item.swiperClass"
+				:title="item.listTitle" />
 			<div
 				v-if="index !== 0"
 				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
 				class="flex flex-col transition-all duration-700">
-				<StudioSection :align="item.align" :id="item.id" :img="item.img" :swiperClass="item.swiperClass" :title="item.title" />
+				<StudioSection
+					:align="item.align"
+					:amount="item.detail.list.length"
+					:detailList="item.detail.list"
+					:id="item.id"
+					:img="item.img"
+					:swiperClass="item.swiperClass"
+					:title="item.listTitle" />
 			</div>
 		</div>
 	</div>

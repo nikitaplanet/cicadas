@@ -21,6 +21,7 @@ export const studioWording = {
 		{
 			id: '1',
 			title: 'Film',
+			listTitle: 'Film',
 			img: swiper1_1,
 			align: 'left',
 			swiperClass: 'aspect-[4/3]',
@@ -31,6 +32,7 @@ export const studioWording = {
 					{
 						id: '1-1',
 						title: 'HER Fund',
+						listTitle: 'HER Fund',
 						content:
 							'HER Fund is a women`s fund based in Hong Kong. They engaged us to create two videos to introduce their Transformative Feminist Leadership program and their HER Hub program.',
 						media: {
@@ -42,6 +44,7 @@ export const studioWording = {
 					{
 						id: '1-2',
 						title: 'RS Group',
+						listTitle: 'RS Group',
 						content:
 							'RS Group is a family office with a mission to help people invest in a way that contributes to the well-being of society and the planet, while generating a financial return. They commissioned a video to introduce their work and the importance of impact investing for a sustainable world.',
 						media: {
@@ -53,6 +56,7 @@ export const studioWording = {
 					{
 						id: '1-3',
 						title: 'BOLD-ED',
+						listTitle: 'BOLD-ED',
 						content:
 							'BOLD-ED empowers students to transform their futures by connecting ambitious night school students with inspiring mentors from Silicon Valley, creating a pathway to meaningful internships at tech companies in Manila. This short portrait highlights the incredible journey of one student whose determination and resilience shine through.',
 						media: {
@@ -64,6 +68,7 @@ export const studioWording = {
 					{
 						id: '1-4',
 						title: 'Kootyin',
+						listTitle: 'Kootyin',
 						content:
 							'Lyfta is a Finnish education platform that introduce diverse cultures and perspectives to the classroom through 360° spaces and inspiring short films. They engaged us to tell a story about Kootyin, a land rights protector turned oral history collector in Hong Kong.',
 						media: {
@@ -78,6 +83,7 @@ export const studioWording = {
 		{
 			id: '2',
 			title: 'Independent<br/>Documentaries',
+			listTitle: 'Independent Documentaries',
 			img: swiper2_1,
 			align: 'right',
 			swiperClass: 'aspect-[1/1.6]',
@@ -88,6 +94,7 @@ export const studioWording = {
 					{
 						id: '2-1',
 						title: 'When a Poet Goes to War',
+						listTitle: 'When a Poet Goes to War',
 						content:
 							'"When peaceful protests fail to sway the country’s dictator, a Burmese poet and his fellow artists pick up arms to fight the well-resourced military junta. Deep in the jungles they are gaining ground, but the former pacifists struggle with the mental and physical realities of a brutal war."<br/><br/>This feature-length documentary follows the journey of Saungkha, a renowned poet-turned-opposition army general as Myanmar descends into a brutal civil war. The project has received support from IDFA Bertha Fund, Purin Foundation and has received the Docs by the Sea Award at TCCF (Taiwan).',
 						// media: {
@@ -103,6 +110,7 @@ export const studioWording = {
 					{
 						id: '2-2',
 						title: 'Creativity is <span style="font-style: normal;">原來我</span>',
+						listTitle: 'Creativity is 原來我',
 						content:
 							'Are you creative? This is the question that kickstarts this short documentary. Through a group of students and six individuals – an inventor, a psychologist, an activist, a startup entrepreneur, a yoga teacher, and a spatial designer - "Creativity is" explores the possibilities and definitions of creativity beyond the conventional understanding - the search and expansion of ourselves is what we all ultimately create.',
 						media: {
@@ -117,6 +125,7 @@ export const studioWording = {
 		{
 			id: '3',
 			title: 'Interactive',
+			listTitle: 'Interactive',
 			img: swiper3_1,
 			align: 'left',
 			swiperClass: 'aspect-[1/1]',
@@ -127,6 +136,7 @@ export const studioWording = {
 					{
 						id: '3-1',
 						title: 'Create Your Own <span style="font-style: normal;">原來我：未定型</span>',
+						listTitle: 'Create Your Own 原來我：未定型',
 						content:
 							'The journey of “creating-your-own-documentary” delves into the essence of creativity, exploring what defines it, why we might feel constrained and how we can reignite that spark within ourselves. Users craft a unique planet based on their choices and the final base is sent to their email as a powerful reminder that they are shaped by their decisions. Together, with others on this shared path, it’s both possible and extraordinary to make bolder, more inspired choices in shaping their identities.',
 						media: {
@@ -138,6 +148,7 @@ export const studioWording = {
 					{
 						id: '3-2',
 						title: 'MADE VR',
+						listTitle: 'MADE VR',
 						content:
 							'"MADE: Meet me at the end of the assembly line" is a choose-your-own-adventure experience, viewers form a personal connection with an Apple factory worker, Xiaowu, gaining insight into her daily life, family and inner thoughts.<br/><br/>At the end of the journey, viewers are invited to take action by sending a letter to tech companies with factories in China, advocating for a living wage for workers.<br><br><a target="_blank" class="text-labelMd font-label font-semibold italic underline" href="https://madevr.com/">Experience Made VR</a>',
 						media: {
@@ -149,6 +160,7 @@ export const studioWording = {
 					{
 						id: '3-3',
 						title: 'Journey In',
+						listTitle: 'Journey In',
 						content:
 							'"Journey In" is a storytelling board game that connects strangers through meaningful conversations and self-discovery. Players embark on a shared journey, opening up their worlds to one another while uncovering their own stories along the way. The game includes narrator scripts, conversation cards and a step-by-step guide to create a personalized map of each player’s unique exploration.',
 						media: {
@@ -160,6 +172,7 @@ export const studioWording = {
 					{
 						id: '3-4',
 						title: 'Better Me Better We',
+						listTitle: 'Better Me Better We',
 						content:
 							'In response to the profound impact of COVID-19 on students, parents, and teachers, Ednovators engaged us to develop a mental wellness toolkit for their Better Me Better We platform. We distributed 500 curated boxes filled with a comprehensive guide, 30 daily exercises and soothing audio meditations, providing hope, resilience and tools to thrive amid adversity. ',
 						media: {
@@ -174,6 +187,7 @@ export const studioWording = {
 		{
 			id: '4',
 			title: `Events`,
+			listTitle: 'Events',
 			img: swiper4_1,
 			align: 'right',
 			swiperClass: 'aspect-[4/3]',
@@ -184,6 +198,7 @@ export const studioWording = {
 					{
 						id: '4-1',
 						title: 'Gaming for Change',
+						listTitle: 'Gaming for Change',
 						content:
 							'In collaboration with Press Start Academy and Eaton Hotel, we hosted Hong Kong’s first-ever event exploring gaming as an innovative medium for advocacy-driven storytelling —creating new opportunities to integrate games into social impact initiatives.<br/><br/>The landmark event combines panel discussions, hands-on workshops and a game exhibition, to showcase the potential of gaming in advocacy.<br/><br/>Around 70 industry professionals and change-makers attended the event, sparking conversations to incorporate games into social impact initiatives.',
 						media: {
@@ -195,6 +210,7 @@ export const studioWording = {
 					{
 						id: '4-2',
 						title: 'Creativity is Anniversary',
+						listTitle: 'Creativity is Anniversary',
 						content:
 							'We organized two celebratory large scale events for "Creativity is". The Film Premiere had over 280 people in attendance and the interactive web game launch with over 120 people in attendance. Both events included exhibitions, talks with speakers and activities designed bespokely for the attendees. ',
 						media: {
