@@ -18,8 +18,8 @@ export const contentText = {
 			'We believe in the power of narratives to shape our future. The new world we envision is built on trust, inclusion and solidarity. Let’s create that world together.',
 	},
 	section1: {
-		title: `We create powerful campaigns for non-profits and purpose-driven businesses to catalyze change in Asia. `,
-		description: `Through data-driven insights and compelling storytelling, we help you connect meaningfully with your audience, transforming your message into a force for change.`,
+		title: `We create <span class="text-text-primary">powerful campaigns</span> for non-profits and purpose-driven businesses to catalyze change in Asia. `,
+		description: `Through <span class="text-text-primary">data-driven</span> insights and compelling <span class="text-text-primary">storytelling</span>, we help you connect meaningfully with your audience, <span class="text-text-primary">transforming</span> your message into a force for change.`,
 	},
 	section2: {
 		title1: 'Cicadas may be small, but they rarely go unnoticed. The space within them amplifies their sound and collectively they make a spectacular noise that no one can ignore.',
