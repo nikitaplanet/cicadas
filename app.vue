@@ -206,5 +206,8 @@ useSeoMeta({
 <style lang="scss" scoped>
 .nav-gradient-bg {
 	background: linear-gradient(180deg, #dd5621 15%, rgba(221, 86, 33, 0) 100%);
+	//box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(3.2px);
+	-webkit-backdrop-filter: blur(8.2px);
 }
 </style>
