@@ -10,20 +10,23 @@
 					:class="{
 						'items-end justify-start': align === 'right',
 					}">
-					<h2 class="max-w-[650px] italic font-semibold text-scaleXL md:text-h2 font-h2 cursor-pointer">
-						{{ title }}
-						<sup class="text-scaleMD md:text-scaleXL font-h2 font-medium italic -top-4 right-1 md:right-3 md:-top-8 relative">{{
-							amount
-						}}</sup>
-					</h2>
+					<div class="w-full lg:max-w-[650px] flex justify-between items-start">
+						<h2 class="italic font-semibold text-scaleXL lg:text-h2 font-h2 cursor-pointer">
+							{{ title }}
+							<sup class="text-scaleMD md:text-scaleXL font-h2 font-medium italic -top-4 right-1 lg:right-3 lg:-top-8 relative">{{
+								amount
+							}}</sup>
+						</h2>
+						<img class="inline-block lg:hidden" alt="Right" src="@/assets/img/studio/right.svg" />
+					</div>
 
-					<div class="w-[90%] mt-5 md:mt-12 flex flex-col items-center">
+					<div class="w-full lg:w-[90%] mt-5 lg:mt-12 flex flex-col items-center">
 						<span class="w-full flex items-center" :class="{'justify-start': align === 'left', 'justify-end': align === 'right'}">
 							<span class="overflow-hidden relative group">
 								<img
 									:alt="title"
 									:src="img"
-									class="clickCursor w-[650px] transition-transform duration-500 ease-in-out lg:group-hover:scale-105"
+									class="clickCursor w-full lg:w-[650px] transition-transform duration-500 ease-in-out lg:group-hover:scale-105"
 									loading="lazy" />
 								<img
 									class="hidden lg:inline-block absolute right-6 bottom-5 opacity-0 transition-opacity duration-300 ease-in group-hover:opacity-100"
@@ -33,10 +36,15 @@
 						</span>
 
 						<div class="w-full flex items-center" :class="{'justify-start': align === 'left', 'justify-end': align === 'right'}">
-							<div class="w-[650px] flex flex-row justify-between mt-5">
-								<NLink v-for="item in detailList" class="font-label text-scaleXS italic text-text-primary font-semibold">{{
-									item.listTitle
-								}}</NLink>
+							<div class="w-full lg:w-[650px] flex flex-row justify-between mt-5">
+								<NLink
+									v-for="(item, index) in detailList"
+									:hasUnderline="false"
+									:to="`/studio/${id}#${item.id}`"
+									class="font-label text-scale2XS lg:text-scaleXS italic text-text-primary font-semibold"
+									:class="{'text-right': index === detailList.length - 1, 'max-w-[80px]': 2 < detailList.length}"
+									>{{ item.listTitle }}</NLink
+								>
 							</div>
 						</div>
 					</div>

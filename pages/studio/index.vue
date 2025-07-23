@@ -5,7 +5,7 @@
 		<div
 			v-for="(item, index) in studioInfo"
 			:key="item.title"
-			class="md:pb-5"
+			class="lg:pb-5"
 			:class="{'pb-[120px]': index !== studioInfo.length - 1, 'pb-[80px]': index === studioInfo.length - 1}">
 			<StudioSection
 				v-if="index === 0"

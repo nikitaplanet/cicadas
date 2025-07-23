@@ -40,7 +40,14 @@ export default defineNuxtConfig({
 	},
 	compatibilityDate: '2025-05-15',
 	devtools: {enabled: false},
-	modules: ['nuxt-swiper', '@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@vueuse/nuxt'],
+	modules: ['nuxt-swiper', '@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@vueuse/nuxt', 'nuxt-anchorscroll'],
+	anchorscroll: {
+		hooks: [
+			// Or any valid hook if needed
+			// Default is `page:finish`
+			'page:transition:finish',
+		],
+	},
 	css: ['~/assets/styles/index.scss'],
 	primevue: {
 		autoImport: true,

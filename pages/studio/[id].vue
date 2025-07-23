@@ -13,12 +13,13 @@
 				<div
 					v-if="index !== 0"
 					v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+					:id="item.id"
 					:key="item.id"
 					class="w-full transition-all duration-700">
 					<StudioDetailListCard :isShowLine="index !== detailData.detail.list.length - 1" :studioData="item" />
 				</div>
 
-				<div v-else class="w-full">
+				<div v-else :id="item.id" class="w-full">
 					<StudioDetailListCard :isShowLine="index !== detailData.detail.list.length - 1" :studioData="item" />
 				</div>
 			</template>
@@ -59,11 +60,30 @@ interface StudioData {
 }
 
 const route = useRoute();
+
+const {scrollToAnchor, scrollToTop} = useAnchorScroll({
+	toAnchor: {
+		scrollOptions: {
+			behavior: 'smooth',
+			offsetTop: -100,
+		},
+	},
+});
+
 const data = studioWording.studioInfo.find((item: StudioData) => item.id === String(route.params.id));
 const detailData = ref(data);
 
 onMounted(() => {
-	window.scrollTo(0, 0);
+	const hash = window.location.hash;
+
+	if (hash) {
+		const cleanHash = window.location.hash.replace('#', '');
+		setTimeout(() => {
+			scrollToAnchor(cleanHash);
+		}, 100);
+	} else {
+		window.scrollTo(0, 0);
+	}
 });
 
 useSeoMeta({

@@ -30,7 +30,7 @@ export const studioWording = {
 					"Our films capture the heart of human experiences, spotlighting powerful narratives that foster connection. We specialize in telling stories that bridge industries, cultures and communities, showcasing resilience, innovation and the pursuit of purpose. Whether it's amplifying grassroots initiatives or celebrating groundbreaking achievements, our work strives to inspire meaningful dialogue. ",
 				list: [
 					{
-						id: '1-1',
+						id: 'herfund',
 						title: 'HER Fund',
 						listTitle: 'HER Fund',
 						content:
@@ -42,7 +42,7 @@ export const studioWording = {
 						isOnGoing: false,
 					},
 					{
-						id: '1-2',
+						id: 'rsgroup',
 						title: 'RS Group',
 						listTitle: 'RS Group',
 						content:
@@ -54,7 +54,7 @@ export const studioWording = {
 						isOnGoing: false,
 					},
 					{
-						id: '1-3',
+						id: 'bolded',
 						title: 'BOLD-ED',
 						listTitle: 'BOLD-ED',
 						content:
@@ -66,7 +66,7 @@ export const studioWording = {
 						isOnGoing: false,
 					},
 					{
-						id: '1-4',
+						id: 'kootyin',
 						title: 'Kootyin',
 						listTitle: 'Kootyin',
 						content:
@@ -92,7 +92,7 @@ export const studioWording = {
 					'Our Independent Documentaries are driven by our filmmakers’ passion for storytelling. These films aren’t just projects—they’re journeys that can take years to complete, as our creators dedicate themselves to capturing the depth and complexity of the lives and stories they document.',
 				list: [
 					{
-						id: '2-1',
+						id: 'whenapoetgoestowar',
 						title: 'When a Poet Goes to War',
 						listTitle: 'When a Poet Goes to War',
 						content:
@@ -108,9 +108,9 @@ export const studioWording = {
 						isOnGoing: true,
 					},
 					{
-						id: '2-2',
+						id: 'creativityis',
 						title: 'Creativity is <span style="font-style: normal;">原來我</span>',
-						listTitle: 'Creativity is 原來我',
+						listTitle: 'Creativity is',
 						content:
 							'Are you creative? This is the question that kickstarts this short documentary. Through a group of students and six individuals – an inventor, a psychologist, an activist, a startup entrepreneur, a yoga teacher, and a spatial designer - "Creativity is" explores the possibilities and definitions of creativity beyond the conventional understanding - the search and expansion of ourselves is what we all ultimately create.',
 						media: {
@@ -134,9 +134,9 @@ export const studioWording = {
 					'Step into immersive worlds that put you at the center of the story. We create digital experiences that merge technology and storytelling in groundbreaking ways. From virtual reality adventures to interactive web narratives, we invite you to engage, explore and be part of the creative process.',
 				list: [
 					{
-						id: '3-1',
+						id: 'createyourown',
 						title: 'Create Your Own <span style="font-style: normal;">原來我：未定型</span>',
-						listTitle: 'Create Your Own 原來我：未定型',
+						listTitle: 'Create Your Own',
 						content:
 							'The journey of “creating-your-own-documentary” delves into the essence of creativity, exploring what defines it, why we might feel constrained and how we can reignite that spark within ourselves. Users craft a unique planet based on their choices and the final base is sent to their email as a powerful reminder that they are shaped by their decisions. Together, with others on this shared path, it’s both possible and extraordinary to make bolder, more inspired choices in shaping their identities.',
 						media: {
@@ -146,7 +146,7 @@ export const studioWording = {
 						isOnGoing: false,
 					},
 					{
-						id: '3-2',
+						id: 'madevr',
 						title: 'MADE VR',
 						listTitle: 'MADE VR',
 						content:
@@ -158,7 +158,7 @@ export const studioWording = {
 						isOnGoing: false,
 					},
 					{
-						id: '3-3',
+						id: 'journeyin',
 						title: 'Journey In',
 						listTitle: 'Journey In',
 						content:
@@ -170,7 +170,7 @@ export const studioWording = {
 						isOnGoing: false,
 					},
 					{
-						id: '3-4',
+						id: 'bettermebetterwe',
 						title: 'Better Me Better We',
 						listTitle: 'Better Me Better We',
 						content:
@@ -196,7 +196,7 @@ export const studioWording = {
 					'Our events are more than just gatherings—they are vibrant celebrations of creativity, innovation and connection. Whether it’s through personalized exhibitions, thought-provoking discussions, or hands-on activities, our mission is to create spaces where imagination thrives and communities grow stronger. ',
 				list: [
 					{
-						id: '4-1',
+						id: 'gamingforchange',
 						title: 'Gaming for Change',
 						listTitle: 'Gaming for Change',
 						content:
@@ -208,7 +208,7 @@ export const studioWording = {
 						isOnGoing: false,
 					},
 					{
-						id: '4-2',
+						id: 'creativityisanniversary',
 						title: 'Creativity is Anniversary',
 						listTitle: 'Creativity is Anniversary',
 						content:
