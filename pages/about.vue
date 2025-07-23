@@ -58,7 +58,7 @@ useSeoMeta({
 	ogTitle: () => seoWording.about.metaTitle,
 	ogDescription: () => seoWording.about.metaDescription,
 	ogImage: () => seoBanner || '',
-	ogUrl: () => seoWording.domain,
+	ogUrl: () => `${seoWording.domain}/about`,
 	ogType: 'website',
 	ogSiteName: seoWording.siteName,
 	twitterCard: 'summary_large_image',

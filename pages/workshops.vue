@@ -24,7 +24,7 @@ useSeoMeta({
 	ogTitle: () => seoWording.workshops.metaTitle,
 	ogDescription: () => seoWording.workshops.metaDescription,
 	ogImage: () => seoBanner || '',
-	ogUrl: () => seoWording.domain,
+	ogUrl: () => `${seoWording.domain}/workshops`,
 	ogType: 'website',
 	ogSiteName: seoWording.siteName,
 	twitterCard: 'summary_large_image',

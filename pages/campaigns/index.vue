@@ -50,7 +50,7 @@ useSeoMeta({
 	ogTitle: () => seoWording.campaignList.metaTitle,
 	ogDescription: () => seoWording.campaignList.metaDescription,
 	ogImage: () => seoBanner || '',
-	ogUrl: () => seoWording.domain,
+	ogUrl: () => `${seoWording.domain}/campaigns`,
 	ogType: 'website',
 	ogSiteName: seoWording.siteName,
 	twitterCard: 'summary_large_image',

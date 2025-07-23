@@ -55,7 +55,7 @@ useSeoMeta({
 	ogTitle: () => seoWording.studioList.metaTitle,
 	ogDescription: () => seoWording.studioList.metaDescription,
 	ogImage: () => seoBanner || '',
-	ogUrl: () => seoWording.domain,
+	ogUrl: () => `${seoWording.domain}/studio`,
 	ogType: 'website',
 	ogSiteName: seoWording.siteName,
 	twitterCard: 'summary_large_image',
