@@ -1,9 +1,7 @@
 <template>
 	<div class="service-bg pt-32 pb-36">
 		<SectionContainer :hasMinHeight="false">
-			<div
-				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
-				class="w-full flex flex-col justify-center items-center transition-all duration-700">
+			<div class="w-full flex flex-col justify-center items-center">
 				<div class="w-full">
 					<SectionNameTag>{{ contentText.issuesWeTackle.title }}</SectionNameTag>
 				</div>

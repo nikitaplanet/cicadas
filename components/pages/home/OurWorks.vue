@@ -1,9 +1,7 @@
 <template>
 	<div class="section3-bg py-10 md:py-28">
 		<SectionContainer :hasMinHeight="false">
-			<div
-				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
-				class="w-full grid grid-cols-1 xl:grid-cols-12 transition-all duration-700">
+			<div class="w-full grid grid-cols-1 xl:grid-cols-12 scroll-fade">
 				<div class="col-span-1 xl:col-span-5 flex flex-col">
 					<SectionNameTag>Our Works</SectionNameTag>
 					<div class="relative py-4 lg:p-4 xl:p-16 mt-3">
@@ -109,6 +107,15 @@ const handleClickMore = () => {
 		router.push(current?.link || '');
 	}
 };
+
+import {useScrollAnime} from '~/composable/useScrollAnime';
+const {fadeInOnScroll} = useScrollAnime();
+onMounted(() => {
+	fadeInOnScroll('.scroll-fade', {
+		duration: 1000,
+		delay: (el, i) => i * 200, // 錯開動畫
+	});
+});
 </script>
 
 <style lang="scss" scoped>

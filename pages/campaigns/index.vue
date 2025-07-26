@@ -3,7 +3,7 @@
 		<LandingSection />
 
 		<template v-for="(item, index) in campaigns" :key="item.title">
-			<div v-if="index !== 0" v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}" class="transition-all duration-700">
+			<div v-if="index !== 0" class="scroll-fade">
 				<CampaignSection
 					@click="handleClickCampaign(item.id)"
 					:id="item.id"
@@ -59,6 +59,11 @@ useSeoMeta({
 	twitterImage: () => seoBanner || '',
 });
 
+definePageMeta({
+	title: seoWording.campaignList.title,
+	keepalive: true,
+});
+
 const router = useRouter();
 
 // Content
@@ -67,6 +72,15 @@ const campaigns = ref(campaignsWording.campaigns);
 const handleClickCampaign = (id: number) => {
 	router.push(`/campaigns/${id}`);
 };
+
+import {useScrollAnime} from '~/composable/useScrollAnime';
+const {fadeInOnScroll} = useScrollAnime();
+onMounted(() => {
+	fadeInOnScroll('.scroll-fade', {
+		duration: 1000,
+		delay: (el, i) => i * 200, // 錯開動畫
+	});
+});
 </script>
 
 <style lang="scss" scoped>

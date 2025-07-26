@@ -6,7 +6,7 @@
 				<!---row-->
 				<router-link
 					:to="`/studio/${id}`"
-					class="flex flex-col cursor-pointer transition ease-in-out hover:opacity-90"
+					class="flex flex-col cursor-pointer hover:opacity-90"
 					:class="{
 						'items-end justify-start': align === 'right',
 					}">

@@ -40,7 +40,15 @@ export default defineNuxtConfig({
 	},
 	compatibilityDate: '2025-05-15',
 	devtools: {enabled: false},
-	modules: ['nuxt-gtag', 'nuxt-swiper', '@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@vueuse/nuxt', 'nuxt-anchorscroll'],
+	modules: [
+		'@hypernym/nuxt-anime',
+		'nuxt-gtag',
+		'nuxt-swiper',
+		'@primevue/nuxt-module',
+		'@nuxtjs/tailwindcss',
+		'@vueuse/nuxt',
+		'nuxt-anchorscroll',
+	],
 	anchorscroll: {
 		hooks: [
 			// Or any valid hook if needed
@@ -48,7 +56,13 @@ export default defineNuxtConfig({
 			'page:transition:finish',
 		],
 	},
+	anime: {
+		provide: true, // 全域提供 $anime
+		composables: true, // 啟用 composables
+		autoImport: true, // 自動匯入
+	},
 	gtag: {
+		enabled: process.env.NODE_ENV === 'production',
 		id: 'G-BP9QW5TJMS',
 		initialConsent: false,
 	},

@@ -16,10 +16,7 @@
 				:img="item.img"
 				:swiperClass="item.swiperClass"
 				:title="item.listTitle" />
-			<div
-				v-if="index !== 0"
-				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
-				class="flex flex-col transition-all duration-700">
+			<div v-if="index !== 0" class="flex flex-col scroll-fade">
 				<StudioSection
 					:align="item.align"
 					:amount="item.detail.list.length"
@@ -46,6 +43,7 @@ const studioInfo = ref(studioWording.studioInfo);
 
 definePageMeta({
 	title: 'Studio',
+	keepalive: true,
 });
 
 useSeoMeta({
@@ -61,6 +59,15 @@ useSeoMeta({
 	twitterTitle: () => seoWording.studioList.metaTitle,
 	twitterDescription: () => seoWording.studioList.description,
 	twitterImage: () => seoBanner || '',
+});
+
+import {useScrollAnime} from '~/composable/useScrollAnime';
+const {fadeInOnScroll} = useScrollAnime();
+onMounted(() => {
+	fadeInOnScroll('.scroll-fade', {
+		duration: 1000,
+		delay: (el, i) => i * 200, // 錯開動畫
+	});
 });
 </script>
 

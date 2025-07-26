@@ -18,7 +18,7 @@
 
 	<div class="bg-surface-def">
 		<Transition mode="out-in" name="fade">
-			<div v-if="!isShowLoading && !isShowLightLoading">
+			<div v-if="!isShowLoading">
 				<NuxtPage :key="pageKey" />
 				<!--Footer-->
 				<NFooter />
@@ -185,6 +185,8 @@ onMounted(() => {
 	requestAnimationFrame(raf);
 
 	lenis.on('scroll', ScrollTrigger.update);
+
+	(window as any).__lenis__ = lenis;
 });
 
 onUnmounted(() => {
