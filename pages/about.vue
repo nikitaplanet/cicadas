@@ -32,19 +32,11 @@
 </template>
 
 <script lang="ts" setup>
-import {onMounted, onUnmounted, nextTick} from 'vue';
 import LandingSection from '@/components/pages/about/LandingSection.vue';
 import WordFadeInSection from '@/components/pages/about/WordFadeInSection.vue';
 import OurTeam from '@/components/pages/about/OurTeam.vue';
 import ServiceWeOfferSection from '@/components/pages/about/ServiceWeOfferSection.vue';
-import OurStorySlide1 from '~/components/pages/about/horizonSlide/OurStorySlide1.vue';
-import OurStorySlide2 from '~/components/pages/about/horizonSlide/OurStorySlide2.vue';
-import OurStorySlide3 from '~/components/pages/about/horizonSlide/OurStorySlide3.vue';
 import OurStoryMobile from '~/components/pages/about/horizonSlide/OurStoryMobile.vue';
-
-import gsap from 'gsap';
-import OurStorySlide4 from '~/components/pages/about/horizonSlide/OurStorySlide4.vue';
-import OurStorySlide5 from '~/components/pages/about/horizonSlide/OurStorySlide5.vue';
 
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
 import {seoWording} from 'assets/wording/seoWording';
@@ -66,47 +58,6 @@ useSeoMeta({
 	twitterDescription: () => seoWording.about.description,
 	twitterImage: () => seoBanner || '',
 });
-
-let ctx: gsap.Context;
-
-onMounted(async () => {
-	await nextTick();
-	initAnimation();
-});
-
-onUnmounted(() => {
-	ctx && ctx.revert();
-});
-
-function getScrollAmount(headingDom: HTMLElement) {
-	const headingWidth = headingDom.offsetWidth;
-	const distance = 200;
-	const amountToScroll = headingWidth - window.innerWidth + distance;
-	return -amountToScroll;
-}
-
-function initAnimation() {
-	// ❗只讓桌機版 (lg 以上) 執行動畫
-	// if (!isDesktop.value) return;
-	//
-	// ctx = gsap.context(() => {
-	// 	const items = gsap.utils.toArray<HTMLElement>('.homePage__aboutUs__items');
-	// 	const container = document.getElementById('homePage__aboutUs')!;
-	// 	const totalWidth = container.offsetWidth;
-	//
-	// 	gsap.to(items, {
-	// 		xPercent: -100 * (items.length - 1),
-	// 		ease: 'sine.out',
-	// 		scrollTrigger: {
-	// 			trigger: container,
-	// 			pin: true,
-	// 			scrub: 3,
-	// 			snap: 1 / (items.length - 1),
-	// 			end: `+=${totalWidth}`,
-	// 		},
-	// 	});
-	// });
-}
 </script>
 
 <style lang="scss" scoped>

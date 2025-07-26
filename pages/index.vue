@@ -29,11 +29,6 @@
 
 		<TextSlide />
 
-		<!--		&lt;!&ndash;Horizon 2&ndash;&gt;-->
-		<!--		<div ref="headingWrapper" id="headingWrapper" class="heading-slide-wrapper overflow-x-hidden">-->
-		<!--			<HeadingHomeMade ref="headingText">{{ contentText.sliderSection.header }}</HeadingHomeMade>-->
-		<!--		</div>-->
-
 		<!--Hear from our partners-->
 		<SliderSection />
 
@@ -60,6 +55,27 @@ definePageMeta({
 	name: ROUTER_NAME.HOME_PAGE,
 });
 
+import {onMounted, nextTick} from 'vue';
+import LandingSection from '@/components/pages/home/LandingSection.vue';
+import Section1 from '@/components/pages/home/Section1.vue';
+import Section2 from '@/components/pages/home/Section2.vue';
+import OurWorks from '@/components/pages/home/OurWorks.vue';
+
+import SliderSection from '@/components/pages/home/SliderSection.vue';
+import ServiceFeatures from '@/components/pages/home/ServiceFeatures.vue';
+import Questions from '@/components/pages/home/Questions.vue';
+
+import AboutUsMobile from '@/components/pages/home/horizonSlide/AboutUsMobile.vue';
+import {seoWording} from 'assets/wording/seoWording';
+
+import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
+import TextSlide from '~/components/pages/home/horizonSlide/TextSlide.vue';
+const {isDesktop} = useGetMediaQuery();
+
+onMounted(async () => {
+	await nextTick();
+});
+
 useSeoMeta({
 	title: () => seoWording.home.title,
 	description: () => seoWording.home.description,
@@ -74,76 +90,6 @@ useSeoMeta({
 	twitterDescription: () => seoWording.home.description,
 	twitterImage: () => seoBanner || '',
 });
-
-import {ref, onMounted, onUnmounted, nextTick} from 'vue';
-import LandingSection from '@/components/pages/home/LandingSection.vue';
-import Section1 from '@/components/pages/home/Section1.vue';
-import Section2 from '@/components/pages/home/Section2.vue';
-import OurWorks from '@/components/pages/home/OurWorks.vue';
-
-import {contentText} from '@/assets/wording/home/text';
-
-import SliderSection from '@/components/pages/home/SliderSection.vue';
-import ServiceFeatures from '@/components/pages/home/ServiceFeatures.vue';
-import Questions from '@/components/pages/home/Questions.vue';
-
-import gsap from 'gsap';
-import HeadingHomeMade from '@/components/atoms/text/HeadingHomeMade.vue';
-import AboutUsMobile from '@/components/pages/home/horizonSlide/AboutUsMobile.vue';
-import {seoWording} from 'assets/wording/seoWording';
-
-import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
-import TextSlide from '~/components/pages/home/horizonSlide/TextSlide.vue';
-const {isDesktop} = useGetMediaQuery();
-
-let ctx: gsap.Context;
-let ctxHeading: gsap.Context;
-
-const headingWrapper = ref<HTMLElement>();
-const headingText = ref<HTMLElement>();
-
-onMounted(async () => {
-	await nextTick();
-	// initAnimation();
-});
-
-onUnmounted(() => {
-	ctx && ctx.revert();
-	ctxHeading && ctxHeading.revert();
-});
-
-function getScrollAmount(headingDom: HTMLElement) {
-	const headingWidth = headingDom.offsetWidth;
-	const distance = 200;
-	const amountToScroll = headingWidth - window.innerWidth + distance;
-	return -amountToScroll;
-}
-
-function initAnimation() {
-	ctxHeading = gsap.context(() => {
-		// Heading
-		setTimeout(() => {
-			const headingWrapperDom = document.getElementById('headingWrapper')!;
-			const headingDom = headingWrapper.value?.querySelector('.heading-home-made-text') as HTMLElement;
-
-			if (!headingDom) return;
-
-			gsap.to(headingDom, {
-				x: getScrollAmount(headingDom),
-				ease: 'power2.out',
-				scrollTrigger: {
-					trigger: headingWrapperDom,
-					start: 'top 20%',
-					end: () => `+=${getScrollAmount(headingDom) * -1 + 200}`,
-					scrub: 3,
-					invalidateOnRefresh: true,
-					pin: true,
-					pinSpacing: true,
-				},
-			});
-		}, 200); // 延遲一點，確保文字 render 完成
-	});
-}
 </script>
 
 <style lang="scss" scoped>
