@@ -14,7 +14,7 @@
 				<div class="section__horizon-block pl-[160px]">
 					<OurStorySlide4 />
 				</div>
-				<div class="section__horizon-block pl-[160px] pr-[200px]">
+				<div class="section__horizon-block pl-[160px] pr-[350px]">
 					<OurStorySlide5 />
 				</div>
 			</div>

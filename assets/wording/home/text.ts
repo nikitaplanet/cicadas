@@ -7,9 +7,9 @@ import slide1 from '@/assets/img/home/sliderSection/slide1.svg';
 import slide2 from '@/assets/img/home/sliderSection/slide2.svg';
 import slide3 from '@/assets/img/home/sliderSection/slide3.svg';
 
-import slideMobile1 from '@/assets/img/home/sliderSection/slide1_m.png';
+import slideMobile1 from '@/assets/img/home/sliderSection/slide1_m.svg';
 import slideMobile2 from '@/assets/img/home/sliderSection/slide2_m.png';
-import slideMobile3 from '@/assets/img/home/sliderSection/slide3_m.png';
+import slideMobile3 from '@/assets/img/home/sliderSection/slide3_m.svg';
 
 export const contentText = {
 	landing: {

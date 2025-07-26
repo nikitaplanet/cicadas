@@ -8,7 +8,7 @@
 				<div class="section__horizon-block">
 					<AboutUsSlide2 />
 				</div>
-				<div class="section__horizon-block pl-[100px] pr-[100px]">
+				<div class="section__horizon-block pl-[100px] pr-[300px]">
 					<AboutUsSlide3 />
 				</div>
 			</div>
