@@ -30,6 +30,7 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.5.1",
     "nuxt-anchorscroll": "^1.0.5",
+    "nuxt-gtag": "^3.0.3",
     "nuxt-lodash": "^2.5.3",
     "prettier": "^3.6.2",
     "prettier-plugin-organize-attributes": "^1.0.0",
