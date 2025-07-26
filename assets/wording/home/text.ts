@@ -14,6 +14,7 @@ import slideMobile3 from '@/assets/img/home/sliderSection/slide3_m.svg';
 export const contentText = {
 	landing: {
 		headerTitle: 'We are a<br />social impact <br />agency',
+		headerTitleMobbile: 'We are a social impact agency',
 		headerDescription:
 			'We believe in the power of narratives to shape our future. The new world we envision is built on trust, inclusion and solidarity. Let’s create that world together.',
 	},
