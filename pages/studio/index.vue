@@ -46,7 +46,6 @@ const studioInfo = ref(studioWording.studioInfo);
 
 definePageMeta({
 	title: 'Studio',
-	keepalive: true,
 });
 
 useSeoMeta({

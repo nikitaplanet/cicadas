@@ -1,5 +1,8 @@
 <template>
 	<div class="aboutUs-bg px-6 py-[120px] flex flex-col gap-[100px]">
+		<div class="w-full">
+			<SectionNameTag>{{ aboutWording.ourStory.title }}</SectionNameTag>
+		</div>
 		<div
 			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
 			class="flex flex-col items-center justify-start gap-[60px] transition-all duration-700">
@@ -46,7 +49,10 @@
 	</div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import {aboutWording} from 'assets/wording/about/text';
+import SectionNameTag from '~/components/atoms/text/SectionNameTag.vue';
+</script>
 
 <style lang="scss" scoped>
 .aboutUs-bg {
