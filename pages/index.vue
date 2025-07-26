@@ -27,10 +27,12 @@
 		<!--BG 過場-->
 		<div class="section-gradient5"></div>
 
-		<!--Horizon 2-->
-		<div ref="headingWrapper" id="headingWrapper" class="heading-slide-wrapper overflow-x-hidden">
-			<HeadingHomeMade ref="headingText">{{ contentText.sliderSection.header }}</HeadingHomeMade>
-		</div>
+		<TextSlide />
+
+		<!--		&lt;!&ndash;Horizon 2&ndash;&gt;-->
+		<!--		<div ref="headingWrapper" id="headingWrapper" class="heading-slide-wrapper overflow-x-hidden">-->
+		<!--			<HeadingHomeMade ref="headingText">{{ contentText.sliderSection.header }}</HeadingHomeMade>-->
+		<!--		</div>-->
 
 		<!--Hear from our partners-->
 		<SliderSection />
@@ -91,6 +93,7 @@ import AboutUsMobile from '@/components/pages/home/horizonSlide/AboutUsMobile.vu
 import {seoWording} from 'assets/wording/seoWording';
 
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
+import TextSlide from '~/components/pages/home/horizonSlide/TextSlide.vue';
 const {isDesktop} = useGetMediaQuery();
 
 let ctx: gsap.Context;
@@ -101,7 +104,7 @@ const headingText = ref<HTMLElement>();
 
 onMounted(async () => {
 	await nextTick();
-	initAnimation();
+	// initAnimation();
 });
 
 onUnmounted(() => {
