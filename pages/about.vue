@@ -49,21 +49,21 @@ definePageMeta({
 });
 
 useSeoMeta({
-	title: () => 'About | Cicadas',
-	description: () =>
+	title: 'About | Cicadas',
+	description:
 		'At Singing Cicadas, we believe in the power of storytelling to shape narratives and behavior. As a dedicated social impact agency, we partner with you to design and deliver transformative campaigns using our insight-driven storytelling approach.',
-	ogTitle: () => 'About Singing Cicadas',
-	ogDescription: () =>
+	ogTitle: 'About Singing Cicadas',
+	ogDescription:
 		'We empower NGOs, ESG-driven businesses, and SDG-aligned initiatives  to fight climate change, gender equality, LGBTQ rights and other human rights issues through data-driven storytelling rooted in Asia and trusted globally.',
-	ogImage: () => seoBanner || '',
-	ogUrl: () => 'https://singingcicadas.com/about',
+	ogImage: seoBanner || '',
+	ogUrl: 'https://singingcicadas.com/about',
 	ogType: 'website',
 	ogSiteName: 'Cicadas',
 	twitterCard: 'summary_large_image',
-	twitterTitle: () => 'About Singing Cicadas | Asia’s Storytelling Experts for Change',
-	twitterDescription: () =>
+	twitterTitle: 'About Singing Cicadas | Asia’s Storytelling Experts for Change',
+	twitterDescription:
 		'We empower NGOs, ESG-driven businesses, and SDG-aligned initiatives  to fight climate change, gender equality, LGBTQ rights and other human rights issues through data-driven storytelling rooted in Asia and trusted globally.',
-	twitterImage: () => seoBanner || '',
+	twitterImage: seoBanner || '',
 });
 
 useHead({
