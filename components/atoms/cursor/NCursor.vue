@@ -60,13 +60,24 @@ function handleMouseMove(e: MouseEvent): void {
 	const el = document.elementFromPoint(e.clientX, e.clientY);
 	isClickable.value = isElementClickable(el);
 
-	if (el?.tagName.toLowerCase() === 'iframe') {
+	// 檢核是否恢復原鼠標
+	const isIframe = el?.tagName.toLowerCase() === 'iframe';
+	const hasCookiebotClass = isInCookiebotContainer(el);
+
+	if (isIframe || hasCookiebotClass) {
 		isInIframe.value = true;
 		document.body.classList.remove('hide-cursor');
 	} else {
 		isInIframe.value = false;
 		document.body.classList.add('hide-cursor');
 	}
+}
+
+function isInCookiebotContainer(el: Element | null): boolean {
+	if (!el) return false;
+
+	// 向上尋找 class 或 id 含有 cookiebot 的元素（第一層父級即可）
+	return !!el.closest('[class*="cookiebot" i], [id*="cookiebot" i]');
 }
 
 onMounted(() => {
