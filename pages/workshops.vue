@@ -18,6 +18,14 @@ import QuoteSection from '@/components/pages/workshops/QuoteSection.vue';
 import {seoWording} from '@/assets/wording/seoWording';
 import seoBanner from '@/assets/img/seo/cicadas_banner.png';
 
+definePageMeta({
+	name: 'Workshops',
+});
+
+useHead({
+	link: [{rel: 'canonical', href: `${seoWording.domain}/workshops`}],
+});
+
 useSeoMeta({
 	title: () => seoWording.workshops.title,
 	description: () => seoWording.workshops.description,

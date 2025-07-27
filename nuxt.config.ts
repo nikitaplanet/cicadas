@@ -26,12 +26,14 @@ export default defineNuxtConfig({
 				{name: 'robots', content: 'index, follow'},
 			],
 			script: [{src: 'https://tally.so/widgets/embed.js', async: true}],
-			link: [{rel: 'canonical', href: 'https://singingcicadas.com'}],
 		},
 	},
 	compatibilityDate: '2025-05-15',
 	devtools: {enabled: false},
 	modules: [
+		'@nuxtjs/robots',
+		'@nuxtjs/sitemap',
+		'@nuxtjs/seo',
 		'@ambitiondev/nuxt-cookiebot',
 		'@hypernym/nuxt-anime',
 		'nuxt-gtag',
@@ -41,6 +43,18 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'nuxt-anchorscroll',
 	],
+	robots: {
+		UserAgent: '*',
+		Allow: '/',
+		Sitemap: 'https://singingcicadas.com/sitemap.xml', // 指向您的 sitemap
+	},
+	sitemap: {
+		hostname: 'https://singingcicadas.com',
+		gzip: true, // 生成 sitemap.xml.gz
+		routes: async () => {
+			return []; // 如果沒有動態路由，可以留空或返回空陣列
+		},
+	},
 	cookiebot: {
 		cookieBotId: '5efa9b8a-2cc4-485e-9d86-54b078df59e8',
 		culture: 'en',
@@ -93,6 +107,11 @@ export default defineNuxtConfig({
 					assetFileNames: '_nuxt/my-[name]-[hash].[ext]',
 				},
 			},
+		},
+	},
+	runtimeConfig: {
+		public: {
+			siteUrl: 'https://singingcicadas.com', // ✅ 給你全站都能用
 		},
 	},
 });

@@ -70,6 +70,10 @@ import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
 import TextSlide from '~/components/pages/home/horizonSlide/TextSlide.vue';
 const {isDesktop} = useGetMediaQuery();
 
+useHead({
+	link: [{rel: 'canonical', href: `${seoWording.domain}`}],
+});
+
 useSeoMeta({
 	title: () => seoWording.home.title,
 	description: () => seoWording.home.description,

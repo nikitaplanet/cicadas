@@ -36,6 +36,7 @@ import LandingSection from '@/components/pages/studio/LandingSection.vue';
 import NLink from '@/components/atoms/link/NLink.vue';
 import {seoWording} from 'assets/wording/seoWording';
 import StudioDetailListCard from '~/components/pages/studio/detail/StudioDetailListCard.vue';
+import seoBanner from 'assets/img/seo/cicadas_banner.png';
 
 interface StudioDetailListItem {
 	id: string;

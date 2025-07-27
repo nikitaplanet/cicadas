@@ -197,16 +197,6 @@ onUnmounted(() => {
 useSeoMeta({
 	title: () => seoWording.siteName,
 	description: () => seoWording.home.description,
-	ogTitle: () => seoWording.siteName,
-	ogDescription: () => seoWording.home.description,
-	ogImage: () => seoBanner || '',
-	ogUrl: () => seoWording.domain,
-	ogType: 'website',
-	ogSiteName: seoWording.siteName,
-	twitterCard: 'summary_large_image',
-	twitterTitle: () => seoWording.siteName,
-	twitterDescription: () => seoWording.home.description,
-	twitterImage: () => seoBanner || '',
 });
 </script>
 

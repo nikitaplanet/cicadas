@@ -44,6 +44,14 @@ import seoBanner from 'assets/img/seo/cicadas_banner.png';
 import AboutHorizonScrollCard from '~/components/pages/about/horizonSlide/AboutHorizonScrollCard.vue';
 const {isDesktop} = useGetMediaQuery();
 
+definePageMeta({
+	name: 'About',
+});
+
+useHead({
+	link: [{rel: 'canonical', href: `${seoWording.domain}/about`}],
+});
+
 useSeoMeta({
 	title: () => seoWording.about.title,
 	description: () => seoWording.about.description,

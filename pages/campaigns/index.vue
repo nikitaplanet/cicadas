@@ -44,24 +44,28 @@ import {campaignsWording} from '@/assets/wording/campaigns/text';
 import {seoWording} from 'assets/wording/seoWording';
 import seoBanner from 'assets/img/seo/cicadas_banner.png';
 
+definePageMeta({
+	title: seoWording.campaignList.title,
+	keepalive: true,
+});
+
+useHead({
+	link: [{rel: 'canonical', href: `https://singingcicadas.com/campaigns`}],
+});
+
 useSeoMeta({
 	title: () => seoWording.campaignList.title,
 	description: () => seoWording.campaignList.description,
 	ogTitle: () => seoWording.campaignList.metaTitle,
 	ogDescription: () => seoWording.campaignList.metaDescription,
 	ogImage: () => seoBanner || '',
-	ogUrl: () => `${seoWording.domain}/campaigns`,
+	ogUrl: () => `https://singingcicadas.com/campaigns`,
 	ogType: 'website',
 	ogSiteName: seoWording.siteName,
 	twitterCard: 'summary_large_image',
 	twitterTitle: () => seoWording.campaignList.metaTitle,
 	twitterDescription: () => seoWording.campaignList.description,
 	twitterImage: () => seoBanner || '',
-});
-
-definePageMeta({
-	title: seoWording.campaignList.title,
-	keepalive: true,
 });
 
 const router = useRouter();

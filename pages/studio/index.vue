@@ -46,6 +46,10 @@ definePageMeta({
 	keepalive: true,
 });
 
+useHead({
+	link: [{rel: 'canonical', href: `${seoWording.domain}/studio`}],
+});
+
 useSeoMeta({
 	title: () => seoWording.studioList.title,
 	description: () => seoWording.studioList.description,
