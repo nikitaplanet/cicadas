@@ -25,16 +25,7 @@ export default defineNuxtConfig({
 				{name: 'author', content: 'Cicadas'},
 				{name: 'robots', content: 'index, follow'},
 			],
-			script: [
-				{src: 'https://tally.so/widgets/embed.js', async: true},
-				// {
-				// 	id: 'Cookiebot',
-				// 	src: 'https://consent.cookiebot.com/uc.js',
-				// 	'data-cbid': '5efa9b8a-2cc4-485e-9d86-54b078df59e8',
-				// 	'data-blockingmode': 'auto',
-				// 	type: 'text/javascript',
-				// },
-			],
+			script: [{src: 'https://tally.so/widgets/embed.js', async: true}],
 			link: [{rel: 'canonical', href: 'https://singingcicadas.com'}],
 		},
 	},
