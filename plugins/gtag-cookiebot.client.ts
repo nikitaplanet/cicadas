@@ -1,16 +1,25 @@
 export default defineNuxtPlugin(() => {
-	// CookieConsentDeclaration 是 Cookiebot 在 consent 做完後觸發的事件
+	const {initialize, gtag} = useGtag();
+
 	window.addEventListener('CookieConsentDeclaration', () => {
-		if (window.Cookiebot?.consents?.given?.statistics) {
-			// 使用 nuxt-gtag 的 gtag composable 載入
-			const {load} = useGtag();
-			load(); // ✅ 啟動 Google Analytics
+		if (window.Cookiebot?.consent?.statistics) {
+			initialize();
+			gtag('consent', 'update', {
+				ad_user_data: 'granted',
+				ad_personalization: 'granted',
+				ad_storage: 'granted',
+				analytics_storage: 'granted',
+			});
 		}
 	});
 
-	// 若使用者已經 consent 過，仍要即時載入
-	if (window.Cookiebot?.consents?.given?.statistics) {
-		const {load} = useGtag();
-		load();
+	if (window.Cookiebot?.consent?.statistics) {
+		initialize();
+		gtag('consent', 'update', {
+			ad_user_data: 'granted',
+			ad_personalization: 'granted',
+			ad_storage: 'granted',
+			analytics_storage: 'granted',
+		});
 	}
 });

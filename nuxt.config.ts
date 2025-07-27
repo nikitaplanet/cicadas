@@ -67,12 +67,12 @@ export default defineNuxtConfig({
 		autoImport: true, // 自動匯入
 	},
 	gtag: {
-		enabled: process.env.NODE_ENV === 'production',
 		id: 'G-BP9QW5TJMS',
 		config: {
 			anonymize_ip: true,
 		},
 		initMode: 'manual',
+		initialConsent: false,
 	},
 	css: ['~/assets/styles/index.scss'],
 	primevue: {
