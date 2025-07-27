@@ -7,21 +7,33 @@
 					<div class="relative py-4 lg:p-4 xl:p-16 mt-3">
 						<div
 							:class="{
-								'inline-block opacity-100': hoverImage === 1 || hoverImage === 0,
-								'hidden opacity-0': hoverImage !== 1 && hoverImage !== 0,
+								'inline-block opacity-100': hoverImage === 1 || currentImage === 1,
+								'hidden opacity-0': hoverImage !== 1 && currentImage !== 1,
 							}">
 							<img alt="1" src="@/assets/img/home/section3/1.png" />
 						</div>
 
-						<div :class="{'inline-block opacity-100': hoverImage === 2, 'hidden opacity-0': hoverImage !== 2}">
+						<div
+							:class="{
+								'inline-block opacity-100': hoverImage === 2 || currentImage === 2,
+								'hidden opacity-0': hoverImage !== 2 && currentImage !== 2,
+							}">
 							<img alt="2" src="@/assets/img/home/section3/2.png" />
 						</div>
 
-						<div :class="{'inline-block opacity-100': hoverImage === 3, 'hidden opacity-0': hoverImage !== 3}">
+						<div
+							:class="{
+								'inline-block opacity-100': hoverImage === 3 || currentImage === 3,
+								'hidden opacity-0': hoverImage !== 3 && currentImage !== 3,
+							}">
 							<img alt="3" src="@/assets/img/home/section3/3.png" />
 						</div>
 
-						<div :class="{'inline-block opacity-100': hoverImage === 4, 'hidden opacity-0': hoverImage !== 4}">
+						<div
+							:class="{
+								'inline-block opacity-100': hoverImage === 4 || currentImage === 4,
+								'hidden opacity-0': hoverImage !== 4 && currentImage !== 4,
+							}">
 							<img alt="4" src="@/assets/img/home/section3/4.png" />
 						</div>
 					</div>
@@ -30,8 +42,8 @@
 					<HoverTextBox
 						v-for="item in list"
 						@click="handleClick(item.id)"
-						@mouseleave="hoverImage = showImage"
-						@mouseover="hoverImage = item.id"
+						@mouseleave="handleMouseLeave"
+						@mouseover="handleMouseOver(item)"
 						:description="item.description"
 						:isActive="selectedContent === item.id"
 						:isButton="item.id === 4"
@@ -57,7 +69,7 @@
 </template>
 
 <script lang="ts" setup>
-import {computed, reactive, ref} from 'vue';
+import {computed, onMounted, reactive, ref} from 'vue';
 import SectionContainer from '@/components/layout/SectionContainer.vue';
 import SectionNameTag from '@/components/atoms/text/SectionNameTag.vue';
 import HoverTextBox from '@/components/molecules/HoverTextBox.vue';
@@ -73,8 +85,26 @@ const {isMobile} = useGetMediaQuery();
 const selectedContent = ref(isMobile.value ? 1 : 0);
 const showImage = ref(0);
 const hoverImage = ref(0);
-
+const currentImage = ref(1);
 const isShowCommon = ref(false);
+
+let timer: ReturnType<typeof setInterval>;
+
+onMounted(() => {
+	if (!isMobile.value) {
+		initTimer();
+	}
+});
+
+const initTimer = () => {
+	timer = setInterval(() => {
+		if (currentImage.value < 4) {
+			currentImage.value++;
+		} else if (currentImage.value === 4) {
+			currentImage.value = 1;
+		}
+	}, 3000);
+};
 
 const handleClick = (id: number) => {
 	selectedContent.value = id;
@@ -106,6 +136,17 @@ const handleClickMore = () => {
 		const current = list.find((item) => item.id === selectedContent.value);
 		router.push(current?.link || '');
 	}
+};
+
+const handleMouseOver = (item) => {
+	hoverImage.value = item.id;
+	clearInterval(timer);
+	currentImage.value = item.id;
+};
+
+const handleMouseLeave = () => {
+	hoverImage.value = showImage.value;
+	initTimer();
 };
 
 import {useScrollAnime} from '~/composable/useScrollAnime';
