@@ -5,8 +5,8 @@
 				<div class="w-full">
 					<SectionNameTag>{{ aboutWording.ourStory.title }}</SectionNameTag>
 				</div>
-				<div class="w-full flex flex-col lg:flex-row justify-center items-center gap-10 mt-28">
-					<img class="w-[90%] max-w-[500px]" alt="flower" src="../../../../assets/img/about/ourStory/1.svg" />
+				<div class="w-full flex flex-col lg:flex-row justify-center items-center gap-10 mt-28 pl-[100px]">
+					<img class="w-[90%] max-w-[480px]" alt="flower" src="../../../../assets/img/about/ourStory/1.svg" />
 					<div class="flex flex-col relative">
 						<img
 							class="absolute bottom-[-135px] lg:bottom-auto lg:top-[-135px] right-[-40%] xs:right-[-30px] lg:right-[-110px] w-32"
