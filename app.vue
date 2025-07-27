@@ -50,8 +50,6 @@ import {useDebounceFn} from '@vueuse/core';
 const {isScrolledPastLanding, showNavBar} = useScrollDirectionNav();
 
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
-import {seoWording} from '~/server/content/seoWording';
-import seoBanner from 'assets/img/seo/cicadas_banner.png';
 import LightLoadingOverlay from '~/components/atoms/loading/LightLoadingOverlay.vue';
 const {isDesktop} = useGetMediaQuery();
 

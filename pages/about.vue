@@ -48,15 +48,6 @@ definePageMeta({
 	name: 'About',
 });
 
-const title = seoWording.about.title;
-const description = seoWording.about.description;
-
-const metaTitle = seoWording.about.metaTitle;
-const metaDescription = seoWording.about.metaDescription;
-
-const siteUrl = `${seoWording.domain}/about`;
-const siteName = seoWording.siteName;
-
 useSeoMeta({
 	title: () => 'About | Cicadas',
 	description: () =>
