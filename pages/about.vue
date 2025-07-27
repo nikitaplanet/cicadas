@@ -48,21 +48,27 @@ definePageMeta({
 	name: 'About',
 });
 
+const title = seoWording.about.title;
+const description = seoWording.about.description;
+
+const metaTitle = seoWording.about.metaTitle;
+const metaDescription = seoWording.about.metaDescription;
+
+const siteUrl = `${seoWording.domain}/about`;
+const siteName = seoWording.siteName;
+
 useSeoMeta({
-	title: 'About | Cicadas',
-	description:
-		'At Singing Cicadas, we believe in the power of storytelling to shape narratives and behavior. As a dedicated social impact agency, we partner with you to design and deliver transformative campaigns using our insight-driven storytelling approach.',
-	ogTitle: 'About Singing Cicadas',
-	ogDescription:
-		'We empower NGOs, ESG-driven businesses, and SDG-aligned initiatives  to fight climate change, gender equality, LGBTQ rights and other human rights issues through data-driven storytelling rooted in Asia and trusted globally.',
+	title: title,
+	description: description,
+	ogTitle: metaTitle,
+	ogDescription: metaDescription,
 	ogImage: seoBanner || '',
-	ogUrl: 'https://singingcicadas.com/about',
+	ogUrl: siteUrl,
 	ogType: 'website',
-	ogSiteName: 'Cicadas',
+	ogSiteName: siteName,
 	twitterCard: 'summary_large_image',
-	twitterTitle: 'About Singing Cicadas | Asia’s Storytelling Experts for Change',
-	twitterDescription:
-		'We empower NGOs, ESG-driven businesses, and SDG-aligned initiatives  to fight climate change, gender equality, LGBTQ rights and other human rights issues through data-driven storytelling rooted in Asia and trusted globally.',
+	twitterTitle: metaTitle,
+	twitterDescription: metaDescription,
 	twitterImage: seoBanner || '',
 });
 
