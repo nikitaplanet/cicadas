@@ -6,7 +6,7 @@
 				<!---row-->
 				<router-link
 					:to="`/studio/${id}`"
-					class="flex flex-col cursor-pointer hover:opacity-90"
+					class="flex flex-col cursor-pointer"
 					:class="{
 						'items-end justify-start': align === 'right',
 					}">
@@ -23,18 +23,14 @@
 								<img
 									:alt="title"
 									:src="img"
-									class="clickCursor w-full lg:w-[650px] transition-transform duration-500 ease-in-out lg:group-hover:scale-105"
+									class="clickCursor opacity-100 w-full lg:w-[650px] transition-transform duration-500 ease-in-out lg:group-hover:scale-105"
 									loading="lazy" />
-								<!--								<img-->
-								<!--									class="hidden lg:inline-block absolute right-6 bottom-5 opacity-0 transition-opacity duration-300 ease-in group-hover:opacity-100"-->
-								<!--									alt="learn more"-->
-								<!--									src="@/assets/img/campaigns/learnmore.svg" />-->
 							</span>
 						</span>
 
 						<div class="w-full flex items-center" :class="{'justify-start': align === 'left', 'justify-end': align === 'right'}">
 							<div class="w-full lg:w-[650px] flex flex-row justify-end mt-5">
-								<img class="inline-block" alt="learn more" src="@/assets/img/campaigns/learnmore.svg" />
+								<img class="inline-block" alt="learn more" src="@/assets/img/studio/learnmore.svg" />
 							</div>
 						</div>
 					</div>
