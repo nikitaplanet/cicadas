@@ -41,7 +41,7 @@ import {ref} from 'vue';
 import LandingSection from '@/components/pages/campaigns/LandingSection.vue';
 import CampaignSection from '@/components/pages/campaigns/CampaignSection.vue';
 import {campaignsWording} from '@/assets/wording/campaigns/text';
-import {seoWording} from 'assets/wording/seoWording';
+import {seoWording} from '~/server/content/seoWording';
 import seoBanner from 'assets/img/seo/cicadas_banner.png';
 
 definePageMeta({

@@ -50,7 +50,7 @@ import {useDebounceFn} from '@vueuse/core';
 const {isScrolledPastLanding, showNavBar} = useScrollDirectionNav();
 
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
-import {seoWording} from 'assets/wording/seoWording';
+import {seoWording} from '~/server/content/seoWording';
 import seoBanner from 'assets/img/seo/cicadas_banner.png';
 import LightLoadingOverlay from '~/components/atoms/loading/LightLoadingOverlay.vue';
 const {isDesktop} = useGetMediaQuery();
@@ -101,7 +101,7 @@ watch(
 watch(
 	() => route.fullPath,
 	() => {
-		initLightLoading();
+		// initLightLoading();
 	},
 );
 
@@ -192,11 +192,6 @@ onMounted(() => {
 onUnmounted(() => {
 	if (!import.meta.client) return;
 	lenis.destroy();
-});
-
-useSeoMeta({
-	title: () => seoWording.siteName,
-	description: () => seoWording.home.description,
 });
 </script>
 

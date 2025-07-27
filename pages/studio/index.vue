@@ -35,7 +35,7 @@ import {ref} from 'vue';
 import LandingSection from '@/components/pages/studio/LandingSection.vue';
 import {studioWording} from '@/assets/wording/studio/text';
 import StudioSection from '@/components/pages/studio/StudioSection.vue';
-import {seoWording} from 'assets/wording/seoWording';
+import {seoWording} from '~/server/content/seoWording';
 import seoBanner from 'assets/img/seo/cicadas_banner.png';
 
 // Content

@@ -15,7 +15,7 @@ import LandingSection from '@/components/pages/workshops/LandingSection.vue';
 import LogoSection from '@/components/pages/workshops/LogoSection.vue';
 import WorkshopsSwiper from '@/components/pages/workshops/WorkshopsSwiper.vue';
 import QuoteSection from '@/components/pages/workshops/QuoteSection.vue';
-import {seoWording} from '@/assets/wording/seoWording';
+import {seoWording} from '~/server/content/seoWording';
 import seoBanner from '@/assets/img/seo/cicadas_banner.png';
 
 definePageMeta({

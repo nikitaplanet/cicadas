@@ -64,7 +64,7 @@ import ServiceFeatures from '@/components/pages/home/ServiceFeatures.vue';
 import Questions from '@/components/pages/home/Questions.vue';
 
 import AboutUsMobile from '@/components/pages/home/horizonSlide/AboutUsMobile.vue';
-import {seoWording} from 'assets/wording/seoWording';
+import {seoWording} from '~/server/content/seoWording';
 
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
 import TextSlide from '~/components/pages/home/horizonSlide/TextSlide.vue';

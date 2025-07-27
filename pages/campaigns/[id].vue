@@ -100,7 +100,7 @@ import {MEDIA_DISPLAY_TYPE} from '@/assets/js/enum/media';
 import NImageSwiper from '@/components/atoms/swiper/NImageSwiper.vue';
 import type {CampaignItem} from '@/assets/js/enum/campaigns';
 import NVideo from '~/components/atoms/videoSec/NVideo.vue';
-import {seoWording} from 'assets/wording/seoWording';
+import {seoWording} from '~/server/content/seoWording';
 
 // route 參數
 const route = useRoute();
