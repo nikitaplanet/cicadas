@@ -40,7 +40,7 @@ import OurStoryMobile from '~/components/pages/about/horizonSlide/OurStoryMobile
 
 import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
 import {seoWording} from '~/server/content/seoWording';
-import seoBanner from 'assets/img/seo/cicadas_banner.png';
+import seoBanner from 'public/cicadas_banner.png';
 import AboutHorizonScrollCard from '~/components/pages/about/horizonSlide/AboutHorizonScrollCard.vue';
 const {isDesktop} = useGetMediaQuery();
 
@@ -57,49 +57,25 @@ const metaDescription = seoWording.about.metaDescription;
 const siteUrl = `${seoWording.domain}/about`;
 const siteName = seoWording.siteName;
 
-// useSeoMeta({
-// 	title: () => title,
-// 	description: () => description,
-// 	ogTitle: () => metaTitle,
-// 	ogDescription: () => metaDescription,
-// 	ogImage: () => seoBanner || '',
-// 	ogUrl: () => siteUrl,
-// 	ogType: 'website',
-// 	ogSiteName: siteName,
-// 	twitterCard: 'summary_large_image',
-// 	twitterTitle: () => metaTitle,
-// 	twitterDescription: () => metaDescription,
-// 	twitterImage: () => seoBanner || '',
-// });
+useSeoMeta({
+	title: () => 'About | Cicadas',
+	description: () =>
+		'At Singing Cicadas, we believe in the power of storytelling to shape narratives and behavior. As a dedicated social impact agency, we partner with you to design and deliver transformative campaigns using our insight-driven storytelling approach.',
+	ogTitle: () => 'About Singing Cicadas | Asia’s Storytelling Experts for Change',
+	ogDescription: () =>
+		'We empower NGOs, ESG-driven businesses, and SDG-aligned initiatives  to fight climate change, gender equality, LGBTQ rights and other human rights issues through data-driven storytelling rooted in Asia and trusted globally.',
+	ogImage: () => seoBanner || '',
+	ogUrl: () => 'https://singingcicadas.com/about',
+	ogType: 'website',
+	ogSiteName: 'Cicadas',
+	twitterCard: 'summary_large_image',
+	twitterTitle: () => 'About Singing Cicadas | Asia’s Storytelling Experts for Change',
+	twitterDescription: () =>
+		'We empower NGOs, ESG-driven businesses, and SDG-aligned initiatives  to fight climate change, gender equality, LGBTQ rights and other human rights issues through data-driven storytelling rooted in Asia and trusted globally.',
+	twitterImage: () => seoBanner || '',
+});
 
 useHead({
-	title: 'About | Cicadas',
-	meta: [
-		{
-			name: 'description',
-			content:
-				'At Singing Cicadas, we believe in the power of storytelling to shape narratives and behavior. As a dedicated social impact agency, we partner with you to design and deliver transformative campaigns using our insight-driven storytelling approach.',
-		},
-		{property: 'og:title', content: 'About Singing Cicadas | Asia’s Storytelling Experts for Change'},
-		{
-			property: 'og:description',
-			content:
-				'We empower NGOs, ESG-driven businesses, and SDG-aligned initiatives  to fight climate change, gender equality, LGBTQ rights and other human rights issues through data-driven storytelling rooted in Asia and trusted globally.',
-		},
-		{property: 'og:image', content: seoBanner || ''},
-		{property: 'og:url', content: 'https://singingcicadas.com/about'},
-		{property: 'og:type', content: 'website'},
-		{property: 'og:site_name', content: 'Cicadas'},
-
-		{name: 'twitter:card', content: 'summary_large_image'},
-		{name: 'twitter:title', content: 'About Singing Cicadas | Asia’s Storytelling Experts for Change'},
-		{
-			name: 'twitter:description',
-			content:
-				'We empower NGOs, ESG-driven businesses, and SDG-aligned initiatives  to fight climate change, gender equality, LGBTQ rights and other human rights issues through data-driven storytelling rooted in Asia and trusted globally.',
-		},
-		{name: 'twitter:image', content: seoBanner || ''},
-	],
 	link: [{rel: 'canonical', href: 'https://singingcicadas.com/about'}],
 });
 </script>

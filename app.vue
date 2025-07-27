@@ -101,7 +101,7 @@ watch(
 watch(
 	() => route.fullPath,
 	() => {
-		// initLightLoading();
+		initLightLoading();
 	},
 );
 
