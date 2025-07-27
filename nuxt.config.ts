@@ -41,6 +41,7 @@ export default defineNuxtConfig({
 	compatibilityDate: '2025-05-15',
 	devtools: {enabled: false},
 	modules: [
+		'@ambitiondev/nuxt-cookiebot',
 		'@hypernym/nuxt-anime',
 		'nuxt-gtag',
 		'nuxt-swiper',
@@ -49,6 +50,10 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'nuxt-anchorscroll',
 	],
+	cookiebot: {
+		cookieBotId: '5efa9b8a-2cc4-485e-9d86-54b078df59e8',
+		culture: 'en',
+	},
 	anchorscroll: {
 		hooks: [
 			// Or any valid hook if needed

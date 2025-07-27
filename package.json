@@ -11,6 +11,7 @@
     "deploy": "./deploy.sh"
   },
   "dependencies": {
+    "@ambitiondev/nuxt-cookiebot": "^3.2.3",
     "@primeuix/themes": "^1.2.1",
     "@studio-freight/lenis": "^1.0.42",
     "@vueuse/core": "^13.5.0",

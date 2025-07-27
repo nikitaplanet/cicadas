@@ -22,6 +22,8 @@ import c3_swiper2 from '@/assets/img/campaigns/detail/resource/swiper2.jpg';
 import c3_swiper3 from '@/assets/img/campaigns/detail/resource/swiper3.jpg';
 import c3_swiper4 from '@/assets/img/campaigns/detail/resource/swiper4.jpg';
 import c3_swiper5 from '@/assets/img/campaigns/detail/resource/swiper5.jpg';
+import c3_swiper6 from '@/assets/img/campaigns/detail/resource/swiper6.jpg';
+import c3_swiper7 from '@/assets/img/campaigns/detail/resource/swiper7.jpg';
 
 import c4_swiper1 from '@/assets/img/campaigns/detail/knock/swiper1.jpg';
 import c4_swiper2 from '@/assets/img/campaigns/detail/knock/swiper2.jpg';
@@ -282,13 +284,21 @@ export const campaignsWording: CampaignWording = {
 								key: 'c3_swiper3',
 								src: c3_swiper3,
 							},
-							// {
-							// 	key: 'c3_swiper4',
-							// 	src: c3_swiper4,
-							// },
+							{
+								key: 'c3_swiper4',
+								src: c3_swiper4,
+							},
 							{
 								key: 'c3_swiper5',
 								src: c3_swiper5,
+							},
+							{
+								key: 'c3_swiper6',
+								src: c3_swiper6,
+							},
+							{
+								key: 'c3_swiper7',
+								src: c3_swiper7,
 							},
 						],
 						url: '',
