@@ -45,17 +45,17 @@
 		<Questions />
 	</div>
 </template>
-
 <script lang="ts" setup>
 import {ROUTER_NAME} from '@/assets/js/enum/routerEnum';
 import seoBanner from '@/assets/img/seo/cicadas_banner.png';
 import HomeAboutHorizonScrollCard from '~/components/pages/home/horizonSlide/HomeAboutHorizonScrollCard.vue';
+import {useGtag} from '#imports';
 
 definePageMeta({
 	name: ROUTER_NAME.HOME_PAGE,
 });
 
-import {onMounted, nextTick} from 'vue';
+import {onMounted} from 'vue';
 import LandingSection from '@/components/pages/home/LandingSection.vue';
 import Section1 from '@/components/pages/home/Section1.vue';
 import Section2 from '@/components/pages/home/Section2.vue';
@@ -72,8 +72,17 @@ import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
 import TextSlide from '~/components/pages/home/horizonSlide/TextSlide.vue';
 const {isDesktop} = useGetMediaQuery();
 
-onMounted(async () => {
-	await nextTick();
+onMounted(() => {
+	const {enableAnalytics} = useGtag();
+	enableAnalytics();
+
+	// 設定 Cookiebot 同意後的 callback
+	// window.CookiebotCallback_OnAccept = function () {
+	// 	if (window.Cookiebot?.consents?.statistics) {
+	// 		// ✅ 使用者同意「統計」類型，啟用 GA
+	// 		enableAnalytics();
+	// 	}
+	// };
 });
 
 useSeoMeta({

@@ -69,7 +69,10 @@ export default defineNuxtConfig({
 	gtag: {
 		enabled: process.env.NODE_ENV === 'production',
 		id: 'G-BP9QW5TJMS',
-		initialConsent: false,
+		config: {
+			anonymize_ip: true,
+		},
+		initMode: 'manual',
 	},
 	css: ['~/assets/styles/index.scss'],
 	primevue: {
