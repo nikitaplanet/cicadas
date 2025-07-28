@@ -2,7 +2,7 @@
 	<div>
 		<section ref="horizonTextSection" class="section -b -horizon">
 			<div ref="horizonTextContainer" class="section__horizon">
-				<div class="section__horizon-block px-[200px]">
+				<div class="section__horizon-block pl-[120px] pr-[80px]">
 					<HeadingHomeMade>{{ contentText.sliderSection.header }}</HeadingHomeMade>
 				</div>
 			</div>

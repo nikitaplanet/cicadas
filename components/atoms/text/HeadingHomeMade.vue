@@ -1,6 +1,6 @@
 <template>
 	<h2
-		class="heading-home-made-text font-superhighlight text-scale3XL md:text-superhighlight xl:text-superhighlightSuper text-text-primary whitespace-nowrap">
+		class="heading-home-made-text font-superhighlight text-scale3XL md:text-superhighlight xl:text-superhighlightXL 2xl:text-superhighlightSuper text-text-primary whitespace-nowrap">
 		<slot />
 	</h2>
 </template>
