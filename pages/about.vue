@@ -32,48 +32,55 @@
 </template>
 
 <script lang="ts" setup>
+import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
+
 import LandingSection from '@/components/pages/about/LandingSection.vue';
 import WordFadeInSection from '@/components/pages/about/WordFadeInSection.vue';
 import OurTeam from '@/components/pages/about/OurTeam.vue';
 import ServiceWeOfferSection from '@/components/pages/about/ServiceWeOfferSection.vue';
 import OurStoryMobile from '~/components/pages/about/horizonSlide/OurStoryMobile.vue';
-
-import {useGetMediaQuery} from '@/assets/js/hooks/useGetMediaQuery';
-import {seoWording} from '~/server/content/seoWording';
-import seoBanner from 'public/cicadas_banner.png';
 import AboutHorizonScrollCard from '~/components/pages/about/horizonSlide/AboutHorizonScrollCard.vue';
+
 const {isDesktop} = useGetMediaQuery();
 
 definePageMeta({
 	name: 'About',
 });
 
-const title = seoWording.about.title;
-const description = seoWording.about.description;
-
-const metaTitle = seoWording.about.metaTitle;
-const metaDescription = seoWording.about.metaDescription;
-
-const siteUrl = `${seoWording.domain}/about`;
-const siteName = seoWording.siteName;
-
+import {seoWording} from '~/server/content/seoWording';
+const seoData = seoWording.about;
 useSeoMeta({
-	title: title,
-	description: description,
-	ogTitle: metaTitle,
-	ogDescription: metaDescription,
-	ogImage: seoBanner || '',
-	ogUrl: siteUrl,
-	ogType: 'website',
-	ogSiteName: siteName,
-	twitterCard: 'summary_large_image',
-	twitterTitle: metaTitle,
-	twitterDescription: metaDescription,
-	twitterImage: seoBanner || '',
+	title: () => seoData.title,
+	description: () => seoData.description,
 });
 
+useServerSeoMeta({
+	robots: 'index, follow',
+	ogTitle: seoData.metaTitle,
+	description: seoData.description,
+	ogDescription: seoData.metaDescription,
+	ogImage: 'https://singingcicadas.com/cicadas_banner.png',
+	ogUrl: 'https://singingcicadas.com/about',
+	ogSiteName: 'Cicadas',
+	ogType: 'website',
+	twitterCard: 'summary_large_image',
+	twitterTitle: () => seoData.metaTitle,
+	twitterDescription: () => seoData.metaDescription,
+	twitterImage: () => 'https://singingcicadas.com/cicadas_banner.png',
+});
+
+// ✅ 補上 canonical
 useHead({
-	link: [{rel: 'canonical', href: 'https://singingcicadas.com/about'}],
+	link: [
+		{
+			rel: 'canonical',
+			href: 'https://singingcicadas.com/about',
+		},
+	],
+});
+
+defineOgImage({
+	url: 'https://singingcicadas.com/cicadas_banner.png',
 });
 </script>
 

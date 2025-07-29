@@ -4,11 +4,8 @@ export default defineNuxtConfig({
 	ssr: true,
 	target: 'server',
 	nitro: {
-		preset: 'vercel',
-		// preset: 'node-server',
-		prerender: {
-			crawlLinks: true,
-		},
+		// preset: 'vercel',
+		preset: 'node-server',
 	},
 	app: {
 		baseURL: '/',
@@ -31,6 +28,7 @@ export default defineNuxtConfig({
 	compatibilityDate: '2025-05-15',
 	devtools: {enabled: false},
 	modules: [
+		'@nuxtjs/seo',
 		'@nuxtjs/robots',
 		'@nuxtjs/sitemap',
 		'@ambitiondev/nuxt-cookiebot',
