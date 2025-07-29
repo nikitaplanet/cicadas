@@ -1,103 +1,69 @@
 <template>
-	<div>
-		<section ref="horizonTextSection" class="section -b -horizon">
-			<div ref="horizonTextContainer" class="section__horizon">
-				<div class="section__horizon-block pl-[120px] pr-[80px]">
-					<HeadingHomeMade>{{ contentText.sliderSection.header }}</HeadingHomeMade>
-				</div>
+	<section ref="horizonTextSection" class="section -b -horizon">
+		<div ref="horizonTextContainer" class="section__horizon">
+			<div class="section__horizon-block pl-[120px] pr-[120px]">
+				<HeadingHomeMade>{{ contentText.sliderSection.header }}</HeadingHomeMade>
 			</div>
-		</section>
-	</div>
+		</div>
+	</section>
 </template>
 
 <script setup>
 import {ref, onMounted, onUnmounted} from 'vue';
-
 import {contentText} from 'assets/wording/home/text.js';
 import HeadingHomeMade from '~/components/atoms/text/HeadingHomeMade.vue';
 
-// 使用 ref 來取得 DOM 元素
 const horizonTextSection = ref(null);
 const horizonTextContainer = ref(null);
 
-// 計算滾動進度的函數
-const getProgress = (element) => {
+let current = 0;
+let target = 0;
+let animationFrameId;
+
+function getProgress(element) {
 	const rect = element.getBoundingClientRect();
-	let progress = -(rect.top / (element.clientHeight - window.innerHeight));
+	const totalScroll = element.clientHeight - window.innerHeight;
+	let progress = -rect.top / totalScroll;
+	return Math.min(1, Math.max(0, progress));
+}
 
-	if (progress <= 0) {
-		progress = 0;
-	} else if (progress >= 1) {
-		progress = 1;
-	}
+function animateScroll() {
+	if (!horizonTextSection.value || !horizonTextContainer.value) return;
 
-	return progress;
-};
+	const progress = getProgress(horizonTextSection.value);
+	const maxScroll = horizonTextContainer.value.scrollWidth - horizonTextContainer.value.clientWidth;
 
-// 處理滾動事件的函數
-const handleScroll = () => {
-	if (horizonTextSection.value && horizonTextContainer.value) {
-		const progress = getProgress(horizonTextSection.value);
-		// 計算實際的可滾動距離（總寬度 - 視窗寬度）
-		const scrollableWidth = horizonTextContainer.value.scrollWidth - horizonTextContainer.value.clientWidth;
-		horizonTextContainer.value.scrollLeft = progress * scrollableWidth;
-	}
-};
+	target = progress * maxScroll;
 
-// 生命週期鉤子
+	const effectiveDuration = 0.6;
+	const lerpFactor = 1 - Math.pow(0.01, 1 / (30 * effectiveDuration));
+
+	current += (target - current) * lerpFactor;
+	horizonTextContainer.value.scrollLeft = current;
+
+	animationFrameId = requestAnimationFrame(animateScroll);
+}
+
 onMounted(() => {
-	window.addEventListener('scroll', handleScroll);
+	animationFrameId = requestAnimationFrame(animateScroll);
 });
 
 onUnmounted(() => {
-	window.removeEventListener('scroll', handleScroll);
+	cancelAnimationFrame(animationFrameId);
 });
 </script>
 
 <style lang="scss" scoped>
-:deep(body::-webkit-scrollbar) {
-	display: none;
-}
-
-:deep(body) {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-}
-
-/* Section 基礎樣式 */
 .section {
 	min-width: 100vw;
 }
 
-/* Section A 樣式 */
-.section.-a {
-	font-size: 6vw;
-	height: 100vh;
-}
-
-/* Section B 樣式 */
 .section.-b {
 	color: #001514;
 	height: 500vh;
 	position: relative;
 }
 
-/* Section C 樣式 */
-.section.-c {
-	font-size: 2vw;
-	font-weight: 100;
-	height: 100vh;
-	color: #fff;
-}
-
-.section.-c a {
-	font-size: 16px;
-	opacity: 0.3;
-	color: #fff;
-	display: block;
-}
-
-/* 水平滾動容器 */
 .section__horizon {
 	top: 0;
 	position: sticky;
@@ -108,16 +74,13 @@ onUnmounted(() => {
 	overflow-y: hidden;
 	display: flex;
 	gap: 160px;
-
 	scrollbar-width: none;
 	&::-webkit-scrollbar {
 		display: none;
 	}
 }
 
-/* 水平滾動區塊 */
 .section__horizon-block {
-	//width: 100vw;
 	flex: 0 0 auto;
 	height: 100%;
 	position: relative;
@@ -133,22 +96,5 @@ onUnmounted(() => {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.section__horizon-block > span {
-	font-size: 4vw;
-	writing-mode: vertical-lr;
-	padding: 1vw;
-}
-
-/* 文字容器 */
-.section__text {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	gap: 0.5rem;
 }
 </style>

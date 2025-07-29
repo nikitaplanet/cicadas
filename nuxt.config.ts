@@ -33,7 +33,6 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxtjs/robots',
 		'@nuxtjs/sitemap',
-		'@nuxtjs/seo',
 		'@ambitiondev/nuxt-cookiebot',
 		'@hypernym/nuxt-anime',
 		'nuxt-gtag',

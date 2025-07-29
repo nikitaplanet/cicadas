@@ -47,7 +47,7 @@
 </template>
 <script lang="ts" setup>
 import {ROUTER_NAME} from '@/assets/js/enum/routerEnum';
-import seoBanner from '@/assets/img/seo/cicadas_banner.png';
+import seoBanner from '@/public/cicadas_banner.png';
 import HomeAboutHorizonScrollCard from '~/components/pages/home/horizonSlide/HomeAboutHorizonScrollCard.vue';
 
 definePageMeta({

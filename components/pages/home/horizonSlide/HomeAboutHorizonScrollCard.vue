@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<section ref="horizonSection" class="section -b -horizon">
-			<div ref="horizonContainer" class="section__horizon">
+			<div ref="horizonContainer" class="section__horizon" data-slow-scroll>
 				<div class="section__horizon-block pl-[100px]">
 					<AboutUsSlide1 />
 				</div>

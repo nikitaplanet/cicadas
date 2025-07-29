@@ -12,7 +12,7 @@
 				</SectionDescription>
 			</div>
 			<div class="mt-[60px] lg:mt-0 col-span-6 xl:col-span-7">
-				<NVideo isAutoPlay isShowLinkOutside videoUrl="https://player.vimeo.com/video/1059379503" />
+				<NVideo isAutoPlay isShowLinkOutside videoUrl="https://player.vimeo.com/video/1105007138" />
 			</div>
 		</div>
 	</SectionContainer>
