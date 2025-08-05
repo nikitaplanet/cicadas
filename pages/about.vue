@@ -49,24 +49,20 @@ definePageMeta({
 
 import {seoWording} from '~/server/content/seoWording';
 const seoData = seoWording.about;
-useSeoMeta({
-	title: () => seoData.title,
-	description: () => seoData.description,
-});
 
-useServerSeoMeta({
+useSeoMeta({
+	title: 'About',
 	robots: 'index, follow',
-	ogTitle: seoData.metaTitle,
-	description: seoData.description,
-	ogDescription: seoData.metaDescription,
+	ogTitle: 'About Singing Cicadas | Asia’s Storytelling Experts for Change',
+	description:
+		'At Singing Cicadas, we believe in the power of storytelling to shape narratives and behavior. As a dedicated social impact agency, we partner with you to design and deliver transformative campaigns using our insight-driven storytelling approach.',
+	ogDescription:
+		'We empower NGOs, ESG-driven businesses, and SDG-aligned initiatives  to fight climate change, gender equality, LGBTQ rights and other human rights issues through data-driven storytelling rooted in Asia and trusted globally.',
 	ogImage: 'https://singingcicadas.com/cicadas_banner.png',
 	ogUrl: 'https://singingcicadas.com/about',
 	ogSiteName: 'Cicadas',
 	ogType: 'website',
 	twitterCard: 'summary_large_image',
-	twitterTitle: () => seoData.metaTitle,
-	twitterDescription: () => seoData.metaDescription,
-	twitterImage: () => 'https://singingcicadas.com/cicadas_banner.png',
 });
 
 // ✅ 補上 canonical

@@ -4,8 +4,11 @@ export default defineNuxtConfig({
 	ssr: true,
 	target: 'server',
 	nitro: {
-		// preset: 'vercel',
-		preset: 'node-server',
+		preset: 'vercel',
+		// preset: 'node-server',
+		prerender: {
+			routes: ['/', '/about', '/workshops', '/studio', '/campaigns'],
+		},
 	},
 	app: {
 		baseURL: '/',
@@ -26,7 +29,7 @@ export default defineNuxtConfig({
 		},
 	},
 	compatibilityDate: '2025-05-15',
-	devtools: {enabled: false},
+	devtools: {enabled: true},
 	modules: [
 		'@nuxtjs/seo',
 		'@nuxtjs/robots',
