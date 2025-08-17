@@ -40,21 +40,47 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Observer);
 const horizonSection = ref<HTMLElement | null>(null);
 const horizonContainer = ref<HTMLElement | null>(null);
 
-let intentObserver = null;
+let intentObserver: Observer | null = null;
 let ctx: gsap.Context | null = null;
 let animating = ref(false);
-let currentIndex = 0;
+let currentIndex = -1;
 let swipePanels = ref<HTMLElement[]>([]);
 
-onMounted(async () => {
-	await nextTick();
+function initST() {
+	ctx = gsap.context(() => {
+		const container = horizonContainer.value!;
+		const section = horizonSection.value!;
 
+		gsap.set(container, {x: 0});
+
+		const getMove = () => container.scrollWidth - document.documentElement.clientWidth;
+
+		gsap.to(container, {
+			scrollTrigger: {
+				trigger: section,
+				start: 'top top',
+				end: () => `+=${getMove()}`,
+				scrub: true,
+				pin: true,
+				anticipatePin: 1,
+				invalidateOnRefresh: true,
+				onEnter: (self) => {
+					console.log('onEnter');
+					intentObserver?.enable();
+					gotoPanel(currentIndex + 1, true);
+				},
+				onEnterBack: () => {
+					console.log('onEnterBack');
+					intentObserver?.enable();
+					gotoPanel(currentIndex - 1, false);
+				},
+			},
+		});
+	}, horizonSection);
+}
+
+function initObserver() {
 	swipePanels.value = gsap.utils.toArray('.section__horizon-block');
-	// set second panel two initial 100%
-	gsap.set('.x-100', {xPercent: 100});
-	// gsap.set(swipePanels, {
-	// 	zIndex: (i) => i,
-	// });
 
 	intentObserver = ScrollTrigger.observe({
 		type: 'wheel,touch',
@@ -70,28 +96,14 @@ onMounted(async () => {
 	});
 
 	intentObserver.disable();
-
 	console.log('intentObserver', intentObserver);
+}
 
-	const section = horizonSection.value!;
+onMounted(async () => {
+	await nextTick();
 
-	ScrollTrigger.create({
-		trigger: section,
-		pin: true,
-		start: 'top top',
-		end: '+=1',
-		anticipatePin: 1,
-		markers: true,
-		onEnter: (self) => {
-			console.log('self', self);
-			// intentObserver.enable();
-			// gotoPanel(currentIndex + 1, true);
-		},
-		onEnterBack: () => {
-			// intentObserver.enable();
-			// gotoPanel(currentIndex - 1, false);
-		},
-	});
+	initST();
+	initObserver();
 });
 
 onBeforeUnmount(() => {
@@ -100,6 +112,7 @@ onBeforeUnmount(() => {
 });
 
 function gotoPanel(index: number, isScrollingDown: boolean) {
+	console.log('gotoPanel', index, isScrollingDown);
 	animating.value = true;
 	// return to normal scroll if we're at the end or back up to the start
 	if ((index === swipePanels.value.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
