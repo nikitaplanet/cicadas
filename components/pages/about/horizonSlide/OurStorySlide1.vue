@@ -1,5 +1,5 @@
 <template>
-	<div class="aboutUs-bg pt-32 pb-32">
+	<div class="w-screen h-screen aboutUs-bg pt-32 pb-32">
 		<SectionContainer :hasMinHeight="false">
 			<div class="w-full flex flex-col justify-center items-center pt-8">
 				<div class="w-full">

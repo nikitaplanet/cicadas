@@ -1,7 +1,7 @@
 <template>
-	<div class="aboutUs-bg">
+	<div class="w-screen h-screen aboutUs-bg">
 		<SectionContainer :hasMinHeight="false">
-			<div class="w-full flex flex-col justify-center items-center pt-8">
+			<div class="w-full h-full flex flex-col justify-center items-center pt-8">
 				<div class="w-full flex flex-col lg:flex-row justify-center items-center gap-10">
 					<img class="w-[90%] max-w-[450px]" alt="flower" src="@/assets/img/about/ourStory/2.svg" />
 					<div class="flex flex-col relative">

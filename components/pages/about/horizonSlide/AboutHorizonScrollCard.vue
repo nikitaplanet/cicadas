@@ -5,16 +5,16 @@
 				<div class="section__horizon-block">
 					<OurStorySlide1 />
 				</div>
-				<div class="section__horizon-block pl-[160px]">
+				<div class="section__horizon-block x-100">
 					<OurStorySlide2 />
 				</div>
-				<div class="section__horizon-block pl-[160px]">
+				<div class="section__horizon-block x-100">
 					<OurStorySlide3 />
 				</div>
-				<div class="section__horizon-block pl-[160px]">
+				<div class="section__horizon-block x-100">
 					<OurStorySlide4 />
 				</div>
-				<div class="section__horizon-block pl-[160px] pr-[350px]">
+				<div class="section__horizon-block x-100">
 					<OurStorySlide5 />
 				</div>
 			</div>
@@ -22,8 +22,12 @@
 	</div>
 </template>
 
-<script setup>
-import {ref, onMounted, onUnmounted} from 'vue';
+<script lang="ts" setup>
+import {ref, onMounted, onBeforeUnmount, nextTick} from 'vue';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import {Observer} from 'gsap/Observer';
 
 import OurStorySlide1 from '~/components/pages/about/horizonSlide/OurStorySlide1.vue';
 import OurStorySlide2 from '~/components/pages/about/horizonSlide/OurStorySlide2.vue';
@@ -31,110 +35,109 @@ import OurStorySlide3 from '~/components/pages/about/horizonSlide/OurStorySlide3
 import OurStorySlide4 from '~/components/pages/about/horizonSlide/OurStorySlide4.vue';
 import OurStorySlide5 from '~/components/pages/about/horizonSlide/OurStorySlide5.vue';
 
-// 使用 ref 來取得 DOM 元素
-const horizonSection = ref(null);
-const horizonContainer = ref(null);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Observer);
 
-// 計算滾動進度的函數
-const getProgress = (element) => {
-	const rect = element.getBoundingClientRect();
-	let progress = -(rect.top / (element.clientHeight - window.innerHeight));
+const horizonSection = ref<HTMLElement | null>(null);
+const horizonContainer = ref<HTMLElement | null>(null);
 
-	if (progress <= 0) {
-		progress = 0;
-	} else if (progress >= 1) {
-		progress = 1;
-	}
+let intentObserver = null;
+let ctx: gsap.Context | null = null;
+let animating = ref(false);
+let currentIndex = 0;
+let swipePanels = gsap.utils.toArray('.section__horizon-block');
 
-	return progress;
-};
+onMounted(async () => {
+	await nextTick();
 
-// 處理滾動事件的函數
-const handleScroll = () => {
-	if (horizonSection.value && horizonContainer.value) {
-		const progress = getProgress(horizonSection.value);
-		// 計算實際的可滾動距離（總寬度 - 視窗寬度）
-		const scrollableWidth = horizonContainer.value.scrollWidth - horizonContainer.value.clientWidth;
-		horizonContainer.value.scrollLeft = progress * scrollableWidth;
-	}
-};
+	ctx = gsap.context(() => {
+		const container = horizonContainer.value!;
+		const section = horizonSection.value!;
 
-// 生命週期鉤子
-onMounted(() => {
-	window.addEventListener('scroll', handleScroll);
+		gsap.set(container, {x: 0});
+
+		const getMove = () => container.scrollWidth - document.documentElement.clientWidth;
+
+		gsap.to(container, {
+			x: () => -getMove(),
+			ease: 'none',
+			scrollTrigger: {
+				trigger: section,
+				start: 'top top',
+				end: () => `+=${getMove()}`,
+				scrub: true,
+				pin: true,
+				anticipatePin: 1,
+				invalidateOnRefresh: true,
+				onEnter: (self) => {
+					console.log('onEnter');
+				},
+				onEnterBack: () => {
+					console.log('onEnterBack');
+				},
+			},
+		});
+	}, horizonSection);
+
+	initObserver();
 });
 
-onUnmounted(() => {
-	window.removeEventListener('scroll', handleScroll);
+onBeforeUnmount(() => {
+	ctx?.revert();
+	ctx = null;
 });
+
+function initObserver() {
+	intentObserver = Observer.create({
+		type: 'wheel,touch',
+		onUp: () => !animating && gotoPanel(currentIndex + 1, true),
+		onDown: () => !animating && gotoPanel(currentIndex - 1, false),
+		wheelSpeed: -1,
+		tolerance: 10,
+		preventDefault: true,
+		onPress: (self) => {
+			ScrollTrigger.isTouch && self.event.preventDefault();
+		},
+	});
+}
+
+function gotoPanel(currentIndex, event) {}
 </script>
 
 <style lang="scss" scoped>
 :deep(body::-webkit-scrollbar) {
 	display: none;
 }
-
 :deep(body) {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
-/* Section 基礎樣式 */
 .section {
 	width: 100vw;
 }
-
-/* Section A 樣式 */
-.section.-a {
-	font-size: 6vw;
-	height: 100vh;
-}
-
-/* Section B 樣式 */
 .section.-b {
 	color: #001514;
-	height: 500vh;
 	position: relative;
 }
 
-/* Section C 樣式 */
-.section.-c {
-	font-size: 2vw;
-	font-weight: 100;
-	height: 100vh;
-	color: #fff;
-}
-
-.section.-c a {
-	font-size: 16px;
-	opacity: 0.3;
-	color: #fff;
-	display: block;
-}
-
-/* 水平滾動容器 */
+/* IMPORTANT: GSAP controls horizontal translate; no sticky/overflow scrolling here */
 .section__horizon {
+	position: relative;
 	top: 0;
-	position: sticky;
 	width: 100%;
 	height: 100vh;
 	white-space: nowrap;
-	overflow-x: auto;
-	overflow-y: hidden;
+	overflow: visible;
 	display: flex;
-	gap: 160px;
-
 	background: var(--Surface-supportive-violet-light, #f3e6f7);
-
 	scrollbar-width: none;
 	&::-webkit-scrollbar {
 		display: none;
 	}
 }
 
-/* 水平滾動區塊 */
 .section__horizon-block {
-	//width: 100vw;
+	width: 100%;
 	flex: 0 0 auto;
 	height: 100%;
 	position: relative;
@@ -158,7 +161,6 @@ onUnmounted(() => {
 	padding: 1vw;
 }
 
-/* 文字容器 */
 .section__text {
 	width: 100%;
 	height: 100%;

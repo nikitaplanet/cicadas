@@ -74,10 +74,6 @@ useHead({
 		},
 	],
 });
-
-defineOgImage({
-	url: 'https://singingcicadas.com/cicadas_banner.png',
-});
 </script>
 
 <style lang="scss" scoped>
