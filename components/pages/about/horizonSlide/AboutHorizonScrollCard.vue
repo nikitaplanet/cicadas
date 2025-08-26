@@ -5,16 +5,16 @@
 				<div class="section__horizon-block">
 					<OurStorySlide1 />
 				</div>
-				<div class="section__horizon-block x-100">
+				<div class="section__horizon-block">
 					<OurStorySlide2 />
 				</div>
-				<div class="section__horizon-block x-100">
+				<div class="section__horizon-block">
 					<OurStorySlide3 />
 				</div>
-				<div class="section__horizon-block x-100">
+				<div class="section__horizon-block">
 					<OurStorySlide4 />
 				</div>
-				<div class="section__horizon-block x-100">
+				<div class="section__horizon-block">
 					<OurStorySlide5 />
 				</div>
 			</div>
@@ -43,37 +43,41 @@ const horizonContainer = ref<HTMLElement | null>(null);
 let intentObserver: Observer | null = null;
 let ctx: gsap.Context | null = null;
 let animating = ref(false);
-let currentIndex = -1;
+let currentIndex = 0;
 let swipePanels = ref<HTMLElement[]>([]);
+const totalSlides = 5;
 
 function initST() {
 	ctx = gsap.context(() => {
 		const container = horizonContainer.value!;
 		const section = horizonSection.value!;
 
+		// 設置初始位置
 		gsap.set(container, {x: 0});
 
-		const getMove = () => container.scrollWidth - document.documentElement.clientWidth;
-
-		gsap.to(container, {
-			scrollTrigger: {
-				trigger: section,
-				start: 'top top',
-				end: () => `+=${getMove()}`,
-				scrub: true,
-				pin: true,
-				anticipatePin: 1,
-				invalidateOnRefresh: true,
-				onEnter: (self) => {
-					console.log('onEnter');
-					intentObserver?.enable();
-					gotoPanel(currentIndex + 1, true);
-				},
-				onEnterBack: () => {
-					console.log('onEnterBack');
-					intentObserver?.enable();
-					gotoPanel(currentIndex - 1, false);
-				},
+		// 只負責 pin section，不做橫向動畫
+		ScrollTrigger.create({
+			trigger: section,
+			start: 'top top',
+			end: `+=${(totalSlides - 1) * window.innerHeight}`, // 每個 slide 相當於一個螢幕高度的滾動距離
+			pin: true,
+			anticipatePin: 1,
+			invalidateOnRefresh: true,
+			onEnter: () => {
+				console.log('ScrollTrigger onEnter');
+				intentObserver?.enable();
+			},
+			onLeave: () => {
+				console.log('ScrollTrigger onLeave - 向下離開');
+				intentObserver?.disable();
+			},
+			onEnterBack: () => {
+				console.log('ScrollTrigger onEnterBack');
+				intentObserver?.enable();
+			},
+			onLeaveBack: () => {
+				console.log('ScrollTrigger onLeaveBack - 向上離開');
+				intentObserver?.disable();
 			},
 		});
 	}, horizonSection);
@@ -81,66 +85,123 @@ function initST() {
 
 function initObserver() {
 	swipePanels.value = gsap.utils.toArray('.section__horizon-block');
+	console.log('Total slides:', swipePanels.value.length);
 
 	intentObserver = ScrollTrigger.observe({
+		target: horizonSection.value,
 		type: 'wheel,touch',
-		onUp: () => !animating && gotoPanel(currentIndex + 1, true),
-		onDown: () => !animating && gotoPanel(currentIndex - 1, false),
+		onUp: () => {
+			console.log('Observer onUp (向下滾動)');
+			if (!animating.value) {
+				goToNextSlide();
+			}
+		},
+		onDown: () => {
+			console.log('Observer onDown (向上滾動)');
+			if (!animating.value) {
+				goToPrevSlide();
+			}
+		},
 		wheelSpeed: -1,
 		tolerance: 10,
 		preventDefault: true,
 		onPress: (self) => {
-			// on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
 			ScrollTrigger.isTouch && self.event.preventDefault();
 		},
 	});
 
 	intentObserver.disable();
-	console.log('intentObserver', intentObserver);
+	console.log('Observer initialized');
+}
+
+function goToNextSlide() {
+	const nextIndex = currentIndex + 1;
+	console.log('goToNextSlide:', currentIndex, '->', nextIndex);
+
+	if (nextIndex >= totalSlides) {
+		console.log('已到最後一張，釋放滾動');
+		// 到達最後一張後，讓用戶繼續向下滾動到下個 section
+		intentObserver?.disable();
+		// 觸發 ScrollTrigger 繼續滾動
+		gsap.to(window, {
+			scrollTo: {
+				y: horizonSection.value!.offsetTop + horizonSection.value!.offsetHeight + 1,
+				autoKill: false,
+			},
+			duration: 0.5,
+		});
+		return;
+	}
+
+	animateToSlide(nextIndex);
+}
+
+function goToPrevSlide() {
+	const prevIndex = currentIndex - 1;
+	console.log('goToPrevSlide:', currentIndex, '->', prevIndex);
+
+	if (prevIndex < 0) {
+		console.log('已到第一張，釋放滾動');
+		// 到達第一張後，讓用戶繼續向上滾動到上個 section
+		intentObserver?.disable();
+		// 觸發 ScrollTrigger 繼續滾動
+		gsap.to(window, {
+			scrollTo: {
+				y: horizonSection.value!.offsetTop - 1,
+				autoKill: false,
+			},
+			duration: 0.5,
+		});
+		return;
+	}
+
+	animateToSlide(prevIndex);
+}
+
+function animateToSlide(index: number) {
+	if (index < 0 || index >= totalSlides) return;
+
+	console.log(`切換到第 ${index + 1} 張 slide`);
+	animating.value = true;
+
+	const container = horizonContainer.value!;
+	const targetX = -index * window.innerWidth;
+
+	gsap.to(container, {
+		x: targetX,
+		duration: 0.8,
+		ease: 'power2.out',
+		onComplete: () => {
+			currentIndex = index;
+			animating.value = false;
+			console.log(`動畫完成，當前第 ${currentIndex + 1} 張`);
+		},
+	});
+}
+
+// 重置到第一張
+function resetToFirstSlide() {
+	console.log('重置到第一張');
+	currentIndex = 0;
+	const container = horizonContainer.value!;
+	gsap.set(container, {x: 0});
 }
 
 onMounted(async () => {
 	await nextTick();
 
+	resetToFirstSlide();
 	initST();
 	initObserver();
+
+	console.log('組件已掛載');
 });
 
 onBeforeUnmount(() => {
+	intentObserver?.kill();
 	ctx?.revert();
 	ctx = null;
 });
-
-function gotoPanel(index: number, isScrollingDown: boolean) {
-	console.log('gotoPanel', index, isScrollingDown);
-	animating.value = true;
-	// return to normal scroll if we're at the end or back up to the start
-	if ((index === swipePanels.value.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
-		let target = index;
-		gsap.to(target, {
-			// xPercent: isScrollingDown ? -100 : 0,
-			duration: 0.0,
-			onComplete: () => {
-				animating.value = false;
-				isScrollingDown && intentObserver?.disable();
-			},
-		});
-		return;
-	}
-
-	//   target the second panel, last panel?
-	let target = isScrollingDown ? swipePanels.value[index] : swipePanels.value[currentIndex];
-
-	gsap.to(target, {
-		xPercent: isScrollingDown ? 0 : 100,
-		duration: 0.75,
-		onComplete: () => {
-			animating.value = false;
-		},
-	});
-	currentIndex = index;
-	console.log(index);
-}
 </script>
 
 <style lang="scss" scoped>
@@ -160,16 +221,14 @@ function gotoPanel(index: number, isScrollingDown: boolean) {
 	position: relative;
 }
 
-/* IMPORTANT: GSAP controls horizontal translate; no sticky/overflow scrolling here */
 .section__horizon {
 	position: relative;
 	top: 0;
-	width: 100%;
+	width: 500%; /* 5 個 slide */
 	height: 100vh;
-	white-space: nowrap;
-	overflow: visible;
 	display: flex;
 	background: var(--Surface-supportive-violet-light, #f3e6f7);
+	overflow: hidden;
 	scrollbar-width: none;
 	&::-webkit-scrollbar {
 		display: none;
@@ -177,8 +236,8 @@ function gotoPanel(index: number, isScrollingDown: boolean) {
 }
 
 .section__horizon-block {
-	width: 100%;
-	flex: 0 0 auto;
+	width: 20%; /* 每個佔 20% */
+	flex: 0 0 20%;
 	height: 100%;
 	position: relative;
 	display: flex;

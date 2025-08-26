@@ -20,7 +20,7 @@ export default defineNuxtConfig({
 				},
 				{
 					name: 'keywords',
-					content: 'Cicadas, singingcicadas, Sharon Yeung, Han Yan Yuen, Hanna Shin',
+					content: 'Singing Cicadas, singingcicadas, Sharon Yeung, Han Yan Yuen, Hanna Shin',
 				},
 				{name: 'author', content: 'Cicadas'},
 				{name: 'robots', content: 'index, follow'},

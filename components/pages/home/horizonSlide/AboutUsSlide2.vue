@@ -1,20 +1,16 @@
 <template>
-	<div class="aboutUs-bg">
-		<SectionContainer :hasMinHeight="false">
-			<div
-				v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
-				class="w-full flex flex-col justify-center items-center transition-all duration-500">
-				<div class="w-full flex flex-col lg:flex-row justify-center items-center gap-10">
-					<div class="flex flex-col">
-						<img alt="wording" src="@/assets/img/home/aboutUs/word/2.svg" />
-					</div>
-					<div class="relative">
-						<img class="w-[90%] max-w-[480px] ml-24" alt="flower2" src="@/assets/img/home/aboutUs/2.svg" />
-						<img class="absolute bottom-[-130px] right-[-100px] w-[80px]" alt="feather" src="@/assets/img/home/aboutUs/feather2.svg" />
-					</div>
-				</div>
+	<div class="w-[960px] mx-auto aboutUs-bg">
+		<div
+			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+			class="w-full flex flex-col lg:flex-row justify-center items-center gap-5 transition-all duration-500">
+			<div class="flex">
+				<img class="w-[422px]" alt="wording" src="@/assets/img/home/aboutUs/word/2.svg" />
 			</div>
-		</SectionContainer>
+			<div class="relative">
+				<img class="w-full max-w-[478px]" alt="flower2" src="@/assets/img/home/aboutUs/2.svg" />
+				<img class="absolute bottom-[-130px] right-[-100px] w-[80px]" alt="feather" src="@/assets/img/home/aboutUs/feather2.svg" />
+			</div>
+		</div>
 	</div>
 </template>
 
