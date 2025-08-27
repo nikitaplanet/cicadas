@@ -1,30 +1,22 @@
 <template>
-	<div class="w-screen h-screen aboutUs-bg pt-32 pb-32">
-		<SectionContainer :hasMinHeight="false">
-			<div class="w-full flex flex-col justify-center items-center pt-8">
-				<div class="w-full">
-					<SectionNameTag>{{ aboutWording.ourStory.title }}</SectionNameTag>
-				</div>
-				<div class="w-full flex flex-col lg:flex-row justify-center items-center gap-10 mt-28 pl-[100px]">
-					<img class="w-[90%] max-w-[480px]" alt="flower" src="../../../../assets/img/about/ourStory/1.svg" />
-					<div class="flex flex-col relative">
-						<img
-							class="absolute bottom-[-135px] lg:bottom-auto lg:top-[-135px] right-[-40%] xs:right-[-30px] lg:right-[-110px] w-32"
-							alt="feather"
-							src="../../../../assets/img/about/ourStory/feather.svg" />
-						<img class="w-full max-w-[350px] ml-24" alt="wording" src="@/assets/img/about/ourStory/word1.svg" />
-					</div>
-				</div>
+	<div class="w-full flex justify-center relative">
+		<img
+			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+			class="absolute right-[3%] top-[-50px] w-32 transition-all duration-700"
+			alt="feather"
+			src="../../../../assets/img/about/ourStory/feather.svg" />
+		<div
+			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+			class="w-full max-w-[960px] flex flex-col lg:flex-row justify-between items-center gap-16 mt-8 transition-all duration-700">
+			<img class="w-full max-w-[480px]" alt="flower" src="../../../../assets/img/about/ourStory/1.svg" />
+			<div class="flex flex-col relative">
+				<img class="w-[340px]" alt="wording" src="@/assets/img/about/ourStory/word1.svg" />
 			</div>
-		</SectionContainer>
+		</div>
 	</div>
 </template>
 
-<script lang="ts" setup>
-import SectionContainer from '@/components/layout/SectionContainer.vue';
-import SectionNameTag from '@/components/atoms/text/SectionNameTag.vue';
-import {aboutWording} from '@/assets/wording/about/text';
-</script>
+<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
 .aboutUs-bg {
