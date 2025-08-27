@@ -4,7 +4,7 @@
 			<SectionNameTag>{{ contentText.aboutUs.title }}</SectionNameTag>
 		</div>
 		<div class="w-full flex flex-col justify-center items-center gap-20">
-			<AboutUsSlide1 />
+			<AboutUsSlide1 class="mt-8" />
 			<AboutUsSlide2 />
 			<AboutUsSlide3 />
 		</div>
