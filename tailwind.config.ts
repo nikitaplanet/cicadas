@@ -75,7 +75,7 @@ const customize = {
 	fontSize: {
 		superhighlightSuper: ['120px', {lineHeight: '1.25', letterSpacing: '-0.02em'}],
 		superhighlightXL: ['90px', {lineHeight: '1.25', letterSpacing: '-0.02em'}],
-		superhighlight: ['90px', {lineHeight: '1.25', letterSpacing: '-0.02em'}],
+		superhighlight: ['70px', {lineHeight: '1.25', letterSpacing: '-0.02em'}],
 		h1: ['80px', {lineHeight: '1', letterSpacing: '-0.02em'}],
 		h2: ['60px', {lineHeight: '1.2'}],
 		h3: ['38px', {lineHeight: '1.2'}],

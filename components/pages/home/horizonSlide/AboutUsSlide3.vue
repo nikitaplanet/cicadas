@@ -1,5 +1,5 @@
 <template>
-	<div class="w-[960px] mx-auto aboutUs-bg">
+	<div class="w-[960px] mx-auto aboutUs-bg py-20">
 		<div
 			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
 			class="w-full flex flex-col lg:flex-row justify-between items-center gap-20 mb-20 transition-all duration-500">
@@ -9,7 +9,9 @@
 			</div>
 		</div>
 
-		<div class="flex justify-center items-center">
+		<div
+			v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
+			class="flex justify-center items-center transition-all duration-500">
 			<NLink class="group bottom-[120px] right-[130px] w-[130px] h-[25px]" to="/about">
 				<div class="w-full relative">
 					<img
