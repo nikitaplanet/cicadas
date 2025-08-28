@@ -5,7 +5,7 @@
 				<SectionNameTag>{{ aboutWording.ourStory.title }}</SectionNameTag>
 			</div>
 
-			<div class="w-full flex flex-col justify-center items-center gap-20">
+			<div class="w-full flex flex-col justify-center items-center">
 				<OurStorySlide1 />
 				<OurStorySlide2 />
 				<OurStorySlide3 />
