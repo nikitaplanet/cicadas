@@ -4,8 +4,8 @@ export default defineNuxtConfig({
 	ssr: true,
 	target: 'server',
 	nitro: {
-		preset: 'vercel',
-		// preset: 'node-server',
+		// preset: 'vercel',
+		preset: 'node-server',
 		prerender: {
 			routes: ['/', '/about', '/workshops', '/studio', '/campaigns'],
 		},

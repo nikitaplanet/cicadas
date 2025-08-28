@@ -1,5 +1,5 @@
 <template>
-	<SectionContainer :hasMinHeight="false" :isAutoWidth="true" class="aboutUs-bg py-[120px]">
+	<SectionContainer :hasMinHeight="false" :isAutoWidth="true" class="aboutUs-bg pt-[120px]">
 		<div class="w-full">
 			<SectionNameTag>{{ contentText.aboutUs.title }}</SectionNameTag>
 		</div>

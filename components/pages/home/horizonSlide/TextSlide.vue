@@ -1,7 +1,7 @@
 <template>
 	<div
 		v-animateonscroll="{enterClass: 'fadein', leaveClass: 'fadeout', once: true}"
-		class="w-screen flex items-center justify-center py-[45px] px-[60px] transition-all duration-700">
+		class="w-screen flex items-center justify-center pt-[20px] pb-[80px] px-[60px] transition-all duration-700">
 		<HeadingHomeMade>{{ contentText.sliderSection.header }}</HeadingHomeMade>
 	</div>
 </template>
