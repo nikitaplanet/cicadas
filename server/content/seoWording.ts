@@ -2,7 +2,7 @@ export const seoWording = {
 	siteName: 'Cicadas',
 	domain: 'https://singingcicadas.com',
 	home: {
-		title: 'Cicadas',
+		title: '',
 		description:
 			'Through data-driven insights and compelling storytelling, we craft powerful campaigns that amplify the voices of changemakers across Asia. Together, we’ll transform your message into a movement that changes perspectives and catalyses action.',
 		metaTitle: 'Asia-Focused Creative Agency for NGOs | Singing Cicadas',

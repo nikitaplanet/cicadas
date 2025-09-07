@@ -46,13 +46,8 @@
 	</div>
 </template>
 <script lang="ts" setup>
-import {ROUTER_NAME} from '@/assets/js/enum/routerEnum';
 import seoBanner from '@/public/cicadas_banner.png';
 import HomeAboutHorizonScrollCard from '~/components/pages/home/horizonSlide/HomeAboutHorizonScrollCard.vue';
-
-definePageMeta({
-	name: ROUTER_NAME.HOME_PAGE,
-});
 
 import LandingSection from '@/components/pages/home/LandingSection.vue';
 import Section1 from '@/components/pages/home/Section1.vue';
