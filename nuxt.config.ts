@@ -4,7 +4,6 @@ export default defineNuxtConfig({
 	ssr: true,
 	target: 'server',
 	nitro: {
-		// preset: 'vercel',
 		preset: 'node-server',
 		prerender: {
 			routes: ['/', '/about', '/workshops', '/studio', '/campaigns'],
@@ -50,9 +49,9 @@ export default defineNuxtConfig({
 	},
 	sitemap: {
 		hostname: 'https://singingcicadas.com',
-		gzip: true, // 生成 sitemap.xml.gz
+		gzip: true,
 		routes: async () => {
-			return []; // 如果沒有動態路由，可以留空或返回空陣列
+			return [];
 		},
 	},
 	cookiebot: {
@@ -111,7 +110,7 @@ export default defineNuxtConfig({
 	},
 	runtimeConfig: {
 		public: {
-			siteUrl: 'https://singingcicadas.com', // ✅ 給你全站都能用
+			siteUrl: 'https://singingcicadas.com',
 		},
 	},
 });
