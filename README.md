@@ -3,73 +3,29 @@
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
-
-Make sure to install dependencies:
+Lang : Nuxt3 <br/>
+Node Version : v22 以上
 
 ```bash
 # npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+npm run dev
 ```
-
-## Development Server
 
 Start the development server on `http://localhost:3000`:
 
-```bash
-# npm
-npm run dev
 
-# pnpm
-pnpm dev
+## Production Deploy To AWS
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
+Build the application for production:<br>
+Check <b>'deploy.sh'</b> first
 
 ```bash
 # npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npm run deploy
 ```
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+# 動畫特效
+- 使用 Lenis.js 控制滾動 smooth 效果
+- GSAP 僅使用首頁第一個區塊淡入淡出
+- 區塊淡入使用 PrimeVue 套件的淡入
